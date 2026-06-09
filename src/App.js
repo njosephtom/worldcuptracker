@@ -30,6 +30,7 @@ export default function App() {
   const [selectedTeam, setSelectedTeam] = useState(null);
   const [counter, setCounter] = useState(() => countdownText(TOURNAMENT_START));
   const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth < MOBILE_BREAKPOINT);
+  const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -42,7 +43,6 @@ export default function App() {
     function onResize() {
       setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
     }
-
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
   }, []);
@@ -65,18 +65,18 @@ export default function App() {
   ];
 
   return (
-    <div style={S.app}>
+    <div style={S.app} data-theme={isDark ? 'dark' : 'light'}>
       {/* TOPBAR */}
       <div style={S.topbar}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <span style={{ fontSize: 18 }}>⚽</span>
           <div>
-            <div style={{ fontSize: 13, fontWeight: 600, color: '#f0c040', letterSpacing: 2, textTransform: 'uppercase' }}>FIFA World Cup 2026</div>
-            <div style={{ fontSize: 9, color: '#4a5a70', letterSpacing: 1 }}>🇺🇸 USA · 🇨🇦 Canada · 🇲🇽 Mexico · Jun 11 – Jul 19</div>
+            <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--ac-gold)', letterSpacing: 2, textTransform: 'uppercase' }}>FIFA World Cup 2026</div>
+            <div style={{ fontSize: 9, color: 'var(--tx-dim)', letterSpacing: 1 }}>🇺🇸 USA · 🇨🇦 Canada · 🇲🇽 Mexico · Jun 11 – Jul 19</div>
           </div>
         </div>
         <div style={S.dateNav}>
-          <button style={{ ...S.dbtn, borderColor: '#22c55e', color: '#22c55e' }} onClick={goToday}>Today</button>
+          <button style={{ ...S.dbtn, borderColor: 'var(--ac-green)', color: 'var(--ac-green)' }} onClick={goToday}>Today</button>
           <button style={S.dbtn} onClick={() => handleDateShift(-1)}>◀</button>
           <input id="dp" type="date" defaultValue={wc.selectedDate} min="2026-06-11" max="2026-07-19"
             onChange={e => wc.setSelectedDate(e.target.value)}
@@ -89,16 +89,23 @@ export default function App() {
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 10 }}>
           {wc.liveCount > 0 && (
-            <span style={{ color: '#ef4444', fontWeight: 600, animation: 'blink 1.4s infinite' }}>● {wc.liveCount} LIVE</span>
+            <span style={{ color: 'var(--ac-red)', fontWeight: 600, animation: 'blink 1.4s infinite' }}>● {wc.liveCount} LIVE</span>
           )}
           {wc.loading ? (
-            <span style={{ color: '#5a6a85', display: 'flex', alignItems: 'center', gap: 5 }}>
+            <span style={{ color: 'var(--tx-muted)', display: 'flex', alignItems: 'center', gap: 5 }}>
               <span style={S.spinner} /> Fetching…
             </span>
           ) : (
-            <span style={{ color: '#4a5a70' }}>↻ {wc.lastFetch || 'Loading…'}</span>
+            <span style={{ color: 'var(--tx-dim)' }}>↻ {wc.lastFetch || 'Loading…'}</span>
           )}
           <button style={{ ...S.dbtn, fontSize: 10, padding: '4px 8px' }} onClick={wc.refresh}>Refresh</button>
+          <button
+            style={{ ...S.dbtn, fontSize: 15, padding: '3px 8px', lineHeight: 1 }}
+            onClick={() => setIsDark(d => !d)}
+            title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            {isDark ? '☀️' : '🌙'}
+          </button>
         </div>
       </div>
 
@@ -114,18 +121,14 @@ export default function App() {
       {/* MAIN PANEL: 3-in-1 */}
       {wc.activeTab === 'main' && (
         <div style={{ ...S.unified, ...(isMobile ? S.unifiedMobile : {}) }}>
-          {/* LEFT: Fixture */}
-          <div style={{ ...S.colLeft, ...(isMobile ? S.colLeftMobile : {}) }}>
-            <div style={{ background: '#0a1420', borderBottom: '1px solid #1a2540', padding: '6px 12px', fontSize: 10, color: '#f0c040', display: 'flex', justifyContent: 'space-between' }}>
-              <span style={{ fontWeight: 500 }}>Fixture — Group Stage → Final</span>
-              <span style={{ color: '#3a4a60', fontSize: 9 }}>hover teams for stats · click team for squad</span>
-            </div>
+          {/* LEFT: Fixture — pushed below match list on mobile */}
+          <div style={{ ...S.colLeft, ...(isMobile ? S.colLeftMobile : {}), order: isMobile ? 2 : 0 }}>
             <div style={{ overflow: 'auto', flex: 1, minHeight: 0 }}>
               <Bracket matches={wc.matches} standings={wc.standings} onTeamSelect={setSelectedTeam} onTT={show} onMoveTT={move} onHideTT={hide} />
             </div>
           </div>
-          {/* RIGHT: Match Day + Map */}
-          <div style={{ ...S.colRight, ...(isMobile ? S.colRightMobile : {}) }}>
+          {/* RIGHT: Match Day + Map — shown first on mobile */}
+          <div style={{ ...S.colRight, ...(isMobile ? S.colRightMobile : {}), order: isMobile ? 1 : 0 }}>
             <MatchDay
               dayMatches={wc.dayMatches}
               selectedDate={wc.selectedDate}
@@ -134,11 +137,13 @@ export default function App() {
               onTeamSelect={setSelectedTeam}
               onTT={show} onMoveTT={move} onHideTT={hide}
             />
-            <VenueMap
-              dayMatches={wc.dayMatches}
-              selectedDate={wc.selectedDate}
-              onTT={show} onMoveTT={move} onHideTT={hide}
-            />
+            {!isMobile && (
+              <VenueMap
+                dayMatches={wc.dayMatches}
+                selectedDate={wc.selectedDate}
+                onTT={show} onMoveTT={move} onHideTT={hide}
+              />
+            )}
           </div>
         </div>
       )}
@@ -157,22 +162,22 @@ export default function App() {
 }
 
 const S = {
-  app: { background: '#080d1a', color: '#e0ddd5', fontFamily: "'Roboto Mono', 'SF Mono', monospace", height: '100vh', overflow: 'hidden', display: 'flex', flexDirection: 'column' },
-  topbar: { background: '#0d1425', borderBottom: '1px solid #1a2540', padding: '10px 16px', display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' },
+  app: { background: 'var(--bg-app)', color: 'var(--tx-primary)', fontFamily: "'Roboto Mono', 'SF Mono', monospace", height: '100vh', overflow: 'hidden', display: 'flex', flexDirection: 'column' },
+  topbar: { background: 'var(--bg-topbar)', borderBottom: '1px solid var(--bd-main)', padding: '10px 16px', display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' },
   dateNav: { display: 'flex', alignItems: 'center', gap: 5 },
-  counterBox: { display: 'flex', flexDirection: 'column', gap: 1, minWidth: 180, padding: '4px 8px', border: '1px solid #1f2d45', borderRadius: 6, background: '#111827' },
-  counterLabel: { fontSize: 9, letterSpacing: '.8px', textTransform: 'uppercase', color: '#5a6a85' },
-  counterValue: { fontSize: 12, fontWeight: 700, color: '#f0c040' },
-  dbtn: { background: '#111827', border: '1px solid #1f2d45', color: '#9ca3af', fontSize: 11, padding: '5px 10px', borderRadius: 6, cursor: 'pointer' },
-  dpInput: { background: '#111827', border: '1px solid #1f2d45', color: '#e0ddd5', fontSize: 11, padding: '5px 10px', borderRadius: 6, cursor: 'pointer', outline: 'none' },
-  tabs: { display: 'flex', background: '#0a1020', borderBottom: '1px solid #1a2540' },
-  tab: { padding: '8px 18px', fontSize: 11, fontWeight: 500, color: '#5a6a85', cursor: 'pointer', borderBottom: '2px solid transparent', transition: 'all .15s', textTransform: 'uppercase', letterSpacing: '.8px' },
-  tabActive: { color: '#f0c040', borderBottomColor: '#f0c040' },
+  counterBox: { display: 'flex', flexDirection: 'column', gap: 1, minWidth: 180, padding: '4px 8px', border: '1px solid var(--bd-btn)', borderRadius: 6, background: 'var(--bg-input)' },
+  counterLabel: { fontSize: 9, letterSpacing: '.8px', textTransform: 'uppercase', color: 'var(--tx-muted)' },
+  counterValue: { fontSize: 12, fontWeight: 700, color: 'var(--ac-gold)' },
+  dbtn: { background: 'var(--bg-input)', border: '1px solid var(--bd-btn)', color: 'var(--tx-secondary)', fontSize: 11, padding: '5px 10px', borderRadius: 6, cursor: 'pointer' },
+  dpInput: { background: 'var(--bg-input)', border: '1px solid var(--bd-btn)', color: 'var(--tx-primary)', fontSize: 11, padding: '5px 10px', borderRadius: 6, cursor: 'pointer', outline: 'none' },
+  tabs: { display: 'flex', background: 'var(--bg-tabs)', borderBottom: '1px solid var(--bd-main)' },
+  tab: { padding: '8px 18px', fontSize: 11, fontWeight: 500, color: 'var(--tx-muted)', cursor: 'pointer', borderBottom: '2px solid transparent', transition: 'all .15s', textTransform: 'uppercase', letterSpacing: '.8px' },
+  tabActive: { color: 'var(--ac-gold)', borderBottomColor: 'var(--ac-gold)' },
   unified: { display: 'grid', gridTemplateColumns: '1.7fr 1fr', flex: 1, minHeight: 0, overflow: 'hidden' },
   unifiedMobile: { gridTemplateColumns: '1fr', gridTemplateRows: 'minmax(340px, 55vh) minmax(320px, 45vh)' },
-  colLeft: { borderRight: '1px solid #1a2540', display: 'flex', flexDirection: 'column', overflow: 'hidden', minHeight: 0 },
+  colLeft: { borderRight: '1px solid var(--bd-main)', display: 'flex', flexDirection: 'column', overflow: 'hidden', minHeight: 0 },
   colRight: { display: 'flex', flexDirection: 'column', overflow: 'hidden', minHeight: 0 },
-  colLeftMobile: { borderRight: 'none', borderBottom: '1px solid #1a2540', minHeight: 0 },
+  colLeftMobile: { borderRight: 'none', borderBottom: '1px solid var(--bd-main)', minHeight: 0 },
   colRightMobile: { minHeight: 0 },
-  spinner: { width: 12, height: 12, borderRadius: '50%', border: '2px solid #1a2540', borderTopColor: '#f0c040', display: 'inline-block', animation: 'spin .7s linear infinite' },
+  spinner: { width: 12, height: 12, borderRadius: '50%', border: '2px solid var(--bd-main)', borderTopColor: 'var(--ac-gold)', display: 'inline-block', animation: 'spin .7s linear infinite' },
 };

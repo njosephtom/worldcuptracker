@@ -1,10 +1,101 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&display=swap');
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: #080d1a; }
+body { background: var(--bg-app); }
+
+:root {
+  --bg-app: #080d1a;
+  --bg-topbar: #0d1425;
+  --bg-panel: #0a1420;
+  --bg-tabs: #0a1020;
+  --bg-card: #0f1828;
+  --bg-input: #111827;
+  --bg-inner: #111d30;
+  --bg-qualified: #0d1f12;
+
+  --bd-main: #1a2540;
+  --bd-card: #1a2a40;
+  --bd-btn: #1f2d45;
+  --bd-modal: #223252;
+  --bd-player: #1c2e49;
+  --bd-close: #29405f;
+
+  --tx-primary: #e0ddd5;
+  --tx-secondary: #9ca3af;
+  --tx-muted: #5a6a85;
+  --tx-dim: #4a5a70;
+  --tx-dim2: #3a4a60;
+  --tx-dim3: #2a3a50;
+  --tx-team: #b0aaa0;
+  --tx-team2: #c0bdb5;
+  --tx-player: #d8d2c6;
+  --tx-subtitle: #8090a7;
+  --tx-bracket: #6a7a90;
+
+  --ac-gold: #f0c040;
+  --ac-green: #22c55e;
+  --ac-red: #ef4444;
+
+  /* bracket-specific tokens */
+  --brk-bg: #05050f;
+  --brk-cell: #06060e;
+  --brk-div: #14142a;
+  --brk-slot: #10101e;
+  --brk-bd: #28284a;
+  --brk-arm: #3a3a58;
+  --brk-ctr: #40406a;
+  --brk-txt: #b8b8d0;
+  --brk-dim: #4a4a6a;
+}
+
+[data-theme="light"] {
+  --bg-app: #f4f6fc;
+  --bg-topbar: #e8ecf7;
+  --bg-panel: #edf0fa;
+  --bg-tabs: #dde4f0;
+  --bg-card: #ffffff;
+  --bg-input: #f0f4ff;
+  --bg-inner: #eaeff8;
+  --bg-qualified: #e5f5ea;
+
+  --bd-main: #c4cee8;
+  --bd-card: #bec8e0;
+  --bd-btn: #b5c0da;
+  --bd-modal: #96aace;
+  --bd-player: #aebdd8;
+  --bd-close: #7a90b8;
+
+  --tx-primary: #0e1630;
+  --tx-secondary: #3a4870;
+  --tx-muted: #4a5888;
+  --tx-dim: #5a6898;
+  --tx-dim2: #6a78a8;
+  --tx-dim3: #7a88b8;
+  --tx-team: #202848;
+  --tx-team2: #1a2240;
+  --tx-player: #181e38;
+  --tx-subtitle: #3a4878;
+  --tx-bracket: #303d6a;
+
+  --ac-gold: #9a6800;
+  --ac-green: #0d7030;
+  --ac-red: #c42020;
+
+  /* bracket-specific tokens — light mode gets a muted navy look */
+  --brk-bg: #e8ecf7;
+  --brk-cell: #dde4f5;
+  --brk-div: #c4cee8;
+  --brk-slot: #f0f4ff;
+  --brk-bd: #b8c4de;
+  --brk-arm: #8090b8;
+  --brk-ctr: #7080b0;
+  --brk-txt: #1a2248;
+  --brk-dim: #6070a0;
+}
+
 ::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: #080d1a; }
-::-webkit-scrollbar-thumb { background: #1a2a40; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #2a3d5a; }
+::-webkit-scrollbar-track { background: var(--bg-app); }
+::-webkit-scrollbar-thumb { background: var(--bd-card); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--bd-close); }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.6} }
 @keyframes spin { to { transform: rotate(360deg); } }
 @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.5} }

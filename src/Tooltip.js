@@ -27,10 +27,10 @@ export function TooltipPortal({ tooltip }) {
   return (
     <div style={{
       position: 'fixed', left: tooltip.x, top: tooltip.y,
-      background: '#0f1828', border: '1px solid #2a3d5a',
+      background: 'var(--bg-card)', border: '1px solid var(--bd-close)',
       borderRadius: 8, padding: '9px 13px', fontSize: 11,
-      color: '#e0ddd5', zIndex: 9999, pointerEvents: 'none',
-      maxWidth: 240, boxShadow: '0 4px 24px rgba(0,0,0,.7)',
+      color: 'var(--tx-primary)', zIndex: 9999, pointerEvents: 'none',
+      maxWidth: 240, boxShadow: '0 4px 24px rgba(0,0,0,.4)',
       lineHeight: 1.5,
     }} dangerouslySetInnerHTML={{ __html: tooltip.html }} />
   );

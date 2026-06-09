@@ -83,7 +83,7 @@ export function VenueMap({ dayMatches, selectedDate, onTT, onMoveTT, onHideTT })
         group.appendChild(label);
       }
 
-      const ttHtml = `<div style="font-weight:500;color:#f0c040;margin-bottom:4px">${COUNTRY_FLAGS[venue.cc] || ''} ${venue.name}</div><div style="color:#9ca3af;font-size:10px">${venue.city} · Cap. ${venue.cap}</div>${venueMatches.length ? venueMatches.map((match) => `<div style="margin-top:4px;padding-top:4px;border-top:1px solid #1a2540;font-size:10px;color:#9ca3af">${flagLabel(match.h)} vs ${flagLabel(match.a)}<br><span style="color:#4a5a70">${match.t} · Group ${match.g}</span></div>`).join('') : '<div style="color:#3a4a60;font-style:italic;font-size:10px;margin-top:4px">No match today</div>'}`;
+      const ttHtml = `<div style="font-weight:500;color:var(--ac-gold);margin-bottom:4px">${COUNTRY_FLAGS[venue.cc] || ''} ${venue.name}</div><div style="color:var(--tx-secondary);font-size:10px">${venue.city} · Cap. ${venue.cap}</div>${venueMatches.length ? venueMatches.map((match) => `<div style="margin-top:4px;padding-top:4px;border-top:1px solid var(--bd-main);font-size:10px;color:var(--tx-secondary)">${flagLabel(match.h)} vs ${flagLabel(match.a)}<br><span style="color:var(--tx-dim)">${match.t} · Group ${match.g}</span></div>`).join('') : '<div style="color:var(--tx-dim2);font-style:italic;font-size:10px;margin-top:4px">No match today</div>'}`;
 
       group.addEventListener('mouseenter', (event) => onTT(event, ttHtml));
       group.addEventListener('mousemove', onMoveTT);
@@ -95,16 +95,16 @@ export function VenueMap({ dayMatches, selectedDate, onTT, onMoveTT, onHideTT })
 
   return (
     <div>
-      <div style={{ background: '#0a1420', borderTop: '1px solid #1a2540', borderBottom: '1px solid #1a2540', padding: '5px 12px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 10 }}>
+      <div style={{ background: 'var(--bg-panel)', borderTop: '1px solid var(--bd-main)', borderBottom: '1px solid var(--bd-main)', padding: '5px 12px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 10 }}>
         <div style={{ display: 'flex', gap: 10 }}>
           {[['🇺🇸', 'US'], ['🇨🇦', 'CA'], ['🇲🇽', 'MX']].map(([flag, code]) => (
-            <span key={code} style={{ color: '#5a6a85' }}>{flag} {code}</span>
+            <span key={code} style={{ color: 'var(--tx-muted)' }}>{flag} {code}</span>
           ))}
-          <span style={{ color: '#3a4a60' }}>· dim = no match today</span>
+          <span style={{ color: 'var(--tx-dim2)' }}>· dim = no match today</span>
         </div>
-        <span style={{ color: '#f0c040' }}>{fmtDate(selectedDate)}</span>
+        <span style={{ color: 'var(--ac-gold)' }}>{fmtDate(selectedDate)}</span>
       </div>
-      <svg ref={svgRef} viewBox="0 0 1000 902" style={{ width: '100%', display: 'block', background: '#8ab8dc' }} xmlns="http://www.w3.org/2000/svg">
+      <svg ref={svgRef} viewBox="418 432 490 428" style={{ width: '100%', display: 'block', background: '#8ab8dc' }} xmlns="http://www.w3.org/2000/svg">
         <rect x="0" y="0" width="1000" height="902" fill="#8ab8dc" />
         <image href="/north-america.svg" x="0" y="0" width="1000" height="902" />
       </svg>

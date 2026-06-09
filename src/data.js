@@ -13,6 +13,50 @@ export const FLAGS = {
   England:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',Croatia:'🇭🇷',Ghana:'🇬🇭',Panama:'🇵🇦'
 };
 
+// PNG flag images from public/flags/ — missing teams fall back to emoji
+export const FLAG_IMGS = {
+  'Mexico':'/flags/mexico.png','South Korea':'/flags/south_korea.png',
+  'South Africa':'/flags/south_africa.png','Czechia':'/flags/czechia.png',
+  'Canada':'/flags/canada.png','Switzerland':'/flags/switzerland.png',
+  'Qatar':'/flags/qatar.png','Bosnia and Herzegovina':'/flags/bosnia.png',
+  'Brazil':'/flags/brazil.png','Morocco':'/flags/morocco.png',
+  'Scotland':'/flags/scotland.png','Haiti':'/flags/haiti.png',
+  'United States':'/flags/usa.png','Australia':'/flags/australia.png',
+  'Paraguay':'/flags/paraguay.png','Turkey':'/flags/turkiye.png',
+  'Germany':'/flags/germany.png','Ecuador':'/flags/ecuador.png',
+  'Ivory Coast':'/flags/cote_divoire.png','Curaçao':'/flags/curacao.png',
+  'Netherlands':'/flags/netherlands.png','Japan':'/flags/japan.png',
+  'Tunisia':'/flags/tunisia.png','Sweden':'/flags/sweden.png',
+  'Belgium':'/flags/belgium.png','Iran':'/flags/iran.png',
+  'Egypt':'/flags/egypt.png','New Zealand':'/flags/new_zealand.png',
+  'Spain':'/flags/spain.png','Uruguay':'/flags/uruguay.png',
+  'Saudi Arabia':'/flags/saudi_arabia.png','France':'/flags/france.png',
+  'Senegal':'/flags/senegal.png','Norway':'/flags/norway.png',
+  'Iraq':'/flags/iraq.png','Argentina':'/flags/argentina.png',
+  'Algeria':'/flags/algeria.png','Austria':'/flags/austria.png',
+  'Portugal':'/flags/portugal.png','Colombia':'/flags/colombia.png',
+  'Uzbekistan':'/flags/uzbekistan.png','England':'/flags/england.png',
+  'Croatia':'/flags/croatia.png','Panama':'/flags/panama.png',
+  'Ghana':'/flags/ghana.png','Jordan':'/flags/jordan.png',
+  'DR Congo':'/flags/dr_congo.png'
+};
+
+// ISO country code for each team
+export const TEAM_CC = {
+  'Mexico':'MX','South Korea':'KR','South Africa':'ZA','Czechia':'CZ',
+  'Canada':'CA','Switzerland':'CH','Qatar':'QA','Bosnia and Herzegovina':'BA',
+  'Brazil':'BR','Morocco':'MA','Scotland':'SCO','Haiti':'HT',
+  'United States':'US','Australia':'AU','Paraguay':'PY','Turkey':'TR',
+  'Germany':'DE','Ecuador':'EC','Ivory Coast':'CI','Curaçao':'CW',
+  'Netherlands':'NL','Japan':'JP','Tunisia':'TN','Sweden':'SE',
+  'Belgium':'BE','Iran':'IR','Egypt':'EG','New Zealand':'NZ',
+  'Spain':'ES','Uruguay':'UY','Saudi Arabia':'SA','Cape Verde':'CV',
+  'France':'FR','Senegal':'SN','Norway':'NO','Iraq':'IQ',
+  'Argentina':'AR','Algeria':'DZ','Austria':'AT','Jordan':'JO',
+  'Portugal':'PT','DR Congo':'CD','Uzbekistan':'UZ','Colombia':'CO',
+  'England':'ENG','Croatia':'HR','Ghana':'GH','Panama':'PA',
+};
+
 export const COUNTRY_FLAGS = {
   AG:'🇦🇬', BS:'🇧🇸', BB:'🇧🇧', BZ:'🇧🇿', CA:'🇨🇦', CR:'🇨🇷', CU:'🇨🇺', DM:'🇩🇲', DO:'🇩🇴',
   SV:'🇸🇻', GD:'🇬🇩', GT:'🇬🇹', HT:'🇭🇹', HN:'🇭🇳', JM:'🇯🇲', MX:'🇲🇽', NI:'🇳🇮', PA:'🇵🇦',
@@ -158,7 +202,49 @@ export const MATCHES = [
   {id:68,d:'2026-06-27',t:'5:00 PM ET',h:'DR Congo',a:'Uzbekistan',g:'K',v:'bmo'},
   {id:69,d:'2026-06-27',t:'5:00 PM ET',h:'Colombia',a:'Portugal',g:'K',v:'bcplace'},
   {id:70,d:'2026-06-27',t:'10:00 PM ET',h:'Algeria',a:'Austria',g:'J',v:'gillette'},
-  {id:71,d:'2026-06-27',t:'10:00 PM ET',h:'Jordan',a:'Argentina',g:'J',v:'att'}
+  {id:71,d:'2026-06-27',t:'10:00 PM ET',h:'Jordan',a:'Argentina',g:'J',v:'att'},
+
+  // ── Round of 32 ─────────────────────────────────────────────────────────────
+  {id:72,d:'2026-06-29',t:'3:00 PM ET',h:'1E',a:'3+ABCDF',round:'R32',v:'att'},
+  {id:73,d:'2026-06-29',t:'8:00 PM ET',h:'1C',a:'2F',round:'R32',v:'metlife'},
+  {id:74,d:'2026-06-30',t:'3:00 PM ET',h:'1I',a:'2I',round:'R32',v:'sofi'},
+  {id:75,d:'2026-06-30',t:'8:00 PM ET',h:'2E',a:'2G',round:'R32',v:'mercedes'},
+  {id:76,d:'2026-07-01',t:'12:00 PM ET',h:'2A',a:'2B',round:'R32',v:'bmo'},
+  {id:77,d:'2026-07-01',t:'4:00 PM ET',h:'1A',a:'3+CEFHI',round:'R32',v:'metlife'},
+  {id:78,d:'2026-07-01',t:'9:00 PM ET',h:'1F',a:'2C',round:'R32',v:'lumen'},
+  {id:79,d:'2026-07-02',t:'12:00 PM ET',h:'1L',a:'3+EHIJK',round:'R32',v:'att'},
+  {id:80,d:'2026-07-02',t:'4:00 PM ET',h:'2K',a:'2L',round:'R32',v:'sofi'},
+  {id:81,d:'2026-07-02',t:'9:00 PM ET',h:'1J',a:'2H',round:'R32',v:'nrg'},
+  {id:82,d:'2026-07-03',t:'3:00 PM ET',h:'1H',a:'2J',round:'R32',v:'mercedes'},
+  {id:83,d:'2026-07-03',t:'8:00 PM ET',h:'2D',a:'3+BEFIJ',round:'R32',v:'arrowhead'},
+  {id:84,d:'2026-07-04',t:'12:00 PM ET',h:'1D',a:'3+AEHIJ',round:'R32',v:'lincoln'},
+  {id:85,d:'2026-07-04',t:'4:00 PM ET',h:'1G',a:'3+CEFIJ',round:'R32',v:'hardrock'},
+  {id:86,d:'2026-07-04',t:'8:00 PM ET',h:'1B',a:'3+DEIJL',round:'R32',v:'att'},
+  {id:87,d:'2026-07-04',t:'10:00 PM ET',h:'1K',a:'2I',round:'R32',v:'metlife'},
+
+  // ── Round of 16 ─────────────────────────────────────────────────────────────
+  {id:88,d:'2026-07-06',t:'3:00 PM ET',h:'TBD',a:'TBD',round:'R16',v:'metlife'},
+  {id:89,d:'2026-07-06',t:'8:00 PM ET',h:'TBD',a:'TBD',round:'R16',v:'sofi'},
+  {id:90,d:'2026-07-07',t:'3:00 PM ET',h:'TBD',a:'TBD',round:'R16',v:'att'},
+  {id:91,d:'2026-07-07',t:'8:00 PM ET',h:'TBD',a:'TBD',round:'R16',v:'mercedes'},
+  {id:92,d:'2026-07-08',t:'3:00 PM ET',h:'TBD',a:'TBD',round:'R16',v:'metlife'},
+  {id:93,d:'2026-07-08',t:'8:00 PM ET',h:'TBD',a:'TBD',round:'R16',v:'sofi'},
+  {id:94,d:'2026-07-09',t:'3:00 PM ET',h:'TBD',a:'TBD',round:'R16',v:'att'},
+  {id:95,d:'2026-07-09',t:'8:00 PM ET',h:'TBD',a:'TBD',round:'R16',v:'mercedes'},
+
+  // ── Quarterfinals ────────────────────────────────────────────────────────────
+  {id:96,d:'2026-07-11',t:'3:00 PM ET',h:'TBD',a:'TBD',round:'QF',v:'metlife'},
+  {id:97,d:'2026-07-11',t:'8:00 PM ET',h:'TBD',a:'TBD',round:'QF',v:'sofi'},
+  {id:98,d:'2026-07-12',t:'3:00 PM ET',h:'TBD',a:'TBD',round:'QF',v:'att'},
+  {id:99,d:'2026-07-12',t:'8:00 PM ET',h:'TBD',a:'TBD',round:'QF',v:'mercedes'},
+
+  // ── Semifinals ───────────────────────────────────────────────────────────────
+  {id:100,d:'2026-07-15',t:'8:00 PM ET',h:'TBD',a:'TBD',round:'SF',v:'metlife'},
+  {id:101,d:'2026-07-16',t:'8:00 PM ET',h:'TBD',a:'TBD',round:'SF',v:'sofi'},
+
+  // ── Third Place + Final ──────────────────────────────────────────────────────
+  {id:102,d:'2026-07-19',t:'3:00 PM ET',h:'TBD',a:'TBD',round:'Bronze',v:'att'},
+  {id:103,d:'2026-07-19',t:'8:00 PM ET',h:'TBD',a:'TBD',round:'Final',v:'metlife'},
 ];
 
 export function todayStr() {
