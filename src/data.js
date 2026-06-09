@@ -13,7 +13,37 @@ export const FLAGS = {
   England:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',Croatia:'🇭🇷',Ghana:'🇬🇭',Panama:'🇵🇦'
 };
 
-export const COUNTRY_FLAGS = { US:'🇺🇸', CA:'🇨🇦', MX:'🇲🇽' };
+export const COUNTRY_FLAGS = {
+  AG:'🇦🇬', BS:'🇧🇸', BB:'🇧🇧', BZ:'🇧🇿', CA:'🇨🇦', CR:'🇨🇷', CU:'🇨🇺', DM:'🇩🇲', DO:'🇩🇴',
+  SV:'🇸🇻', GD:'🇬🇩', GT:'🇬🇹', HT:'🇭🇹', HN:'🇭🇳', JM:'🇯🇲', MX:'🇲🇽', NI:'🇳🇮', PA:'🇵🇦',
+  KN:'🇰🇳', LC:'🇱🇨', VC:'🇻🇨', TT:'🇹🇹', US:'🇺🇸'
+};
+
+export const NORTH_AMERICA_COUNTRIES = [
+  { code: 'CA', name: 'Canada', x: 620, y: 330 },
+  { code: 'US', name: 'United States', x: 653, y: 582 },
+  { code: 'MX', name: 'Mexico', x: 596, y: 766 },
+  { code: 'GT', name: 'Guatemala', x: 720, y: 870 },
+  { code: 'BZ', name: 'Belize', x: 735, y: 855 },
+  { code: 'SV', name: 'El Salvador', x: 730, y: 888 },
+  { code: 'HN', name: 'Honduras', x: 750, y: 882 },
+  { code: 'NI', name: 'Nicaragua', x: 760, y: 895 },
+  { code: 'CR', name: 'Costa Rica', x: 772, y: 900 },
+  { code: 'PA', name: 'Panama', x: 807, y: 895 },
+  { code: 'CU', name: 'Cuba', x: 807, y: 792 },
+  { code: 'JM', name: 'Jamaica', x: 823, y: 840 },
+  { code: 'HT', name: 'Haiti', x: 864, y: 828 },
+  { code: 'DO', name: 'Dominican Republic', x: 882, y: 832 },
+  { code: 'BS', name: 'Bahamas', x: 827, y: 756 },
+  { code: 'KN', name: 'Saint Kitts and Nevis', x: 944, y: 850 },
+  { code: 'AG', name: 'Antigua and Barbuda', x: 952, y: 855 },
+  { code: 'DM', name: 'Dominica', x: 955, y: 870 },
+  { code: 'LC', name: 'Saint Lucia', x: 958, y: 882 },
+  { code: 'VC', name: 'Saint Vincent and the Grenadines', x: 956, y: 890 },
+  { code: 'BB', name: 'Barbados', x: 966, y: 888 },
+  { code: 'GD', name: 'Grenada', x: 952, y: 898 },
+  { code: 'TT', name: 'Trinidad and Tobago', x: 954, y: 898 }
+];
 
 export const GROUPS = {
   A:{teams:['Mexico','South Korea','South Africa','Czechia']},
@@ -39,22 +69,22 @@ export function flagLabel(name) {
 }
 
 export const VENUES = {
-  azteca:{name:'Estadio Azteca',city:'Mexico City',cc:'MX',cap:'83,000',x:175,y:247},
-  akron:{name:'Estadio Akron',city:'Guadalajara',cc:'MX',cap:'49,850',x:152,y:228},
-  bbva:{name:'Estadio BBVA',city:'Monterrey',cc:'MX',cap:'53,500',x:196,y:210},
-  sofi:{name:'SoFi Stadium',city:'Los Angeles',cc:'US',cap:'70,240',x:76,y:195},
-  levis:{name:"Levi's Stadium",city:'Bay Area',cc:'US',cap:'68,500',x:68,y:170},
-  lumen:{name:'Lumen Field',city:'Seattle',cc:'US',cap:'68,740',x:70,y:126},
-  arrowhead:{name:'Arrowhead Stadium',city:'Kansas City',cc:'US',cap:'76,416',x:236,y:172},
-  att:{name:'AT&T Stadium',city:'Dallas',cc:'US',cap:'80,000',x:222,y:200},
-  nrg:{name:'NRG Stadium',city:'Houston',cc:'US',cap:'72,220',x:228,y:227},
-  mercedes:{name:'Mercedes-Benz Stadium',city:'Atlanta',cc:'US',cap:'71,000',x:295,y:193},
-  hardrock:{name:'Hard Rock Stadium',city:'Miami',cc:'US',cap:'64,767',x:312,y:244},
-  lincoln:{name:'Lincoln Financial Field',city:'Philadelphia',cc:'US',cap:'69,796',x:366,y:163},
-  gillette:{name:'Gillette Stadium',city:'Boston',cc:'US',cap:'65,878',x:376,y:145},
-  metlife:{name:'MetLife Stadium',city:'New York / NJ',cc:'US',cap:'82,500',x:370,y:155},
-  bmo:{name:'BMO Field',city:'Toronto',cc:'CA',cap:'45,736',x:348,y:140},
-  bcplace:{name:'BC Place',city:'Vancouver',cc:'CA',cap:'54,500',x:70,y:118}
+  azteca:{name:'Estadio Azteca',city:'Mexico City',cc:'MX',cap:'83,000',x:647,y:827},
+  akron:{name:'Estadio Akron',city:'Guadalajara',cc:'MX',cap:'49,850',x:612,y:812},
+  bbva:{name:'Estadio BBVA',city:'Monterrey',cc:'MX',cap:'53,500',x:637,y:751},
+  sofi:{name:'SoFi Stadium',city:'Los Angeles',cc:'US',cap:'70,240',x:490,y:651},
+  levis:{name:"Levi's Stadium",city:'Bay Area',cc:'US',cap:'68,500',x:460,y:609},
+  lumen:{name:'Lumen Field',city:'Seattle',cc:'US',cap:'68,740',x:457,y:486},
+  arrowhead:{name:'Arrowhead Stadium',city:'Kansas City',cc:'US',cap:'76,416',x:685,y:589},
+  att:{name:'AT&T Stadium',city:'Dallas',cc:'US',cap:'80,000',x:663,y:666},
+  nrg:{name:'NRG Stadium',city:'Houston',cc:'US',cap:'72,220',x:677,y:703},
+  mercedes:{name:'Mercedes-Benz Stadium',city:'Atlanta',cc:'US',cap:'71,000',x:767,y:654},
+  hardrock:{name:'Hard Rock Stadium',city:'Miami',cc:'US',cap:'64,767',x:801,y:748},
+  lincoln:{name:'Lincoln Financial Field',city:'Philadelphia',cc:'US',cap:'69,796',x:842,y:579},
+  gillette:{name:'Gillette Stadium',city:'Boston',cc:'US',cap:'65,878',x:874,y:553},
+  metlife:{name:'MetLife Stadium',city:'New York / NJ',cc:'US',cap:'82,500',x:851,y:568},
+  bmo:{name:'BMO Field',city:'Toronto',cc:'CA',cap:'45,736',x:808,y:534},
+  bcplace:{name:'BC Place',city:'Vancouver',cc:'CA',cap:'54,500',x:451,y:466}
 };
 
 export const MATCHES = [

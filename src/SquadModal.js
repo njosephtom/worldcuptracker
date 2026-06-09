@@ -1,11 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { flagLabel } from './data';
-import { getTeamSquad } from './squads';
+import { getFallbackTeamSquad, getTeamSquad } from './squads';
 
 export function SquadModal({ team, onClose }) {
-  if (!team) return null;
+  const [squad, setSquad] = useState({ coach: 'Unknown', players: [] });
+  const [loading, setLoading] = useState(true);
 
-  const squad = getTeamSquad(team);
+  useEffect(() => {
+    if (!team) {
+      setSquad({ coach: 'Unknown', players: [] });
+      setLoading(false);
+      return undefined;
+    }
+
+    let cancelled = false;
+    setSquad(getFallbackTeamSquad(team));
+    setLoading(true);
+
+    getTeamSquad(team)
+      .then((data) => {
+        if (!cancelled) setSquad(data);
+      })
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [team]);
+
+  if (!team) return null;
 
   return (
     <div style={styles.backdrop} onClick={onClose}>
@@ -17,11 +42,15 @@ export function SquadModal({ team, onClose }) {
           </div>
           <button type="button" onClick={onClose} style={styles.closeButton}>Close</button>
         </div>
-        <div style={styles.sectionLabel}>Squad Players</div>
+        <div style={styles.sectionLabel}>{loading ? 'Squad Players · Loading...' : 'Squad Players'}</div>
         <div style={styles.playerGrid}>
-          {squad.players.map((player) => (
-            <div key={player} style={styles.playerCard}>{player}</div>
-          ))}
+          {squad.players.length > 0 ? (
+            squad.players.map((player) => (
+              <div key={player} style={styles.playerCard}>{player}</div>
+            ))
+          ) : (
+            <div style={styles.empty}>No squad players available for this team yet.</div>
+          )}
         </div>
       </div>
     </div>
@@ -92,5 +121,10 @@ const styles = {
     padding: '10px 12px',
     color: '#d8d2c6',
     fontSize: 12,
+  },
+  empty: {
+    color: '#8090a7',
+    fontSize: 12,
+    padding: '6px 2px',
   },
 };

@@ -1,3 +1,5 @@
+import { parse } from 'yaml';
+
 export const TEAM_SQUADS = {
   Mexico: {
     coach: "Javier Aguirre",
@@ -193,6 +195,65 @@ export const TEAM_SQUADS = {
   },
 };
 
-export function getTeamSquad(teamName) {
-  return TEAM_SQUADS[teamName] || { coach: "Unknown", players: [] };
+const YAML_SQUADS_URL = '/fifa_world_cup_2026_squads.yaml';
+const TEAM_NAME_ALIASES = {
+  Turkey: 'Türkiye',
+  'Ivory Coast': "Côte d'Ivoire",
+};
+
+function buildYamlTeamSquads(doc) {
+  const confederations = doc?.confederations || {};
+  const teams = {};
+
+  Object.values(confederations).forEach((confedTeams) => {
+    if (!confedTeams || typeof confedTeams !== 'object') return;
+
+    Object.entries(confedTeams).forEach(([teamName, teamInfo]) => {
+      teams[teamName] = {
+        coach: teamInfo?.manager || 'Unknown',
+        players: (teamInfo?.squad || []).map((player) => `${player.name} (${player.position})`),
+      };
+    });
+  });
+
+  return teams;
+}
+
+async function loadYamlTeamSquads() {
+  return fetch(`${YAML_SQUADS_URL}?ts=${Date.now()}`)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Failed to load ${YAML_SQUADS_URL}`);
+      }
+      return response.text();
+    })
+    .then((text) => parse(text))
+    .then((doc) => buildYamlTeamSquads(doc))
+    .catch(() => ({}));
+}
+
+function resolveTeamName(teamName, yamlTeamSquads) {
+  if (yamlTeamSquads[teamName]) return teamName;
+  const alias = TEAM_NAME_ALIASES[teamName];
+  if (alias && yamlTeamSquads[alias]) return alias;
+  return teamName;
+}
+
+export function getFallbackTeamSquad(teamName) {
+  return TEAM_SQUADS[teamName] || { coach: 'Unknown', players: [] };
+}
+
+export async function getTeamSquad(teamName) {
+  const yamlTeamSquads = await loadYamlTeamSquads();
+  const resolvedTeam = resolveTeamName(teamName, yamlTeamSquads);
+  const yamlData = yamlTeamSquads[resolvedTeam];
+
+  if (yamlData) {
+    const fallback = TEAM_SQUADS[teamName];
+    return {
+      coach: yamlData.coach,
+      players: yamlData.players.length > 0 ? yamlData.players : (fallback?.players || []),
+    };
+  }
+  return getFallbackTeamSquad(teamName);
 }

@@ -1,0 +1,194 @@
+# FIFA World Cup 2026 - Official 48 Qualified Nations Schema
+tournament: "FIFA World Cup 2026"
+hosts:
+  - Canada
+  - Mexico
+  - United States
+total_teams: 48
+
+confederations:
+  CONCACAF (North America):
+    Canada:
+      manager: "Jesse Marsch"
+      squad:
+        - name: "Maxime Crépeau"
+          position: "Goalkeeper"
+        - name: "Alphonso Davies"
+          position: "Defender"
+        - name: "Jonathan David"
+          position: "Forward"
+    Mexico:
+      manager: "Javier Aguirre"
+      squad:
+        - name: "Guillermo Ochoa"
+          position: "Goalkeeper"
+        - name: "César Montes"
+          position: "Defender"
+        - name: "Santiago Giménez"
+          position: "Forward"
+    United States:
+      manager: "Mauricio Pochettino"
+      squad:
+        - name: "Matt Turner"
+          position: "Goalkeeper"
+        - name: "Antonee Robinson"
+          position: "Defender"
+        - name: "Christian Pulisic"
+          position: "Forward"
+    Panama:
+      manager: "Thomas Christiansen"
+      squad: []
+    Haiti:
+      manager: "Sébastien Migné"
+      squad: []
+    Curaçao:
+      manager: "Dick Advocaat"
+      squad: []
+
+  UEFA (Europe):
+    Germany:
+      manager: "Julian Nagelsmann"
+      squad:
+        - name: "Oliver Baumann"
+          position: "Goalkeeper"
+        - name: "Antonio Rüdiger"
+          position: "Defender"
+        - name: "Jamal Musiala"
+          position: "Midfielder"
+    France:
+      manager: "Didier Deschamps"
+      squad: []
+    Spain:
+      manager: "Luis de la Fuente"
+      squad: []
+    England:
+      manager: "Thomas Tuchel"
+      squad: []
+    Portugal:
+      manager: "Roberto Martínez"
+      squad: []
+    Netherlands:
+      manager: "Ronald Koeman"
+      squad: []
+    Belgium:
+      manager: "Domenico Tedesco"
+      squad: []
+    Croatia:
+      manager: "Zlatko Dalić"
+      squad: []
+    Switzerland:
+      manager: "Murat Yakin"
+      squad: []
+    Austria:
+      manager: "Ralf Rangnick"
+      squad: []
+    Scotland:
+      manager: "Steve Clarke"
+      squad: []
+    Norway:
+      manager: "Ståle Solbakken"
+      squad: []
+    Sweden:
+      manager: "Jon Dahl Tomasson"
+      squad: []
+    Türkiye:
+      manager: "Vincenzo Montella"
+      squad: []
+    Czechia:
+      manager: "Ivan Hašek"
+      squad: []
+    Bosnia and Herzegovina:
+      manager: "Sergej Barbarez"
+      squad: []
+
+  CONMEBOL (South America):
+    Argentina:
+      manager: "Lionel Scaloni"
+      squad:
+        - name: "Emiliano Martínez"
+          position: "Goalkeeper"
+        - name: "Cristian Romero"
+          position: "Defender"
+        - name: "Lionel Messi"
+          position: "Forward"
+    Brazil:
+      manager: "Dorival Júnior"
+      squad: []
+    Colombia:
+      manager: "Néstor Lorenzo"
+      squad: []
+    Ecuador:
+      manager: "Sebastián Beccacece"
+      squad: []
+    Uruguay:
+      manager: "Marcelo Bielsa"
+      squad: []
+    Paraguay:
+      manager: "Gustavo Alfaro"
+      squad: []
+
+  CAF (Africa):
+    Morocco:
+      manager: "Walid Regragui"
+      squad: []
+    Senegal:
+      manager: "Pape Thiaw"
+      squad: []
+    Egypt:
+      manager: "Hossam Hassan"
+      squad: []
+    Tunisia:
+      manager: "Kais Yaâkoubi"
+      squad: []
+    Algeria:
+      manager: "Vladimir Petković"
+      squad: []
+    South Africa:
+      manager: "Hugo Broos"
+      squad: []
+    Côte d'Ivoire:
+      manager: "Emerse Faé"
+      squad: []
+    Ghana:
+      manager: "Otto Addo"
+      squad: []
+    Cape Verde:
+      manager: "Bubista"
+      squad: []
+    DR Congo:
+      manager: "Sébastien Desabre"
+      squad: []
+
+  AFC (Asia):
+    Japan:
+      manager: "Hajime Moriyasu"
+      squad: []
+    Iran:
+      manager: "Amir Ghalenoei"
+      squad: []
+    South Korea:
+      manager: "Hong Myung-bo"
+      squad: []
+    Australia:
+      manager: "Tony Popovic"
+      squad: []
+    Uzbekistan:
+      manager: "Srečko Katanec"
+      squad: []
+    Jordan:
+      manager: "Jamal Sellami"
+      squad: []
+    Qatar:
+      manager: "Tintín Márquez"
+      squad: []
+    Saudi Arabia:
+      manager: "Hervé Renard"
+      squad: []
+    Iraq:
+      manager: "Jesús Casas"
+      squad: []
+
+  OFC (Oceania):
+    New Zealand:
+      manager: "Darren Bazeley"
+      squad: []
