@@ -44,13 +44,13 @@ export function Bracket({ matches, standings, onTeamSelect, onTT, onMoveTT, onHi
 
   return (
     <div style={{ overflowX: 'auto', padding: 10 }}>
-      <div style={{ display: 'flex', gap: 0, alignItems: 'flex-start', minWidth: 880 }}>
+      <div style={{ display: 'flex', gap: 0, alignItems: 'flex-start', minWidth: 880, width: '100%' }}>
         {/* LEFT GROUPS */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 5, minWidth: 168 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 5, flex: '0 0 17%', minWidth: 155 }}>
           {left.map(g => <GroupBlock key={g} g={g} standings={groupStandingsArr} matches={matches} onTeamSelect={onTeamSelect} onTT={onTT} onMoveTT={onMoveTT} onHideTT={onHideTT} />)}
         </div>
         {/* LEFT R32 */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 3, minWidth: 185, padding: '0 5px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 3, flex: 1, minWidth: 170, padding: '0 5px' }}>
           <div style={S.rlbl}>R32 · Jul 1–8</div>
           {r32left.map((s, i) => (
             <div key={i} style={S.kslot} onMouseEnter={e => onTT(e, ttKO(s, 'Round of 32 · Jul 1–8'))} onMouseMove={onMoveTT} onMouseLeave={onHideTT}>
@@ -60,7 +60,7 @@ export function Bracket({ matches, standings, onTeamSelect, onTT, onMoveTT, onHi
           ))}
         </div>
         {/* CENTER */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4, minWidth: 200, padding: '0 6px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4, flex: '0 0 22%', minWidth: 195, padding: '0 6px' }}>
           <div style={S.rlbl}>Quarterfinals · Jul 4–5</div>
           {[0,1,2,3].map(i => (
             <div key={i} style={S.kslot} onMouseEnter={e => onTT(e, ttKO('Quarterfinal', 'Jul 4–5 · TBD'))} onMouseMove={onMoveTT} onMouseLeave={onHideTT}>
@@ -86,7 +86,7 @@ export function Bracket({ matches, standings, onTeamSelect, onTT, onMoveTT, onHi
           </div>
         </div>
         {/* RIGHT R32 */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 3, minWidth: 185, padding: '0 5px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 3, flex: 1, minWidth: 170, padding: '0 5px' }}>
           <div style={S.rlbl}>R32 · Jul 1–8</div>
           {r32right.map((s, i) => (
             <div key={i} style={S.kslot} onMouseEnter={e => onTT(e, ttKO(s, 'Round of 32 · Jul 1–8'))} onMouseMove={onMoveTT} onMouseLeave={onHideTT}>
@@ -96,7 +96,7 @@ export function Bracket({ matches, standings, onTeamSelect, onTT, onMoveTT, onHi
           ))}
         </div>
         {/* RIGHT GROUPS */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 5, minWidth: 168 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 5, flex: '0 0 17%', minWidth: 155 }}>
           {right.map(g => <GroupBlock key={g} g={g} standings={groupStandingsArr} matches={matches} onTeamSelect={onTeamSelect} onTT={onTT} onMoveTT={onMoveTT} onHideTT={onHideTT} />)}
         </div>
       </div>
@@ -106,11 +106,11 @@ export function Bracket({ matches, standings, onTeamSelect, onTT, onMoveTT, onHi
 
 const S = {
   bgrp: { background: '#0f1828', border: '1px solid #1a2a40', borderRadius: 6, overflow: 'hidden' },
-  bgrpLbl: { fontSize: 8, fontWeight: 600, color: '#f0c040', textTransform: 'uppercase', letterSpacing: '.8px', padding: '3px 8px', background: '#0a1420', borderBottom: '1px solid #1a2540' },
-  bteam: { display: 'flex', alignItems: 'center', gap: 4, padding: '3px 8px', fontSize: 10, borderBottom: '1px solid #111d30', cursor: 'pointer', transition: 'background .12s' },
-  bname: { flex: 1, color: '#b0aaa0', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', fontSize: 10 },
-  bpts: { fontSize: 8, fontWeight: 600, background: '#111d30', color: '#7a8a9a', padding: '1px 4px', borderRadius: 2, minWidth: 16, textAlign: 'center' },
-  kslot: { background: '#0f1828', border: '1px solid #1a2a40', borderRadius: 5, padding: '4px 7px', cursor: 'pointer', transition: 'border-color .12s' },
-  kteam: { display: 'flex', alignItems: 'center', gap: 4, fontSize: 9, color: '#6a7a90', padding: '1px 0', overflow: 'hidden' },
-  rlbl: { fontSize: 8, color: '#f0c040', textTransform: 'uppercase', letterSpacing: '.8px', textAlign: 'center', marginBottom: 3 },
+  bgrpLbl: { fontSize: 9, fontWeight: 600, color: '#f0c040', textTransform: 'uppercase', letterSpacing: '.8px', padding: '3px 8px', background: '#0a1420', borderBottom: '1px solid #1a2540' },
+  bteam: { display: 'flex', alignItems: 'center', gap: 4, padding: '4px 8px', fontSize: 11, borderBottom: '1px solid #111d30', cursor: 'pointer', transition: 'background .12s' },
+  bname: { flex: 1, color: '#b0aaa0', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', fontSize: 11 },
+  bpts: { fontSize: 9, fontWeight: 600, background: '#111d30', color: '#7a8a9a', padding: '1px 4px', borderRadius: 2, minWidth: 16, textAlign: 'center' },
+  kslot: { background: '#0f1828', border: '1px solid #1a2a40', borderRadius: 5, padding: '5px 8px', cursor: 'pointer', transition: 'border-color .12s' },
+  kteam: { display: 'flex', alignItems: 'center', gap: 4, fontSize: 10, color: '#6a7a90', padding: '1px 0', overflow: 'hidden' },
+  rlbl: { fontSize: 9, color: '#f0c040', textTransform: 'uppercase', letterSpacing: '.8px', textAlign: 'center', marginBottom: 3 },
 };
