@@ -1,5 +1,5 @@
 import React from 'react';
-import { VENUES, TEAM_CC, flagLabel, fmtDate } from './data';
+import { VENUES, flagLabel, fmtDate } from './data';
 import { FlagImg } from './FlagImg';
 
 export function MatchDay({ dayMatches, selectedDate, today, onMatchClick, onTeamSelect, onTT, onMoveTT, onHideTT }) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { GROUPS, TEAM_CC, flagLabel } from './data';
+import { GROUPS, flagLabel } from './data';
 import { FlagImg } from './FlagImg';
 
 export function Groups({ standings, matches, onTeamSelect }) {
