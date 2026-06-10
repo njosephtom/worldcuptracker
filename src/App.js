@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useWorldCup } from './useWorldCup';
 import { useTooltip, TooltipPortal } from './Tooltip';
 import { MatchDay } from './MatchDay';
@@ -40,6 +40,8 @@ export default function App() {
   const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth < MOBILE_BREAKPOINT);
   const [isDark, setIsDark] = useState(() => localStorage.getItem('wc-theme') !== 'light');
   const [tzAbbr] = useState(getTZAbbr);
+  const [isRefreshing, setIsRefreshing] = useState(false);
+  const refreshingRef = useRef(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -54,6 +56,27 @@ export default function App() {
     }
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  function handleRefresh() {
+    if (refreshingRef.current) return;
+    refreshingRef.current = true;
+    setIsRefreshing(true);
+    setTimeout(() => {
+      refreshingRef.current = false;
+      setIsRefreshing(false);
+    }, 900);
+  }
+
+  useEffect(() => {
+    const t = setInterval(() => {
+      if (!refreshingRef.current) {
+        refreshingRef.current = true;
+        setIsRefreshing(true);
+        setTimeout(() => { refreshingRef.current = false; setIsRefreshing(false); }, 900);
+      }
+    }, 5 * 60 * 1000);
+    return () => clearInterval(t);
   }, []);
 
   function handleDateShift(n) {
@@ -102,6 +125,13 @@ export default function App() {
             title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
           >
             {isDark ? '☀️' : '🌙'}
+          </button>
+          <button
+            style={{ ...S.dbtn, fontSize: 14, padding: '3px 8px', lineHeight: 1, opacity: isRefreshing ? 0.5 : 1, transition: 'opacity .2s' }}
+            onClick={handleRefresh}
+            title="Refresh data (auto-refreshes every 5 min)"
+          >
+            <span style={{ display: 'inline-block', animation: isRefreshing ? 'spin .7s linear infinite' : 'none' }}>↻</span>
           </button>
         </div>
       </div>

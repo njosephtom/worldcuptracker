@@ -5,8 +5,8 @@ import trophyUrl from './trophy.svg';
 
 // ─── Layout constants ─────────────────────────────────────────────────────────
 const CW  = 140;
-const CH  = 54;
-const SH  = 66;
+const CH  = 62;
+const SH  = 76;
 const GX  = 36;
 const TH  = 16 * SH;
 const TW  = 5 * (CW + GX) - GX + 2;
@@ -119,7 +119,7 @@ function TeamSlot({ slot, isActive, onEnter, onLeave, onClick }) {
   const { main, sub, tbd } = slotLine(slot);
   return (
     <div onMouseEnter={onEnter} onMouseLeave={onLeave} onClick={onClick} style={{
-      display:'flex', alignItems:'center', gap:5, padding:'4px 7px', height:CH/2,
+      display:'flex', alignItems:'center', gap:5, padding:'4px 7px', minHeight:CH/2,
       cursor: tbd ? 'default' : 'pointer',
       background: isActive ? 'rgba(240,192,64,0.10)' : 'transparent',
       transition:'background .15s', borderRadius:3, flexShrink:0,
@@ -142,10 +142,10 @@ function MatchCard({ id, m, highlighted, hoveredSlot, onSlotEnter, onSlotLeave, 
   return (
     <div style={{
       position:'absolute', left:cardX(m.r), top:cardCY(m.r, m.p) - CH/2,
-      width:CW, height:CH,
+      width:CW, minHeight:CH,
       background:isOnPath ? 'rgba(240,192,64,0.06)' : 'var(--brk-cell)',
       border:`1px solid ${isOnPath ? 'rgba(240,192,64,0.5)' : 'var(--brk-bd)'}`,
-      borderRadius:5, overflow:'hidden',
+      borderRadius:5,
       boxShadow:isOnPath ? '0 0 10px rgba(240,192,64,0.15)' : 'none',
       transition:'border-color .18s, box-shadow .18s, background .18s',
       zIndex:isOnPath ? 2 : 1,
@@ -164,16 +164,16 @@ function BronzeCard() {
   const x = cardX('Final');
   const y = TH - SH * 2.5;
   return (
-    <div style={{ position:'absolute', left:x, top:y, width:CW, height:CH,
+    <div style={{ position:'absolute', left:x, top:y, width:CW, minHeight:CH,
       background:'var(--brk-cell)', border:'1px solid var(--brk-bd)',
-      borderRadius:5, overflow:'hidden', opacity:0.75 }}>
+      borderRadius:5, opacity:0.75 }}>
       <div style={{ fontSize:'var(--fs-xs)', color:'var(--brk-dim)', textAlign:'center',
-        padding:'2px 0', borderBottom:'1px solid var(--brk-div)', letterSpacing:0.5, textTransform:'uppercase' }}>
+        padding:'2px 0', borderBottom:'1px solid var(--brk-div)', letterSpacing:0.5, textTransform:'lowercase' }}>
         🥉 3rd Place · Jul 19
       </div>
       {[0,1].map(i => (
-        <div key={i} style={{ display:'flex', alignItems:'center', gap:5, padding:'3px 7px', height:(CH-14)/2 }}>
-          <span style={{ width:18, height:12, display:'inline-block', background:'var(--brk-div)', borderRadius:2 }} />
+        <div key={i} style={{ display:'flex', alignItems:'center', gap:5, padding:'3px 7px', minHeight:(CH-14)/2 }}>
+          <span style={{ width:18, height:14, display:'inline-block', background:'var(--brk-div)', borderRadius:2 }} />
           <span style={{ fontSize:'var(--fs-xs)', color:'var(--brk-dim)' }}>TBD</span>
         </div>
       ))}

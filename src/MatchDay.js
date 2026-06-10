@@ -109,8 +109,15 @@ export function MatchDay({ matches, today, onMatchClick, onTeamSelect, onTT, onM
           const isToday = date === today;
           const dMatches = grouped[date];
           return (
-            <div key={date}>
-              {/* Date header — only shown in All view, or always for clarity */}
+            <div key={date} style={isToday && view === 'all' ? {
+              border: '1.5px solid rgba(240,192,64,0.55)',
+              borderRadius: 8,
+              margin: '6px 6px 10px',
+              background: 'rgba(240,192,64,0.03)',
+              overflow: 'hidden',
+              boxShadow: '0 0 14px rgba(240,192,64,0.10)',
+            } : {}}>
+              {/* Date header */}
               <div style={{
                 ...styles.dateHdr,
                 background: isToday ? 'var(--bg-panel)' : 'var(--bg-tabs)',
