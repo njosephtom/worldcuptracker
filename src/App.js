@@ -144,7 +144,7 @@ export default function App() {
       {/* GROUPS TAB */}
       {wc.activeTab === 'groups' && (
         <div style={{ flex: 1, minHeight: 0, overflowY: 'auto' }}>
-          <Groups matches={wc.matches} standings={wc.standings} onTeamSelect={setSelectedTeam} />
+          <Groups matches={wc.matches} standings={wc.standings} onTeamSelect={setSelectedTeam} isMobile={isMobile} />
         </div>
       )}
 

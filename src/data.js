@@ -38,7 +38,7 @@ export const FLAG_IMGS = {
   'Uzbekistan':'/flags/uzbekistan.png','England':'/flags/england.png',
   'Croatia':'/flags/croatia.png','Panama':'/flags/panama.png',
   'Ghana':'/flags/ghana.png','Jordan':'/flags/jordan.png',
-  'DR Congo':'/flags/dr_congo.png'
+  'DR Congo':'/flags/dr_congo.png','Cape Verde':'/flags/cape_verde.png'
 };
 
 // ISO country code for each team

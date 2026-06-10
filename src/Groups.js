@@ -2,9 +2,10 @@ import React from 'react';
 import { GROUPS, flagLabel } from './data';
 import { FlagImg } from './FlagImg';
 
-export function Groups({ standings, matches, onTeamSelect }) {
+export function Groups({ standings, matches, onTeamSelect, isMobile }) {
+  const cols = isMobile ? '1fr' : 'repeat(4, minmax(0, 1fr))';
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 10, padding: 12 }}>
+    <div style={{ display: 'grid', gridTemplateColumns: cols, gap: 10, padding: 12 }}>
       {Object.keys(GROUPS).map(g => {
         const sorted = GROUPS[g].teams.map(n => {
           const s = standings[n] || { mp:0,w:0,d:0,l:0,gf:0,ga:0,pts:0 };
