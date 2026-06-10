@@ -30,7 +30,7 @@ export default function App() {
   const [selectedTeam, setSelectedTeam] = useState(null);
   const [counter, setCounter] = useState(() => countdownText(TOURNAMENT_START));
   const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth < MOBILE_BREAKPOINT);
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(() => localStorage.getItem('wc-theme') !== 'light');
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -83,17 +83,19 @@ export default function App() {
             style={S.dpInput} />
           <button style={S.dbtn} onClick={() => handleDateShift(1)}>▶</button>
         </div>
-        <div style={S.counterBox}>
-          <span style={S.counterLabel}>World Cup Counter</span>
-          <span style={S.counterValue}>{counter}</span>
-        </div>
+        {!isMobile && (
+          <div style={S.counterBox}>
+            <span style={S.counterLabel}>World Cup Counter</span>
+            <span style={S.counterValue}>{counter}</span>
+          </div>
+        )}
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 10 }}>
           {wc.liveCount > 0 && (
             <span style={{ color: 'var(--ac-red)', fontWeight: 600, animation: 'blink 1.4s infinite' }}>● {wc.liveCount} LIVE</span>
           )}
           <button
             style={{ ...S.dbtn, fontSize: 15, padding: '3px 8px', lineHeight: 1 }}
-            onClick={() => setIsDark(d => !d)}
+            onClick={() => setIsDark(d => { const n = !d; localStorage.setItem('wc-theme', n ? 'dark' : 'light'); return n; })}
             title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
           >
             {isDark ? '☀️' : '🌙'}
@@ -122,8 +124,7 @@ export default function App() {
           {/* RIGHT: Match Day + Map — shown first on mobile */}
           <div style={{ ...S.colRight, ...(isMobile ? S.colRightMobile : {}), order: isMobile ? 1 : 0 }}>
             <MatchDay
-              dayMatches={wc.dayMatches}
-              selectedDate={wc.selectedDate}
+              matches={wc.matches}
               today={wc.today}
               onMatchClick={m => {}}
               onTeamSelect={setSelectedTeam}

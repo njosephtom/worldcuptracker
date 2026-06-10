@@ -22,7 +22,7 @@ export function Groups({ standings, matches, onTeamSelect }) {
               <span style={{ fontSize: 9, color: 'var(--tx-dim2)' }}>P W D L GD Pts</span>
             </div>
             {sorted.map((t, i) => (
-              <div key={t.name} style={{ display: 'flex', alignItems: 'center', gap: 5, padding: '4px 10px', borderBottom: '1px solid var(--bg-inner)', fontSize: 10, background: i < 2 ? 'var(--bg-qualified)' : 'transparent', borderLeft: i < 2 ? '2px solid var(--ac-green)' : '2px solid transparent', cursor: 'pointer' }} onClick={() => onTeamSelect?.(t.name)}>
+              <div key={t.name} style={{ display: 'flex', alignItems: 'center', gap: 5, padding: '4px 10px', borderBottom: '1px solid var(--bg-inner)', fontSize: 10, background: i < 2 ? 'var(--bg-qualified)' : (i % 2 === 0 ? 'var(--bg-stripe)' : 'transparent'), borderLeft: i < 2 ? '2px solid var(--ac-green)' : '2px solid transparent', cursor: 'pointer' }} onClick={() => onTeamSelect?.(t.name)}>
                 <span style={{ fontSize: 8, color: i < 2 ? 'var(--ac-green)' : 'var(--tx-dim2)', width: 10, fontWeight: i < 2 ? 700 : 400 }}>{i+1}</span>
                 <FlagImg name={t.name} w={20} h={14} />
                 <span style={{ flex: 1, color: 'var(--tx-team)', fontSize: 10, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{t.name}</span>

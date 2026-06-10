@@ -34,6 +34,7 @@ body { background: var(--bg-app); }
   --ac-gold: #f0c040;
   --ac-green: #22c55e;
   --ac-red: #ef4444;
+  --bg-stripe: rgba(255,255,255,0.028);
 
   /* bracket-specific tokens */
   --brk-bg: #05050f;
@@ -79,6 +80,7 @@ body { background: var(--bg-app); }
   --ac-gold: #9a6800;
   --ac-green: #0d7030;
   --ac-red: #c42020;
+  --bg-stripe: rgba(0,0,0,0.035);
 
   /* bracket-specific tokens — light mode gets a muted navy look */
   --brk-bg: #e8ecf7;
