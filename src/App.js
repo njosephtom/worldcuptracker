@@ -6,7 +6,7 @@ import { VenueMap } from './VenueMap';
 import { KnockoutBracket } from './KnockoutBracket';
 import { Groups } from './Groups';
 import { SquadModal } from './SquadModal';
-import { shiftDate, clampDate, todayStr } from './data';
+import { shiftDate, clampDate } from './data';
 import './App.css';
 
 const TOURNAMENT_START = new Date('2026-06-11T15:00:00-04:00');
@@ -60,12 +60,6 @@ export default function App() {
     const nd = clampDate(shiftDate(wc.selectedDate, n));
     wc.setSelectedDate(nd);
     document.getElementById('dp').value = nd;
-  }
-
-  function goToday() {
-    const t = clampDate(todayStr());
-    wc.setSelectedDate(t);
-    document.getElementById('dp').value = t;
   }
 
   const tabs = [
