@@ -91,14 +91,6 @@ export default function App() {
           {wc.liveCount > 0 && (
             <span style={{ color: 'var(--ac-red)', fontWeight: 600, animation: 'blink 1.4s infinite' }}>● {wc.liveCount} LIVE</span>
           )}
-          {wc.loading ? (
-            <span style={{ color: 'var(--tx-muted)', display: 'flex', alignItems: 'center', gap: 5 }}>
-              <span style={S.spinner} /> Fetching…
-            </span>
-          ) : (
-            <span style={{ color: 'var(--tx-dim)' }}>↻ {wc.lastFetch || 'Loading…'}</span>
-          )}
-          <button style={{ ...S.dbtn, fontSize: 10, padding: '4px 8px' }} onClick={wc.refresh}>Refresh</button>
           <button
             style={{ ...S.dbtn, fontSize: 15, padding: '3px 8px', lineHeight: 1 }}
             onClick={() => setIsDark(d => !d)}
