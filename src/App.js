@@ -184,6 +184,13 @@ export default function App() {
 
       <SquadModal team={selectedTeam} onClose={() => setSelectedTeam(null)} />
       <TooltipPortal tooltip={tooltip} />
+
+      {/* Footer */}
+      <div style={S.footer}>
+        <span>Not affiliated with FIFA &nbsp;·&nbsp;</span>
+        <a href="/privacy.html" style={S.footerLink} target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+        <span> &nbsp;·&nbsp; &copy; 2026 worldcuptracker.us</span>
+      </div>
     </div>
   );
 }
@@ -208,4 +215,6 @@ const S = {
   colLeftMobile: { borderRight: 'none', borderBottom: '1px solid var(--bd-main)', minHeight: 0 },
   colRightMobile: { minHeight: 0 },
   spinner: { width: 12, height: 12, borderRadius: '50%', border: '2px solid var(--bd-main)', borderTopColor: 'var(--ac-gold)', display: 'inline-block', animation: 'spin .7s linear infinite' },
+  footer: { flexShrink: 0, borderTop: '1px solid var(--bd-main)', padding: '5px 16px', fontSize: 10, color: 'var(--tx-muted)', textAlign: 'center', background: 'var(--bg-topbar)' },
+  footerLink: { color: 'var(--ac-gold)', textDecoration: 'none', fontWeight: 500 },
 };
