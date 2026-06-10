@@ -1,0 +1,35 @@
+# FIFA World Cup 2026 Tracker
+> Live fixture tracking, real-time scores, group standings, squad information, and venue map for all 48 teams in the FIFA World Cup 2026 hosted across USA, Canada, and Mexico.
+
+## Features
+- Real-time match scores and fixtures for all 104 matches
+- Group stage standings for 12 groups (A through L), each with 4 teams
+- Full squad information for all 48 qualified nations across 6 confederations
+- Interactive venue map with all 16 host stadiums
+- Bracket view showing full tournament path from Round of 32 through Final
+- Dark/light theme toggle
+- Mobile-optimized layout with today's matches prominently displayed
+
+## Tournament Info
+- Dates: June 11 – July 19, 2026
+- Hosts: United States, Canada, Mexico
+- Teams: 48 nations (12 groups × 4 teams)
+- Knockout rounds: Round of 32, Round of 16, Quarterfinals, Semifinals, Third Place, Final
+- Final venue: MetLife Stadium, New York/NJ (July 19, 2026)
+
+## Groups
+- Group A: Mexico, South Korea, South Africa, Czechia
+- Group B: Canada, Switzerland, Qatar, Bosnia and Herzegovina
+- Group C: Brazil, Morocco, Scotland, Haiti
+- Group D: United States, Australia, Paraguay, Turkey
+- Group E: Germany, Ecuador, Ivory Coast, Curaçao
+- Group F: Netherlands, Japan, Tunisia, Sweden
+- Group G: Belgium, Egypt, Iran, New Zealand
+- Group H: Spain, Uruguay, Saudi Arabia, Cape Verde
+- Group I: France, Senegal, Norway, Iraq
+- Group J: Argentina, Algeria, Austria, Jordan
+- Group K: Portugal, DR Congo, Colombia, Uzbekistan
+- Group L: England, Croatia, Ghana, Panama
+
+## Host Venues
+16 stadiums across USA (13), Canada (2), and Mexico (3) including MetLife Stadium (NY), SoFi Stadium (LA), AT&T Stadium (Dallas), Hard Rock Stadium (Miami), Estadio Azteca (Mexico City), BC Place (Vancouver), BMO Field (Toronto).
