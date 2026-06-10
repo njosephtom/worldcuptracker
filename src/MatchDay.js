@@ -196,11 +196,11 @@ export function MatchDay({ matches, today, onMatchClick, onTeamSelect, onTT, onM
                         const countdown = matchCountdown(md, now);
                         return (
                           <div>
-                            <div style={{ fontSize: 8, color: 'var(--tx-secondary)', fontWeight: 500 }}>
+                            <div style={{ fontSize: 11, color: 'var(--tx-secondary)', fontWeight: 600 }}>
                               {fmtLocalTime(md)}
                             </div>
                             {countdown && (
-                              <div style={{ fontSize: 7, color: 'var(--ac-green)', marginTop: 1, fontWeight: 600 }}>
+                              <div style={{ fontSize: 9, color: 'var(--ac-green)', marginTop: 1, fontWeight: 600 }}>
                                 {countdown}
                               </div>
                             )}
@@ -244,9 +244,9 @@ const styles = {
     background: 'transparent',
     border: 'none',
     color: 'var(--tx-dim)',
-    fontSize: 8,
+    fontSize: 11,
     fontWeight: 600,
-    padding: '3px 16px',
+    padding: '5px 20px',
     borderRadius: 3,
     cursor: 'pointer',
     textTransform: 'uppercase',
