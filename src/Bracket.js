@@ -13,54 +13,54 @@ const STAGE_LBL = {
   letterSpacing: 0.8, textAlign: 'center', paddingBottom: 5, whiteSpace: 'nowrap',
 };
 
-// Rectangular standings-style group card: flag | CC | P W D L Pts
+// Rectangular standings-style group card: flags only, stats on hover/click
 function GroupCard({ g, teams, onTeamSelect, onTT, onMoveTT, onHideTT }) {
   const color = GC[g];
+  const [activeTeam, setActiveTeam] = useState(null);
+
   return (
-    <div style={{ border: `2px solid ${color}`, borderRadius: 6, overflow: 'hidden', flexShrink: 0, width: 162 }}>
+    <div style={{ border: `2px solid ${color}`, borderRadius: 6, overflow: 'hidden', flexShrink: 0, width: 52 }}>
       {/* GROUP label */}
       <div style={{
         background: color, color: g === 'F' ? '#000' : '#fff',
-        fontWeight: 900, fontSize: 8, textAlign: 'center',
-        padding: '3px 6px', letterSpacing: 1.5, textTransform: 'uppercase',
-        fontFamily: 'monospace',
+        fontWeight: 900, fontSize: 7, textAlign: 'center',
+        padding: '3px 4px', letterSpacing: 1.5, textTransform: 'uppercase',
+        fontFamily: 'var(--font-sans)',
       }}>
-        GROUP {g}
+        GRP {g}
       </div>
-      {/* Column headers */}
-      <div style={{ display: 'flex', alignItems: 'center', padding: '2px 5px', background: 'var(--brk-cell)', borderBottom: '1px solid var(--brk-div)' }}>
-        <div style={{ flex: 1 }} />
-        {['P', 'W', 'D', 'L', 'Pts'].map(h => (
-          <div key={h} style={{ width: 20, textAlign: 'center', fontSize: 7, color: 'var(--brk-dim)', fontWeight: 700 }}>{h}</div>
-        ))}
-      </div>
-      {/* Team rows */}
+      {/* Team rows — flag + rank only; stats on hover (tooltip) or click (inline) */}
       {teams.map((t, i) => {
         const cc = TEAM_CC[t.name] || t.name.slice(0, 3).toUpperCase();
-        const ttHtml = `<div style="font-weight:700;color:var(--ac-gold);font-size:13px;margin-bottom:2px">${cc}</div><div style="color:var(--tx-secondary);font-size:10px">${t.name}</div>`;
+        const ttHtml = `<div style="font-weight:700;color:var(--ac-gold);font-size:12px;margin-bottom:4px">${cc} · ${t.name}</div><div style="display:flex;gap:10px;font-size:10px"><span><span style="color:var(--tx-dim2)">P </span><b>${t.mp}</b></span><span><span style="color:var(--tx-dim2)">W </span><b>${t.w}</b></span><span><span style="color:var(--tx-dim2)">D </span><b>${t.d}</b></span><span><span style="color:var(--tx-dim2)">L </span><b>${t.l}</b></span><span style="color:var(--ac-gold)"><span style="color:var(--tx-dim2)">Pts </span><b>${t.pts}</b></span></div>`;
+        const isActive = activeTeam === t.name;
         return (
-          <div
-            key={t.name}
-            onClick={() => onTeamSelect?.(t.name)}
-            onMouseEnter={e => onTT(e, ttHtml)}
-            onMouseMove={onMoveTT}
-            onMouseLeave={onHideTT}
-            style={{
-              display: 'flex', alignItems: 'center', gap: 4, padding: '3px 5px',
-              background: i < 2 ? 'var(--bg-qualified)' : 'var(--brk-cell)',
-              borderBottom: i < 3 ? '1px solid var(--brk-div)' : 'none',
-              cursor: 'pointer',
-            }}
-          >
-            <FlagImg name={t.name} w={18} h={12} />
-            <span style={{ flex: 1, fontSize: 8, color: 'var(--brk-txt)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{cc}</span>
-            {[t.mp, t.w, t.d, t.l, t.pts].map((v, j) => (
-              <span key={j} style={{
-                width: 20, textAlign: 'center', fontSize: 8,
-                color: j === 4 ? 'var(--ac-gold)' : 'var(--brk-txt)',
-                fontWeight: j === 4 ? 700 : 400,
-              }}>{v}</span>
-            ))}
+          <div key={t.name}>
+            <div
+              onClick={() => { setActiveTeam(isActive ? null : t.name); }}
+              onMouseEnter={e => onTT(e, ttHtml)}
+              onMouseMove={onMoveTT}
+              onMouseLeave={onHideTT}
+              style={{
+                display: 'flex', alignItems: 'center', gap: 3, padding: '3px 4px',
+                background: i < 2 ? 'var(--bg-qualified)' : 'var(--brk-cell)',
+                borderBottom: '1px solid var(--brk-div)',
+                cursor: 'pointer',
+              }}
+            >
+              <span style={{ fontSize: 7, color: i < 2 ? 'var(--ac-green)' : 'var(--brk-dim)', width: 8, flexShrink: 0 }}>{i + 1}</span>
+              <FlagImg name={t.name} w={22} h={15} />
+            </div>
+            {isActive && (
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 3, padding: '3px 4px', background: 'var(--bg-inner)', borderBottom: '1px solid var(--brk-div)' }}>
+                {[['P', t.mp], ['W', t.w], ['D', t.d], ['L', t.l], ['Pts', t.pts]].map(([lbl, val]) => (
+                  <span key={lbl} style={{ fontSize: 7, whiteSpace: 'nowrap' }}>
+                    <span style={{ color: 'var(--tx-dim2)' }}>{lbl}:</span>
+                    <b style={{ color: lbl === 'Pts' ? 'var(--ac-gold)' : 'var(--brk-txt)' }}>{val}</b>
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
         );
       })}
@@ -145,7 +145,7 @@ export function Bracket({ matches, standings, onTeamSelect, onTT, onMoveTT, onHi
       height: '100%', background: 'var(--brk-bg)', color: 'var(--brk-txt)',
       display: 'flex', flexDirection: 'column',
       padding: '10px 6px 8px', userSelect: 'none', minWidth: 1100,
-      fontFamily: "'Roboto Mono', monospace",
+      fontFamily: 'var(--font-sans)',
     }}>
 
       {/* BRACKET BODY */}

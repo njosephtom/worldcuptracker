@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 112" fill="none">
+  <!-- Stars -->
+  <text x="40" y="11" text-anchor="middle" font-size="10" fill="#f0c040" font-family="serif">★ ★ ★</text>
+
+  <!-- Cup body -->
+  <path d="M21 20 L17 76 L63 76 L59 20 Z" fill="#E8B830"/>
+
+  <!-- Side shading -->
+  <path d="M21 20 L22 76 L17 76 Z" fill="#B8720A" opacity="0.55"/>
+  <path d="M59 20 L58 76 L63 76 Z" fill="#B8720A" opacity="0.55"/>
+
+  <!-- Cup top ellipse -->
+  <ellipse cx="40" cy="20" rx="19" ry="4.5" fill="#C4921C"/>
+
+  <!-- Left handle -->
+  <path d="M21 30 C8 36 7 58 17 65 C20 67 22 65.5 22 63.5"
+        stroke="#D4A520" stroke-width="6.5" stroke-linecap="round"/>
+  <!-- Left handle inner -->
+  <path d="M21 30 C9 36 8 57 17 64"
+        stroke="#F0C040" stroke-width="2" stroke-linecap="round" opacity="0.45"/>
+
+  <!-- Right handle -->
+  <path d="M59 30 C72 36 73 58 63 65 C60 67 58 65.5 58 63.5"
+        stroke="#D4A520" stroke-width="6.5" stroke-linecap="round"/>
+  <!-- Right handle inner -->
+  <path d="M59 30 C71 36 72 57 63 64"
+        stroke="#F0C040" stroke-width="2" stroke-linecap="round" opacity="0.45"/>
+
+  <!-- Cup shine -->
+  <path d="M27 28 Q32 19 38 24" stroke="rgba(255,255,255,0.42)" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M29 40 Q31 34 35 37" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Stem -->
+  <rect x="35" y="76" width="10" height="16" fill="#D4A520"/>
+  <rect x="36" y="76" width="3" height="16" fill="#F0C040" opacity="0.35"/>
+
+  <!-- Base upper -->
+  <rect x="22" y="91" width="36" height="7" rx="2" fill="#C4921C"/>
+  <!-- Base lower -->
+  <rect x="15" y="97" width="50" height="10" rx="3" fill="#8B6914"/>
+  <!-- Base shine -->
+  <rect x="18" y="99" width="44" height="2" rx="1" fill="#D4A520" opacity="0.4"/>
+</svg>

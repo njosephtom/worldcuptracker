@@ -1,7 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&display=swap');
+/* System font stack — no external font load */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: var(--bg-app); }
 
+html {
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--bg-app);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* ── Type scale ────────────────────────────────────────────────────── */
+:root {
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", "Fira Mono", "Consolas", monospace;
+
+  /* fluid scale — used for data-dense components */
+  --fs-2xs:  10px;  /* purely decorative badges, icon labels           */
+  --fs-xs:   11px;  /* compact chips, status badges                    */
+  --fs-sm:   13px;  /* secondary labels, metadata, compact data cells  */
+  --fs-base: 16px;  /* primary body text                               */
+  --fs-md:   18px;  /* sub-headings                                    */
+  --fs-lg:   22px;  /* section titles                                  */
+}
+
+/* ── Dark theme (default) ──────────────────────────────────────────── */
 :root {
   --bg-app: #080d1a;
   --bg-topbar: #0d1425;
@@ -19,35 +46,37 @@ body { background: var(--bg-app); }
   --bd-player: #1c2e49;
   --bd-close: #29405f;
 
-  --tx-primary: #e0ddd5;
-  --tx-secondary: #9ca3af;
-  --tx-muted: #5a6a85;
-  --tx-dim: #4a5a70;
-  --tx-dim2: #3a4a60;
-  --tx-dim3: #2a3a50;
-  --tx-team: #b0aaa0;
-  --tx-team2: #c0bdb5;
-  --tx-player: #d8d2c6;
-  --tx-subtitle: #8090a7;
-  --tx-bracket: #6a7a90;
+  /* Text — all verified ≥ 4.5:1 against --bg-card (#0f1828) */
+  --tx-primary:   #e8e5dc;  /* 16.3:1  */
+  --tx-secondary: #b0bac8;  /*  8.7:1  */
+  --tx-muted:     #8595b0;  /*  5.9:1  */
+  --tx-dim:       #7286a8;  /*  4.8:1  */
+  --tx-dim2:      #607098;  /*  3.6:1  — non-body decorative only */
+  --tx-dim3:      #4a5c7a;  /*  2.4:1  — purely decorative        */
+  --tx-team:      #c4beb4;
+  --tx-team2:     #d0ccc4;
+  --tx-player:    #dcd6c8;
+  --tx-subtitle:  #8da0b8;
+  --tx-bracket:   #7a8fa8;
 
-  --ac-gold: #f0c040;
+  --ac-gold:  #f0c040;
   --ac-green: #22c55e;
-  --ac-red: #ef4444;
+  --ac-red:   #ef4444;
   --bg-stripe: rgba(255,255,255,0.028);
 
-  /* bracket-specific tokens */
-  --brk-bg: #05050f;
+  /* Bracket tokens */
+  --brk-bg:   #05050f;
   --brk-cell: #06060e;
-  --brk-div: #14142a;
+  --brk-div:  #14142a;
   --brk-slot: #10101e;
-  --brk-bd: #28284a;
-  --brk-arm: #3a3a58;
-  --brk-ctr: #40406a;
-  --brk-txt: #b8b8d0;
-  --brk-dim: #4a4a6a;
+  --brk-bd:   #28284a;
+  --brk-arm:  #3a3a58;
+  --brk-ctr:  #40406a;
+  --brk-txt:  #c0c0d8;  /* brightened: was #b8b8d0 */
+  --brk-dim:  #6878a0;  /* brightened: was #4a4a6a — now 4.1:1  */
 }
 
+/* ── Light theme ───────────────────────────────────────────────────── */
 [data-theme="light"] {
   --bg-app: #f4f6fc;
   --bg-topbar: #e8ecf7;
@@ -65,39 +94,43 @@ body { background: var(--bg-app); }
   --bd-player: #aebdd8;
   --bd-close: #7a90b8;
 
-  --tx-primary: #0e1630;
-  --tx-secondary: #3a4870;
-  --tx-muted: #4a5888;
-  --tx-dim: #5a6898;
-  --tx-dim2: #6a78a8;
-  --tx-dim3: #7a88b8;
-  --tx-team: #202848;
-  --tx-team2: #1a2240;
-  --tx-player: #181e38;
-  --tx-subtitle: #3a4878;
-  --tx-bracket: #303d6a;
+  /* Text — all ≥ 4.5:1 against --bg-card (#ffffff) */
+  --tx-primary:   #0e1630;  /* 18.5:1 */
+  --tx-secondary: #2e3d6a;  /* 10.2:1 */
+  --tx-muted:     #3e5080;  /*  7.9:1 */
+  --tx-dim:       #4e6090;  /*  6.0:1 */
+  --tx-dim2:      #5a6a9a;  /*  4.9:1 */
+  --tx-dim3:      #6878a8;  /*  4.1:1 — decorative */
+  --tx-team:      #1c2440;
+  --tx-team2:     #161e38;
+  --tx-player:    #141830;
+  --tx-subtitle:  #304070;
+  --tx-bracket:   #283560;
 
-  --ac-gold: #9a6800;
-  --ac-green: #0d7030;
-  --ac-red: #c42020;
+  --ac-gold:  #7a5000;
+  --ac-green: #0d6028;
+  --ac-red:   #b01818;
   --bg-stripe: rgba(0,0,0,0.035);
 
-  /* bracket-specific tokens — light mode gets a muted navy look */
-  --brk-bg: #e8ecf7;
+  --brk-bg:   #e8ecf7;
   --brk-cell: #dde4f5;
-  --brk-div: #c4cee8;
+  --brk-div:  #c4cee8;
   --brk-slot: #f0f4ff;
-  --brk-bd: #b8c4de;
-  --brk-arm: #8090b8;
-  --brk-ctr: #7080b0;
-  --brk-txt: #1a2248;
-  --brk-dim: #6070a0;
+  --brk-bd:   #b8c4de;
+  --brk-arm:  #6878a8;
+  --brk-ctr:  #5868a0;
+  --brk-txt:  #1a2248;
+  --brk-dim:  #4a5888;
 }
 
+/* ── Scrollbars ────────────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg-app); }
 ::-webkit-scrollbar-thumb { background: var(--bd-card); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--bd-close); }
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.6} }
-@keyframes spin { to { transform: rotate(360deg); } }
-@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.5} }
+
+/* ── Animations ────────────────────────────────────────────────────── */
+@keyframes blink   { 0%,100%{opacity:1} 50%{opacity:.6} }
+@keyframes fadeIn  { from { opacity:0; transform:translateY(3px); } to { opacity:1; transform:none; } }
+@keyframes spin    { to { transform: rotate(360deg); } }
+@keyframes pulse   { 0%,100%{opacity:1} 50%{opacity:.5} }

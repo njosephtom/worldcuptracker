@@ -80,10 +80,10 @@ export function MatchDay({ matches, today, onMatchClick, onTeamSelect, onTT, onM
       <div style={styles.panelHdr}>
         <div style={{ display: 'flex', alignItems: 'baseline', gap: 5 }}>
           <span style={{ color: 'var(--ac-gold)', fontWeight: 700, fontSize: 10 }}>⚡ Match Schedule</span>
-          {tzAbbr && <span style={{ fontSize: 8, color: 'var(--tx-dim)', fontWeight: 400 }}>All times in your local time: {tzAbbr}</span>}
+          {tzAbbr && <span style={{ fontSize: 9, color: 'var(--tx-dim)', fontWeight: 400 }}>All times in your local time: {tzAbbr}</span>}
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <span style={{ fontSize: 9, color: 'var(--tx-dim)' }}>{filtered.length} match{filtered.length !== 1 ? 'es' : ''}</span>
+          <span style={{ fontSize: 10, color: 'var(--tx-dim)' }}>{filtered.length} match{filtered.length !== 1 ? 'es' : ''}</span>
           <div style={styles.toggle}>
             {['today', 'all'].map(opt => (
               <button
@@ -223,7 +223,7 @@ const styles = {
     color: 'var(--tx-dim)',
     fontSize: 8,
     fontWeight: 600,
-    padding: '2px 7px',
+    padding: '3px 16px',
     borderRadius: 3,
     cursor: 'pointer',
     textTransform: 'uppercase',

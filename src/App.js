@@ -3,7 +3,7 @@ import { useWorldCup } from './useWorldCup';
 import { useTooltip, TooltipPortal } from './Tooltip';
 import { MatchDay } from './MatchDay';
 import { VenueMap } from './VenueMap';
-import { Bracket } from './Bracket';
+import { KnockoutBracket } from './KnockoutBracket';
 import { Groups } from './Groups';
 import { SquadModal } from './SquadModal';
 import { shiftDate, clampDate, todayStr } from './data';
@@ -80,12 +80,11 @@ export default function App() {
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <span style={{ fontSize: 18 }}>⚽</span>
           <div>
-            <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--ac-gold)', letterSpacing: 2, textTransform: 'uppercase' }}>FIFA World Cup 2026</div>
-            <div style={{ fontSize: 9, color: 'var(--tx-dim)', letterSpacing: 1 }}>🇺🇸 USA · 🇨🇦 Canada · 🇲🇽 Mexico · Jun 11 – Jul 19</div>
+            <div style={{ fontSize: 'var(--fs-sm)', fontWeight: 700, color: 'var(--ac-gold)', letterSpacing: 1.5, textTransform: 'uppercase' }}>FIFA World Cup 2026</div>
+            <div style={{ fontSize: 'var(--fs-xs)', color: 'var(--tx-dim)', letterSpacing: 0.5 }}>🇺🇸 USA · 🇨🇦 Canada · 🇲🇽 Mexico · Jun 11 – Jul 19</div>
           </div>
         </div>
         <div style={S.dateNav}>
-          <button style={{ ...S.dbtn, borderColor: 'var(--ac-green)', color: 'var(--ac-green)' }} onClick={goToday}>Today</button>
           <button style={S.dbtn} onClick={() => handleDateShift(-1)}>◀</button>
           <input id="dp" type="date" defaultValue={wc.selectedDate} min="2026-06-11" max="2026-07-19"
             onChange={e => wc.setSelectedDate(e.target.value)}
@@ -99,9 +98,9 @@ export default function App() {
             {tzAbbr && <span style={S.tzLabel}>Your local time: {tzAbbr}</span>}
           </div>
         )}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 10 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 'var(--fs-xs)' }}>
           {wc.liveCount > 0 && (
-            <span style={{ color: 'var(--ac-red)', fontWeight: 600, animation: 'blink 1.4s infinite' }}>● {wc.liveCount} LIVE</span>
+            <span style={{ color: 'var(--ac-red)', fontWeight: 700, animation: 'blink 1.4s infinite' }}>● {wc.liveCount} LIVE</span>
           )}
           <button
             style={{ ...S.dbtn, fontSize: 15, padding: '3px 8px', lineHeight: 1 }}
@@ -127,8 +126,9 @@ export default function App() {
         <div style={{ ...S.unified, ...(isMobile ? S.unifiedMobile : {}) }}>
           {/* LEFT: Fixture — pushed below match list on mobile */}
           <div style={{ ...S.colLeft, ...(isMobile ? S.colLeftMobile : {}), order: isMobile ? 2 : 0 }}>
-            <div style={{ overflow: 'auto', flex: 1, minHeight: 0 }}>
-              <Bracket matches={wc.matches} standings={wc.standings} onTeamSelect={setSelectedTeam} onTT={show} onMoveTT={move} onHideTT={hide} />
+            <div style={{ overflow: 'hidden', flex: 1, minHeight: 0 }}>
+              <KnockoutBracket isMobile={isMobile} standings={wc.standings}
+                  onTT={show} onMoveTT={move} onHideTT={hide} />
             </div>
           </div>
           {/* RIGHT: Match Day + Map — shown first on mobile */}
@@ -165,17 +165,17 @@ export default function App() {
 }
 
 const S = {
-  app: { background: 'var(--bg-app)', color: 'var(--tx-primary)', fontFamily: "'Roboto Mono', 'SF Mono', monospace", height: '100vh', overflow: 'hidden', display: 'flex', flexDirection: 'column' },
+  app: { background: 'var(--bg-app)', color: 'var(--tx-primary)', fontFamily: 'var(--font-sans)', height: '100vh', overflow: 'hidden', display: 'flex', flexDirection: 'column' },
   topbar: { background: 'var(--bg-topbar)', borderBottom: '1px solid var(--bd-main)', padding: '10px 16px', display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' },
   dateNav: { display: 'flex', alignItems: 'center', gap: 5 },
   counterBox: { display: 'flex', flexDirection: 'column', gap: 1, minWidth: 180, padding: '4px 8px', border: '1px solid var(--bd-btn)', borderRadius: 6, background: 'var(--bg-input)' },
-  counterLabel: { fontSize: 9, letterSpacing: '.8px', textTransform: 'uppercase', color: 'var(--tx-muted)' },
-  counterValue: { fontSize: 12, fontWeight: 700, color: 'var(--ac-gold)' },
-  tzLabel: { fontSize: 8, color: 'var(--tx-dim)', letterSpacing: '.4px', marginTop: 1 },
-  dbtn: { background: 'var(--bg-input)', border: '1px solid var(--bd-btn)', color: 'var(--tx-secondary)', fontSize: 11, padding: '5px 10px', borderRadius: 6, cursor: 'pointer' },
-  dpInput: { background: 'var(--bg-input)', border: '1px solid var(--bd-btn)', color: 'var(--tx-primary)', fontSize: 11, padding: '5px 10px', borderRadius: 6, cursor: 'pointer', outline: 'none' },
+  counterLabel: { fontSize: 'var(--fs-xs)', letterSpacing: '.6px', textTransform: 'uppercase', color: 'var(--tx-muted)' },
+  counterValue: { fontSize: 'var(--fs-sm)', fontWeight: 700, color: 'var(--ac-gold)' },
+  tzLabel: { fontSize: 'var(--fs-xs)', color: 'var(--tx-dim)', letterSpacing: '.3px', marginTop: 1 },
+  dbtn: { background: 'var(--bg-input)', border: '1px solid var(--bd-btn)', color: 'var(--tx-secondary)', fontSize: 'var(--fs-sm)', padding: '5px 10px', borderRadius: 6, cursor: 'pointer', fontFamily: 'var(--font-sans)' },
+  dpInput: { background: 'var(--bg-input)', border: '1px solid var(--bd-btn)', color: 'var(--tx-primary)', fontSize: 'var(--fs-sm)', padding: '5px 10px', borderRadius: 6, cursor: 'pointer', outline: 'none', fontFamily: 'var(--font-sans)' },
   tabs: { display: 'flex', background: 'var(--bg-tabs)', borderBottom: '1px solid var(--bd-main)' },
-  tab: { padding: '8px 18px', fontSize: 11, fontWeight: 500, color: 'var(--tx-muted)', cursor: 'pointer', borderBottom: '2px solid transparent', transition: 'all .15s', textTransform: 'uppercase', letterSpacing: '.8px' },
+  tab: { padding: '9px 18px', fontSize: 'var(--fs-sm)', fontWeight: 500, color: 'var(--tx-muted)', cursor: 'pointer', borderBottom: '2px solid transparent', transition: 'all .15s', textTransform: 'uppercase', letterSpacing: '.6px' },
   tabActive: { color: 'var(--ac-gold)', borderBottomColor: 'var(--ac-gold)' },
   unified: { display: 'grid', gridTemplateColumns: '1.7fr 1fr', flex: 1, minHeight: 0, overflow: 'hidden' },
   unifiedMobile: { gridTemplateColumns: '1fr', gridTemplateRows: 'minmax(340px, 55vh) minmax(320px, 45vh)' },
