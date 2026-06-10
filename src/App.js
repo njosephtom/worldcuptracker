@@ -9,8 +9,16 @@ import { SquadModal } from './SquadModal';
 import { shiftDate, clampDate, todayStr } from './data';
 import './App.css';
 
-const TOURNAMENT_START = new Date('2026-06-11T15:00:00-05:00');
+const TOURNAMENT_START = new Date('2026-06-11T15:00:00-04:00');
 const MOBILE_BREAKPOINT = 900;
+
+function getTZAbbr() {
+  try {
+    return new Intl.DateTimeFormat(undefined, { timeZoneName: 'short' })
+      .formatToParts(new Date())
+      .find(p => p.type === 'timeZoneName')?.value || '';
+  } catch { return ''; }
+}
 
 function countdownText(targetDate) {
   const diff = targetDate.getTime() - Date.now();
@@ -31,6 +39,7 @@ export default function App() {
   const [counter, setCounter] = useState(() => countdownText(TOURNAMENT_START));
   const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth < MOBILE_BREAKPOINT);
   const [isDark, setIsDark] = useState(() => localStorage.getItem('wc-theme') !== 'light');
+  const [tzAbbr] = useState(getTZAbbr);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -65,7 +74,7 @@ export default function App() {
   ];
 
   return (
-    <div style={S.app} data-theme={isDark ? 'dark' : 'light'}>
+    <div style={S.app} data-theme={isDark ? 'dark' : 'light'} role="main">
       {/* TOPBAR */}
       <div style={S.topbar}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -87,6 +96,7 @@ export default function App() {
           <div style={S.counterBox}>
             <span style={S.counterLabel}>World Cup Counter</span>
             <span style={S.counterValue}>{counter}</span>
+            {tzAbbr && <span style={S.tzLabel}>Your local time: {tzAbbr}</span>}
           </div>
         )}
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 10 }}>
@@ -161,6 +171,7 @@ const S = {
   counterBox: { display: 'flex', flexDirection: 'column', gap: 1, minWidth: 180, padding: '4px 8px', border: '1px solid var(--bd-btn)', borderRadius: 6, background: 'var(--bg-input)' },
   counterLabel: { fontSize: 9, letterSpacing: '.8px', textTransform: 'uppercase', color: 'var(--tx-muted)' },
   counterValue: { fontSize: 12, fontWeight: 700, color: 'var(--ac-gold)' },
+  tzLabel: { fontSize: 8, color: 'var(--tx-dim)', letterSpacing: '.4px', marginTop: 1 },
   dbtn: { background: 'var(--bg-input)', border: '1px solid var(--bd-btn)', color: 'var(--tx-secondary)', fontSize: 11, padding: '5px 10px', borderRadius: 6, cursor: 'pointer' },
   dpInput: { background: 'var(--bg-input)', border: '1px solid var(--bd-btn)', color: 'var(--tx-primary)', fontSize: 11, padding: '5px 10px', borderRadius: 6, cursor: 'pointer', outline: 'none' },
   tabs: { display: 'flex', background: 'var(--bg-tabs)', borderBottom: '1px solid var(--bd-main)' },

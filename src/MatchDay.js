@@ -1,9 +1,63 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { VENUES, flagLabel, fmtDate } from './data';
 import { FlagImg } from './FlagImg';
 
+// Tournament runs June–July 2026 (EDT = UTC-4)
+function parseMatchDateTime(date, timeET) {
+  const str = timeET.replace(' ET', '').trim();
+  const [timePart, period] = str.split(' ');
+  const [hStr, mStr] = timePart.split(':');
+  let h = parseInt(hStr, 10);
+  const m = parseInt(mStr, 10);
+  if (period === 'PM' && h !== 12) h += 12;
+  if (period === 'AM' && h === 12) h = 0;
+  return new Date(`${date}T${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:00-04:00`);
+}
+
+function matchCountdown(matchDate, now) {
+  const diff = matchDate.getTime() - now;
+  if (diff <= 0) return null;
+  const mins = Math.floor(diff / 60000);
+  if (mins < 1) return 'Starting now';
+  if (mins < 60) return `Starts in ${mins}m`;
+  const h = Math.floor(mins / 60);
+  const rem = mins % 60;
+  if (h < 24) return rem > 0 ? `Starts in ${h}h ${rem}m` : `Starts in ${h}h`;
+  const d = Math.floor(h / 24);
+  const rh = h % 24;
+  return rh > 0 ? `in ${d}d ${rh}h` : `in ${d}d`;
+}
+
+function fmtLocalTime(matchDate) {
+  return matchDate.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit', hour12: true });
+}
+
+function liveMinute(matchDate, now) {
+  const e = Math.floor((now - matchDate.getTime()) / 60000);
+  if (e < 0) return '';
+  if (e <= 45) return ` ${Math.max(1, e)}'`;
+  if (e <= 60) return ' HT';
+  const second = e - 15;
+  if (second <= 90) return ` ${second}'`;
+  return ' 90+';
+}
+
 export function MatchDay({ matches, today, onMatchClick, onTeamSelect, onTT, onMoveTT, onHideTT }) {
   const [view, setView] = useState('today');
+  const [now, setNow] = useState(Date.now);
+
+  useEffect(() => {
+    const t = setInterval(() => setNow(Date.now()), 30000);
+    return () => clearInterval(t);
+  }, []);
+
+  const tzAbbr = useMemo(() => {
+    try {
+      return new Intl.DateTimeFormat(undefined, { timeZoneName: 'short' })
+        .formatToParts(new Date())
+        .find(p => p.type === 'timeZoneName')?.value || '';
+    } catch { return ''; }
+  }, []);
 
   const handleTeamClick = (event, team) => {
     event.stopPropagation();
@@ -24,7 +78,10 @@ export function MatchDay({ matches, today, onMatchClick, onTeamSelect, onTT, onM
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
       {/* Header with filter toggle */}
       <div style={styles.panelHdr}>
-        <span style={{ color: 'var(--ac-gold)', fontWeight: 600, fontSize: 10 }}>⚡ Match Schedule</span>
+        <div style={{ display: 'flex', alignItems: 'baseline', gap: 5 }}>
+          <span style={{ color: 'var(--ac-gold)', fontWeight: 700, fontSize: 10 }}>⚡ Match Schedule</span>
+          {tzAbbr && <span style={{ fontSize: 8, color: 'var(--tx-dim)', fontWeight: 400 }}>All times in your local time: {tzAbbr}</span>}
+        </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <span style={{ fontSize: 9, color: 'var(--tx-dim)' }}>{filtered.length} match{filtered.length !== 1 ? 'es' : ''}</span>
           <div style={styles.toggle}>
@@ -91,9 +148,9 @@ export function MatchDay({ matches, today, onMatchClick, onTeamSelect, onTT, onM
                       </div>
                       {ft || live ? (
                         <div style={styles.scoreBox}>
-                          <span style={styles.scoreNum}>{m.homeScore ?? 0}</span>
-                          <span style={{ color: 'var(--tx-dim2)', fontSize: 10 }}>–</span>
-                          <span style={styles.scoreNum}>{m.awayScore ?? 0}</span>
+                          <span style={live ? styles.scoreNumLive : styles.scoreNum}>{m.homeScore ?? 0}</span>
+                          <span style={{ color: live ? 'var(--ac-red)' : 'var(--tx-dim2)', fontSize: 10, fontWeight: live ? 700 : 400 }}>–</span>
+                          <span style={live ? styles.scoreNumLive : styles.scoreNum}>{m.awayScore ?? 0}</span>
                         </div>
                       ) : (
                         <div style={styles.vsBox}>vs</div>
@@ -106,13 +163,31 @@ export function MatchDay({ matches, today, onMatchClick, onTeamSelect, onTT, onM
                       </div>
                     </div>
                     <div style={styles.mcardMeta}>
-                      <div style={{ fontSize: 7, color: m.round ? 'var(--ac-gold)' : 'var(--tx-dim2)', fontWeight: m.round ? 700 : 400, marginBottom: 1, letterSpacing: .4 }}>
+                      <div style={{ fontSize: 7, color: m.round ? 'var(--ac-gold)' : 'var(--tx-dim)', fontWeight: m.round ? 700 : 400, marginBottom: 1, letterSpacing: .4 }}>
                         {m.round || `Grp ${m.g}`}
                       </div>
-                      {live && <span style={styles.liveBadge}>● LIVE</span>}
+                      {live && (() => {
+                        const md = parseMatchDateTime(m.d, m.t);
+                        return <span style={styles.liveBadge}>● LIVE{liveMinute(md, now)}</span>;
+                      })()}
                       {ft && <span style={styles.ftBadge}>FT</span>}
-                      {!live && !ft && <span style={{ fontSize: 8, color: 'var(--tx-muted)' }}>{m.t}</span>}
-                      <div style={{ fontSize: 8, color: 'var(--tx-dim2)', marginTop: 1 }}>{v.city}</div>
+                      {!live && !ft && (() => {
+                        const md = parseMatchDateTime(m.d, m.t);
+                        const countdown = matchCountdown(md, now);
+                        return (
+                          <div>
+                            <div style={{ fontSize: 8, color: 'var(--tx-secondary)', fontWeight: 500 }}>
+                              {fmtLocalTime(md)}
+                            </div>
+                            {countdown && (
+                              <div style={{ fontSize: 7, color: 'var(--ac-green)', marginTop: 1, fontWeight: 600 }}>
+                                {countdown}
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })()}
+                      <div style={{ fontSize: 7, color: 'var(--tx-muted)', marginTop: 1 }}>{v.city}</div>
                     </div>
                   </div>
                 );
@@ -182,9 +257,10 @@ const styles = {
   },
   mcardTeams: { flex: 1, display: 'flex', alignItems: 'center', gap: 4 },
   teamRow: { display: 'flex', alignItems: 'center', gap: 3, flex: 1 },
-  tname: { fontSize: 9, color: 'var(--tx-team2)', fontWeight: 500, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: 80 },
+  tname: { fontSize: 10, color: 'var(--tx-team2)', fontWeight: 700, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: 80 },
   scoreBox: { display: 'flex', alignItems: 'center', gap: 3, minWidth: 40, justifyContent: 'center' },
-  scoreNum: { fontSize: 12, fontWeight: 600, color: 'var(--ac-gold)', minWidth: 12, textAlign: 'center' },
+  scoreNum: { fontSize: 14, fontWeight: 800, color: 'var(--ac-gold)', minWidth: 14, textAlign: 'center' },
+  scoreNumLive: { fontSize: 15, fontWeight: 900, color: 'var(--ac-red)', minWidth: 14, textAlign: 'center' },
   vsBox: { fontSize: 8, color: 'var(--tx-dim2)', minWidth: 20, textAlign: 'center' },
   mcardMeta: { textAlign: 'right', fontSize: 8, color: 'var(--tx-dim)', minWidth: 48, flexShrink: 0 },
   liveBadge: { display: 'inline-block', background: 'var(--ac-red)', color: '#fff', fontSize: 7, fontWeight: 600, padding: '1px 4px', borderRadius: 6, animation: 'blink 1.4s infinite' },
