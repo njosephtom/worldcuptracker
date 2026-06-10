@@ -317,10 +317,10 @@ function DesktopBracket({ standings, hoveredSlot, setHoveredSlot, onTT, onMoveTT
           <img src={trophyUrl} alt="World Cup Trophy"
             style={{
               position:'absolute',
-              left: cardX('Final') + CW / 2 - 38,
-              top:  cardCY('Final', 0) + CH / 2 + 18,
-              width: 76, height: 107,
-              filter: 'drop-shadow(0 0 10px rgba(240,192,64,0.55))',
+              left: cardX('Final') + CW / 2 - 40,
+              top:  cardCY('Final', 0) + CH / 2 + 14,
+              width: 80, height: 110,
+              filter: 'drop-shadow(0 0 12px rgba(240,192,64,0.6))',
               pointerEvents: 'none',
             }} />
         </div>
