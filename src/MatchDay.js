@@ -59,6 +59,14 @@ export function MatchDay({ matches, today, onMatchClick, onTeamSelect, onTT, onM
     } catch { return ''; }
   }, []);
 
+  const userCity = useMemo(() => {
+    try {
+      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      const parts = tz.split('/');
+      return parts[parts.length - 1].replace(/_/g, ' ');
+    } catch { return ''; }
+  }, []);
+
   const handleTeamClick = (event, team) => {
     event.stopPropagation();
     onTeamSelect?.(team);
@@ -80,7 +88,12 @@ export function MatchDay({ matches, today, onMatchClick, onTeamSelect, onTT, onM
       <div style={styles.panelHdr}>
         <div style={{ display: 'flex', alignItems: 'baseline', gap: 5 }}>
           <span style={{ color: 'var(--ac-gold)', fontWeight: 700, fontSize: 10 }}>⚡ Match Schedule</span>
-          {tzAbbr && <span style={{ fontSize: 9, color: 'var(--tx-dim)', fontWeight: 400 }}>All times in your local time: {tzAbbr}</span>}
+          {tzAbbr && (
+            <span style={{ fontSize: 9, color: 'var(--tx-dim)', fontWeight: 400 }}>
+              All times in your local time: <b style={{ color: 'var(--tx-secondary)' }}>{tzAbbr}</b>
+              {userCity && <span style={{ color: 'var(--tx-dim2)' }}> · 📍 {userCity}</span>}
+            </span>
+          )}
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <span style={{ fontSize: 10, color: 'var(--tx-dim)' }}>{filtered.length} match{filtered.length !== 1 ? 'es' : ''}</span>
@@ -194,7 +207,10 @@ export function MatchDay({ matches, today, onMatchClick, onTeamSelect, onTT, onM
                           </div>
                         );
                       })()}
-                      <div style={{ fontSize: 7, color: 'var(--tx-muted)', marginTop: 1 }}>{v.city}</div>
+                      <div style={{ fontSize: 8, color: 'var(--tx-dim2)', marginTop: 2, fontWeight: 500 }}>
+                        📍 {v.city}
+                      </div>
+                      {v.name && <div style={{ fontSize: 7, color: 'var(--tx-muted)', marginTop: 1, lineHeight: 1.2 }}>{v.name}</div>}
                     </div>
                   </div>
                 );
