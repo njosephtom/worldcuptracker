@@ -42,12 +42,12 @@ function liveMinute(matchDate, now) {
   return ' 90+';
 }
 
-export function MatchDay({ matches, today, onMatchClick, onTeamSelect, onTT, onMoveTT, onHideTT }) {
+export function MatchDay({ matches, today, onMatchClick, onTT, onMoveTT, onHideTT }) {
   const [view, setView] = useState('today');
   const [now, setNow] = useState(Date.now);
 
   useEffect(() => {
-    const t = setInterval(() => setNow(Date.now()), 30000);
+    const t = setInterval(() => setNow(Date.now()), 1000);
     return () => clearInterval(t);
   }, []);
 
@@ -67,10 +67,6 @@ export function MatchDay({ matches, today, onMatchClick, onTeamSelect, onTT, onM
     } catch { return ''; }
   }, []);
 
-  const handleTeamClick = (event, team) => {
-    event.stopPropagation();
-    onTeamSelect?.(team);
-  };
 
   const upcoming = matches.filter(m => m.d >= today);
   const filtered = view === 'today' ? upcoming.filter(m => m.d === today) : upcoming;
@@ -166,11 +162,10 @@ export function MatchDay({ matches, today, onMatchClick, onTeamSelect, onTT, onM
                   >
                     <div style={styles.mcardTeams}>
                       <div style={styles.teamRow}>
-                        <span style={{ cursor: 'pointer', flexShrink: 0 }} onClick={e => handleTeamClick(e, m.h)}>
+                        <span style={{ flexShrink: 0 }}>
                           <FlagImg name={m.h} w={18} h={12} />
                         </span>
-                        <span style={{ ...styles.tname, cursor: 'pointer', color: homeWins ? 'var(--ac-gold)' : undefined }}
-                          onClick={e => handleTeamClick(e, m.h)}>{m.h}</span>
+                        <span style={{ ...styles.tname, color: homeWins ? 'var(--ac-gold)' : undefined }}>{m.h}</span>
                         {homeWins && <span style={styles.wBadge}>W</span>}
                       </div>
                       {ft || live ? (
@@ -183,11 +178,10 @@ export function MatchDay({ matches, today, onMatchClick, onTeamSelect, onTT, onM
                         <div style={styles.vsBox}>vs</div>
                       )}
                       <div style={styles.teamRow}>
-                        <span style={{ cursor: 'pointer', flexShrink: 0 }} onClick={e => handleTeamClick(e, m.a)}>
+                        <span style={{ flexShrink: 0 }}>
                           <FlagImg name={m.a} w={18} h={12} />
                         </span>
-                        <span style={{ ...styles.tname, cursor: 'pointer', color: awayWins ? 'var(--ac-gold)' : undefined }}
-                          onClick={e => handleTeamClick(e, m.a)}>{m.a}</span>
+                        <span style={{ ...styles.tname, color: awayWins ? 'var(--ac-gold)' : undefined }}>{m.a}</span>
                         {awayWins && <span style={styles.wBadge}>W</span>}
                       </div>
                     </div>

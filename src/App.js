@@ -6,6 +6,7 @@ import { VenueMap } from './VenueMap';
 import { KnockoutBracket } from './KnockoutBracket';
 import { Groups } from './Groups';
 import { SquadModal } from './SquadModal';
+import { MatchModal } from './MatchModal';
 import { shiftDate, clampDate } from './data';
 import './App.css';
 
@@ -36,6 +37,7 @@ export default function App() {
   const wc = useWorldCup();
   const { tooltip, show, move, hide } = useTooltip();
   const [selectedTeam, setSelectedTeam] = useState(null);
+  const [selectedMatch, setSelectedMatch] = useState(null);
   const [counter, setCounter] = useState(() => countdownText(TOURNAMENT_START));
   const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth < MOBILE_BREAKPOINT);
   const [isDark, setIsDark] = useState(() => localStorage.getItem('wc-theme') !== 'light');
@@ -176,8 +178,7 @@ export default function App() {
             <MatchDay
               matches={wc.matches}
               today={wc.today}
-              onMatchClick={m => {}}
-              onTeamSelect={setSelectedTeam}
+              onMatchClick={m => setSelectedMatch(m)}
               onTT={show} onMoveTT={move} onHideTT={hide}
             />
             {!isMobile && (
@@ -199,6 +200,7 @@ export default function App() {
       )}
 
       <SquadModal team={selectedTeam} onClose={() => setSelectedTeam(null)} />
+      <MatchModal match={selectedMatch} onClose={() => setSelectedMatch(null)} />
       <TooltipPortal tooltip={tooltip} />
 
       {/* Footer */}
