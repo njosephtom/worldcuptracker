@@ -89,7 +89,7 @@ export function MatchDay({ matches, today, onMatchClick, onTeamSelect, onTT, onM
         <div style={{ display: 'flex', alignItems: 'baseline', gap: 5 }}>
           <span style={{ color: 'var(--ac-gold)', fontWeight: 700, fontSize: 10 }}>⚡ Match Schedule</span>
           {tzAbbr && (
-            <span style={{ fontSize: 9, color: 'var(--tx-dim)', fontWeight: 400 }}>
+            <span style={{ fontSize: 10, color: 'var(--tx-dim)', fontWeight: 400 }}>
               All times in your local time: <b style={{ color: 'var(--tx-secondary)' }}>{tzAbbr}</b>
               {userCity && <span style={{ color: 'var(--tx-dim2)' }}> · 📍 {userCity}</span>}
             </span>
@@ -136,10 +136,10 @@ export function MatchDay({ matches, today, onMatchClick, onTeamSelect, onTT, onM
                 background: isToday ? 'var(--bg-panel)' : 'var(--bg-tabs)',
                 borderLeft: isToday ? '3px solid var(--ac-gold)' : '3px solid transparent',
               }}>
-                <span style={{ color: isToday ? 'var(--ac-gold)' : 'var(--tx-secondary)', fontWeight: isToday ? 700 : 400 }}>
+                <span style={{ color: isToday ? 'var(--ac-gold)' : 'var(--tx-secondary)', fontWeight: isToday ? 600 : 400 }}>
                   {isToday ? '⚡ Today — ' : ''}{fmtDate(date)}
                 </span>
-                <span style={{ fontSize: 9, color: 'var(--tx-dim)' }}>
+                <span style={{ fontSize: 8, color: 'var(--tx-dim)' }}>
                   {dMatches.length} match{dMatches.length !== 1 ? 'es' : ''}
                 </span>
               </div>
@@ -200,17 +200,17 @@ export function MatchDay({ matches, today, onMatchClick, onTeamSelect, onTT, onM
                               {fmtLocalTime(md)}
                             </div>
                             {countdown && (
-                              <div style={{ fontSize: 9, color: 'var(--ac-green)', marginTop: 1, fontWeight: 600 }}>
+                              <div style={{ fontSize: 10, color: 'var(--ac-green)', marginTop: 1, fontWeight: 600 }}>
                                 {countdown}
                               </div>
                             )}
                           </div>
                         );
                       })()}
-                      <div style={{ fontSize: 8, color: 'var(--tx-dim2)', marginTop: 2, fontWeight: 500 }}>
+                      <div style={{ fontSize: 10, color: 'var(--tx-dim2)', marginTop: 2, fontWeight: 500 }}>
                         📍 {v.city}
                       </div>
-                      {v.name && <div style={{ fontSize: 7, color: 'var(--tx-muted)', marginTop: 1, lineHeight: 1.2 }}>{v.name}</div>}
+                      {v.name && <div style={{ fontSize: 10, color: 'var(--tx-muted)', marginTop: 1, lineHeight: 1.2 }}>{v.name}</div>}
                     </div>
                   </div>
                 );
@@ -258,11 +258,12 @@ const styles = {
     color: '#0a0e1a',
   },
   dateHdr: {
-    padding: '3px 10px',
+    padding: '2px 8px',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    fontSize: 9,
+    fontSize: 8,
+    fontWeight: 400,
     borderBottom: '1px solid var(--bd-main)',
     position: 'sticky',
     top: 0,
@@ -271,7 +272,7 @@ const styles = {
   noMatch: { padding: 24, textAlign: 'center', color: 'var(--tx-dim2)', fontSize: 11 },
   mcard: {
     borderBottom: '1px solid var(--bg-inner)',
-    padding: '5px 10px',
+    padding: '3px 8px',
     cursor: 'pointer',
     display: 'flex',
     alignItems: 'center',
@@ -280,7 +281,7 @@ const styles = {
   },
   mcardTeams: { flex: 1, display: 'flex', alignItems: 'center', gap: 4 },
   teamRow: { display: 'flex', alignItems: 'center', gap: 3, flex: 1 },
-  tname: { fontSize: 10, color: 'var(--tx-team2)', fontWeight: 700, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: 80 },
+  tname: { fontSize: 12, color: 'var(--tx-team2)', fontWeight: 700, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: 80 },
   scoreBox: { display: 'flex', alignItems: 'center', gap: 3, minWidth: 40, justifyContent: 'center' },
   scoreNum: { fontSize: 14, fontWeight: 800, color: 'var(--ac-gold)', minWidth: 14, textAlign: 'center' },
   scoreNumLive: { fontSize: 15, fontWeight: 900, color: 'var(--ac-red)', minWidth: 14, textAlign: 'center' },
