@@ -136,10 +136,10 @@ export function MatchDay({ matches, today, onMatchClick, onTeamSelect, onTT, onM
                 background: isToday ? 'var(--bg-panel)' : 'var(--bg-tabs)',
                 borderLeft: isToday ? '3px solid var(--ac-gold)' : '3px solid transparent',
               }}>
-                <span style={{ color: isToday ? 'var(--ac-gold)' : 'var(--tx-secondary)', fontWeight: isToday ? 600 : 400 }}>
+                <span style={{ color: isToday ? 'var(--ac-gold)' : 'var(--tx-secondary)', fontWeight: 700 }}>
                   {isToday ? '⚡ Today — ' : ''}{fmtDate(date)}
                 </span>
-                <span style={{ fontSize: 8, color: 'var(--tx-dim)' }}>
+                <span style={{ fontSize: 11, color: 'var(--tx-dim)' }}>
                   {dMatches.length} match{dMatches.length !== 1 ? 'es' : ''}
                 </span>
               </div>
@@ -260,11 +260,11 @@ const styles = {
     color: '#0a0e1a',
   },
   dateHdr: {
-    padding: '2px 8px',
+    padding: '5px 10px',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    fontSize: 10,
+    fontSize: 12,
     fontWeight: 700,
     borderBottom: '1px solid var(--bd-main)',
     position: 'sticky',
