@@ -192,12 +192,10 @@ export function MatchDay({ matches, today, onMatchClick, onTeamSelect, onTT, onM
                       </div>
                     </div>
                     <div style={styles.mcardMeta}>
-                      <div style={{ fontSize: 11, color: m.round ? 'var(--ac-gold)' : 'var(--tx-dim2)', fontWeight: m.round ? 700 : 400, marginBottom: 1, letterSpacing: .3 }}>
+                      <div style={{ fontSize: 10, color: 'var(--tx-dim2)', fontWeight: 400, marginBottom: 1, letterSpacing: .3 }}>
                         {m.round || `Grp ${m.g}`}
                       </div>
-                      {/* Status on its own line */}
                       {live && <div style={{ marginBottom: 1 }}><span style={styles.liveBadge}>● LIVE{liveMinute(md, now)}</span></div>}
-                      {ft   && <div style={{ fontSize: 9, color: 'var(--ac-green)', fontWeight: 700, marginBottom: 1 }}>FT</div>}
                       {/* Local kickoff time — always visible */}
                       <div style={{ fontSize: 11, color: 'var(--tx-secondary)', fontWeight: 600, whiteSpace: 'nowrap', textAlign: 'right' }}>
                         {fmtLocalTime(md)}
