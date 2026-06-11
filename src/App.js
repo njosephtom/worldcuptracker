@@ -108,7 +108,7 @@ export default function App() {
             style={S.dpInput} />
           <button style={S.dbtn} onClick={() => handleDateShift(1)}>▶</button>
         </div>
-        {!isMobile && (
+        {!isMobile && Date.now() < TOURNAMENT_START.getTime() && (
           <div style={S.counterBox}>
             <span style={S.counterLabel}>World Cup Counter</span>
             <span style={S.counterValue}>{counter}</span>
