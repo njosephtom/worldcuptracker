@@ -43,7 +43,7 @@ function liveMinute(matchDate, now) {
 }
 
 export function MatchDay({ matches, today, onMatchClick, onTT, onMoveTT, onHideTT }) {
-  const [view, setView] = useState('today');
+  const [view, setView] = useState('all');
   const [now, setNow] = useState(Date.now);
 
   useEffect(() => {

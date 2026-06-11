@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useWorldCup, isDevMode } from './useWorldCup';
 import { useTooltip, TooltipPortal } from './Tooltip';
 import { MatchDay } from './MatchDay';
-import { VenueMap } from './VenueMap';
 import { KnockoutBracket } from './KnockoutBracket';
 import { Groups } from './Groups';
 import { SquadModal } from './SquadModal';
@@ -181,13 +180,6 @@ export default function App() {
               onMatchClick={m => setSelectedMatch(m)}
               onTT={show} onMoveTT={move} onHideTT={hide}
             />
-            {!isMobile && (
-              <VenueMap
-                dayMatches={wc.dayMatches}
-                selectedDate={wc.selectedDate}
-                onTT={show} onMoveTT={move} onHideTT={hide}
-              />
-            )}
           </div>
         </div>
       )}
