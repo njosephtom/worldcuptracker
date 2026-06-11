@@ -197,8 +197,8 @@ export const MATCHES = [
   {id:63,d:'2026-06-26',t:'8:00 PM ET',h:'Uruguay',a:'Spain',g:'H',v:'arrowhead'},
   {id:64,d:'2026-06-26',t:'11:00 PM ET',h:'New Zealand',a:'Belgium',g:'G',v:'bcplace'},
   {id:65,d:'2026-06-26',t:'11:00 PM ET',h:'Iran',a:'Egypt',g:'G',v:'sofi'},
-  {id:66,d:'2026-06-27',t:'5:00 PM ET',h:'Panama',a:'England',g:'L',v:'mercedes'},
-  {id:67,d:'2026-06-27',t:'5:00 PM ET',h:'Croatia',a:'Ghana',g:'L',v:'lumen'},
+  {id:66,d:'2026-06-27',t:'5:00 PM ET',h:'Ghana',a:'England',g:'L',v:'mercedes'},
+  {id:67,d:'2026-06-27',t:'5:00 PM ET',h:'Croatia',a:'Panama',g:'L',v:'lumen'},
   {id:68,d:'2026-06-27',t:'5:00 PM ET',h:'DR Congo',a:'Uzbekistan',g:'K',v:'bmo'},
   {id:69,d:'2026-06-27',t:'5:00 PM ET',h:'Colombia',a:'Portugal',g:'K',v:'bcplace'},
   {id:70,d:'2026-06-27',t:'10:00 PM ET',h:'Algeria',a:'Austria',g:'J',v:'gillette'},
@@ -275,7 +275,18 @@ export function computeStandings(matches, liveData) {
   Object.values(GROUPS).forEach(g => g.teams.forEach(t => {
     stand[t] = {mp:0,w:0,d:0,l:0,gf:0,ga:0,pts:0};
   }));
-  // merge live data results
+  // compute from finished group stage matches
+  matches.forEach(m => {
+    if (m.status !== 'finished' || !m.g || m.homeScore === undefined || m.awayScore === undefined) return;
+    const h = stand[m.h], a = stand[m.a];
+    if (!h || !a) return;
+    h.mp++; a.mp++;
+    h.gf += m.homeScore; h.ga += m.awayScore;
+    a.gf += m.awayScore; a.ga += m.homeScore;
+    if (m.homeScore > m.awayScore)      { h.w++; h.pts += 3; a.l++; }
+    else if (m.homeScore < m.awayScore) { a.w++; a.pts += 3; h.l++; }
+    else                                { h.d++; h.pts++; a.d++; a.pts++; }
+  });
   if (liveData?.standings) {
     Object.entries(liveData.standings).forEach(([k,v]) => {
       if (stand[k]) stand[k] = {...stand[k], ...v};

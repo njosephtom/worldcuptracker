@@ -126,7 +126,8 @@ function TeamSlot({ slot, score, isWinner, isActive, onEnter, onLeave, onClick }
     <div onMouseEnter={onEnter} onMouseLeave={onLeave} onClick={onClick} style={{
       display:'flex', alignItems:'center', gap:5, padding:'4px 7px', height:CH/2,
       cursor: tbd ? 'default' : 'pointer',
-      background: isActive ? 'rgba(240,192,64,0.10)' : 'transparent',
+      background: isActive ? 'rgba(240,192,64,0.10)' : (isWinner ? 'rgba(34,197,94,0.09)' : 'transparent'),
+      boxShadow: isWinner ? 'inset 3px 0 0 var(--ac-green)' : 'none',
       transition:'background .15s', borderRadius:3, flexShrink:0,
     }}>
       {!tbd && <FlagImg name={slot} w={18} h={12} />}
@@ -139,6 +140,10 @@ function TeamSlot({ slot, score, isWinner, isActive, onEnter, onLeave, onClick }
         </div>
         {sub && <div style={{ fontSize:'var(--fs-xs)', color:'var(--brk-dim)', marginTop:1 }}>{sub}</div>}
       </div>
+      {isWinner && (
+        <span style={{ fontSize:7, background:'var(--ac-green)', color:'#fff', fontWeight:800,
+          padding:'1px 3px', borderRadius:3, flexShrink:0, letterSpacing:0.3 }}>W</span>
+      )}
       {score !== undefined && (
         <span style={{ fontSize:'var(--fs-sm)', fontWeight:800, flexShrink:0, minWidth:14, textAlign:'right',
           color: isWinner ? 'var(--ac-gold)' : 'var(--brk-dim)' }}>
@@ -190,7 +195,9 @@ function BronzeCard() {
   const awayWins = fin && mock.as > mock.hs;
 
   const Row = ({ name, score, wins }) => (
-    <div style={{ display:'flex', alignItems:'center', gap:5, padding:'3px 7px', height:(CH-14)/2 }}>
+    <div style={{ display:'flex', alignItems:'center', gap:5, padding:'3px 7px', height:(CH-14)/2,
+      background: wins ? 'rgba(34,197,94,0.09)' : 'transparent',
+      boxShadow: wins ? 'inset 3px 0 0 var(--ac-green)' : 'none' }}>
       {fin
         ? <FlagImg name={name} w={18} h={12} />
         : <span style={{ width:18, height:12, display:'inline-block', background:'var(--brk-div)', borderRadius:2 }} />}
@@ -198,6 +205,7 @@ function BronzeCard() {
         color: wins ? 'var(--ac-gold)' : (fin ? 'var(--brk-txt)' : 'var(--brk-dim)') }}>
         {fin ? name : 'TBD'}
       </span>
+      {wins && fin && <span style={{ fontSize:7, background:'var(--ac-green)', color:'#fff', fontWeight:800, padding:'1px 3px', borderRadius:3, flexShrink:0 }}>W</span>}
       {fin && <span style={{ fontSize:'var(--fs-xs)', fontWeight:800, color: wins ? 'var(--ac-gold)' : 'var(--brk-dim)' }}>{score}</span>}
     </div>
   );
@@ -396,7 +404,8 @@ function MobileMatchRow({ id, m, highlighted, hoveredSlot, onSlotToggle }) {
       <div onClick={() => !tbd && onSlotToggle(slot)} style={{
         display:'flex', alignItems:'center', gap:8, padding:'8px 12px',
         cursor: tbd ? 'default' : 'pointer',
-        background: slot === hoveredSlot ? 'rgba(240,192,64,0.10)' : 'transparent',
+        background: slot === hoveredSlot ? 'rgba(240,192,64,0.10)' : (wins ? 'rgba(34,197,94,0.09)' : 'transparent'),
+        boxShadow: wins ? 'inset 4px 0 0 var(--ac-green)' : 'none',
         transition:'background .15s',
       }}>
         {!tbd
@@ -410,6 +419,10 @@ function MobileMatchRow({ id, m, highlighted, hoveredSlot, onSlotToggle }) {
           </div>
           {sub && <div style={{ fontSize:'var(--fs-sm)', color:'var(--brk-dim)', marginTop:2 }}>{sub}</div>}
         </div>
+        {wins && (
+          <span style={{ fontSize:10, background:'var(--ac-green)', color:'#fff', fontWeight:800,
+            padding:'2px 5px', borderRadius:4, flexShrink:0, letterSpacing:0.3 }}>W</span>
+        )}
         {score !== undefined && (
           <span style={{ fontSize:22, fontWeight:800, color: wins ? 'var(--ac-gold)' : 'var(--brk-dim)', flexShrink:0 }}>{score}</span>
         )}
