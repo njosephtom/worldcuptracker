@@ -43,7 +43,11 @@ function parseESPN(data) {
     const sName = ev.status?.type?.name || '';
     let status = 'upcoming';
     if (sName === 'STATUS_IN_PROGRESS' ||
-        sName === 'STATUS_HALFTIME')     status = 'live';
+        sName === 'STATUS_FIRST_HALF'  ||
+        sName === 'STATUS_SECOND_HALF' ||
+        sName === 'STATUS_HALFTIME'    ||
+        sName === 'STATUS_EXTRA_TIME'  ||
+        sName === 'STATUS_PENALTY')     status = 'live';
     if (sName === 'STATUS_FINAL' ||
         sName === 'STATUS_FULL_TIME' ||
         sName === 'STATUS_END_PERIOD')   status = 'finished';
