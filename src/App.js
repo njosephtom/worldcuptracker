@@ -87,7 +87,7 @@ export default function App() {
   }
 
   const tabs = [
-    { id: 'main', label: '📅 Match Day + Map + Fixture' },
+    { id: 'main', label: '📅 Match Day + Fixture' },
     { id: 'groups', label: '📊 Groups' },
   ];
 
