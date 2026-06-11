@@ -192,23 +192,22 @@ export function MatchDay({ matches, today, onMatchClick, onTeamSelect, onTT, onM
                       </div>
                     </div>
                     <div style={styles.mcardMeta}>
-                      <div style={{ fontSize: 11, color: m.round ? 'var(--ac-gold)' : 'var(--tx-dim2)', fontWeight: m.round ? 700 : 400, marginBottom: 2, letterSpacing: .3 }}>
+                      <div style={{ fontSize: 11, color: m.round ? 'var(--ac-gold)' : 'var(--tx-dim2)', fontWeight: m.round ? 700 : 400, marginBottom: 1, letterSpacing: .3 }}>
                         {m.round || `Grp ${m.g}`}
                       </div>
-                      {/* Status badge + local kickoff time — always show time */}
-                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 4, flexWrap: 'nowrap' }}>
-                        {live && <span style={styles.liveBadge}>● LIVE{liveMinute(md, now)}</span>}
-                        {ft  && <span style={styles.ftBadge}>FT</span>}
-                        <span style={{ fontSize: 11, color: 'var(--tx-secondary)', fontWeight: 600, whiteSpace: 'nowrap' }}>
-                          {fmtLocalTime(md)}
-                        </span>
+                      {/* Status on its own line */}
+                      {live && <div style={{ marginBottom: 1 }}><span style={styles.liveBadge}>● LIVE{liveMinute(md, now)}</span></div>}
+                      {ft   && <div style={{ fontSize: 9, color: 'var(--ac-green)', fontWeight: 700, marginBottom: 1 }}>FT</div>}
+                      {/* Local kickoff time — always visible */}
+                      <div style={{ fontSize: 11, color: 'var(--tx-secondary)', fontWeight: 600, whiteSpace: 'nowrap', textAlign: 'right' }}>
+                        {fmtLocalTime(md)}
                       </div>
                       {!ft && !live && countdown && (
                         <div style={{ fontSize: 9, color: 'var(--ac-green)', fontWeight: 600, textAlign: 'right', whiteSpace: 'nowrap' }}>
                           {countdown}
                         </div>
                       )}
-                      <div style={{ fontSize: 9, color: 'var(--tx-dim2)', marginTop: 3, fontWeight: 500, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                      <div style={{ fontSize: 9, color: 'var(--tx-dim2)', marginTop: 2, fontWeight: 500, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                         📍 {v.city}{v.name ? ` · ${v.name}` : ''}
                       </div>
                     </div>
@@ -272,7 +271,7 @@ const styles = {
   noMatch: { padding: 24, textAlign: 'center', color: 'var(--tx-dim2)', fontSize: 11 },
   mcard: {
     borderBottom: '1px solid var(--bg-inner)',
-    padding: '1px 8px',
+    padding: '6px 8px',
     cursor: 'pointer',
     display: 'flex',
     alignItems: 'center',
