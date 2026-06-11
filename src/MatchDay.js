@@ -182,13 +182,13 @@ export function MatchDay({ matches, today, onMatchClick, onTeamSelect, onTT, onM
                       ) : (
                         <div style={styles.vsBox}>vs</div>
                       )}
-                      <div style={{ ...styles.teamRow, justifyContent: 'flex-end' }}>
-                        {awayWins && <span style={styles.wBadge}>W</span>}
-                        <span style={{ ...styles.tname, cursor: 'pointer', color: awayWins ? 'var(--ac-gold)' : undefined, textAlign: 'right' }}
-                          onClick={e => handleTeamClick(e, m.a)}>{m.a}</span>
+                      <div style={styles.teamRow}>
                         <span style={{ cursor: 'pointer', flexShrink: 0 }} onClick={e => handleTeamClick(e, m.a)}>
                           <FlagImg name={m.a} w={18} h={12} />
                         </span>
+                        <span style={{ ...styles.tname, cursor: 'pointer', color: awayWins ? 'var(--ac-gold)' : undefined }}
+                          onClick={e => handleTeamClick(e, m.a)}>{m.a}</span>
+                        {awayWins && <span style={styles.wBadge}>W</span>}
                       </div>
                     </div>
                     <div style={styles.mcardMeta}>
