@@ -199,12 +199,12 @@ export function MatchDay({ matches, today, onMatchClick, onTeamSelect, onTT, onM
                       {/* Local kickoff time — always visible */}
                       <div style={{ fontSize: 11, color: 'var(--tx-secondary)', fontWeight: 600, whiteSpace: 'nowrap', textAlign: 'right' }}>
                         {fmtLocalTime(md)}
+                        {!ft && !live && countdown && (
+                          <span style={{ fontSize: 9, color: 'var(--ac-green)', fontWeight: 600, marginLeft: 4 }}>
+                            ({countdown.replace(/^Starts in /, '').replace(/^in /, '').replace('Starting now', 'now')})
+                          </span>
+                        )}
                       </div>
-                      {!ft && !live && countdown && (
-                        <div style={{ fontSize: 9, color: 'var(--ac-green)', fontWeight: 600, textAlign: 'right', whiteSpace: 'nowrap' }}>
-                          {countdown}
-                        </div>
-                      )}
                       <div style={{ fontSize: 9, color: 'var(--tx-dim2)', marginTop: 2, fontWeight: 500, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                         📍 {v.city}{v.name ? ` · ${v.name}` : ''}
                       </div>
