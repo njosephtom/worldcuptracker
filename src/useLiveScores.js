@@ -1,24 +1,25 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 
 const ESPN_URL = 'https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard';
-const POLL_MS  = 60 * 1000; // poll every 60 seconds
+const POLL_MS  = 30 * 1000; // poll every 30 seconds
 
-// ESPN display names → our MATCHES team names
+// ESPN display names → our MATCHES team names (must match exactly what's in data.js MATCHES)
 const ESPN_NAME_MAP = {
-  'Czech Republic':          'Czechia',
-  'Bosnia-Herzegovina':      'Bosnia and Herzegovina',
-  "Cote d'Ivoire":           "Côte d'Ivoire",
-  "Côte D'Ivoire":           "Côte d'Ivoire",
-  'Ivory Coast':             "Côte d'Ivoire",
-  'Korea Republic':          'South Korea',
-  'Republic of Korea':       'South Korea',
-  'IR Iran':                 'Iran',
-  'United Arab Emirates':    'UAE',
-  'DR Congo':                'DR Congo',
-  'Democratic Republic of the Congo': 'DR Congo',
-  'Turkey':                  'Türkiye',
-  'Türkiye':                 'Türkiye',
-  'Curacao':                 'Curaçao',
+  'Czech Republic':                    'Czechia',
+  'Bosnia-Herzegovina':                'Bosnia and Herzegovina',
+  "Cote d'Ivoire":                     'Ivory Coast',
+  "Côte D'Ivoire":                     'Ivory Coast',
+  "Côte d'Ivoire":                     'Ivory Coast',
+  'Korea Republic':                    'South Korea',
+  'Republic of Korea':                 'South Korea',
+  'IR Iran':                           'Iran',
+  'United Arab Emirates':              'UAE',
+  'Congo DR':                          'DR Congo',
+  'Democratic Republic of the Congo':  'DR Congo',
+  'Türkiye':                           'Turkey',
+  'Curacao':                           'Curaçao',
+  'Cabo Verde':                        'Cape Verde',
+  'USA':                               'United States',
 };
 
 function normalise(name) {
@@ -41,10 +42,14 @@ function parseESPN(data) {
 
     const sName = ev.status?.type?.name || '';
     let status = 'upcoming';
-    if (sName === 'STATUS_IN_PROGRESS')  status = 'live';
+    if (sName === 'STATUS_IN_PROGRESS' ||
+        sName === 'STATUS_HALFTIME')     status = 'live';
     if (sName === 'STATUS_FINAL' ||
         sName === 'STATUS_FULL_TIME' ||
         sName === 'STATUS_END_PERIOD')   status = 'finished';
+
+    // skip upcoming — only merge live/finished into the app
+    if (status === 'upcoming') return;
 
     const clock = ev.status?.displayClock || '';
 
