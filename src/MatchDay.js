@@ -190,15 +190,16 @@ export function MatchDay({ matches, today, onMatchClick, onTT, onMoveTT, onHideT
                         {m.round || `Grp ${m.g}`}
                       </div>
                       {live && <div style={{ marginBottom: 1 }}><span style={styles.liveBadge}>● LIVE{m.clock ? ` · ${m.clock}` : liveMinute(md, now)}</span></div>}
-                      {/* Local kickoff time — always visible */}
-                      <div style={{ fontSize: 11, color: 'var(--tx-secondary)', fontWeight: 600, whiteSpace: 'nowrap', textAlign: 'right' }}>
-                        {fmtLocalTime(md)}
-                        {!ft && !live && countdown && (
-                          <span style={{ fontSize: 9, color: 'var(--ac-green)', fontWeight: 600, marginLeft: 4 }}>
-                            ({countdown.replace(/^Starts in /, '').replace(/^in /, '').replace('Starting now', 'now')})
-                          </span>
-                        )}
-                      </div>
+                      {!ft && (
+                        <div style={{ fontSize: 11, color: 'var(--tx-secondary)', fontWeight: 600, whiteSpace: 'nowrap', textAlign: 'right' }}>
+                          {fmtLocalTime(md)}
+                          {!live && countdown && (
+                            <span style={{ fontSize: 9, color: 'var(--ac-green)', fontWeight: 600, marginLeft: 4 }}>
+                              ({countdown.replace(/^Starts in /, '').replace(/^in /, '').replace('Starting now', 'now')})
+                            </span>
+                          )}
+                        </div>
+                      )}
                       <div style={{ fontSize: 9, color: 'var(--tx-dim2)', marginTop: 2, fontWeight: 500, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                         📍 {v.city}{v.name ? ` · ${v.name}` : ''}
                       </div>
