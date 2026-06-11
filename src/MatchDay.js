@@ -86,7 +86,7 @@ export function MatchDay({ matches, today, onMatchClick, onTeamSelect, onTT, onM
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
       {/* Header with filter toggle */}
       <div style={styles.panelHdr}>
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: 5 }}>
+        <div style={{ display: 'flex', alignItems: 'baseline', gap: 5, overflow: 'hidden', minWidth: 0 }}>
           <span style={{ color: 'var(--ac-gold)', fontWeight: 700, fontSize: 10 }}>⚡ Match Schedule</span>
           {tzAbbr && (
             <span style={{ fontSize: 10, color: 'var(--tx-dim)', fontWeight: 400 }}>
@@ -112,7 +112,7 @@ export function MatchDay({ matches, today, onMatchClick, onTeamSelect, onTT, onM
       </div>
 
       {/* Match list */}
-      <div style={{ flex: 1, overflowY: 'auto' }}>
+      <div style={{ flex: 1, overflowY: 'auto', overflowX: 'hidden' }}>
         {dates.length === 0 ? (
           <div style={styles.noMatch}>
             <div style={{ fontSize: 24, marginBottom: 6 }}>{view === 'today' ? '🗓' : '🏆'}</div>
@@ -264,7 +264,7 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    fontSize: 12,
+    fontSize: 10,
     fontWeight: 700,
     borderBottom: '1px solid var(--bd-main)',
     position: 'sticky',
@@ -288,7 +288,7 @@ const styles = {
   scoreNum: { fontSize: 14, fontWeight: 800, color: 'var(--ac-gold)', minWidth: 14, textAlign: 'center' },
   scoreNumLive: { fontSize: 15, fontWeight: 900, color: 'var(--ac-red)', minWidth: 14, textAlign: 'center' },
   vsBox: { fontSize: 8, color: 'var(--tx-dim2)', minWidth: 20, textAlign: 'center' },
-  mcardMeta: { textAlign: 'right', fontSize: 8, color: 'var(--tx-dim)', minWidth: 120, flexShrink: 0 },
+  mcardMeta: { textAlign: 'right', fontSize: 8, color: 'var(--tx-dim)', minWidth: 120, maxWidth: 120, overflow: 'hidden', flexShrink: 0 },
   liveBadge: { display: 'inline-block', background: 'var(--ac-red)', color: '#fff', fontSize: 7, fontWeight: 600, padding: '1px 4px', borderRadius: 6, animation: 'blink 1.4s infinite' },
   ftBadge: { fontSize: 8, color: 'var(--ac-green)', fontWeight: 600 },
 };
