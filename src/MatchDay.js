@@ -183,7 +183,8 @@ export function MatchDay({ matches, today, onMatchClick, onTeamSelect, onTT, onM
                       </div>
                     </div>
                     <div style={styles.mcardMeta}>
-                      <div style={{ fontSize: 7, color: m.round ? 'var(--ac-gold)' : 'var(--tx-dim)', fontWeight: m.round ? 700 : 400, marginBottom: 1, letterSpacing: .4 }}>
+                      {/* Round / group label — same size as time, muted for groups */}
+                      <div style={{ fontSize: 11, color: m.round ? 'var(--ac-gold)' : 'var(--tx-dim2)', fontWeight: m.round ? 700 : 400, marginBottom: 2, letterSpacing: .3 }}>
                         {m.round || `Grp ${m.g}`}
                       </div>
                       {live && (() => {
@@ -195,22 +196,23 @@ export function MatchDay({ matches, today, onMatchClick, onTeamSelect, onTT, onM
                         const md = parseMatchDateTime(m.d, m.t);
                         const countdown = matchCountdown(md, now);
                         return (
-                          <div>
-                            <div style={{ fontSize: 11, color: 'var(--tx-secondary)', fontWeight: 600 }}>
+                          /* time + countdown on one line */
+                          <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'flex-end', gap: 5, flexWrap: 'nowrap' }}>
+                            <span style={{ fontSize: 11, color: 'var(--tx-secondary)', fontWeight: 600, whiteSpace: 'nowrap' }}>
                               {fmtLocalTime(md)}
-                            </div>
+                            </span>
                             {countdown && (
-                              <div style={{ fontSize: 10, color: 'var(--ac-green)', marginTop: 1, fontWeight: 600 }}>
+                              <span style={{ fontSize: 9, color: 'var(--ac-green)', fontWeight: 600, whiteSpace: 'nowrap' }}>
                                 {countdown}
-                              </div>
+                              </span>
                             )}
                           </div>
                         );
                       })()}
-                      <div style={{ fontSize: 10, color: 'var(--tx-dim2)', marginTop: 2, fontWeight: 500 }}>
-                        📍 {v.city}
+                      {/* city · stadium on one line */}
+                      <div style={{ fontSize: 9, color: 'var(--tx-dim2)', marginTop: 3, fontWeight: 500, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                        📍 {v.city}{v.name ? ` · ${v.name}` : ''}
                       </div>
-                      {v.name && <div style={{ fontSize: 10, color: 'var(--tx-muted)', marginTop: 1, lineHeight: 1.2 }}>{v.name}</div>}
                     </div>
                   </div>
                 );
@@ -262,8 +264,8 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    fontSize: 8,
-    fontWeight: 400,
+    fontSize: 10,
+    fontWeight: 700,
     borderBottom: '1px solid var(--bd-main)',
     position: 'sticky',
     top: 0,
@@ -272,7 +274,7 @@ const styles = {
   noMatch: { padding: 24, textAlign: 'center', color: 'var(--tx-dim2)', fontSize: 11 },
   mcard: {
     borderBottom: '1px solid var(--bg-inner)',
-    padding: '3px 8px',
+    padding: '1px 8px',
     cursor: 'pointer',
     display: 'flex',
     alignItems: 'center',
@@ -286,7 +288,7 @@ const styles = {
   scoreNum: { fontSize: 14, fontWeight: 800, color: 'var(--ac-gold)', minWidth: 14, textAlign: 'center' },
   scoreNumLive: { fontSize: 15, fontWeight: 900, color: 'var(--ac-red)', minWidth: 14, textAlign: 'center' },
   vsBox: { fontSize: 8, color: 'var(--tx-dim2)', minWidth: 20, textAlign: 'center' },
-  mcardMeta: { textAlign: 'right', fontSize: 8, color: 'var(--tx-dim)', minWidth: 48, flexShrink: 0 },
+  mcardMeta: { textAlign: 'right', fontSize: 8, color: 'var(--tx-dim)', minWidth: 120, flexShrink: 0 },
   liveBadge: { display: 'inline-block', background: 'var(--ac-red)', color: '#fff', fontSize: 7, fontWeight: 600, padding: '1px 4px', borderRadius: 6, animation: 'blink 1.4s infinite' },
   ftBadge: { fontSize: 8, color: 'var(--ac-green)', fontWeight: 600 },
 };
