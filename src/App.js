@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { useWorldCup, isDevMode } from './useWorldCup';
 import { useTooltip, TooltipPortal } from './Tooltip';
 import { MatchDay } from './MatchDay';
@@ -207,6 +208,8 @@ export default function App() {
         <a href="/privacy.html" style={S.footerLink} target="_blank" rel="noopener noreferrer">Privacy Policy</a>
         <span> &nbsp;·&nbsp; &copy; 2026 worldcuptracker.us</span>
       </div>
+
+      <Analytics />
     </div>
   );
 }
