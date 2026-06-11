@@ -1,64 +1,48 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { MATCHES, computeStandings, todayStr, clampDate } from './data';
 import { MOCK_RESULTS } from './mockBracket';
+import { useLiveScores } from './useLiveScores';
 
 export const isDevMode =
   process.env.NODE_ENV === 'development' ||
   (typeof window !== 'undefined' && window.location.hostname === 'localhost');
 
-// Match runs ~115 min (90 + 15 HT + 10 buffer)
-const LIVE_MS = 115 * 60 * 1000;
-
-function parseMatchDT(date, timeET) {
-  const str = timeET.replace(' ET', '').trim();
-  const [timePart, period] = str.split(' ');
-  const [hStr, mStr] = timePart.split(':');
-  let h = parseInt(hStr, 10);
-  const m = parseInt(mStr, 10);
-  if (period === 'PM' && h !== 12) h += 12;
-  if (period === 'AM' && h === 12) h = 0;
-  return new Date(`${date}T${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:00-04:00`);
-}
-
-function resolveStatus(m, now) {
-  const start = parseMatchDT(m.d, m.t).getTime();
-  if (now >= start && now < start + LIVE_MS) return 'live';
-  return 'upcoming';
-}
-
 export function useWorldCup() {
-  const today = todayStr();
+  const today   = todayStr();
   const initial = clampDate(today);
   const [selectedDate, setSelectedDate] = useState(initial);
-  const [activeTab, setActiveTab] = useState('main');
-  const [mockEnabled, setMockEnabled] = useState(false);
-  const [now, setNow] = useState(Date.now());
+  const [activeTab,    setActiveTab]    = useState('main');
+  const [mockEnabled,  setMockEnabled]  = useState(false);
 
-  // Re-evaluate live status every 30 seconds
-  useEffect(() => {
-    const t = setInterval(() => setNow(Date.now()), 30000);
-    return () => clearInterval(t);
-  }, []);
+  // Live scores polled from ESPN every 60 s
+  const liveScores = useLiveScores();
 
   const matches = MATCHES.map(m => {
+    // Dev mock takes priority
     if (mockEnabled && m.g) {
       const mock = MOCK_RESULTS[m.id];
-      if (mock) {
-        return { ...m, status: 'finished', homeScore: mock.hs, awayScore: mock.as };
-      }
+      if (mock) return { ...m, status: 'finished', homeScore: mock.hs, awayScore: mock.as };
     }
-    const status = resolveStatus(m, now);
-    return {
-      ...m,
-      status,
-      homeScore: status === 'live' ? (m.homeScore ?? 0) : undefined,
-      awayScore: status === 'live' ? (m.awayScore ?? 0) : undefined,
-    };
+
+    // Merge ESPN live/finished data when available
+    const key = `${m.h}|${m.a}`;
+    const live = liveScores[key];
+    if (live) {
+      return {
+        ...m,
+        status:    live.status,
+        homeScore: live.homeScore,
+        awayScore: live.awayScore,
+        clock:     live.clock,
+      };
+    }
+
+    return { ...m, status: 'upcoming', homeScore: undefined, awayScore: undefined, clock: undefined };
   });
 
-  const standings = computeStandings(matches, null);
+  const standings  = computeStandings(matches, null);
   const dayMatches = matches.filter(m => m.d === selectedDate);
-  const liveCount = matches.filter(m => m.status === 'live').length;
+  const liveCount  = matches.filter(m => m.status === 'live').length;
 
   return {
     selectedDate, setSelectedDate,

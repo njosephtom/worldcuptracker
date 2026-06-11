@@ -189,7 +189,7 @@ export function MatchDay({ matches, today, onMatchClick, onTT, onMoveTT, onHideT
                       <div style={{ fontSize: 10, color: 'var(--tx-dim2)', fontWeight: 600, marginBottom: 1, letterSpacing: .3 }}>
                         {m.round || `Grp ${m.g}`}
                       </div>
-                      {live && <div style={{ marginBottom: 1 }}><span style={styles.liveBadge}>● LIVE{liveMinute(md, now)}</span></div>}
+                      {live && <div style={{ marginBottom: 1 }}><span style={styles.liveBadge}>● LIVE{m.clock ? ` · ${m.clock}` : liveMinute(md, now)}</span></div>}
                       {/* Local kickoff time — always visible */}
                       <div style={{ fontSize: 11, color: 'var(--tx-secondary)', fontWeight: 600, whiteSpace: 'nowrap', textAlign: 'right' }}>
                         {fmtLocalTime(md)}

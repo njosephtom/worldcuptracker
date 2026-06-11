@@ -111,7 +111,8 @@ export function MatchModal({ match, onClose }) {
   const live     = match.status === 'live';
   const finished = match.status === 'finished';
   const upcoming = !live && !finished;
-  const liveMin  = live ? getLiveMinute(md, now) : null;
+  // Prefer ESPN clock; fall back to computed minute
+  const liveMin  = live ? (match.clock || getLiveMinute(md, now)) : null;
   const venue    = VENUES[match.v] || { city: match.v, name: '' };
   const roundLabel = match.round || `Group ${match.g}`;
 
