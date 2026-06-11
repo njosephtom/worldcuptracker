@@ -192,7 +192,7 @@ export function MatchDay({ matches, today, onMatchClick, onTeamSelect, onTT, onM
                       </div>
                     </div>
                     <div style={styles.mcardMeta}>
-                      <div style={{ fontSize: 10, color: 'var(--tx-dim2)', fontWeight: 400, marginBottom: 1, letterSpacing: .3 }}>
+                      <div style={{ fontSize: 10, color: 'var(--tx-dim2)', fontWeight: 600, marginBottom: 1, letterSpacing: .3 }}>
                         {m.round || `Grp ${m.g}`}
                       </div>
                       {live && <div style={{ marginBottom: 1 }}><span style={styles.liveBadge}>● LIVE{liveMinute(md, now)}</span></div>}
@@ -276,10 +276,10 @@ const styles = {
     gap: 6,
     transition: 'background .12s',
   },
-  mcardTeams: { flex: 1, display: 'flex', alignItems: 'center', gap: 4 },
-  teamRow: { display: 'flex', alignItems: 'center', gap: 3, flex: 1 },
+  mcardTeams: { flex: 1, display: 'grid', gridTemplateColumns: '1fr auto 1fr', alignItems: 'center', gap: 4 },
+  teamRow: { display: 'flex', alignItems: 'center', gap: 3 },
   tname: { fontSize: 12, color: 'var(--tx-team2)', fontWeight: 700, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: 80 },
-  scoreBox: { display: 'flex', alignItems: 'center', gap: 3, minWidth: 40, justifyContent: 'center' },
+  scoreBox: { display: 'flex', alignItems: 'center', gap: 3, padding: '0 6px', justifyContent: 'center' },
   scoreNum: { fontSize: 14, fontWeight: 800, color: 'var(--ac-gold)', minWidth: 14, textAlign: 'center' },
   scoreNumLive: { fontSize: 15, fontWeight: 900, color: 'var(--ac-red)', minWidth: 14, textAlign: 'center' },
   vsBox: { fontSize: 8, color: 'var(--tx-dim2)', minWidth: 20, textAlign: 'center' },
