@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { FlagImg } from './FlagImg';
 import { TEAM_CC, GROUPS } from './data';
+import { MOCK_RESULTS } from './mockBracket';
 import trophyUrl from './trophy.svg';
 
 // ─── Layout constants ─────────────────────────────────────────────────────────
@@ -57,10 +58,17 @@ const BD = {
  102: { r:'Bronze', p:0, h:'TBD', a:'TBD'                        },
 };
 
+// ─── Merge mock results into bracket ─────────────────────────────────────────
+const BDM = {};
+Object.entries(BD).forEach(([id, m]) => {
+  const r = MOCK_RESULTS[+id];
+  BDM[+id] = r ? { ...m, h:r.h, a:r.a, hs:r.hs, as:r.as } : { ...m };
+});
+
 function pathFor(slot) {
   if (!slot || slot === 'TBD') return new Set();
   const ids = new Set();
-  for (const [id, m] of Object.entries(BD)) {
+  for (const [id, m] of Object.entries(BDM)) {
     if (m.r !== 'R32') continue;
     if (m.h === slot || m.a === slot) {
       let cur = +id;
@@ -112,23 +120,32 @@ function ConnectorLines({ highlighted }) {
 }
 
 // ─── Knockout team slot ───────────────────────────────────────────────────────
-function TeamSlot({ slot, isActive, onEnter, onLeave, onClick }) {
+function TeamSlot({ slot, score, isWinner, isActive, onEnter, onLeave, onClick }) {
   const { main, sub, tbd } = slotLine(slot);
   return (
     <div onMouseEnter={onEnter} onMouseLeave={onLeave} onClick={onClick} style={{
       display:'flex', alignItems:'center', gap:5, padding:'4px 7px', minHeight:CH/2,
       cursor: tbd ? 'default' : 'pointer',
-      background: isActive ? 'rgba(240,192,64,0.10)' : 'transparent',
+      background: isActive ? 'rgba(240,192,64,0.10)' : (isWinner ? 'rgba(34,197,94,0.09)' : 'transparent'),
+      boxShadow: isWinner ? 'inset 3px 0 0 var(--ac-green)' : 'none',
       transition:'background .15s', borderRadius:3, flexShrink:0,
     }}>
       {!tbd && <FlagImg name={slot} w={18} h={12} />}
       {tbd  && <span style={{ width:18, height:12, display:'inline-block', background:'var(--brk-div)', borderRadius:2 }} />}
       <div style={{ minWidth:0, flex:1 }}>
         <div style={{ fontSize:'var(--fs-sm)', fontWeight:tbd?400:600,
-          color:tbd?'var(--brk-dim)':'var(--brk-txt)',
+          color: isWinner ? 'var(--ac-gold)' : (tbd?'var(--brk-dim)':'var(--brk-txt)'),
           whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis', lineHeight:1.4 }}>{main}</div>
         {sub && <div style={{ fontSize:'var(--fs-xs)', color:'var(--brk-dim)', marginTop:1 }}>{sub}</div>}
       </div>
+      {isWinner && (
+        <span style={{ fontSize:7, background:'var(--ac-green)', color:'#fff', fontWeight:800,
+          padding:'1px 3px', borderRadius:3, flexShrink:0, letterSpacing:0.3 }}>W</span>
+      )}
+      {score !== undefined && (
+        <span style={{ fontSize:'var(--fs-sm)', fontWeight:800, flexShrink:0, minWidth:14, textAlign:'right',
+          color: isWinner ? 'var(--ac-gold)' : 'var(--brk-dim)' }}>{score}</span>
+      )}
     </div>
   );
 }
@@ -136,21 +153,27 @@ function TeamSlot({ slot, isActive, onEnter, onLeave, onClick }) {
 // ─── Knockout match card ──────────────────────────────────────────────────────
 function MatchCard({ id, m, highlighted, hoveredSlot, onSlotEnter, onSlotLeave, onSlotClick }) {
   const isOnPath = highlighted.has(id);
+  const fin      = m.hs !== undefined;
+  const homeWins = fin && m.hs > m.as;
+  const awayWins = fin && m.as > m.hs;
+  const isFinal  = id === 103;
   return (
     <div style={{
       position:'absolute', left:cardX(m.r), top:cardCY(m.r, m.p) - CH/2,
       width:CW, minHeight:CH,
-      background:isOnPath ? 'rgba(240,192,64,0.06)' : 'var(--brk-cell)',
-      border:`1px solid ${isOnPath ? 'rgba(240,192,64,0.5)' : 'var(--brk-bd)'}`,
+      background: isOnPath ? 'rgba(240,192,64,0.06)' : 'var(--brk-cell)',
+      border:`1px solid ${(isOnPath || (isFinal && fin)) ? 'rgba(240,192,64,0.55)' : 'var(--brk-bd)'}`,
       borderRadius:5,
-      boxShadow:isOnPath ? '0 0 10px rgba(240,192,64,0.15)' : 'none',
+      boxShadow: isFinal && fin ? '0 0 24px rgba(240,192,64,0.4)' : isOnPath ? '0 0 10px rgba(240,192,64,0.15)' : 'none',
       transition:'border-color .18s, box-shadow .18s, background .18s',
-      zIndex:isOnPath ? 2 : 1,
+      zIndex: isFinal && fin ? 3 : isOnPath ? 2 : 1,
     }}>
-      <TeamSlot slot={m.h} isActive={m.h === hoveredSlot}
+      <TeamSlot slot={m.h} score={fin ? m.hs : undefined} isWinner={homeWins}
+        isActive={m.h === hoveredSlot}
         onEnter={() => onSlotEnter(m.h)} onLeave={onSlotLeave} onClick={() => onSlotClick(m.h)} />
       <div style={{ height:1, background:'var(--brk-div)', margin:'0 7px' }} />
-      <TeamSlot slot={m.a} isActive={m.a === hoveredSlot}
+      <TeamSlot slot={m.a} score={fin ? m.as : undefined} isWinner={awayWins}
+        isActive={m.a === hoveredSlot}
         onEnter={() => onSlotEnter(m.a)} onLeave={onSlotLeave} onClick={() => onSlotClick(m.a)} />
     </div>
   );
@@ -158,22 +181,68 @@ function MatchCard({ id, m, highlighted, hoveredSlot, onSlotEnter, onSlotLeave, 
 
 // ─── Bronze card ──────────────────────────────────────────────────────────────
 function BronzeCard() {
-  const x = cardX('Final');
-  const y = TH - SH * 2.5;
+  const mock = MOCK_RESULTS[102];
+  const x    = cardX('Final');
+  const y    = TH - SH * 2.5;
+  const fin      = !!mock;
+  const homeWins = fin && mock.hs > mock.as;
+  const awayWins = fin && mock.as > mock.hs;
+
+  const Row = ({ name, score, wins }) => (
+    <div style={{ display:'flex', alignItems:'center', gap:5, padding:'3px 7px', minHeight:(CH-14)/2,
+      background: wins ? 'rgba(34,197,94,0.09)' : 'transparent',
+      boxShadow: wins ? 'inset 3px 0 0 var(--ac-green)' : 'none' }}>
+      {fin
+        ? <FlagImg name={name} w={18} h={12} />
+        : <span style={{ width:18, height:12, display:'inline-block', background:'var(--brk-div)', borderRadius:2 }} />}
+      <span style={{ flex:1, fontSize:'var(--fs-xs)', fontWeight:600, overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap',
+        color: wins ? 'var(--ac-gold)' : (fin ? 'var(--brk-txt)' : 'var(--brk-dim)') }}>
+        {fin ? name : 'TBD'}
+      </span>
+      {wins && <span style={{ fontSize:7, background:'var(--ac-green)', color:'#fff', fontWeight:800, padding:'1px 3px', borderRadius:3, flexShrink:0 }}>W</span>}
+      {fin && <span style={{ fontSize:'var(--fs-xs)', fontWeight:800, color: wins ? 'var(--ac-gold)' : 'var(--brk-dim)' }}>{score}</span>}
+    </div>
+  );
+
   return (
     <div style={{ position:'absolute', left:x, top:y, width:CW, minHeight:CH,
-      background:'var(--brk-cell)', border:'1px solid var(--brk-bd)',
-      borderRadius:5, opacity:0.75 }}>
+      background:'var(--brk-cell)', border:'1px solid var(--brk-bd)', borderRadius:5 }}>
       <div style={{ fontSize:'var(--fs-xs)', color:'var(--brk-dim)', textAlign:'center',
         padding:'2px 0', borderBottom:'1px solid var(--brk-div)', letterSpacing:0.5, textTransform:'lowercase' }}>
         🥉 3rd Place · Jul 19
       </div>
-      {[0,1].map(i => (
-        <div key={i} style={{ display:'flex', alignItems:'center', gap:5, padding:'3px 7px', minHeight:(CH-14)/2 }}>
-          <span style={{ width:18, height:14, display:'inline-block', background:'var(--brk-div)', borderRadius:2 }} />
-          <span style={{ fontSize:'var(--fs-xs)', color:'var(--brk-dim)' }}>TBD</span>
-        </div>
-      ))}
+      <Row name={mock?.h} score={mock?.hs} wins={homeWins} />
+      <div style={{ height:1, background:'var(--brk-div)', margin:'0 7px' }} />
+      <Row name={mock?.a} score={mock?.as} wins={awayWins} />
+    </div>
+  );
+}
+
+// ─── Champion banner ──────────────────────────────────────────────────────────
+function ChampionBanner() {
+  const m = MOCK_RESULTS[103];
+  if (!m) return null;
+  const champion = m.as > m.hs ? m.a : m.h;
+  const score    = m.as > m.hs ? `${m.as}–${m.hs}` : `${m.hs}–${m.as}`;
+  const x = cardX('Final');
+  const y = cardCY('Final', 0) + CH / 2 + 10;
+  return (
+    <div style={{
+      position:'absolute', left:x - 12, top:y, width:CW + 24,
+      background:'linear-gradient(135deg,rgba(240,192,64,0.18),rgba(240,192,64,0.07))',
+      border:'1px solid rgba(240,192,64,0.55)',
+      borderRadius:8, padding:'8px 10px', textAlign:'center', zIndex:5,
+    }}>
+      <div style={{ fontSize:8, color:'var(--brk-dim)', letterSpacing:1, textTransform:'uppercase', marginBottom:5 }}>
+        🏆 World Champions
+      </div>
+      <div style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:8, marginBottom:4 }}>
+        <FlagImg name={champion} w={28} h={20} />
+        <span style={{ fontSize:'var(--fs-base)', fontWeight:800, color:'var(--ac-gold)', letterSpacing:0.3 }}>{champion}</span>
+      </div>
+      <div style={{ fontSize:9, color:'var(--brk-dim)', letterSpacing:0.5 }}>
+        Final: {m.h} {score} {m.a} · Jul 19, 2026
+      </div>
     </div>
   );
 }
@@ -195,13 +264,11 @@ function BracketGroupCard({ g, standings, onTT, onMoveTT, onHideTT }) {
 
   return (
     <div style={{ border:'1px solid var(--brk-bd)', borderRadius:5, overflow:'visible', marginBottom:7, flexShrink:0, width:CW }}>
-      {/* Group header */}
       <div style={{ background:'var(--brk-div)', padding:'4px 7px',
         fontSize:9, fontWeight:700, color:'var(--ac-gold)',
         textTransform:'uppercase', letterSpacing:0.8, borderRadius:'4px 4px 0 0' }}>
         Group {g}
       </div>
-      {/* Team rows */}
       {teams.map((t, i) => {
         const isActive = activeTeam === t.name;
         const ccCode = teamCC(t.name);
@@ -223,6 +290,7 @@ function BracketGroupCard({ g, standings, onTT, onMoveTT, onHideTT }) {
               <span style={{ fontSize:8, color:i < 2 ? 'var(--ac-green)' : 'var(--brk-dim)', width:9, flexShrink:0 }}>{i+1}</span>
               <FlagImg name={t.name} w={22} h={15} />
               <span style={{ flex:1, fontSize:9, color:'var(--brk-txt)', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap', fontWeight:600 }}>{ccCode}</span>
+              {t.pts > 0 && <span style={{ fontSize:8, color:'var(--ac-gold)', fontWeight:700, flexShrink:0 }}>{t.pts}</span>}
             </div>
             {isActive && (
               <div style={{ display:'flex', flexWrap:'wrap', gap:4, padding:'4px 7px',
@@ -252,7 +320,6 @@ function GroupStageDesktop({ standings, onTT, onMoveTT, onHideTT }) {
       ))}
     </div>
   );
-
   return (
     <div style={{ display:'flex', gap:GX, flexShrink:0, paddingRight:GS_DIV }}>
       {renderCol(LEFT_GROUPS)}
@@ -272,18 +339,16 @@ const ROUND_HEADERS = [
 
 // ─── Desktop bracket ──────────────────────────────────────────────────────────
 function DesktopBracket({ standings, hoveredSlot, setHoveredSlot, onTT, onMoveTT, onHideTT }) {
-  const highlighted = useMemo(() => pathFor(hoveredSlot), [hoveredSlot]);
+  const highlighted    = useMemo(() => pathFor(hoveredSlot), [hoveredSlot]);
   const allKnockoutIds = Object.keys(BD).map(Number).filter(id => BD[id].r !== 'Bronze');
-  const TOTAL_W = GS_W + TW;
+  const TOTAL_W        = GS_W + TW;
+  const hasMock        = !!MOCK_RESULTS[103];
+  const trophyTop      = cardCY('Final', 0) + CH / 2 + (hasMock ? 110 : 14);
 
   return (
     <div style={{ overflowX:'auto', overflowY:'auto', flex:1, minHeight:0 }}>
-      {/* Sticky header row */}
-      <div style={{
-        display:'flex', position:'sticky', top:0, zIndex:10,
-        background:'var(--brk-bg)', borderBottom:'1px solid var(--brk-div)',
-        minWidth:TOTAL_W + 2,
-      }}>
+      <div style={{ display:'flex', position:'sticky', top:0, zIndex:10,
+        background:'var(--brk-bg)', borderBottom:'1px solid var(--brk-div)', minWidth:TOTAL_W + 2 }}>
         <div style={{ width:GS_W, flexShrink:0, textAlign:'center', padding:'6px 0 5px' }}>
           <div style={{ fontSize:'var(--fs-xs)', fontWeight:700, color:'var(--ac-gold)', letterSpacing:0.8, textTransform:'uppercase' }}>Group Stage</div>
           <div style={{ fontSize:'var(--fs-xs)', color:'var(--brk-dim)', marginTop:2 }}>Jun 11 – 27</div>
@@ -296,30 +361,23 @@ function DesktopBracket({ standings, hoveredSlot, setHoveredSlot, onTT, onMoveTT
         ))}
       </div>
 
-      {/* Content row */}
       <div style={{ display:'flex', alignItems:'flex-start', minWidth:TOTAL_W + 2, margin:'8px 1px 16px' }}>
         <GroupStageDesktop standings={standings} onTT={onTT} onMoveTT={onMoveTT} onHideTT={onHideTT} />
         <div style={{ width:1, height:TH, background:'var(--brk-arm)', opacity:0.4, flexShrink:0, alignSelf:'stretch' }} />
         <div style={{ position:'relative', width:TW, height:TH, flexShrink:0 }}>
           <ConnectorLines highlighted={highlighted} />
           {allKnockoutIds.map(id => (
-            <MatchCard key={id} id={id} m={BD[id]} highlighted={highlighted}
+            <MatchCard key={id} id={id} m={BDM[id]} highlighted={highlighted}
               hoveredSlot={hoveredSlot}
               onSlotEnter={slot => slot && slot !== 'TBD' && setHoveredSlot(slot)}
               onSlotLeave={() => setHoveredSlot(null)}
               onSlotClick={slot => { if (!slot || slot === 'TBD') return; setHoveredSlot(s => s === slot ? null : slot); }} />
           ))}
           <BronzeCard />
-          {/* Trophy below the Final card */}
+          {hasMock && <ChampionBanner />}
           <img src={trophyUrl} alt="World Cup Trophy"
-            style={{
-              position:'absolute',
-              left: cardX('Final') + CW / 2 - 40,
-              top:  cardCY('Final', 0) + CH / 2 + 14,
-              width: 80, height: 110,
-              filter: 'drop-shadow(0 0 12px rgba(240,192,64,0.6))',
-              pointerEvents: 'none',
-            }} />
+            style={{ position:'absolute', left:cardX('Final') + CW / 2 - 40, top:trophyTop,
+              width:80, height:110, filter:'drop-shadow(0 0 12px rgba(240,192,64,0.6))', pointerEvents:'none' }} />
         </div>
       </div>
     </div>
@@ -329,40 +387,71 @@ function DesktopBracket({ standings, hoveredSlot, setHoveredSlot, onTT, onMoveTT
 // ─── Mobile: knockout match row ───────────────────────────────────────────────
 function MobileMatchRow({ id, m, highlighted, hoveredSlot, onSlotToggle }) {
   const isOnPath = highlighted.has(id);
+  const fin      = m.hs !== undefined;
+  const homeWins = fin && m.hs > m.as;
+  const awayWins = fin && m.as > m.hs;
+  const isFinal  = id === 103;
+
   return (
     <div style={{
-      background:isOnPath ? 'rgba(240,192,64,0.06)' : 'var(--brk-cell)',
-      border:`1px solid ${isOnPath ? 'rgba(240,192,64,0.45)' : 'var(--brk-bd)'}`,
+      background: isOnPath ? 'rgba(240,192,64,0.06)' : 'var(--brk-cell)',
+      border:`1px solid ${(isOnPath || (isFinal && fin)) ? 'rgba(240,192,64,0.45)' : 'var(--brk-bd)'}`,
       borderRadius:7, overflow:'hidden', marginBottom:8,
-      boxShadow:isOnPath ? '0 0 8px rgba(240,192,64,0.12)' : 'none',
+      boxShadow: isFinal && fin ? '0 0 20px rgba(240,192,64,0.3)' : isOnPath ? '0 0 8px rgba(240,192,64,0.12)' : 'none',
       transition:'all .18s',
     }}>
-      {[m.h, m.a].map((slot, i) => {
+      {[
+        { slot:m.h, score:fin?m.hs:undefined, wins:homeWins },
+        { slot:m.a, score:fin?m.as:undefined, wins:awayWins },
+      ].map(({ slot, score, wins }, i) => {
         const { main, sub, tbd } = slotLine(slot);
         const active = slot === hoveredSlot;
         return (
           <React.Fragment key={i}>
-            {i === 1 && <div style={{ height:1, background:'var(--brk-div)', margin:'0 10px' }} />}
+            {i === 1 && (
+              <div style={{ display:'flex', alignItems:'center', padding:'0 12px', gap:6 }}>
+                <div style={{ flex:1, height:1, background:'var(--brk-div)' }} />
+                <span style={{ fontSize:9, color:'var(--brk-dim)', letterSpacing:0.5 }}>{fin ? 'FT' : 'vs'}</span>
+                <div style={{ flex:1, height:1, background:'var(--brk-div)' }} />
+              </div>
+            )}
             <div onClick={() => !tbd && onSlotToggle(slot)} style={{
               display:'flex', alignItems:'center', gap:8, padding:'8px 12px',
-              cursor:tbd ? 'default' : 'pointer',
-              background:active ? 'rgba(240,192,64,0.10)' : 'transparent',
+              cursor: tbd ? 'default' : 'pointer',
+              background: active ? 'rgba(240,192,64,0.10)' : (wins ? 'rgba(34,197,94,0.09)' : 'transparent'),
+              boxShadow: wins ? 'inset 4px 0 0 var(--ac-green)' : 'none',
               transition:'background .15s',
             }}>
               {!tbd
                 ? <FlagImg name={slot} w={22} h={15} />
-                : <span style={{ width:22, height:15, display:'inline-block', background:'var(--brk-div)', borderRadius:2 }} />
-              }
+                : <span style={{ width:22, height:15, display:'inline-block', background:'var(--brk-div)', borderRadius:2 }} />}
               <div style={{ flex:1, minWidth:0 }}>
                 <div style={{ fontSize:'var(--fs-base)', fontWeight:tbd?400:600,
-                  color:tbd?'var(--brk-dim)':'var(--brk-txt)',
+                  color: wins ? 'var(--ac-gold)' : (tbd?'var(--brk-dim)':'var(--brk-txt)'),
                   whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis', lineHeight:1.4 }}>{main}</div>
                 {sub && <div style={{ fontSize:'var(--fs-sm)', color:'var(--brk-dim)', marginTop:2 }}>{sub}</div>}
               </div>
+              {wins && (
+                <span style={{ fontSize:10, background:'var(--ac-green)', color:'#fff', fontWeight:800,
+                  padding:'2px 5px', borderRadius:4, flexShrink:0, letterSpacing:0.3 }}>W</span>
+              )}
+              {score !== undefined && (
+                <span style={{ fontSize:22, fontWeight:800, color:wins?'var(--ac-gold)':'var(--brk-dim)', flexShrink:0 }}>{score}</span>
+              )}
             </div>
           </React.Fragment>
         );
       })}
+
+      {isFinal && fin && (
+        <div style={{ background:'rgba(240,192,64,0.10)', borderTop:'1px solid rgba(240,192,64,0.3)',
+          padding:'6px 12px', display:'flex', alignItems:'center', gap:8 }}>
+          <FlagImg name={m.as > m.hs ? m.a : m.h} w={22} h={15} />
+          <span style={{ fontSize:'var(--fs-sm)', fontWeight:700, color:'var(--ac-gold)' }}>
+            🏆 {m.as > m.hs ? m.a : m.h} — World Champions 2026
+          </span>
+        </div>
+      )}
     </div>
   );
 }
@@ -399,7 +488,6 @@ function MobileBracket({ standings, hoveredSlot, setHoveredSlot, onTT, onMoveTT,
 
   return (
     <div style={{ display:'flex', flexDirection:'column', height:'100%' }}>
-      {/* Tab bar */}
       <div style={{ display:'flex', overflowX:'auto', borderBottom:'1px solid var(--brk-div)',
         background:'var(--brk-bg)', flexShrink:0 }}>
         {MOBILE_ROUNDS.map(({ key, label }) => {
@@ -417,7 +505,6 @@ function MobileBracket({ standings, hoveredSlot, setHoveredSlot, onTT, onMoveTT,
         })}
       </div>
 
-      {/* Round title */}
       <div style={{ padding:'10px 12px 6px', flexShrink:0 }}>
         <span style={{ fontSize:'var(--fs-base)', fontWeight:700, color:'var(--ac-gold)', letterSpacing:0.3 }}>{rnd.full}</span>
         <span style={{ fontSize:'var(--fs-sm)', color:'var(--brk-dim)', marginLeft:10 }}>{rnd.date}</span>
@@ -436,7 +523,7 @@ function MobileBracket({ standings, hoveredSlot, setHoveredSlot, onTT, onMoveTT,
         : (
           <div style={{ overflowY:'auto', flex:1, padding:'0 12px 12px' }}>
             {rnd.ids.map(id => (
-              <MobileMatchRow key={id} id={id} m={BD[id]}
+              <MobileMatchRow key={id} id={id} m={BDM[id]}
                 highlighted={highlighted} hoveredSlot={hoveredSlot} onSlotToggle={toggleSlot} />
             ))}
           </div>
