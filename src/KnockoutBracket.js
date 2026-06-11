@@ -58,17 +58,20 @@ const BD = {
  102: { r:'Bronze', p:0, h:'TBD', a:'TBD'                        },
 };
 
-// ─── Merge mock results into bracket ─────────────────────────────────────────
-const BDM = {};
-Object.entries(BD).forEach(([id, m]) => {
-  const r = MOCK_RESULTS[+id];
-  BDM[+id] = r ? { ...m, h:r.h, a:r.a, hs:r.hs, as:r.as } : { ...m };
-});
+// ─── Merge mock results into bracket (computed per-render based on toggle) ────
+function buildBDM(enabled) {
+  const out = {};
+  Object.entries(BD).forEach(([id, m]) => {
+    const r = enabled ? MOCK_RESULTS[+id] : null;
+    out[+id] = r ? { ...m, h:r.h, a:r.a, hs:r.hs, as:r.as } : { ...m };
+  });
+  return out;
+}
 
-function pathFor(slot) {
+function pathFor(slot, bdm) {
   if (!slot || slot === 'TBD') return new Set();
   const ids = new Set();
-  for (const [id, m] of Object.entries(BDM)) {
+  for (const [id, m] of Object.entries(bdm)) {
     if (m.r !== 'R32') continue;
     if (m.h === slot || m.a === slot) {
       let cur = +id;
@@ -79,8 +82,9 @@ function pathFor(slot) {
 }
 
 function slotLine(slot) {
-  if (!slot || slot === 'TBD') return { main:'TBD', sub:null, tbd:true };
-  if (slot.startsWith('3+'))   return { main:'3 ' + slot.slice(2), sub:null, tbd:false };
+  if (!slot || slot === 'TBD')   return { main:'TBD', sub:null, tbd:true };
+  if (slot.startsWith('3+'))     return { main:'3rd ' + slot.slice(2), sub:null, tbd:true };
+  if (/^\d[A-L]$/.test(slot))   return { main:slot, sub:null, tbd:true };
   return { main:slot, sub:null, tbd:false };
 }
 const teamCC = (name) => TEAM_CC[name] || name.slice(0,3).toUpperCase();
@@ -180,8 +184,8 @@ function MatchCard({ id, m, highlighted, hoveredSlot, onSlotEnter, onSlotLeave, 
 }
 
 // ─── Bronze card ──────────────────────────────────────────────────────────────
-function BronzeCard() {
-  const mock = MOCK_RESULTS[102];
+function BronzeCard({ mockEnabled }) {
+  const mock = mockEnabled ? MOCK_RESULTS[102] : null;
   const x    = cardX('Final');
   const y    = TH - SH * 2.5;
   const fin      = !!mock;
@@ -219,8 +223,8 @@ function BronzeCard() {
 }
 
 // ─── Champion banner ──────────────────────────────────────────────────────────
-function ChampionBanner() {
-  const m = MOCK_RESULTS[103];
+function ChampionBanner({ mockEnabled }) {
+  const m = mockEnabled ? MOCK_RESULTS[103] : null;
   if (!m) return null;
   const champion = m.as > m.hs ? m.a : m.h;
   const score    = m.as > m.hs ? `${m.as}–${m.hs}` : `${m.hs}–${m.as}`;
@@ -338,11 +342,11 @@ const ROUND_HEADERS = [
 ];
 
 // ─── Desktop bracket ──────────────────────────────────────────────────────────
-function DesktopBracket({ standings, hoveredSlot, setHoveredSlot, onTT, onMoveTT, onHideTT }) {
-  const highlighted    = useMemo(() => pathFor(hoveredSlot), [hoveredSlot]);
+function DesktopBracket({ bdm, mockEnabled, standings, hoveredSlot, setHoveredSlot, onTT, onMoveTT, onHideTT }) {
+  const highlighted    = useMemo(() => pathFor(hoveredSlot, bdm), [hoveredSlot, bdm]);
   const allKnockoutIds = Object.keys(BD).map(Number).filter(id => BD[id].r !== 'Bronze');
   const TOTAL_W        = GS_W + TW;
-  const hasMock        = !!MOCK_RESULTS[103];
+  const hasMock        = mockEnabled && !!MOCK_RESULTS[103];
   const trophyTop      = cardCY('Final', 0) + CH / 2 + (hasMock ? 110 : 14);
 
   return (
@@ -367,14 +371,14 @@ function DesktopBracket({ standings, hoveredSlot, setHoveredSlot, onTT, onMoveTT
         <div style={{ position:'relative', width:TW, height:TH, flexShrink:0 }}>
           <ConnectorLines highlighted={highlighted} />
           {allKnockoutIds.map(id => (
-            <MatchCard key={id} id={id} m={BDM[id]} highlighted={highlighted}
+            <MatchCard key={id} id={id} m={bdm[id]} highlighted={highlighted}
               hoveredSlot={hoveredSlot}
               onSlotEnter={slot => slot && slot !== 'TBD' && setHoveredSlot(slot)}
               onSlotLeave={() => setHoveredSlot(null)}
               onSlotClick={slot => { if (!slot || slot === 'TBD') return; setHoveredSlot(s => s === slot ? null : slot); }} />
           ))}
-          <BronzeCard />
-          {hasMock && <ChampionBanner />}
+          <BronzeCard mockEnabled={mockEnabled} />
+          {hasMock && <ChampionBanner mockEnabled={mockEnabled} />}
           <img src={trophyUrl} alt="World Cup Trophy"
             style={{ position:'absolute', left:cardX('Final') + CW / 2 - 40, top:trophyTop,
               width:80, height:110, filter:'drop-shadow(0 0 12px rgba(240,192,64,0.6))', pointerEvents:'none' }} />
@@ -480,10 +484,10 @@ const MOBILE_ROUNDS = [
   { key:'Final', label:'Final',  full:'Final + Bronze', date:'Jul 19',       ids:[103,102] },
 ];
 
-function MobileBracket({ standings, hoveredSlot, setHoveredSlot, onTT, onMoveTT, onHideTT }) {
+function MobileBracket({ bdm, mockEnabled, standings, hoveredSlot, setHoveredSlot, onTT, onMoveTT, onHideTT }) {
   const [activeRound, setActiveRound] = useState('GS');
   const rnd = MOBILE_ROUNDS.find(r => r.key === activeRound);
-  const highlighted = useMemo(() => pathFor(hoveredSlot), [hoveredSlot]);
+  const highlighted = useMemo(() => pathFor(hoveredSlot, bdm), [hoveredSlot, bdm]);
   function toggleSlot(slot) { setHoveredSlot(s => s === slot ? null : slot); }
 
   return (
@@ -523,7 +527,7 @@ function MobileBracket({ standings, hoveredSlot, setHoveredSlot, onTT, onMoveTT,
         : (
           <div style={{ overflowY:'auto', flex:1, padding:'0 12px 12px' }}>
             {rnd.ids.map(id => (
-              <MobileMatchRow key={id} id={id} m={BDM[id]}
+              <MobileMatchRow key={id} id={id} m={bdm[id]}
                 highlighted={highlighted} hoveredSlot={hoveredSlot} onSlotToggle={toggleSlot} />
             ))}
           </div>
@@ -551,17 +555,20 @@ function PathLegend({ slot, onClear }) {
 }
 
 // ─── Root export ──────────────────────────────────────────────────────────────
-export function KnockoutBracket({ isMobile, standings = {}, onTT, onMoveTT, onHideTT }) {
+export function KnockoutBracket({ isMobile, mockEnabled = false, standings = {}, onTT, onMoveTT, onHideTT }) {
   const [hoveredSlot, setHoveredSlot] = useState(null);
+  const bdm = useMemo(() => buildBDM(mockEnabled), [mockEnabled]);
 
   return (
     <div style={{ height:'100%', display:'flex', flexDirection:'column',
       background:'var(--brk-bg)', fontFamily:'var(--font-sans)',
       position:'relative', userSelect:'none' }}>
       {isMobile
-        ? <MobileBracket standings={standings} hoveredSlot={hoveredSlot} setHoveredSlot={setHoveredSlot}
+        ? <MobileBracket bdm={bdm} mockEnabled={mockEnabled} standings={standings}
+            hoveredSlot={hoveredSlot} setHoveredSlot={setHoveredSlot}
             onTT={onTT} onMoveTT={onMoveTT} onHideTT={onHideTT} />
-        : <DesktopBracket standings={standings} hoveredSlot={hoveredSlot} setHoveredSlot={setHoveredSlot}
+        : <DesktopBracket bdm={bdm} mockEnabled={mockEnabled} standings={standings}
+            hoveredSlot={hoveredSlot} setHoveredSlot={setHoveredSlot}
             onTT={onTT} onMoveTT={onMoveTT} onHideTT={onHideTT} />
       }
       {!isMobile && <PathLegend slot={hoveredSlot} onClear={() => setHoveredSlot(null)} />}

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useWorldCup } from './useWorldCup';
+import { useWorldCup, isDevMode } from './useWorldCup';
 import { useTooltip, TooltipPortal } from './Tooltip';
 import { MatchDay } from './MatchDay';
 import { VenueMap } from './VenueMap';
@@ -119,6 +119,22 @@ export default function App() {
           {wc.liveCount > 0 && (
             <span style={{ color: 'var(--ac-red)', fontWeight: 700, animation: 'blink 1.4s infinite' }}>● {wc.liveCount} LIVE</span>
           )}
+          {isDevMode && (
+            <button
+              style={{
+                ...S.dbtn,
+                fontSize: 10, padding: '4px 10px', letterSpacing: 0.4,
+                background: wc.mockEnabled ? 'rgba(34,197,94,0.15)' : 'var(--bg-input)',
+                border: wc.mockEnabled ? '1px solid var(--ac-green)' : '1px solid var(--bd-btn)',
+                color: wc.mockEnabled ? 'var(--ac-green)' : 'var(--tx-dim)',
+                transition: 'all .18s',
+              }}
+              onClick={() => wc.setMockEnabled(v => !v)}
+              title="Toggle mock data — dev/localhost only"
+            >
+              🎭 Mock {wc.mockEnabled ? 'ON' : 'OFF'}
+            </button>
+          )}
           <button
             style={{ ...S.dbtn, fontSize: 15, padding: '3px 8px', lineHeight: 1 }}
             onClick={() => setIsDark(d => { const n = !d; localStorage.setItem('wc-theme', n ? 'dark' : 'light'); return n; })}
@@ -151,7 +167,7 @@ export default function App() {
           {/* LEFT: Fixture — pushed below match list on mobile */}
           <div style={{ ...S.colLeft, ...(isMobile ? S.colLeftMobile : {}), order: isMobile ? 2 : 0 }}>
             <div style={{ overflow: 'hidden', flex: 1, minHeight: 0 }}>
-              <KnockoutBracket isMobile={isMobile} standings={wc.standings}
+              <KnockoutBracket isMobile={isMobile} mockEnabled={wc.mockEnabled} standings={wc.standings}
                   onTT={show} onMoveTT={move} onHideTT={hide} />
             </div>
           </div>
