@@ -151,6 +151,11 @@ export function MatchDay({ matches, today, onMatchClick, onTeamSelect, onTT, onM
                 const roundLabel = m.round || `Group ${m.g}`;
                 const ttHtml = `<div style="font-weight:500;color:var(--ac-gold);margin-bottom:5px">${roundLabel}: ${flagLabel(m.h)} vs ${flagLabel(m.a)}</div><div style="color:var(--tx-secondary)">📅 ${m.d} · ${m.t}</div><div style="color:var(--tx-secondary)">🏟️ ${v.name || v.city}, ${v.city}</div>${ft || live ? `<div style="color:var(--ac-green);font-weight:500;margin-top:4px">Score: ${m.homeScore} – ${m.awayScore}</div>` : ''}`;
 
+                const md       = parseMatchDateTime(m.d, m.t);
+                const countdown = matchCountdown(md, now);
+                const homeWins  = ft && m.homeScore > m.awayScore;
+                const awayWins  = ft && m.awayScore > m.homeScore;
+
                 return (
                   <div key={m.id}
                     style={{ ...styles.mcard, borderLeft: live ? '3px solid var(--ac-red)' : '3px solid transparent' }}
@@ -164,7 +169,9 @@ export function MatchDay({ matches, today, onMatchClick, onTeamSelect, onTT, onM
                         <span style={{ cursor: 'pointer', flexShrink: 0 }} onClick={e => handleTeamClick(e, m.h)}>
                           <FlagImg name={m.h} w={18} h={12} />
                         </span>
-                        <span style={{ ...styles.tname, cursor: 'pointer' }} onClick={e => handleTeamClick(e, m.h)}>{m.h}</span>
+                        <span style={{ ...styles.tname, cursor: 'pointer', color: homeWins ? 'var(--ac-gold)' : undefined }}
+                          onClick={e => handleTeamClick(e, m.h)}>{m.h}</span>
+                        {homeWins && <span style={styles.wBadge}>W</span>}
                       </div>
                       {ft || live ? (
                         <div style={styles.scoreBox}>
@@ -175,41 +182,32 @@ export function MatchDay({ matches, today, onMatchClick, onTeamSelect, onTT, onM
                       ) : (
                         <div style={styles.vsBox}>vs</div>
                       )}
-                      <div style={styles.teamRow}>
+                      <div style={{ ...styles.teamRow, justifyContent: 'flex-end' }}>
+                        {awayWins && <span style={styles.wBadge}>W</span>}
+                        <span style={{ ...styles.tname, cursor: 'pointer', color: awayWins ? 'var(--ac-gold)' : undefined, textAlign: 'right' }}
+                          onClick={e => handleTeamClick(e, m.a)}>{m.a}</span>
                         <span style={{ cursor: 'pointer', flexShrink: 0 }} onClick={e => handleTeamClick(e, m.a)}>
                           <FlagImg name={m.a} w={18} h={12} />
                         </span>
-                        <span style={{ ...styles.tname, cursor: 'pointer' }} onClick={e => handleTeamClick(e, m.a)}>{m.a}</span>
                       </div>
                     </div>
                     <div style={styles.mcardMeta}>
-                      {/* Round / group label — same size as time, muted for groups */}
                       <div style={{ fontSize: 11, color: m.round ? 'var(--ac-gold)' : 'var(--tx-dim2)', fontWeight: m.round ? 700 : 400, marginBottom: 2, letterSpacing: .3 }}>
                         {m.round || `Grp ${m.g}`}
                       </div>
-                      {live && (() => {
-                        const md = parseMatchDateTime(m.d, m.t);
-                        return <span style={styles.liveBadge}>● LIVE{liveMinute(md, now)}</span>;
-                      })()}
-                      {ft && <span style={styles.ftBadge}>FT</span>}
-                      {!live && !ft && (() => {
-                        const md = parseMatchDateTime(m.d, m.t);
-                        const countdown = matchCountdown(md, now);
-                        return (
-                          /* time + countdown on one line */
-                          <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'flex-end', gap: 5, flexWrap: 'nowrap' }}>
-                            <span style={{ fontSize: 11, color: 'var(--tx-secondary)', fontWeight: 600, whiteSpace: 'nowrap' }}>
-                              {fmtLocalTime(md)}
-                            </span>
-                            {countdown && (
-                              <span style={{ fontSize: 9, color: 'var(--ac-green)', fontWeight: 600, whiteSpace: 'nowrap' }}>
-                                {countdown}
-                              </span>
-                            )}
-                          </div>
-                        );
-                      })()}
-                      {/* city · stadium on one line */}
+                      {/* Status badge + local kickoff time — always show time */}
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 4, flexWrap: 'nowrap' }}>
+                        {live && <span style={styles.liveBadge}>● LIVE{liveMinute(md, now)}</span>}
+                        {ft  && <span style={styles.ftBadge}>FT</span>}
+                        <span style={{ fontSize: 11, color: 'var(--tx-secondary)', fontWeight: 600, whiteSpace: 'nowrap' }}>
+                          {fmtLocalTime(md)}
+                        </span>
+                      </div>
+                      {!ft && !live && countdown && (
+                        <div style={{ fontSize: 9, color: 'var(--ac-green)', fontWeight: 600, textAlign: 'right', whiteSpace: 'nowrap' }}>
+                          {countdown}
+                        </div>
+                      )}
                       <div style={{ fontSize: 9, color: 'var(--tx-dim2)', marginTop: 3, fontWeight: 500, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                         📍 {v.city}{v.name ? ` · ${v.name}` : ''}
                       </div>
@@ -291,4 +289,5 @@ const styles = {
   mcardMeta: { textAlign: 'right', fontSize: 8, color: 'var(--tx-dim)', minWidth: 120, maxWidth: 120, overflow: 'hidden', flexShrink: 0 },
   liveBadge: { display: 'inline-block', background: 'var(--ac-red)', color: '#fff', fontSize: 7, fontWeight: 600, padding: '1px 4px', borderRadius: 6, animation: 'blink 1.4s infinite' },
   ftBadge: { fontSize: 8, color: 'var(--ac-green)', fontWeight: 600 },
+  wBadge: { fontSize: 7, background: 'var(--ac-green)', color: '#fff', fontWeight: 800, padding: '1px 3px', borderRadius: 3, flexShrink: 0, letterSpacing: 0.3 },
 };
