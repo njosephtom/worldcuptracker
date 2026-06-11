@@ -72,12 +72,9 @@ function pathFor(slot) {
 
 function slotLine(slot) {
   if (!slot || slot === 'TBD') return { main:'TBD', sub:null, tbd:true };
-  if (slot.startsWith('3+'))   return { main:'3rd place', sub:slot.slice(2), tbd:false };
-  const m = slot.match(/^(\d)(.)$/);
-  if (m) return { main:`${m[1]}${ordSuffix(+m[1])} · Grp ${m[2]}`, sub:null, tbd:false };
+  if (slot.startsWith('3+'))   return { main:'3 ' + slot.slice(2), sub:null, tbd:false };
   return { main:slot, sub:null, tbd:false };
 }
-function ordSuffix(n) { return ['','st','nd','rd'][n] || 'th'; }
 const teamCC = (name) => TEAM_CC[name] || name.slice(0,3).toUpperCase();
 
 // ─── SVG connectors ───────────────────────────────────────────────────────────
