@@ -40,7 +40,8 @@ export function useWorldCup(autoRefresh = true) {
       };
     }
 
-    return { ...m, status: 'upcoming', homeScore: undefined, awayScore: undefined, clock: undefined };
+    const isPast = m.d < today;
+    return { ...m, status: isPast ? 'finished' : 'upcoming', homeScore: undefined, awayScore: undefined, clock: undefined };
   });
 
   const standings  = computeStandings(matches, null);
