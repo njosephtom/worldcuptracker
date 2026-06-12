@@ -91,7 +91,7 @@ function parseESPN(data) {
   return scores;
 }
 
-export function useLiveScores() {
+export function useLiveScores(paused = false) {
   const [scores, setScores] = useState({});
   const timer  = useRef(null);
 
@@ -105,10 +105,11 @@ export function useLiveScores() {
   }, []);
 
   useEffect(() => {
+    if (paused) { clearInterval(timer.current); return; }
     fetchScores();
     timer.current = setInterval(fetchScores, POLL_MS);
     return () => clearInterval(timer.current);
-  }, [fetchScores]);
+  }, [fetchScores, paused]);
 
   return scores;
 }

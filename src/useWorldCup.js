@@ -7,7 +7,7 @@ export const isDevMode =
   process.env.NODE_ENV === 'development' ||
   (typeof window !== 'undefined' && window.location.hostname === 'localhost');
 
-export function useWorldCup() {
+export function useWorldCup(autoRefresh = true) {
   const today   = todayStr();
   const initial = clampDate(today);
   const [selectedDate, setSelectedDate] = useState(initial);
@@ -15,7 +15,7 @@ export function useWorldCup() {
   const [mockEnabled,  setMockEnabled]  = useState(false);
 
   // Live scores polled from ESPN every 60 s
-  const liveScores = useLiveScores();
+  const liveScores = useLiveScores(!autoRefresh);
 
   const matches = MATCHES.map(m => {
     // Dev mock takes priority

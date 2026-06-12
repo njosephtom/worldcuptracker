@@ -33,13 +33,15 @@ function countdownText(targetDate) {
 }
 
 export default function App() {
-  const wc = useWorldCup();
+  const wc = useWorldCup(autoRefresh);
   const { tooltip, show, move, hide } = useTooltip();
   const [selectedTeam, setSelectedTeam] = useState(null);
   const [selectedMatch, setSelectedMatch] = useState(null);
   const [counter, setCounter] = useState(() => countdownText(TOURNAMENT_START));
   const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth < MOBILE_BREAKPOINT);
   const [isDark, setIsDark] = useState(() => localStorage.getItem('wc-theme') !== 'light');
+  const [use24h, setUse24h] = useState(() => localStorage.getItem('wc-clock') === '24h');
+  const [autoRefresh, setAutoRefresh] = useState(() => localStorage.getItem('wc-autorefresh') !== 'off');
   const [tzAbbr] = useState(getTZAbbr);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const refreshingRef = useRef(false);
@@ -70,6 +72,7 @@ export default function App() {
   }
 
   useEffect(() => {
+    if (!autoRefresh) return;
     const t = setInterval(() => {
       if (!refreshingRef.current) {
         refreshingRef.current = true;
@@ -78,7 +81,7 @@ export default function App() {
       }
     }, 5 * 60 * 1000);
     return () => clearInterval(t);
-  }, []);
+  }, [autoRefresh]);
 
   function handleDateShift(n) {
     const nd = clampDate(shiftDate(wc.selectedDate, n));
@@ -137,6 +140,24 @@ export default function App() {
             </button>
           )}
           <button
+            style={{ ...S.dbtn, fontSize: 11, padding: '4px 8px',
+              color: autoRefresh ? 'var(--ac-green)' : 'var(--tx-dim)',
+              borderColor: autoRefresh ? 'var(--ac-green)' : 'var(--bd-btn)',
+              background: autoRefresh ? 'rgba(34,197,94,0.08)' : 'var(--bg-input)',
+            }}
+            onClick={() => setAutoRefresh(v => { const n = !v; localStorage.setItem('wc-autorefresh', n ? 'on' : 'off'); return n; })}
+            title={autoRefresh ? 'Auto-refresh ON — click to disable' : 'Auto-refresh OFF — click to enable'}
+          >
+            ↻ Auto {autoRefresh ? 'ON' : 'OFF'}
+          </button>
+          <button
+            style={{ ...S.dbtn, fontSize: 11, padding: '4px 8px' }}
+            onClick={() => setUse24h(v => { const n = !v; localStorage.setItem('wc-clock', n ? '24h' : '12h'); return n; })}
+            title="Toggle 12h / 24h clock"
+          >
+            {use24h ? '24h' : '12h'}
+          </button>
+          <button
             style={{ ...S.dbtn, fontSize: 15, padding: '3px 8px', lineHeight: 1 }}
             onClick={() => setIsDark(d => { const n = !d; localStorage.setItem('wc-theme', n ? 'dark' : 'light'); return n; })}
             title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
@@ -146,7 +167,7 @@ export default function App() {
           <button
             style={{ ...S.dbtn, fontSize: 14, padding: '3px 8px', lineHeight: 1, opacity: isRefreshing ? 0.5 : 1, transition: 'opacity .2s' }}
             onClick={handleRefresh}
-            title="Refresh data (auto-refreshes every 5 min)"
+            title="Manually refresh data"
           >
             <span style={{ display: 'inline-block', animation: isRefreshing ? 'spin .7s linear infinite' : 'none' }}>↻</span>
           </button>
@@ -177,6 +198,7 @@ export default function App() {
             <MatchDay
               matches={wc.matches}
               today={wc.today}
+              use24h={use24h}
               onMatchClick={m => setSelectedMatch(m)}
               onTT={show} onMoveTT={move} onHideTT={hide}
             />
@@ -192,7 +214,7 @@ export default function App() {
       )}
 
       <SquadModal team={selectedTeam} onClose={() => setSelectedTeam(null)} />
-      <MatchModal match={selectedMatch} onClose={() => setSelectedMatch(null)} />
+      <MatchModal match={selectedMatch} onClose={() => setSelectedMatch(null)} use24h={use24h} />
       <TooltipPortal tooltip={tooltip} />
 
       {/* Footer */}

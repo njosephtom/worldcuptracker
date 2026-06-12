@@ -14,8 +14,8 @@ function parseMatchDateTime(date, timeET) {
   return new Date(`${date}T${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:00-04:00`);
 }
 
-function fmtLocalTime(d) {
-  return d.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit', hour12: true });
+function fmtLocalTime(d, use24h) {
+  return d.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit', hour12: !use24h });
 }
 
 function getLiveMinute(matchDate, now) {
@@ -59,7 +59,7 @@ function EventsColumn({ team, events, teamId, align }) {
 }
 
 // ── main component ────────────────────────────────────────────────────────────
-export function MatchModal({ match, onClose }) {
+export function MatchModal({ match, onClose, use24h }) {
   const [now, setNow] = useState(Date.now());
 
   // 1-second ticker for live match minute
@@ -124,7 +124,7 @@ export function MatchModal({ match, onClose }) {
           <div style={S.sbCenter}>
             {upcoming ? (
               <div style={S.sbTime}>
-                <div style={S.sbKickoff}>{fmtLocalTime(md)}</div>
+                <div style={S.sbKickoff}>{fmtLocalTime(md, use24h)}</div>
                 <div style={S.sbDate}>{new Date(md).toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' })}</div>
               </div>
             ) : (

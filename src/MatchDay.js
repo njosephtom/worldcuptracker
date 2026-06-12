@@ -28,8 +28,8 @@ function matchCountdown(matchDate, now) {
   return rh > 0 ? `in ${d}d ${rh}h` : `in ${d}d`;
 }
 
-function fmtLocalTime(matchDate) {
-  return matchDate.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit', hour12: true });
+function fmtLocalTime(matchDate, use24h) {
+  return matchDate.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit', hour12: !use24h });
 }
 
 const VENUE_TZ = {
@@ -51,12 +51,12 @@ const VENUE_TZ = {
   bcplace:   'America/Vancouver',
 };
 
-function fmtVenueTime(date, venueId) {
+function fmtVenueTime(date, venueId, use24h) {
   const tz = VENUE_TZ[venueId];
   if (!tz) return '';
   try {
     return date.toLocaleTimeString('en-US', {
-      hour: 'numeric', minute: '2-digit', hour12: true,
+      hour: 'numeric', minute: '2-digit', hour12: !use24h,
       timeZone: tz, timeZoneName: 'short',
     });
   } catch { return ''; }
@@ -72,7 +72,7 @@ function liveMinute(matchDate, now) {
   return ' 90+';
 }
 
-export function MatchDay({ matches, today, onMatchClick, onTT, onMoveTT, onHideTT }) {
+export function MatchDay({ matches, today, use24h, onMatchClick, onTT, onMoveTT, onHideTT }) {
   const [view, setView] = useState('all');
   const [now, setNow] = useState(Date.now);
 
@@ -221,7 +221,7 @@ export function MatchDay({ matches, today, onMatchClick, onTT, onMoveTT, onHideT
                       {live && <div style={{ marginBottom: 1 }}><span style={styles.liveBadge}>● LIVE{m.clock ? ` · ${m.clock}` : liveMinute(md, now)}</span></div>}
                       {!ft && (
                         <div style={{ fontSize: 11, color: 'var(--tx-secondary)', fontWeight: 600, whiteSpace: 'nowrap', textAlign: 'right' }}>
-                          {fmtLocalTime(md)}
+                          {fmtLocalTime(md, use24h)}
                           {!live && countdown && (
                             <span style={{ fontSize: 9, color: 'var(--ac-green)', fontWeight: 600, marginLeft: 4 }}>
                               ({countdown.replace(/^Starts in /, '').replace(/^in /, '').replace('Starting now', 'now')})
@@ -229,7 +229,7 @@ export function MatchDay({ matches, today, onMatchClick, onTT, onMoveTT, onHideT
                           )}
                         </div>
                       )}
-                      {!ft && (() => { const vt = fmtVenueTime(md, m.v); return vt ? (
+                      {!ft && (() => { const vt = fmtVenueTime(md, m.v, use24h); return vt ? (
                         <div style={{ fontSize: 9, color: 'var(--tx-dim)', fontWeight: 500, whiteSpace: 'nowrap', textAlign: 'right' }}>
                           🏟 {vt}
                         </div>
