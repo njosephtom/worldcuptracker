@@ -33,6 +33,7 @@ function countdownText(targetDate) {
 }
 
 export default function App() {
+  const [autoRefresh, setAutoRefresh] = useState(() => localStorage.getItem('wc-autorefresh') !== 'off');
   const wc = useWorldCup(autoRefresh);
   const { tooltip, show, move, hide } = useTooltip();
   const [selectedTeam, setSelectedTeam] = useState(null);
@@ -41,7 +42,6 @@ export default function App() {
   const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth < MOBILE_BREAKPOINT);
   const [isDark, setIsDark] = useState(() => localStorage.getItem('wc-theme') !== 'light');
   const [use24h, setUse24h] = useState(() => localStorage.getItem('wc-clock') === '24h');
-  const [autoRefresh, setAutoRefresh] = useState(() => localStorage.getItem('wc-autorefresh') !== 'off');
   const [tzAbbr] = useState(getTZAbbr);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const refreshingRef = useRef(false);
