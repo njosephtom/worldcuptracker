@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { VENUES, flagLabel, fmtDate } from './data';
 import { FlagImg } from './FlagImg';
 
@@ -75,11 +75,22 @@ function liveMinute(matchDate, now) {
 export function MatchDay({ matches, today, use24h, onMatchClick, onTT, onMoveTT, onHideTT }) {
   const [view, setView] = useState('all');
   const [now, setNow] = useState(Date.now);
+  const todayRef = useRef(null);
 
   useEffect(() => {
     const t = setInterval(() => setNow(Date.now()), 1000);
     return () => clearInterval(t);
   }, []);
+
+  // Scroll to today's section when switching to "all" view
+  useEffect(() => {
+    if (view === 'all') {
+      const t = setTimeout(() => {
+        todayRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 60);
+      return () => clearTimeout(t);
+    }
+  }, [view]);
 
   const tzAbbr = useMemo(() => {
     try {
@@ -147,7 +158,7 @@ export function MatchDay({ matches, today, use24h, onMatchClick, onTT, onMoveTT,
           const isToday = date === today;
           const dMatches = grouped[date];
           return (
-            <div key={date} style={isToday && view === 'all' ? {
+            <div key={date} ref={isToday ? todayRef : null} style={isToday && view === 'all' ? {
               border: '1.5px solid rgba(240,192,64,0.55)',
               borderRadius: 8,
               margin: '6px 6px 10px',

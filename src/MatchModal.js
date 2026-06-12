@@ -2,6 +2,49 @@ import React, { useEffect, useState } from 'react';
 import { VENUES } from './data';
 import { FlagImg } from './FlagImg';
 
+// ── ESPN historical fetch (for finished matches no longer in live scoreboard) ──
+const ESPN_SCOREBOARD = 'https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard';
+const ESPN_NAME_MAP = {
+  'Czech Republic':'Czechia','Bosnia-Herzegovina':'Bosnia and Herzegovina',
+  "Cote d'Ivoire":'Ivory Coast',"Côte D'Ivoire":'Ivory Coast',"Côte d'Ivoire":'Ivory Coast',
+  'Korea Republic':'South Korea','Republic of Korea':'South Korea',
+  'IR Iran':'Iran','Türkiye':'Turkey','Curacao':'Curaçao',
+  'Congo DR':'DR Congo','Democratic Republic of the Congo':'DR Congo',
+  'Cabo Verde':'Cape Verde','USA':'United States',
+};
+function espnNorm(n) { return ESPN_NAME_MAP[n] || n; }
+function fixEnc(s) { if (!s) return s; try { return decodeURIComponent(escape(s)); } catch { return s; } }
+async function fetchMatchEvents(matchDate, homeTeam, awayTeam) {
+  const dateStr = matchDate.replace(/-/g, '');
+  const res = await fetch(`${ESPN_SCOREBOARD}?dates=${dateStr}&ts=${Date.now()}`);
+  if (!res.ok) return null;
+  const data = await res.json();
+  for (const ev of (data?.events || [])) {
+    const comp = ev.competitions?.[0];
+    if (!comp) continue;
+    const home = comp.competitors?.find(c => c.homeAway === 'home');
+    const away = comp.competitors?.find(c => c.homeAway === 'away');
+    if (!home || !away) continue;
+    if (espnNorm(home.team?.displayName) !== homeTeam) continue;
+    if (espnNorm(away.team?.displayName) !== awayTeam) continue;
+    return (comp.details || [])
+      .filter(d => d.scoringPlay || d.yellowCard || d.redCard)
+      .map(d => ({
+        minute:  d.clock?.displayValue || '',
+        player:  fixEnc(d.athletesInvolved?.[0]?.shortName || ''),
+        teamId:  d.team?.id || '',
+        goal:    d.scoringPlay,
+        ownGoal: d.ownGoal,
+        penalty: d.penaltyKick,
+        yellow:  d.yellowCard,
+        red:     d.redCard,
+        homeTeamId: home.team?.id || '',
+        awayTeamId: away.team?.id || '',
+      }));
+  }
+  return null;
+}
+
 // ── helpers ──────────────────────────────────────────────────────────────────
 function parseMatchDateTime(date, timeET) {
   const str = timeET.replace(' ET', '').trim();
@@ -61,12 +104,27 @@ function EventsColumn({ team, events, teamId, align }) {
 // ── main component ────────────────────────────────────────────────────────────
 export function MatchModal({ match, onClose, use24h }) {
   const [now, setNow] = useState(Date.now());
+  const [extraEvents, setExtraEvents] = useState(null);
+  const [loadingEvents, setLoadingEvents] = useState(false);
 
   // 1-second ticker for live match minute
   useEffect(() => {
     const t = setInterval(() => setNow(Date.now()), 1000);
     return () => clearInterval(t);
   }, []);
+
+  // Fetch historical events when finished match has no events in live data
+  useEffect(() => {
+    if (!match) { setExtraEvents(null); return; }
+    if (match.status !== 'finished') { setExtraEvents(null); return; }
+    if (match.events && match.events.length > 0) { setExtraEvents(null); return; }
+    let cancelled = false;
+    setLoadingEvents(true);
+    fetchMatchEvents(match.d, match.h, match.a)
+      .then(evs => { if (!cancelled) { setExtraEvents(evs); setLoadingEvents(false); } })
+      .catch(() => { if (!cancelled) setLoadingEvents(false); });
+    return () => { cancelled = true; };
+  }, [match]);
 
   // Close on Escape key
   useEffect(() => {
@@ -90,7 +148,11 @@ export function MatchModal({ match, onClose, use24h }) {
   const homeWins  = finished && homeScore > awayScore;
   const awayWins  = finished && awayScore > homeScore;
 
-  const hasEvents = (match.events || []).length > 0;
+  // Use live events from match, or fetched historical events
+  const events      = (match.events && match.events.length > 0) ? match.events : (extraEvents || []);
+  const homeTeamId  = match.homeTeamId || (extraEvents?.[0]?.homeTeamId ?? '');
+  const awayTeamId  = match.awayTeamId || (extraEvents?.[0]?.awayTeamId ?? '');
+  const hasEvents   = events.length > 0;
 
   return (
     <div style={S.backdrop} onClick={onClose}>
@@ -152,21 +214,23 @@ export function MatchModal({ match, onClose, use24h }) {
           <div style={S.eventsLabel}>Match Events</div>
           {upcoming ? (
             <div style={S.evUpcoming}>Match has not started yet</div>
+          ) : loadingEvents ? (
+            <div style={S.evUpcoming}>Loading events…</div>
           ) : !hasEvents ? (
             <div style={S.evUpcoming}>No events recorded</div>
           ) : (
             <div style={S.eventsGrid}>
               <EventsColumn
                 team={match.h}
-                events={match.events}
-                teamId={match.homeTeamId}
+                events={events}
+                teamId={homeTeamId}
                 align="left"
               />
               <div style={S.evDivider} />
               <EventsColumn
                 team={match.a}
-                events={match.events}
-                teamId={match.awayTeamId}
+                events={events}
+                teamId={awayTeamId}
                 align="right"
               />
             </div>
