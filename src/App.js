@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { useWorldCup, isDevMode } from './useWorldCup';
 import { useTooltip, TooltipPortal } from './Tooltip';
 import { MatchDay } from './MatchDay';
@@ -216,6 +217,7 @@ export default function App() {
       <SquadModal team={selectedTeam} onClose={() => setSelectedTeam(null)} />
       <MatchModal match={selectedMatch} onClose={() => setSelectedMatch(null)} use24h={use24h} />
       <TooltipPortal tooltip={tooltip} />
+      <Analytics />
 
       {/* Footer */}
       <div style={S.footer}>
