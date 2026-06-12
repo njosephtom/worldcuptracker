@@ -249,8 +249,8 @@ export const MATCHES = [
 ];
 
 export function todayStr() {
-  const n = new Date();
-  return `${n.getFullYear()}-${String(n.getMonth()+1).padStart(2,'0')}-${String(n.getDate()).padStart(2,'0')}`;
+  // Use ET (tournament timezone) so "today" matches the scheduled game date
+  return new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
 }
 
 export function clampDate(d) {

@@ -30,10 +30,13 @@ export function useWorldCup() {
     if (live) {
       return {
         ...m,
-        status:    live.status,
-        homeScore: live.homeScore,
-        awayScore: live.awayScore,
-        clock:     live.clock,
+        status:     live.status,
+        homeScore:  live.homeScore,
+        awayScore:  live.awayScore,
+        clock:      live.clock,
+        homeTeamId: live.homeTeamId,
+        awayTeamId: live.awayTeamId,
+        events:     live.events,
       };
     }
 

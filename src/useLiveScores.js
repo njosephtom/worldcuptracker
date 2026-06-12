@@ -26,6 +26,12 @@ function normalise(name) {
   return ESPN_NAME_MAP[name] || name;
 }
 
+// ESPN double-encodes UTF-8 names (e.g. "Julián" → "JuliÃ¡n")
+function fixEncoding(s) {
+  if (!s) return s;
+  try { return decodeURIComponent(escape(s)); } catch { return s; }
+}
+
 function parseESPN(data) {
   const scores = {};
   (data?.events || []).forEach(ev => {
@@ -57,12 +63,29 @@ function parseESPN(data) {
 
     const clock = ev.status?.displayClock || '';
 
+    // Parse goals, cards, own-goals from competition details
+    const events = (comp.details || [])
+      .filter(d => d.scoringPlay || d.yellowCard || d.redCard)
+      .map(d => ({
+        minute:  d.clock?.displayValue || '',
+        player:  fixEncoding(d.athletesInvolved?.[0]?.shortName || ''),
+        teamId:  d.team?.id || '',
+        goal:    d.scoringPlay,
+        ownGoal: d.ownGoal,
+        penalty: d.penaltyKick,
+        yellow:  d.yellowCard,
+        red:     d.redCard,
+      }));
+
     // key matches our MATCHES: home team first
     scores[`${homeTeam}|${awayTeam}`] = {
-      homeScore: parseInt(home.score, 10) || 0,
-      awayScore: parseInt(away.score, 10) || 0,
+      homeScore:  parseInt(home.score, 10) || 0,
+      awayScore:  parseInt(away.score, 10) || 0,
+      homeTeamId: home.team?.id || '',
+      awayTeamId: away.team?.id || '',
       status,
       clock,
+      events,
     };
   });
   return scores;

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { VENUES } from './data';
 import { FlagImg } from './FlagImg';
-import { getTeamSquad, getFallbackTeamSquad } from './squads';
 
 // ── helpers ──────────────────────────────────────────────────────────────────
 function parseMatchDateTime(date, timeET) {
@@ -29,42 +28,31 @@ function getLiveMinute(matchDate, now) {
   return '90+\'';
 }
 
-const POS_ORDER = ['Goalkeeper', 'Defender', 'Midfielder', 'Forward'];
-const POS_SHORT = { Goalkeeper: 'GK', Defender: 'DEF', Midfielder: 'MID', Forward: 'FWD' };
+function eventIcon(ev) {
+  if (ev.red)    return '🟥';
+  if (ev.yellow) return '🟨';
+  if (ev.goal)   return ev.ownGoal ? '⚽ OG' : ev.penalty ? '⚽ (P)' : '⚽';
+  return '';
+}
 
-function SquadColumn({ team, squad, loading }) {
+function EventsColumn({ team, events, teamId, align }) {
+  const teamEvents = (events || []).filter(e => e.teamId === teamId);
   return (
-    <div style={S.squadCol}>
-      <div style={S.squadTeamHeader}>
-        <FlagImg name={team} w={20} h={14} />
-        <span style={S.squadTeamName}>{team}</span>
+    <div style={{ ...S.eventsCol, alignItems: align === 'right' ? 'flex-end' : 'flex-start' }}>
+      <div style={{ ...S.evColHeader, flexDirection: align === 'right' ? 'row-reverse' : 'row' }}>
+        <FlagImg name={team} w={18} h={12} />
+        <span style={S.evTeamName}>{team}</span>
       </div>
-      <div style={S.coachRow}>Coach: {squad.coach}</div>
-      {loading ? (
-        <div style={S.loading}>Loading…</div>
-      ) : squad.players.length === 0 ? (
-        <div style={S.noData}>No squad data</div>
+      {teamEvents.length === 0 ? (
+        <div style={S.evEmpty}>–</div>
       ) : (
-        POS_ORDER.map(pos => {
-          const group = squad.players.filter(p =>
-            typeof p === 'string' ? p.includes(`(${pos})`) : p.position === pos
-          );
-          if (group.length === 0) return null;
-          return (
-            <div key={pos} style={S.posGroup}>
-              <div style={S.posLabel}>{POS_SHORT[pos]}</div>
-              {group.map((p, i) => {
-                const name = typeof p === 'string' ? p.replace(` (${pos})`, '') : p.name;
-                return (
-                  <div key={i} style={S.playerRow}>
-                    <span style={S.posDot} />
-                    {name}
-                  </div>
-                );
-              })}
-            </div>
-          );
-        })
+        teamEvents.map((ev, i) => (
+          <div key={i} style={{ ...S.evRow, flexDirection: align === 'right' ? 'row-reverse' : 'row' }}>
+            <span style={S.evMin}>{ev.minute}</span>
+            <span style={S.evIcon}>{eventIcon(ev)}</span>
+            <span style={S.evPlayer}>{ev.player}</span>
+          </div>
+        ))
       )}
     </div>
   );
@@ -73,30 +61,12 @@ function SquadColumn({ team, squad, loading }) {
 // ── main component ────────────────────────────────────────────────────────────
 export function MatchModal({ match, onClose }) {
   const [now, setNow] = useState(Date.now());
-  const [homeSquad, setHomeSquad] = useState(null);
-  const [awaySquad, setAwaySquad] = useState(null);
-  const [homeLoading, setHomeLoading] = useState(true);
-  const [awayLoading, setAwayLoading] = useState(true);
 
   // 1-second ticker for live match minute
   useEffect(() => {
     const t = setInterval(() => setNow(Date.now()), 1000);
     return () => clearInterval(t);
   }, []);
-
-  // Load squads for both teams
-  useEffect(() => {
-    if (!match) return;
-    setHomeSquad(getFallbackTeamSquad(match.h));
-    setAwaySquad(getFallbackTeamSquad(match.a));
-    setHomeLoading(true);
-    setAwayLoading(true);
-
-    let cancelled = false;
-    getTeamSquad(match.h).then(d => { if (!cancelled) { setHomeSquad(d); setHomeLoading(false); } });
-    getTeamSquad(match.a).then(d => { if (!cancelled) { setAwaySquad(d); setAwayLoading(false); } });
-    return () => { cancelled = true; };
-  }, [match]);
 
   // Close on Escape key
   useEffect(() => {
@@ -111,7 +81,6 @@ export function MatchModal({ match, onClose }) {
   const live     = match.status === 'live';
   const finished = match.status === 'finished';
   const upcoming = !live && !finished;
-  // Prefer ESPN clock; fall back to computed minute
   const liveMin  = live ? (match.clock || getLiveMinute(md, now)) : null;
   const venue    = VENUES[match.v] || { city: match.v, name: '' };
   const roundLabel = match.round || `Group ${match.g}`;
@@ -120,6 +89,8 @@ export function MatchModal({ match, onClose }) {
   const awayScore = match.awayScore ?? 0;
   const homeWins  = finished && homeScore > awayScore;
   const awayWins  = finished && awayScore > homeScore;
+
+  const hasEvents = (match.events || []).length > 0;
 
   return (
     <div style={S.backdrop} onClick={onClose}>
@@ -142,7 +113,6 @@ export function MatchModal({ match, onClose }) {
 
         {/* ── Scoreboard ── */}
         <div style={S.scoreboard}>
-          {/* Home team */}
           <div style={{ ...S.sbTeam, alignItems: 'flex-end' }}>
             <div style={S.sbFlag}><FlagImg name={match.h} w={36} h={24} /></div>
             <div style={{ ...S.sbTeamName, color: homeWins ? 'var(--ac-gold)' : 'var(--tx-primary)' }}>
@@ -151,7 +121,6 @@ export function MatchModal({ match, onClose }) {
             </div>
           </div>
 
-          {/* Score / time */}
           <div style={S.sbCenter}>
             {upcoming ? (
               <div style={S.sbTime}>
@@ -165,15 +134,10 @@ export function MatchModal({ match, onClose }) {
                 <span style={{ color: awayWins ? 'var(--ac-gold)' : live ? 'var(--ac-red)' : 'var(--tx-primary)' }}>{awayScore}</span>
               </div>
             )}
-            {live && liveMin && (
-              <div style={S.liveTimer}>{liveMin}</div>
-            )}
-            <div style={S.venueRow}>
-              📍 {venue.name ? `${venue.name}, ` : ''}{venue.city}
-            </div>
+            {live && liveMin && <div style={S.liveTimer}>{liveMin}</div>}
+            <div style={S.venueRow}>📍 {venue.name ? `${venue.name}, ` : ''}{venue.city}</div>
           </div>
 
-          {/* Away team */}
           <div style={{ ...S.sbTeam, alignItems: 'flex-start' }}>
             <div style={S.sbFlag}><FlagImg name={match.a} w={36} h={24} /></div>
             <div style={{ ...S.sbTeamName, color: awayWins ? 'var(--ac-gold)' : 'var(--tx-primary)' }}>
@@ -183,17 +147,32 @@ export function MatchModal({ match, onClose }) {
           </div>
         </div>
 
-        {/* ── Squads ── */}
-        <div style={S.squadsLabel}>Squads</div>
-        <div style={S.squadsRow}>
-          {homeSquad && (
-            <SquadColumn team={match.h} squad={homeSquad} loading={homeLoading} />
-          )}
-          <div style={S.squadDivider} />
-          {awaySquad && (
-            <SquadColumn team={match.a} squad={awaySquad} loading={awayLoading} />
+        {/* ── Match Events ── */}
+        <div style={S.eventsSection}>
+          <div style={S.eventsLabel}>Match Events</div>
+          {upcoming ? (
+            <div style={S.evUpcoming}>Match has not started yet</div>
+          ) : !hasEvents ? (
+            <div style={S.evUpcoming}>No events recorded</div>
+          ) : (
+            <div style={S.eventsGrid}>
+              <EventsColumn
+                team={match.h}
+                events={match.events}
+                teamId={match.homeTeamId}
+                align="left"
+              />
+              <div style={S.evDivider} />
+              <EventsColumn
+                team={match.a}
+                events={match.events}
+                teamId={match.awayTeamId}
+                align="right"
+              />
+            </div>
           )}
         </div>
+
       </div>
     </div>
   );
@@ -209,7 +188,7 @@ const S = {
     padding: 16,
   },
   modal: {
-    width: 'min(760px, 100%)',
+    width: 'min(680px, 100%)',
     maxHeight: '90vh',
     overflowY: 'auto',
     background: 'var(--bg-card)',
@@ -273,24 +252,39 @@ const S = {
     padding: '2px 10px', borderRadius: 12, letterSpacing: .4,
   },
   venueRow: { fontSize: 10, color: 'var(--tx-dim2)', marginTop: 2 },
-  squadsLabel: {
+  eventsSection: {
+    borderTop: '1px solid var(--bd-main)',
+    padding: '12px 20px 20px',
+  },
+  eventsLabel: {
     fontSize: 9, fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase',
-    color: 'var(--tx-muted)', borderTop: '1px solid var(--bd-main)',
-    padding: '10px 20px 0',
+    color: 'var(--tx-muted)', marginBottom: 12,
   },
-  squadsRow: { display: 'grid', gridTemplateColumns: '1fr 1px 1fr', gap: 0, padding: '8px 16px 20px' },
-  squadDivider: { background: 'var(--bd-main)', margin: '0 12px' },
-  squadCol: { display: 'flex', flexDirection: 'column', gap: 2, minWidth: 0 },
-  squadTeamHeader: { display: 'flex', alignItems: 'center', gap: 6, marginBottom: 4 },
-  squadTeamName: { fontSize: 13, fontWeight: 700, color: 'var(--ac-gold)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' },
-  coachRow: { fontSize: 10, color: 'var(--tx-dim)', marginBottom: 8, fontStyle: 'italic' },
-  posGroup: { marginBottom: 8 },
-  posLabel: {
-    fontSize: 8, fontWeight: 800, letterSpacing: '1px', textTransform: 'uppercase',
-    color: 'var(--ac-gold)', marginBottom: 3,
+  eventsGrid: {
+    display: 'grid', gridTemplateColumns: '1fr 1px 1fr', gap: 0,
   },
-  playerRow: { fontSize: 11, color: 'var(--tx-secondary)', padding: '2px 0', display: 'flex', alignItems: 'center', gap: 5 },
-  posDot: { width: 4, height: 4, borderRadius: '50%', background: 'var(--tx-dim2)', flexShrink: 0 },
-  loading: { fontSize: 11, color: 'var(--tx-dim)', fontStyle: 'italic', padding: '8px 0' },
-  noData: { fontSize: 11, color: 'var(--tx-dim2)', padding: '8px 0' },
+  evDivider: { background: 'var(--bd-main)', margin: '0 16px' },
+  eventsCol: { display: 'flex', flexDirection: 'column', gap: 6 },
+  evColHeader: {
+    display: 'flex', alignItems: 'center', gap: 6,
+    marginBottom: 8,
+  },
+  evTeamName: {
+    fontSize: 11, fontWeight: 700, color: 'var(--ac-gold)',
+    overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+  },
+  evRow: {
+    display: 'flex', alignItems: 'center', gap: 5,
+  },
+  evMin: {
+    fontSize: 10, fontWeight: 700, color: 'var(--tx-dim)',
+    minWidth: 30, flexShrink: 0,
+  },
+  evIcon: { fontSize: 12, flexShrink: 0 },
+  evPlayer: { fontSize: 11, color: 'var(--tx-secondary)' },
+  evEmpty: { fontSize: 11, color: 'var(--tx-dim2)', fontStyle: 'italic' },
+  evUpcoming: {
+    fontSize: 12, color: 'var(--tx-dim)', textAlign: 'center',
+    padding: '16px 0',
+  },
 };
