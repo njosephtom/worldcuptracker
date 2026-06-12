@@ -32,6 +32,36 @@ function fmtLocalTime(matchDate) {
   return matchDate.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit', hour12: true });
 }
 
+const VENUE_TZ = {
+  azteca:    'America/Mexico_City',
+  akron:     'America/Mexico_City',
+  bbva:      'America/Monterrey',
+  sofi:      'America/Los_Angeles',
+  levis:     'America/Los_Angeles',
+  lumen:     'America/Los_Angeles',
+  arrowhead: 'America/Chicago',
+  att:       'America/Chicago',
+  nrg:       'America/Chicago',
+  mercedes:  'America/New_York',
+  hardrock:  'America/New_York',
+  lincoln:   'America/New_York',
+  gillette:  'America/New_York',
+  metlife:   'America/New_York',
+  bmo:       'America/Toronto',
+  bcplace:   'America/Vancouver',
+};
+
+function fmtVenueTime(date, venueId) {
+  const tz = VENUE_TZ[venueId];
+  if (!tz) return '';
+  try {
+    return date.toLocaleTimeString('en-US', {
+      hour: 'numeric', minute: '2-digit', hour12: true,
+      timeZone: tz, timeZoneName: 'short',
+    });
+  } catch { return ''; }
+}
+
 function liveMinute(matchDate, now) {
   const e = Math.floor((now - matchDate.getTime()) / 60000);
   if (e < 0) return '';
@@ -199,6 +229,11 @@ export function MatchDay({ matches, today, onMatchClick, onTT, onMoveTT, onHideT
                           )}
                         </div>
                       )}
+                      {!ft && (() => { const vt = fmtVenueTime(md, m.v); return vt ? (
+                        <div style={{ fontSize: 9, color: 'var(--tx-dim)', fontWeight: 500, whiteSpace: 'nowrap', textAlign: 'right' }}>
+                          🏟 {vt}
+                        </div>
+                      ) : null; })()}
                       <div style={{ fontSize: 9, color: 'var(--tx-dim2)', marginTop: 2, fontWeight: 500, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                         📍 {v.city}{v.name ? ` · ${v.name}` : ''}
                       </div>
