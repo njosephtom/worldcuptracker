@@ -29,11 +29,8 @@ const ESPN_NAME_MAP = {
 
 function norm(name) { return ESPN_NAME_MAP[name] || name; }
 
-// Fix ESPN's double-encoded UTF-8 names (e.g. "JuliÃ¡n" → "Julián")
-function fixEnc(s) {
-  if (!s) return s;
-  try { return Buffer.from(s, 'latin1').toString('utf8'); } catch { return s; }
-}
+// Node fetch already decodes UTF-8 correctly — pass through unchanged
+function fixEnc(s) { return s || s; }
 
 // All group-stage matches — id, date (ET), home, away
 const MATCHES = [

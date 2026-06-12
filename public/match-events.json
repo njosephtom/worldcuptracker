@@ -7,7 +7,7 @@
     "events": [
       {
         "minute": "9'",
-        "player": "J. Qui�ones",
+        "player": "J. Quiñones",
         "teamId": "203",
         "goal": true,
         "ownGoal": false,
@@ -27,7 +27,7 @@
       },
       {
         "minute": "23'",
-        "player": "B. Guti�rrez",
+        "player": "B. Gutiérrez",
         "teamId": "203",
         "goal": false,
         "ownGoal": false,
@@ -47,7 +47,7 @@
       },
       {
         "minute": "67'",
-        "player": "R. Jim�nez",
+        "player": "R. Jiménez",
         "teamId": "203",
         "goal": true,
         "ownGoal": false,
@@ -95,7 +95,7 @@
     "events": [
       {
         "minute": "59'",
-        "player": "L. Krejc�",
+        "player": "L. Krejcí",
         "teamId": "450",
         "goal": true,
         "ownGoal": false,
@@ -135,5 +135,5 @@
       }
     ]
   },
-  "updated": "2026-06-12T14:30:59.516Z"
+  "updated": "2026-06-12T15:41:17.780Z"
 }
