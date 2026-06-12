@@ -135,5 +135,83 @@
       }
     ]
   },
-  "updated": "2026-06-12T19:59:50.411Z"
+  "3": {
+    "homeScore": 1,
+    "awayScore": 1,
+    "homeTeamId": "206",
+    "awayTeamId": "452",
+    "events": [
+      {
+        "minute": "11'",
+        "player": "A. Johnston",
+        "teamId": "206",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "21'",
+        "player": "J. Lukic",
+        "teamId": "452",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "45'",
+        "player": "E. Demirovic",
+        "teamId": "452",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "45'+1'",
+        "player": "J. Lukic",
+        "teamId": "452",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "53'",
+        "player": "L. de Fougerolles",
+        "teamId": "206",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "78'",
+        "player": "C. Larin",
+        "teamId": "206",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "90'+3'",
+        "player": "N. Katic",
+        "teamId": "452",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
+  "updated": "2026-06-12T21:54:45.229Z"
 }
