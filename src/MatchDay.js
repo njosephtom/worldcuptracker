@@ -68,8 +68,7 @@ export function MatchDay({ matches, today, onMatchClick, onTT, onMoveTT, onHideT
   }, []);
 
 
-  const upcoming = matches.filter(m => m.d >= today);
-  const filtered = view === 'today' ? upcoming.filter(m => m.d === today) : upcoming;
+  const filtered = view === 'today' ? matches.filter(m => m.d === today) : matches;
 
   const grouped = {};
   filtered.forEach(m => {
