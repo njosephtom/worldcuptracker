@@ -8,1099 +8,2643 @@ total_teams: 48
 confederations:
   CONCACAF:
     Canada:
-      manager: "Jesse Marsch"
+      manager: Jesse Marsch
       squad:
-        - name: "Maxime Crépeau"
+        - name: Maxime Crépeau
           position: "Goalkeeper"
-        - name: "Dayne St. Clair"
+        - name: Dayne St. Clair
           position: "Goalkeeper"
-        - name: "Alphonso Davies"
+        - name: Owen Goodman
+          position: "Goalkeeper"
+        - name: Richie Laryea
           position: "Defender"
-        - name: "Alistair Johnston"
+        - name: Alphonso Davies
           position: "Defender"
-        - name: "Moïse Bombito"
+        - name: Joel Waterman
           position: "Defender"
-        - name: "Derek Cornelius"
+        - name: Derek Cornelius
           position: "Defender"
-        - name: "Stephen Eustáquio"
+        - name: Alfie Jones
+          position: "Defender"
+        - name: Alistair Johnston
+          position: "Defender"
+        - name: Moïse Bombito
+          position: "Defender"
+        - name: Luc de Fougerolles
+          position: "Defender"
+        - name: Jonathan Osorio
           position: "Midfielder"
-        - name: "Ismaël Koné"
+        - name: Stephen Eustáquio
           position: "Midfielder"
-        - name: "Jonathan Osorio"
+        - name: Mathieu Choinière
           position: "Midfielder"
-        - name: "Jonathan David"
+        - name: Nathan Saliba
+          position: "Midfielder"
+        - name: Ismaël Koné
+          position: "Midfielder"
+        - name: Ali Ahmed
+          position: "Midfielder"
+        - name: Niko Sigur
+          position: "Midfielder"
+        - name: Cyle Larin
           position: "Forward"
-        - name: "Cyle Larin"
+        - name: Liam Millar
           position: "Forward"
-        - name: "Jacob Shaffelburg"
+        - name: Jonathan David
+          position: "Forward"
+        - name: Jayden Nelson
+          position: "Forward"
+        - name: Tajon Buchanan
+          position: "Forward"
+        - name: Jacob Shaffelburg
+          position: "Forward"
+        - name: Tani Oluwaseyi
+          position: "Forward"
+        - name: Promise David
           position: "Forward"
     Mexico:
-      manager: "Javier Aguirre"
+      manager: Javier Aguirre
       squad:
-        - name: "Raúl Rangel"
+        - name: Guillermo Ochoa
           position: "Goalkeeper"
-        - name: "Carlos Acevedo"
+        - name: Carlos Acevedo
           position: "Goalkeeper"
-        - name: "Guillermo Ochoa"
+        - name: Raúl Rangel
           position: "Goalkeeper"
-        - name: "César Montes"
+        - name: Jesús Gallardo
           position: "Defender"
-        - name: "Johan Vásquez"
+        - name: Jorge Sánchez
           position: "Defender"
-        - name: "Jorge Sánchez"
+        - name: César Montes
           position: "Defender"
-        - name: "Jesús Gallardo"
+        - name: Johan Vásquez
           position: "Defender"
-        - name: "Israel Reyes"
+        - name: Israel Reyes
           position: "Defender"
-        - name: "Mateo Chávez"
+        - name: Mateo Chávez
           position: "Defender"
-        - name: "Edson Álvarez"
-          position: "Defender"
-        - name: "Érik Lira"
+        - name: Luis Chávez
           position: "Midfielder"
-        - name: "Luis Romo"
+        - name: Orbelín Pineda
           position: "Midfielder"
-        - name: "Álvaro Fidalgo"
+        - name: Edson Álvarez
           position: "Midfielder"
-        - name: "Orbelín Pineda"
+        - name: Luis Romo
           position: "Midfielder"
-        - name: "Obed Vargas"
+        - name: César Huerta
           position: "Midfielder"
-        - name: "Gilberto Mora"
+        - name: Érik Lira
           position: "Midfielder"
-        - name: "Luis Chávez"
+        - name: Álvaro Fidalgo
           position: "Midfielder"
-        - name: "Roberto Alvarado"
+        - name: Brian Gutiérrez
           position: "Midfielder"
-        - name: "Brian Gutiérrez"
+        - name: Obed Vargas
           position: "Midfielder"
-        - name: "Raúl Jiménez"
+        - name: Gilberto Mora
+          position: "Midfielder"
+        - name: Raúl Jiménez
           position: "Forward"
-        - name: "Alexis Vega"
+        - name: Guillermo Martínez
           position: "Forward"
-        - name: "Santiago Giménez"
+        - name: Roberto Alvarado
           position: "Forward"
-        - name: "Armando González"
+        - name: Alexis Vega
           position: "Forward"
-        - name: "Julián Quiñones"
+        - name: Julián Quiñones
           position: "Forward"
-        - name: "César Huerta"
+        - name: Santiago Gimenez
           position: "Forward"
-        - name: "Guillermo Martínez"
+        - name: Armando González
           position: "Forward"
     United States:
-      manager: "Mauricio Pochettino"
+      manager: Mauricio Pochettino
       squad:
-        - name: "Matt Turner"
+        - name: Matt Freese
           position: "Goalkeeper"
-        - name: "Patrick Schulte"
+        - name: Chris Brady
           position: "Goalkeeper"
-        - name: "Antonee Robinson"
+        - name: Matt Turner
+          position: "Goalkeeper"
+        - name: Mark McKenzie
           position: "Defender"
-        - name: "Tim Ream"
+        - name: Tim Ream
           position: "Defender"
-        - name: "Chris Richards"
+        - name: Antonee Robinson
           position: "Defender"
-        - name: "Joe Scally"
+        - name: Auston Trusty
           position: "Defender"
-        - name: "Weston McKennie"
+        - name: Alex Freeman
+          position: "Defender"
+        - name: Miles Robinson
+          position: "Defender"
+        - name: Sergiño Dest
+          position: "Defender"
+        - name: Joe Scally
+          position: "Defender"
+        - name: Chris Richards
+          position: "Defender"
+        - name: Cristian Roldan
           position: "Midfielder"
-        - name: "Yunus Musah"
+        - name: Tyler Adams
           position: "Midfielder"
-        - name: "Tyler Adams"
+        - name: Christian Pulisic
           position: "Midfielder"
-        - name: "Christian Pulisic"
+        - name: Weston McKennie
+          position: "Midfielder"
+        - name: Brenden Aaronson
+          position: "Midfielder"
+        - name: Giovanni Reyna
+          position: "Midfielder"
+        - name: Sebastian Berhalter
+          position: "Midfielder"
+        - name: Malik Tillman
+          position: "Midfielder"
+        - name: Max Arfsten
+          position: "Midfielder"
+        - name: Alejandro Zendejas
           position: "Forward"
-        - name: "Folarin Balogun"
+        - name: Haji Wright
           position: "Forward"
-        - name: "Timothy Weah"
+        - name: Timothy Weah
+          position: "Forward"
+        - name: Folarin Balogun
+          position: "Forward"
+        - name: Ricardo Pepi
           position: "Forward"
     Panama:
-      manager: "Thomas Christiansen"
+      manager: Thomas Christiansen
       squad:
-        - name: "Orlando Mosquera"
+        - name: Luis Mejía
           position: "Goalkeeper"
-        - name: "Fidel Escobar"
+        - name: Orlando Mosquera
+          position: "Goalkeeper"
+        - name: César Samudio
+          position: "Goalkeeper"
+        - name: Roderick Miller
           position: "Defender"
-        - name: "José Córdoba"
+        - name: Éric Davis
           position: "Defender"
-        - name: "Adalberto Carrasquilla"
+        - name: Andrés Andrade
+          position: "Defender"
+        - name: Fidel Escobar
+          position: "Defender"
+        - name: Amir Murillo
+          position: "Defender"
+        - name: César Blackman
+          position: "Defender"
+        - name: Jorge Gutiérrez
+          position: "Defender"
+        - name: José Córdoba
+          position: "Defender"
+        - name: Jiovany Ramos
+          position: "Defender"
+        - name: Edgardo Fariña
+          position: "Defender"
+        - name: Aníbal Godoy
           position: "Midfielder"
-        - name: "Aníbal Godoy"
+        - name: Cristian Martínez
           position: "Midfielder"
-        - name: "José Fajardo"
+        - name: Édgar Yoel Bárcenas
+          position: "Midfielder"
+        - name: Adalberto Carrasquilla
+          position: "Midfielder"
+        - name: José Luis Rodríguez
+          position: "Midfielder"
+        - name: Carlos Harvey
+          position: "Midfielder"
+        - name: Alberto Quintero
           position: "Forward"
-        - name: "Ismael Díaz"
+        - name: Cecilio Waterman
+          position: "Forward"
+        - name: Ismael Díaz
+          position: "Forward"
+        - name: José Fajardo
+          position: "Forward"
+        - name: Tomás Rodríguez
+          position: "Forward"
+        - name: César Yanis
+          position: "Forward"
+        - name: Azarias Londoño
           position: "Forward"
     Haiti:
-      manager: "Sébastien Migné"
+      manager: Sébastien Migné
       squad:
-        - name: "Josué Duverger"
+        - name: Johny Placide
           position: "Goalkeeper"
-        - name: "Mechack Jérôme"
+        - name: Josué Duverger
+          position: "Goalkeeper"
+        - name: Alexandre Pierre
+          position: "Goalkeeper"
+        - name: Ricardo Adé
           position: "Defender"
-        - name: "Wilde-Donald Guerrier"
+        - name: Carlens Arcus
           position: "Defender"
-        - name: "James Léa Siliki"
+        - name: Markhus Lacroix
+          position: "Defender"
+        - name: Jean-Kévin Duverne
+          position: "Defender"
+        - name: Hannes Delcroix
+          position: "Defender"
+        - name: Martin Expérience
+          position: "Defender"
+        - name: Wilguens Paugain
+          position: "Defender"
+        - name: Keeto Thermoncy
+          position: "Defender"
+        - name: Jean-Ricner Bellegarde
           position: "Midfielder"
-        - name: "Frantzdy Pierrot"
+        - name: Leverton Pierre
           position: "Midfielder"
-        - name: "Duckens Nazon"
+        - name: Carl Sainté
+          position: "Midfielder"
+        - name: Danley Jean Jacques
+          position: "Midfielder"
+        - name: Dominique Simon
+          position: "Midfielder"
+        - name: Woodensky Pierre
+          position: "Midfielder"
+        - name: Duckens Nazon
           position: "Forward"
-        - name: "Derrick Etienne"
+        - name: Derrick Etienne Jr.
           position: "Forward"
-        - name: "Kevin Lafrance"
+        - name: Frantzdy Pierrot
+          position: "Forward"
+        - name: Wilson Isidor
+          position: "Forward"
+        - name: Yassin Fortuné
+          position: "Midfielder"
+        - name: Louicius Deedson
+          position: "Forward"
+        - name: Lenny Joseph
+          position: "Forward"
+        - name: Josué Casimir
+          position: "Forward"
+        - name: Ruben Providence
           position: "Forward"
     Curaçao:
-      manager: "Dick Advocaat"
+      manager: Dick Advocaat
       squad:
-        - name: "Eloy Room"
+        - name: Eloy Room
           position: "Goalkeeper"
-        - name: "Cuco Martina"
+        - name: Trevor Doornbusch
+          position: "Goalkeeper"
+        - name: Tyrick Bodak
+          position: "Goalkeeper"
+        - name: Joshua Brenet
           position: "Defender"
-        - name: "Jurien Gaari"
+        - name: Riechedly Bazoer
           position: "Defender"
-        - name: "Leandro Bacuna"
+        - name: Sherel Floranus
+          position: "Defender"
+        - name: Armando Obispo
+          position: "Defender"
+        - name: Juriën Gaari
+          position: "Defender"
+        - name: Roshon van Eijma
+          position: "Defender"
+        - name: Shurandy Sambo
+          position: "Defender"
+        - name: Livano Comenencia
+          position: "Defender"
+        - name: Deveron Fonville
+          position: "Defender"
+        - name: Leandro Bacuna
           position: "Midfielder"
-        - name: "Rangelo Janga"
+        - name: Juninho Bacuna
           position: "Midfielder"
-        - name: "Gervane Kastaneer"
+        - name: Kevin Felida
+          position: "Midfielder"
+        - name: Godfried Roemeratoe
+          position: "Midfielder"
+        - name: Tahith Chong
+          position: "Midfielder"
+        - name: "Ar'jany Martha"
+          position: "Midfielder"
+        - name: Tyrese Noslin
+          position: "Defender"
+        - name: Jürgen Locadia
           position: "Forward"
-        - name: "Quevin Castro"
+        - name: Brandley Kuwas
           position: "Forward"
-
+        - name: Gervane Kastaneer
+          position: "Forward"
+        - name: Kenji Gorré
+          position: "Forward"
+        - name: Sontje Hansen
+          position: "Forward"
+        - name: Jearl Margaritha
+          position: "Forward"
+        - name: Jeremy Antonisse
+          position: "Forward"
   CONMEBOL:
     Argentina:
-      manager: "Lionel Scaloni"
+      manager: Lionel Scaloni
       squad:
-        - name: "Emiliano Martínez"
+        - name: Emiliano Martínez
           position: "Goalkeeper"
-        - name: "Gerónimo Rulli"
+        - name: Gerónimo Rulli
           position: "Goalkeeper"
-        - name: "Cristian Romero"
+        - name: Juan Musso
+          position: "Goalkeeper"
+        - name: Cristian Romero
           position: "Defender"
-        - name: "Lisandro Martínez"
+        - name: Nicolás Otamendi
           position: "Defender"
-        - name: "Nicolás Otamendi"
+        - name: Nicolás Tagliafico
           position: "Defender"
-        - name: "Nahuel Molina"
+        - name: Nahuel Molina
           position: "Defender"
-        - name: "Rodrigo De Paul"
+        - name: Gonzalo Montiel
+          position: "Defender"
+        - name: Lisandro Martínez
+          position: "Defender"
+        - name: Facundo Medina
+          position: "Defender"
+        - name: Leandro Paredes
           position: "Midfielder"
-        - name: "Alexis Mac Allister"
+        - name: Rodrigo De Paul
           position: "Midfielder"
-        - name: "Enzo Fernández"
+        - name: Giovani Lo Celso
           position: "Midfielder"
-        - name: "Lionel Messi"
+        - name: Exequiel Palacios
+          position: "Midfielder"
+        - name: Alexis Mac Allister
+          position: "Midfielder"
+        - name: Thiago Almada
+          position: "Midfielder"
+        - name: Enzo Fernández
+          position: "Midfielder"
+        - name: Valentín Barco
+          position: "Midfielder"
+        - name: Lionel Messi
           position: "Forward"
-        - name: "Julián Álvarez"
+        - name: Nico González
           position: "Forward"
-        - name: "Lautaro Martínez"
+        - name: Lautaro Martínez
+          position: "Forward"
+        - name: Julián Álvarez
+          position: "Forward"
+        - name: José Manuel López
+          position: "Forward"
+        - name: Giuliano Simeone
+          position: "Forward"
+        - name: Nico Paz
           position: "Forward"
     Brazil:
-      manager: "Dorival Júnior"
+      manager: Carlo Ancelotti
       squad:
-        - name: "Alisson Becker"
+        - name: Ederson
           position: "Goalkeeper"
-        - name: "Ederson"
+        - name: Alisson Becker
           position: "Goalkeeper"
-        - name: "Marquinhos"
+        - name: Weverton
+          position: "Goalkeeper"
+        - name: Alex Sandro
           position: "Defender"
-        - name: "Gabriel Magalhães"
+        - name: Léo Pereira
           position: "Defender"
-        - name: "Danilo"
+        - name: Marquinhos 
           position: "Defender"
-        - name: "Bruno Guimarães"
+        - name: Danilo
+          position: "Defender"
+        - name: Douglas Santos
+          position: "Defender"
+        - name: Gabriel Magalhães
+          position: "Defender"
+        - name: Bremer
+          position: "Defender"
+        - name: Roger Ibañez
+          position: "Defender"
+        - name: Casemiro
           position: "Midfielder"
-        - name: "Lucas Paquetá"
+        - name: Fabinho
           position: "Midfielder"
-        - name: "João Gomes"
+        - name: Bruno Guimarães
           position: "Midfielder"
-        - name: "Vinícius Júnior"
+        - name: Lucas Paquetá
+          position: "Midfielder"
+        - name: Éderson
+          position: "Midfielder"
+        - name: Danilo Santos
+          position: "Midfielder"
+        - name: Neymar
           position: "Forward"
-        - name: "Rodrygo"
+        - name: Raphinha
           position: "Forward"
-        - name: "Raphinha"
+        - name: Vinícius Júnior
           position: "Forward"
-        - name: "Endrick"
+        - name: Matheus Cunha
+          position: "Forward"
+        - name: Gabriel Martinelli
+          position: "Forward"
+        - name: Igor Thiago
+          position: "Forward"
+        - name: Luiz Henrique
+          position: "Forward"
+        - name: Endrick
+          position: "Forward"
+        - name: Rayan
           position: "Forward"
     Uruguay:
-      manager: "Marcelo Bielsa"
+      manager: Marcelo Bielsa
       squad:
-        - name: "Sergio Rochet"
+        - name: Fernando Muslera
           position: "Goalkeeper"
-        - name: "José María Giménez"
+        - name: Sergio Rochet
+          position: "Goalkeeper"
+        - name: Santiago Mele
+          position: "Goalkeeper"
+        - name: Guillermo Varela
           position: "Defender"
-        - name: "Ronald Araújo"
+        - name: José María Giménez
           position: "Defender"
-        - name: "Mathías Olivera"
+        - name: Mathías Olivera
           position: "Defender"
-        - name: "Federico Valverde"
+        - name: Santiago Bueno
+          position: "Defender"
+        - name: Joaquín Piquerez
+          position: "Defender"
+        - name: Matías Viña
+          position: "Defender"
+        - name: Ronald Araújo
+          position: "Defender"
+        - name: Sebastián Cáceres
+          position: "Defender"
+        - name: Emiliano Martínez
           position: "Midfielder"
-        - name: "Manuel Ugarte"
+        - name: Giorgian de Arrascaeta
           position: "Midfielder"
-        - name: "Nicolas de la Cruz"
+        - name: Rodrigo Bentancur
           position: "Midfielder"
-        - name: "Darwin Núñez"
+        - name: Federico Valverde
+          position: "Midfielder"
+        - name: Manuel Ugarte
+          position: "Midfielder"
+        - name: Nicolás de la Cruz
+          position: "Midfielder"
+        - name: Maxi Araújo
+          position: "Midfielder"
+        - name: Rodrigo Zalazar
+          position: "Midfielder"
+        - name: Juan Manuel Sanabria
+          position: "Midfielder"
+        - name: Facundo Pellistri
+          position: "Midfielder"
+        - name: Brian Rodríguez
           position: "Forward"
-        - name: "Facundo Pellistri"
+        - name: Rodrigo Aguirre
           position: "Forward"
-        - name: "Luis Suárez"
+        - name: Agustín Canobbio
+          position: "Forward"
+        - name: Darwin Núñez
+          position: "Forward"
+        - name: Federico Viñas
           position: "Forward"
     Colombia:
-      manager: "Néstor Lorenzo"
+      manager: Néstor Lorenzo
       squad:
-        - name: "Camilo Vargas"
+        - name: David Ospina
           position: "Goalkeeper"
-        - name: "Davinson Sánchez"
+        - name: Álvaro Montero
+          position: "Goalkeeper"
+        - name: Camilo Vargas
+          position: "Goalkeeper"
+        - name: Daniel Muñoz
           position: "Defender"
-        - name: "Daniel Muñoz"
+        - name: Santiago Arias
           position: "Defender"
-        - name: "Johan Mojica"
+        - name: Johan Mojica
           position: "Defender"
-        - name: "Jefferson Lerma"
+        - name: Yerry Mina
+          position: "Defender"
+        - name: Davinson Sánchez
+          position: "Defender"
+        - name: Deiver Machado
+          position: "Defender"
+        - name: Jhon Lucumí
+          position: "Defender"
+        - name: Willer Ditta
+          position: "Defender"
+        - name: James Rodríguez
           position: "Midfielder"
-        - name: "Jhon Arias"
+        - name: Juan Portilla
           position: "Midfielder"
-        - name: "James Rodríguez"
+        - name: Juan Fernando Quintero
           position: "Midfielder"
-        - name: "Luis Díaz"
+        - name: Jefferson Lerma
+          position: "Midfielder"
+        - name: Jorge Carrascal
+          position: "Midfielder"
+        - name: Jhon Arias
+          position: "Midfielder"
+        - name: Jáminton Campaz
+          position: "Midfielder"
+        - name: Richard Ríos
+          position: "Midfielder"
+        - name: Kevin Castaño
+          position: "Midfielder"
+        - name: Gustavo Puerta
+          position: "Midfielder"
+        - name: Jhon Córdoba
           position: "Forward"
-        - name: "Jhon Durán"
+        - name: Luis Díaz
           position: "Forward"
-        - name: "Rafael Santos Borré"
+        - name: Luis Suárez
+          position: "Forward"
+        - name: Andrés Gómez
+          position: "Forward"
+        - name: Cucho Hernández
           position: "Forward"
     Ecuador:
-      manager: "Sebastián Beccacece"
+      manager: Sebastián Beccacece
       squad:
-        - name: "Hernán Galíndez"
+        - name: Gonzalo Valle
           position: "Goalkeeper"
-        - name: "Piero Hincapié"
+        - name: Hernán Galíndez
+          position: "Goalkeeper"
+        - name: Moisés Ramírez
+          position: "Goalkeeper"
+        - name: Pervis Estupiñán
           position: "Defender"
-        - name: "Willian Pacho"
+        - name: Félix Torres
           position: "Defender"
-        - name: "Pervis Estupiñán"
+        - name: Ángelo Preciado
           position: "Defender"
-        - name: "Moises Caicedo"
+        - name: Jackson Porozo
+          position: "Defender"
+        - name: Willian Pacho
+          position: "Defender"
+        - name: Piero Hincapié
+          position: "Defender"
+        - name: Yaimar Medina
+          position: "Defender"
+        - name: Joel Ordóñez
+          position: "Defender"
+        - name: Alan Franco
           position: "Midfielder"
-        - name: "Alan Franco"
+        - name: Jordy Alcívar
           position: "Midfielder"
-        - name: "Gonzalo Plata"
+        - name: Moisés Caicedo
           position: "Midfielder"
-        - name: "Enner Valencia"
+        - name: Pedro Vite
+          position: "Midfielder"
+        - name: Denil Castillo
+          position: "Midfielder"
+        - name: Kendry Páez
+          position: "Midfielder"
+        - name: Enner Valencia
           position: "Forward"
-        - name: "Jordy Caicedo"
+        - name: Jordy Caicedo
+          position: "Forward"
+        - name: John Yeboah
+          position: "Forward"
+        - name: Gonzalo Plata
+          position: "Forward"
+        - name: Kevin Rodríguez
+          position: "Forward"
+        - name: Anthony Valencia
+          position: "Forward"
+        - name: Nilson Angulo
+          position: "Forward"
+        - name: Alan Minda
+          position: "Forward"
+        - name: Jeremy Arévalo
           position: "Forward"
     Paraguay:
-      manager: "Gustavo Alfaro"
+      manager: Gustavo Alfaro
       squad:
-        - name: "Roberto Fernández"
+        - name: Gatito Fernández
           position: "Goalkeeper"
-        - name: "Gustavo Gómez"
+        - name: Gastón Olveira
+          position: "Goalkeeper"
+        - name: Orlando Gil
+          position: "Goalkeeper"
+        - name: Juan Cáceres
           position: "Defender"
-        - name: "Omar Alderete"
+        - name: Gustavo Gómez
           position: "Defender"
-        - name: "Andrés Cubas"
+        - name: Gustavo Velázquez
+          position: "Defender"
+        - name: Júnior Alonso
+          position: "Defender"
+        - name: Fabián Balbuena
+          position: "Defender"
+        - name: Omar Alderete
+          position: "Defender"
+        - name: José Canale
+          position: "Defender"
+        - name: Alexandro Maidana
+          position: "Defender"
+        - name: Julio Enciso
           position: "Midfielder"
-        - name: "Diego Gómez"
+        - name: Alejandro Romero Gamarra
           position: "Midfielder"
-        - name: "Miguel Almirón"
+        - name: Diego Gómez
           position: "Midfielder"
-        - name: "Julio Enciso"
+        - name: Andrés Cubas
+          position: "Midfielder"
+        - name: Braian Ojeda
+          position: "Midfielder"
+        - name: Mauricio
+          position: "Midfielder"
+        - name: Matías Galarza
+          position: "Midfielder"
+        - name: Damián Bobadilla
+          position: "Midfielder"
+        - name: Miguel Almirón
           position: "Forward"
-        - name: "Antonio Sanabria"
+        - name: Gustavo Caballero
           position: "Forward"
-
+        - name: Antonio Sanabria
+          position: "Forward"
+        - name: Gabriel Ávalos
+          position: "Forward"
+        - name: Alex Arce
+          position: "Forward"
+        - name: Isidro Pitta
+          position: "Forward"
+        - name: Ramón Sosa
+          position: "Forward"
   UEFA:
     Germany:
-      manager: "Julian Nagelsmann"
+      manager: Julian Nagelsmann
       squad:
-        - name: "Oliver Baumann"
+        - name: Manuel Neuer
           position: "Goalkeeper"
-        - name: "Alexander Nübel"
+        - name: Oliver Baumann
           position: "Goalkeeper"
-        - name: "Antonio Rüdiger"
+        - name: Alexander Nübel
+          position: "Goalkeeper"
+        - name: Nathaniel Brown
           position: "Defender"
-        - name: "Joshua Kimmich"
+        - name: Antonio Rüdiger
           position: "Defender"
-        - name: "Jonathan Tah"
+        - name: Jonathan Tah
           position: "Defender"
-        - name: "Nico Schlotterbeck"
+        - name: Waldemar Anton
           position: "Defender"
-        - name: "Jamal Musiala"
+        - name: David Raum
+          position: "Defender"
+        - name: Nico Schlotterbeck
+          position: "Defender"
+        - name: Malick Thiaw
+          position: "Defender"
+        - name: Pascal Gross
           position: "Midfielder"
-        - name: "Florian Wirtz"
+        - name: Leon Goretzka
           position: "Midfielder"
-        - name: "Pascal Groß"
+        - name: Joshua Kimmich
           position: "Midfielder"
-        - name: "Kai Havertz"
+        - name: Nadiem Amiri
+          position: "Midfielder"
+        - name: Felix Nmecha
+          position: "Midfielder"
+        - name: Angelo Stiller
+          position: "Midfielder"
+        - name: Florian Wirtz
+          position: "Midfielder"
+        - name: Jamal Musiala
+          position: "Midfielder"
+        - name: Aleksandar Pavlovic
+          position: "Midfielder"
+        - name: Assan Ouédraogo
+          position: "Midfielder"
+        - name: Leroy Sané
           position: "Forward"
-        - name: "Leroy Sané"
+        - name: Kai Havertz
           position: "Forward"
-        - name: "Deniz Undav"
+        - name: Deniz Undav
+          position: "Forward"
+        - name: Maximilian Beier
+          position: "Forward"
+        - name: Jamie Leweling
+          position: "Forward"
+        - name: Nick Woltemade
           position: "Forward"
     France:
-      manager: "Didier Deschamps"
+      manager: Didier Deschamps
       squad:
-        - name: "Mike Maignan"
+        - name: Brice Samba
           position: "Goalkeeper"
-        - name: "Brice Samba"
+        - name: Mike Maignan
           position: "Goalkeeper"
-        - name: "William Saliba"
+        - name: Robin Risser
+          position: "Goalkeeper"
+        - name: Lucas Digne
           position: "Defender"
-        - name: "Dayot Upamecano"
+        - name: Lucas Hernández
           position: "Defender"
-        - name: "Theo Hernandez"
+        - name: Dayot Upamecano
           position: "Defender"
-        - name: "Jules Koundé"
+        - name: Jules Koundé
           position: "Defender"
-        - name: "Aurélien Tchouaméni"
-          position: "Midfielder"
-        - name: "Eduardo Camavinga"
-          position: "Midfielder"
+        - name: Theo Hernández
+          position: "Defender"
+        - name: Ibrahima Konaté
+          position: "Defender"
+        - name: Maxence Lacroix
+          position: "Defender"
+        - name: William Saliba
+          position: "Defender"
+        - name: Malo Gusto
+          position: "Defender"
         - name: "N'Golo Kanté"
           position: "Midfielder"
-        - name: "Kylian Mbappé"
+        - name: Adrien Rabiot
+          position: "Midfielder"
+        - name: Aurélien Tchouaméni
+          position: "Midfielder"
+        - name: Manu Koné
+          position: "Midfielder"
+        - name: Michael Olise
+          position: "Midfielder"
+        - name: Rayan Cherki
+          position: "Midfielder"
+        - name: Maghnes Akliouche
+          position: "Midfielder"
+        - name: Warren Zaïre-Emery
+          position: "Midfielder"
+        - name: Marcus Thuram
           position: "Forward"
-        - name: "Ousmane Dembélé"
+        - name: Ousmane Dembélé
           position: "Forward"
-        - name: "Bradley Barcola"
+        - name: Kylian Mbappé
+          position: "Forward"
+        - name: Jean-Philippe Mateta
+          position: "Forward"
+        - name: Bradley Barcola
+          position: "Forward"
+        - name: Désiré Doué
           position: "Forward"
     Spain:
-      manager: "Luis de la Fuente"
+      manager: Luis de la Fuente
       squad:
-        - name: "David Raya"
+        - name: David Raya
           position: "Goalkeeper"
-        - name: "Alex Remiro"
+        - name: Unai Simón
           position: "Goalkeeper"
-        - name: "Aymeric Laporte"
+        - name: Joan García
+          position: "Goalkeeper"
+        - name: Eric García
           position: "Defender"
-        - name: "Robin Le Normand"
+        - name: Aymeric Laporte
           position: "Defender"
-        - name: "Dani Carvajal"
+        - name: Alejandro Grimaldo
           position: "Defender"
-        - name: "Marc Cucurella"
+        - name: Marc Cucurella
           position: "Defender"
-        - name: "Rodri"
+        - name: Pedro Porro
+          position: "Defender"
+        - name: Marc Pubill
+          position: "Defender"
+        - name: Pau Cubarsí
+          position: "Defender"
+        - name: Marcos Llorente
           position: "Midfielder"
-        - name: "Fabian Ruiz"
+        - name: Mikel Merino
           position: "Midfielder"
-        - name: "Pedri"
+        - name: Fabián Ruiz
           position: "Midfielder"
-        - name: "Lamine Yamal"
+        - name: Dani Olmo
+          position: "Midfielder"
+        - name: Rodri
+          position: "Midfielder"
+        - name: Pedri
+          position: "Midfielder"
+        - name: Martín Zubimendi
+          position: "Midfielder"
+        - name: Yéremy Pino
+          position: "Midfielder"
+        - name: Álex Baena
+          position: "Midfielder"
+        - name: Gavi
+          position: "Midfielder"
+        - name: Borja Iglesias
           position: "Forward"
-        - name: "Nico Williams"
+        - name: Mikel Oyarzabal
           position: "Forward"
-        - name: "Alvaro Morata"
+        - name: Ferran Torres
+          position: "Forward"
+        - name: Nico Williams
+          position: "Forward"
+        - name: Lamine Yamal
+          position: "Forward"
+        - name: Víctor Muñoz
           position: "Forward"
     England:
-      manager: "Thomas Tuchel"
+      manager: Thomas Tuchel
       squad:
-        - name: "Jordan Pickford"
+        - name: Jordan Pickford
           position: "Goalkeeper"
-        - name: "Dean Henderson"
+        - name: Dean Henderson
           position: "Goalkeeper"
-        - name: "John Stones"
+        - name: James Trafford
+          position: "Goalkeeper"
+        - name: John Stones
           position: "Defender"
-        - name: "Marc Guéhi"
+        - name: Reece James
           position: "Defender"
-        - name: "Kyle Walker"
+        - name: Dan Burn
           position: "Defender"
-        - name: "Trent Alexander-Arnold"
+        - name: Ezri Konsa
           position: "Defender"
-        - name: "Declan Rice"
+        - name: Marc Guéhi
+          position: "Defender"
+        - name: Djed Spence
+          position: "Defender"
+        - name: Jarell Quansah
+          position: "Defender"
+        - name: Tino Livramento
+          position: "Defender"
+        - name: "Nico O'Reilly"
+          position: "Defender"
+        - name: Jordan Henderson
           position: "Midfielder"
-        - name: "Jude Bellingham"
+        - name: Declan Rice
           position: "Midfielder"
-        - name: "Cole Palmer"
+        - name: Elliot Anderson
           position: "Midfielder"
-        - name: "Harry Kane"
+        - name: Eberechi Eze
+          position: "Midfielder"
+        - name: Morgan Rogers
+          position: "Midfielder"
+        - name: Jude Bellingham
+          position: "Midfielder"
+        - name: Kobbie Mainoo
+          position: "Midfielder"
+        - name: Harry Kane
           position: "Forward"
-        - name: "Bukayo Saka"
+        - name: Ivan Toney
           position: "Forward"
-        - name: "Phil Foden"
+        - name: Ollie Watkins
+          position: "Forward"
+        - name: Marcus Rashford
+          position: "Forward"
+        - name: Anthony Gordon
+          position: "Forward"
+        - name: Bukayo Saka
+          position: "Forward"
+        - name: Noni Madueke
           position: "Forward"
     Portugal:
-      manager: "Roberto Martínez"
+      manager: Roberto Martínez
       squad:
-        - name: "Diogo Costa"
+        - name: Rui Silva
           position: "Goalkeeper"
-        - name: "Rúben Dias"
+        - name: José Sá
+          position: "Goalkeeper"
+        - name: Diogo Costa
+          position: "Goalkeeper"
+        - name: João Cancelo
           position: "Defender"
-        - name: "João Cancelo"
+        - name: Nélson Semedo
           position: "Defender"
-        - name: "Nuno Mendes"
+        - name: Rúben Dias
           position: "Defender"
-        - name: "Bruno Fernandes"
+        - name: Diogo Dalot
+          position: "Defender"
+        - name: Nuno Mendes
+          position: "Defender"
+        - name: Gonçalo Inácio
+          position: "Defender"
+        - name: Tomás Araújo
+          position: "Defender"
+        - name: Renato Veiga
+          position: "Defender"
+        - name: Bruno Fernandes
           position: "Midfielder"
-        - name: "Vitinha"
+        - name: Samú Costa
           position: "Midfielder"
-        - name: "Bernardo Silva"
+        - name: Bernardo Silva
           position: "Midfielder"
-        - name: "Cristiano Ronaldo"
+        - name: Rúben Neves
+          position: "Midfielder"
+        - name: Vitinha 
+          position: "Midfielder"
+        - name: Matheus Nunes
+          position: "Midfielder"
+        - name: João Neves
+          position: "Midfielder"
+        - name: Cristiano Ronaldo
           position: "Forward"
-        - name: "Rafael Leão"
+        - name: Gonçalo Guedes
           position: "Forward"
-        - name: "Pedro Neto"
+        - name: Pedro Neto
+          position: "Forward"
+        - name: Rafael Leão
+          position: "Forward"
+        - name: Francisco Trincão
+          position: "Forward"
+        - name: João Félix
+          position: "Forward"
+        - name: Gonçalo Ramos
+          position: "Forward"
+        - name: Francisco Conceição
           position: "Forward"
     Netherlands:
-      manager: "Ronald Koeman"
+      manager: Ronald Koeman
       squad:
-        - name: "Bart Verbruggen"
+        - name: Mark Flekken
           position: "Goalkeeper"
-        - name: "Virgil van Dijk"
+        - name: Bart Verbruggen
+          position: "Goalkeeper"
+        - name: Robin Roefs
+          position: "Goalkeeper"
+        - name: Virgil van Dijk
           position: "Defender"
-        - name: "Nathan Aké"
+        - name: Nathan Aké
           position: "Defender"
-        - name: "Denzel Dumfries"
+        - name: Denzel Dumfries
           position: "Defender"
-        - name: "Tijjani Reijnders"
+        - name: Lutsharel Geertruida
+          position: "Defender"
+        - name: Jan Paul van Hecke
+          position: "Defender"
+        - name: Micky van de Ven
+          position: "Defender"
+        - name: Jorrel Hato
+          position: "Defender"
+        - name: Marten de Roon
           position: "Midfielder"
-        - name: "Xavi Simons"
+        - name: Frenkie de Jong
           position: "Midfielder"
-        - name: "Frenkie de Jong"
+        - name: Guus Til
           position: "Midfielder"
-        - name: "Cody Gakpo"
+        - name: Teun Koopmeiners
+          position: "Midfielder"
+        - name: Tijjani Reijnders
+          position: "Midfielder"
+        - name: Ryan Gravenberch
+          position: "Midfielder"
+        - name: Mats Wieffer
+          position: "Midfielder"
+        - name: Quinten Timber
+          position: "Midfielder"
+        - name: Memphis Depay
           position: "Forward"
-        - name: "Donyell Malen"
+        - name: Wout Weghorst
           position: "Forward"
-        - name: "Memphis Depay"
+        - name: Justin Kluivert
+          position: "Forward"
+        - name: Cody Gakpo
+          position: "Forward"
+        - name: Noa Lang
+          position: "Forward"
+        - name: Donyell Malen
+          position: "Forward"
+        - name: Brian Brobbey
+          position: "Forward"
+        - name: Crysencio Summerville
           position: "Forward"
     Belgium:
-      manager: "Domenico Tedesco"
+      manager: Domenico Tedesco
       squad:
-        - name: "Koen Casteels"
+        - name: Thibaut Courtois
           position: "Goalkeeper"
-        - name: "Wout Faes"
+        - name: Senne Lammens
+          position: "Goalkeeper"
+        - name: Mike Penders
+          position: "Goalkeeper"
+        - name: Thomas Meunier
           position: "Defender"
-        - name: "Arthur Theate"
+        - name: Brandon Mechele
           position: "Defender"
-        - name: "Amadou Onana"
+        - name: Timothy Castagne
+          position: "Defender"
+        - name: Maxim De Cuyper
+          position: "Defender"
+        - name: Arthur Theate
+          position: "Defender"
+        - name: Koni De Winter
+          position: "Defender"
+        - name: Zeno Debast
+          position: "Defender"
+        - name: Nathan Ngoy
+          position: "Defender"
+        - name: Joaquin Seys
+          position: "Defender"
+        - name: Kevin De Bruyne
           position: "Midfielder"
-        - name: "Kevin De Bruyne"
+        - name: Axel Witsel
           position: "Midfielder"
-        - name: "Youri Tielemans"
+        - name: Youri Tielemans
           position: "Midfielder"
-        - name: "Jeremy Doku"
+        - name: Hans Vanaken
+          position: "Midfielder"
+        - name: Nicolas Raskin
+          position: "Midfielder"
+        - name: Amadou Onana
+          position: "Midfielder"
+        - name: Romelu Lukaku
           position: "Forward"
-        - name: "Romelu Lukaku"
+        - name: Leandro Trossard
           position: "Forward"
-        - name: "Leandro Trossard"
+        - name: Dodi Lukébakio
+          position: "Forward"
+        - name: Alexis Saelemaekers
+          position: "Forward"
+        - name: Jérémy Doku
+          position: "Forward"
+        - name: Charles De Ketelaere
+          position: "Forward"
+        - name: Diego Moreira
+          position: "Forward"
+        - name: Matias Fernandez-Pardo
           position: "Forward"
     Croatia:
-      manager: "Zlatko Dalić"
+      manager: Zlatko Dalić
       squad:
-        - name: "Dominik Livaković"
+        - name: Dominik Livakovic
           position: "Goalkeeper"
-        - name: "Josko Gvardiol"
+        - name: Dominik Kotarski
+          position: "Goalkeeper"
+        - name: Ivor Pandur
+          position: "Goalkeeper"
+        - name: Duje Caleta-Car
           position: "Defender"
-        - name: "Duje Ćaleta-Car"
+        - name: Martin Erlic
           position: "Defender"
-        - name: "Mateo Kovačić"
+        - name: Marin Pongracic
+          position: "Defender"
+        - name: Josip Stanisic
+          position: "Defender"
+        - name: Josko Gvardiol
+          position: "Defender"
+        - name: Josip Sutalo
+          position: "Defender"
+        - name: Luka Vuskovic
+          position: "Defender"
+        - name: Luka Modric
           position: "Midfielder"
-        - name: "Luka Modrić"
+        - name: Mateo Kovacic
           position: "Midfielder"
-        - name: "Marcelo Brozović"
+        - name: Mario Pasalic
           position: "Midfielder"
-        - name: "Andrej Kramarić"
+        - name: Nikola Vlasic
+          position: "Midfielder"
+        - name: Nikola Moro
+          position: "Midfielder"
+        - name: Kristijan Jakic
+          position: "Midfielder"
+        - name: Luka Sucic
+          position: "Midfielder"
+        - name: Martin Baturina
+          position: "Midfielder"
+        - name: Toni Fruk
+          position: "Midfielder"
+        - name: Petar Sucic
+          position: "Midfielder"
+        - name: Ivan Perisic
           position: "Forward"
-        - name: "Ivan Perišić"
+        - name: Andrej Kramaric
+          position: "Forward"
+        - name: Ante Budimir
+          position: "Forward"
+        - name: Petar Musa
+          position: "Forward"
+        - name: Igor Matanovic
+          position: "Forward"
+        - name: Marco Pasalic
           position: "Forward"
     Switzerland:
-      manager: "Murat Yakin"
+      manager: Murat Yakin
       squad:
-        - name: "Yann Sommer"
+        - name: Yvon Mvogo
           position: "Goalkeeper"
-        - name: "Manuel Akanji"
+        - name: Gregor Kobel
+          position: "Goalkeeper"
+        - name: Marvin Keller
+          position: "Goalkeeper"
+        - name: Ricardo Rodríguez
           position: "Defender"
-        - name: "Ricardo Rodríguez"
+        - name: Silvan Widmer
           position: "Defender"
-        - name: "Granit Xhaka"
+        - name: Nico Elvedi
+          position: "Defender"
+        - name: Manuel Akanji
+          position: "Defender"
+        - name: Eray Cömert
+          position: "Defender"
+        - name: Miro Muheim
+          position: "Defender"
+        - name: Aurèle Amenda
+          position: "Defender"
+        - name: Luca Jaquez
+          position: "Defender"
+        - name: Granit Xhaka
           position: "Midfielder"
-        - name: "Remo Freuler"
+        - name: Remo Freuler
           position: "Midfielder"
-        - name: "Xherdan Shaqiri"
+        - name: Djibril Sow
           position: "Midfielder"
-        - name: "Breel Embolo"
+        - name: Denis Zakaria
+          position: "Midfielder"
+        - name: Christian Fassnacht
+          position: "Midfielder"
+        - name: Michel Aebischer
+          position: "Midfielder"
+        - name: Rubén Vargas
+          position: "Midfielder"
+        - name: Ardon Jashari
+          position: "Midfielder"
+        - name: Fabian Rieder
+          position: "Midfielder"
+        - name: Johan Manzambi
+          position: "Midfielder"
+        - name: Breel Embolo
           position: "Forward"
-        - name: "Noah Okafor"
+        - name: Cedric Itten
+          position: "Forward"
+        - name: Noah Okafor
+          position: "Forward"
+        - name: Dan Ndoye
+          position: "Forward"
+        - name: Zeki Amdouni
           position: "Forward"
     Austria:
-      manager: "Ralf Rangnick"
+      manager: Ralf Rangnick
       squad:
-        - name: "Patrick Pentz"
+        - name: Alexander Schlager
           position: "Goalkeeper"
-        - name: "David Alaba"
+        - name: Patrick Pentz
+          position: "Goalkeeper"
+        - name: Florian Wiegele
+          position: "Goalkeeper"
+        - name: David Alaba
           position: "Defender"
-        - name: "Stefan Posch"
+        - name: Philipp Lienhart
           position: "Defender"
-        - name: "Marcel Sabitzer"
+        - name: Marco Friedl
+          position: "Defender"
+        - name: Stefan Posch
+          position: "Defender"
+        - name: Phillipp Mwene
+          position: "Defender"
+        - name: Kevin Danso
+          position: "Defender"
+        - name: Michael Svoboda
+          position: "Defender"
+        - name: David Affengruber
+          position: "Defender"
+        - name: Alexander Prass
+          position: "Defender"
+        - name: Konrad Laimer
           position: "Midfielder"
-        - name: "Konrad Laimer"
+        - name: Marcel Sabitzer
           position: "Midfielder"
-        - name: "Nicolas Seiwald"
+        - name: Alessandro Schöpf
           position: "Midfielder"
-        - name: "Marko Arnautović"
+        - name: Florian Grillitsch
+          position: "Midfielder"
+        - name: Romano Schmid
+          position: "Midfielder"
+        - name: Xaver Schlager
+          position: "Midfielder"
+        - name: Carney Chukwuemeka
+          position: "Midfielder"
+        - name: Patrick Wimmer
+          position: "Midfielder"
+        - name: Nicolas Seiwald
+          position: "Midfielder"
+        - name: Paul Wanner
+          position: "Midfielder"
+        - name: Marko Arnautovic
           position: "Forward"
-        - name: "Patrick Wimmer"
+        - name: Michael Gregoritsch
+          position: "Forward"
+        - name: Sasa Kalajdzic
           position: "Forward"
     Norway:
-      manager: "Ståle Solbakken"
+      manager: Ståle Solbakken
       squad:
-        - name: "Ørjan Nyland"
+        - name: Ørjan Nyland
           position: "Goalkeeper"
-        - name: "Leo Østigård"
+        - name: Egil Selvik
+          position: "Goalkeeper"
+        - name: Sander Tangvik
+          position: "Goalkeeper"
+        - name: Marcus Holmgren Pedersen
           position: "Defender"
-        - name: "Andreas Hanche-Olsen"
+        - name: Kristoffer Ajer
           position: "Defender"
-        - name: "Martin Ødegaard"
+        - name: Julian Ryerson
+          position: "Defender"
+        - name: Fredrik André Bjørkan
+          position: "Defender"
+        - name: Torbjørn Heggem
+          position: "Defender"
+        - name: Leo Østigard
+          position: "Defender"
+        - name: Henrik Falchener
+          position: "Defender"
+        - name: David Møller Wolfe
+          position: "Defender"
+        - name: Sondre Langas
+          position: "Defender"
+        - name: Morten Thorsby
           position: "Midfielder"
-        - name: "Sander Berge"
+        - name: Martin Ødegaard
           position: "Midfielder"
-        - name: "Erling Haaland"
+        - name: Patrick Berg
+          position: "Midfielder"
+        - name: Fredrik Aursnes
+          position: "Midfielder"
+        - name: Sander Berge
+          position: "Midfielder"
+        - name: Jens Petter Hauge
+          position: "Midfielder"
+        - name: Kristian Thorstvedt
+          position: "Midfielder"
+        - name: Oscar Bobb
+          position: "Midfielder"
+        - name: Thelo Aasgaard
+          position: "Midfielder"
+        - name: Antonio Nusa
+          position: "Midfielder"
+        - name: Alexander Sørloth
           position: "Forward"
-        - name: "Alexander Sørloth"
+        - name: Jørgen Strand Larsen
+          position: "Forward"
+        - name: Erling Haaland
+          position: "Forward"
+        - name: Andreas Schjelderup
           position: "Forward"
     Sweden:
-      manager: "Jon Dahl Tomasson"
+      manager: Jon Dahl Tomasson
       squad:
-        - name: "Robin Olsen"
+        - name: Kristoffer Nordfeldt
           position: "Goalkeeper"
-        - name: "Victor Lindelöf"
+        - name: Viktor Johansson
+          position: "Goalkeeper"
+        - name: Jacob Widell Zetterström
+          position: "Goalkeeper"
+        - name: Carl Starfelt
           position: "Defender"
-        - name: "Emil Krafth"
+        - name: Eric Smith
           position: "Defender"
-        - name: "Dejan Kulusevski"
+        - name: Victor Lindelöf
+          position: "Defender"
+        - name: Gabriel Gudmundsson
+          position: "Defender"
+        - name: Hjalmar Ekdal
+          position: "Defender"
+        - name: Daniel Svensson
+          position: "Defender"
+        - name: Isak Hien
+          position: "Defender"
+        - name: Gustaf Lagerbielke
+          position: "Defender"
+        - name: Ken Sema
           position: "Midfielder"
-        - name: "Emil Forsberg"
+        - name: Mattias Svanberg
           position: "Midfielder"
-        - name: "Viktor Gyökeres"
+        - name: Jesper Karlström
+          position: "Midfielder"
+        - name: Yasin Ayari
+          position: "Midfielder"
+        - name: Herman Johansson
+          position: "Midfielder"
+        - name: Taha Ali
+          position: "Midfielder"
+        - name: Besfort Zeneli
+          position: "Midfielder"
+        - name: Lucas Bergvall
+          position: "Midfielder"
+        - name: Elliot Stroud
+          position: "Midfielder"
+        - name: Alexander Isak
           position: "Forward"
-        - name: "Alexander Isak"
+        - name: Gustaf Nilsson
           position: "Forward"
-    Türkiye:
-      manager: "Vincenzo Montella"
+        - name: Viktor Gyökeres
+          position: "Forward"
+        - name: Benjamin Nygren
+          position: "Forward"
+        - name: Anthony Elanga
+          position: "Forward"
+        - name: Alexander Bernhardsson
+          position: "Forward"
+    Turkey:
+      manager: Vincenzo Montella
       squad:
-        - name: "Mert Günok"
+        - name: Mert Günok
           position: "Goalkeeper"
-        - name: "Merih Demiral"
+        - name: Ugurcan Çakir
+          position: "Goalkeeper"
+        - name: Altay Bayindir
+          position: "Goalkeeper"
+        - name: Kaan Ayhan
           position: "Defender"
-        - name: "Zeki Çelik"
+        - name: Abdülkerim Bardakçi
           position: "Defender"
-        - name: "Hakan Çalhanoğlu"
+        - name: Çaglar Söyüncü
+          position: "Defender"
+        - name: Ferdi Kadioglu
+          position: "Defender"
+        - name: Mert Müldür
+          position: "Defender"
+        - name: Ozan Kabak
+          position: "Defender"
+        - name: Merih Demiral
+          position: "Defender"
+        - name: Zeki Çelik
+          position: "Defender"
+        - name: Eren Elmali
+          position: "Defender"
+        - name: Samet Akaydin
+          position: "Defender"
+        - name: Hakan Çalhanoglu
           position: "Midfielder"
-        - name: "Salih Özcan"
+        - name: Irfan Can Kahveci
           position: "Midfielder"
-        - name: "Arda Güler"
+        - name: Salih Özcan
           position: "Midfielder"
-        - name: "Kenan Yıldız"
+        - name: Orkun Kökçü
+          position: "Midfielder"
+        - name: Ismail Yüksek
+          position: "Midfielder"
+        - name: Arda Güler
+          position: "Midfielder"
+        - name: Can Uzun
+          position: "Midfielder"
+        - name: Yunus Akgün
           position: "Forward"
-        - name: "Baris Yilmaz"
+        - name: Kerem Aktürkoglu
+          position: "Forward"
+        - name: Baris Alper Yilmaz
+          position: "Forward"
+        - name: Oguz Aydin
+          position: "Forward"
+        - name: Deniz Gül
+          position: "Forward"
+        - name: Kenan Yildiz
           position: "Forward"
     Scotland:
-      manager: "Steve Clarke"
+      manager: Steve Clarke
       squad:
-        - name: "Angus Gunn"
+        - name: Liam Kelly
           position: "Goalkeeper"
-        - name: "Craig Gordon"
+        - name: Craig Gordon
           position: "Goalkeeper"
-        - name: "Andy Robertson"
+        - name: Angus Gunn
+          position: "Goalkeeper"
+        - name: Andy Robertson
           position: "Defender"
-        - name: "Kieran Tierney"
+        - name: Grant Hanley
           position: "Defender"
-        - name: "Grant Hanley"
+        - name: John Souttar
           position: "Defender"
-        - name: "Scott McTominay"
+        - name: Scott McKenna
+          position: "Defender"
+        - name: Jack Hendry
+          position: "Defender"
+        - name: Kieran Tierney
+          position: "Defender"
+        - name: Anthony Ralston
+          position: "Defender"
+        - name: Dominic Hyam
+          position: "Defender"
+        - name: Nathan Patterson
+          position: "Defender"
+        - name: Aaron Hickey
+          position: "Defender"
+        - name: Ryan Christie
           position: "Midfielder"
-        - name: "John McGinn"
+        - name: Kenny McLean
           position: "Midfielder"
-        - name: "Billy Gilmour"
+        - name: John McGinn
           position: "Midfielder"
-        - name: "Ryan Christie"
+        - name: Lewis Ferguson
           position: "Midfielder"
-        - name: "Che Adams"
+        - name: Scott McTominay
+          position: "Midfielder"
+        - name: Tyler Fletcher
+          position: "Midfielder"
+        - name: Lawrence Shankland
           position: "Forward"
-        - name: "Lawrence Shankland"
+        - name: Lyndon Dykes
           position: "Forward"
-        - name: "Ryan Fraser"
+        - name: Ché Adams
+          position: "Forward"
+        - name: George Hirst
+          position: "Forward"
+        - name: Ross Stewart
+          position: "Forward"
+        - name: Ben Gannon-Doak
+          position: "Forward"
+        - name: Findlay Curtis
           position: "Forward"
     Czechia:
-      manager: "Ivan Hašek"
+      manager: Miroslav Koubek
       squad:
-        - name: "Jiří Pavlenka"
+        - name: Jindrich Stanek
           position: "Goalkeeper"
-        - name: "Tomáš Vaclík"
+        - name: Matej Kovár
           position: "Goalkeeper"
-        - name: "Vladimír Coufal"
+        - name: Lukás Hornícek
+          position: "Goalkeeper"
+        - name: Ladislav Krejcí
           position: "Defender"
-        - name: "Tomáš Holeš"
+        - name: Vladimír Coufal
           position: "Defender"
-        - name: "David Jurásek"
+        - name: Jaroslav Zelený
           position: "Defender"
-        - name: "Tomáš Souček"
+        - name: Tomás Holes
+          position: "Defender"
+        - name: David Zima
+          position: "Defender"
+        - name: Robin Hranác
+          position: "Defender"
+        - name: David Jurásek
+          position: "Defender"
+        - name: Stepán Chaloupek
+          position: "Defender"
+        - name: Vladimír Darida
           position: "Midfielder"
-        - name: "Lukáš Provod"
+        - name: Tomás Soucek
           position: "Midfielder"
-        - name: "Antonín Barák"
+        - name: Michal Sadílek
           position: "Midfielder"
-        - name: "Václav Černý"
+        - name: Lukás Provod
+          position: "Midfielder"
+        - name: Lukás Cerv
+          position: "Midfielder"
+        - name: Pavel Sulc
+          position: "Midfielder"
+        - name: Denis Visinský
+          position: "Midfielder"
+        - name: David Doudera
+          position: "Midfielder"
+        - name: Alexandr Sojka
+          position: "Midfielder"
+        - name: Hugo Sochurek
+          position: "Midfielder"
+        - name: Patrik Schick
           position: "Forward"
-        - name: "Patrik Schick"
+        - name: Tomás Chorý
           position: "Forward"
-        - name: "Adam Hložek"
+        - name: Adam Hlozek
+          position: "Forward"
+        - name: Jan Kuchta
+          position: "Forward"
+        - name: Mojmír Chytil
           position: "Forward"
     Bosnia and Herzegovina:
-      manager: "Sergej Barbarez"
+      manager: Sergej Barbarez
       squad:
-        - name: "Asmir Begović"
+        - name: Nikola Vasilj
           position: "Goalkeeper"
-        - name: "Ibrahim Šehić"
+        - name: Martin Zlomislic
           position: "Goalkeeper"
-        - name: "Sead Kolašinac"
+        - name: Mladen Jurkas
+          position: "Goalkeeper"
+        - name: Sead Kolasinac
           position: "Defender"
-        - name: "Anel Ahmedhodžić"
+        - name: Nikola Katic
           position: "Defender"
-        - name: "Miralem Pjanić"
+        - name: Dennis Hadzikadunic
+          position: "Defender"
+        - name: Nihad Mujakic
+          position: "Defender"
+        - name: Stjepan Radeljic
+          position: "Defender"
+        - name: Amar Dedic
+          position: "Defender"
+        - name: Tarik Muharemovic
+          position: "Defender"
+        - name: Nidal Celik
+          position: "Defender"
+        - name: Ivan Sunjic
           position: "Midfielder"
-        - name: "Rade Krunić"
+        - name: Amir Hadziahmetovic
           position: "Midfielder"
-        - name: "Amir Hadžiahmetović"
+        - name: Dzenis Burnic
           position: "Midfielder"
-        - name: "Edin Džeko"
+        - name: Armin Gigovic
+          position: "Midfielder"
+        - name: Ivan Basic
+          position: "Midfielder"
+        - name: Amar Memic
+          position: "Midfielder"
+        - name: Benjamin Tahirovic
+          position: "Midfielder"
+        - name: Ermin Mahmic
+          position: "Midfielder"
+        - name: Edin Dzeko
           position: "Forward"
-        - name: "Ermedin Demirović"
+        - name: Haris Tabakovic
           position: "Forward"
-        - name: "Smail Prevljak"
+        - name: Ermedin Demirovic
           position: "Forward"
-
+        - name: Jovo Lukic
+          position: "Forward"
+        - name: Samed Bazdar
+          position: "Forward"
+        - name: Esmir Bajraktarevic
+          position: "Forward"
+        - name: Kerim Alajbegovic
+          position: "Forward"
   AFC:
     Japan:
-      manager: "Hajime Moriyasu"
+      manager: Hajime Moriyasu
       squad:
-        - name: "Zion Suzuki"
+        - name: Keisuke Osako
           position: "Goalkeeper"
-        - name: "Kou Itakura"
+        - name: Zion Suzuki
+          position: "Goalkeeper"
+        - name: Tomoki Hayakawa
+          position: "Goalkeeper"
+        - name: Hiroki Ito
           position: "Defender"
-        - name: "Takehiro Tomiyasu"
+        - name: Yuto Nagatomo
           position: "Defender"
-        - name: "Wataru Endo"
+        - name: Shogo Taniguchi
+          position: "Defender"
+        - name: Takehiro Tomiyasu
+          position: "Defender"
+        - name: Kou Itakura
+          position: "Defender"
+        - name: Ayumu Seko
+          position: "Defender"
+        - name: Yukinari Sugawara
+          position: "Defender"
+        - name: Tsuyoshi Watanabe
+          position: "Defender"
+        - name: Junnosuke Suzuki
+          position: "Defender"
+        - name: Wataru Endo
           position: "Midfielder"
-        - name: "Kaoru Mitoma"
+        - name: Daichi Kamada
           position: "Midfielder"
-        - name: "Takefusa Kubo"
+        - name: Ritsu Doan
           position: "Midfielder"
-        - name: "Ayase Ueda"
+        - name: Ao Tanaka
+          position: "Midfielder"
+        - name: Yuito Suzuki
+          position: "Midfielder"
+        - name: Kaishu Sano
+          position: "Midfielder"
+        - name: Junya Ito
           position: "Forward"
-        - name: "Takumi Minamino"
+        - name: Koki Ogawa
+          position: "Forward"
+        - name: Takefusa Kubo
+          position: "Forward"
+        - name: Keito Nakamura
+          position: "Forward"
+        - name: Ayase Ueda
+          position: "Forward"
+        - name: Daizen Maeda
+          position: "Forward"
+        - name: Keisuke Goto
+          position: "Forward"
+        - name: Kento Shiogai
           position: "Forward"
     Iran:
-      manager: "Amir Ghalenoei"
+      manager: Amir Ghalenoei
       squad:
-        - name: "Alireza Beiranvand"
+        - name: Hossein Hosseini
           position: "Goalkeeper"
-        - name: "Shojae Khalilzadeh"
+        - name: Alireza Beiranvand
+          position: "Goalkeeper"
+        - name: Payam Niazmand
+          position: "Goalkeeper"
+        - name: Shoja Khalilzadeh
           position: "Defender"
-        - name: "Majid Hosseini"
+        - name: Ehsan Hajsafi
           position: "Defender"
-        - name: "Saeid Ezatolahi"
+        - name: Ramin Rezaeian
+          position: "Defender"
+        - name: Milad Mohammadi
+          position: "Defender"
+        - name: Hossein Kanani
+          position: "Defender"
+        - name: Ali Nemati
+          position: "Defender"
+        - name: Saleh Hardani
+          position: "Defender"
+        - name: Arya Yousefi
+          position: "Defender"
+        - name: Danial Iri
+          position: "Defender"
+        - name: Alireza Jahanbakhsh
           position: "Midfielder"
-        - name: "Alireza Jahanbakhsh"
+        - name: Saeid Ezatolahi
           position: "Midfielder"
-        - name: "Saman Ghoddos"
+        - name: Mehdi Torabi
           position: "Midfielder"
-        - name: "Mehdi Taremi"
+        - name: Saman Ghoddos
+          position: "Midfielder"
+        - name: Roozbeh Cheshmi
+          position: "Midfielder"
+        - name: Mohammad Mohebbi
+          position: "Midfielder"
+        - name: Mohammad Ghorbani
+          position: "Midfielder"
+        - name: Amirmohammad Razzaghinia
+          position: "Midfielder"
+        - name: Mehdi Taremi
           position: "Forward"
-        - name: "Sardar Azmoun"
+        - name: Ali Alipour
+          position: "Forward"
+        - name: Mehdi Ghayedi
+          position: "Forward"
+        - name: Amirhossein Hosseinzadeh
+          position: "Forward"
+        - name: Dennis Dargahi
+          position: "Forward"
+        - name: Shahriyar Moghanloo
           position: "Forward"
     South Korea:
-      manager: "Hong Myung-bo"
+      manager: Hong Myung-bo
       squad:
-        - name: "Jo Hyeon-woo"
+        - name: Kim Seung-Gyu
           position: "Goalkeeper"
-        - name: "Kim Seung-gyu"
+        - name: Jo Hyeon-Woo
           position: "Goalkeeper"
-        - name: "Kim Min-jae"
+        - name: Song Bum-Keun
+          position: "Goalkeeper"
+        - name: Kim Min-Jae
           position: "Defender"
-        - name: "Lee Kang-in"
+        - name: Kim Moon-Hwan
+          position: "Defender"
+        - name: Kim Tae-Hyeon
+          position: "Defender"
+        - name: Lee Tae-Seok
+          position: "Defender"
+        - name: Lee Han-Beom
+          position: "Defender"
+        - name: Seol Young-Woo
+          position: "Defender"
+        - name: Lee Gi-Hyuk
+          position: "Defender"
+        - name: Cho Wi-Je
+          position: "Defender"
+        - name: Kim Jin-Gyu
           position: "Midfielder"
-        - name: "Hwang In-beom"
+        - name: Lee Jae-Sung
           position: "Midfielder"
-        - name: "Jeong Woo-yeong"
+        - name: Paik Seung-Ho
           position: "Midfielder"
-        - name: "Son Heung-min"
+        - name: Lee Dong-Gyeong
+          position: "Midfielder"
+        - name: Lee Kang-In
+          position: "Midfielder"
+        - name: Hwang In-Beom
+          position: "Midfielder"
+        - name: Jens Castrop
+          position: "Midfielder"
+        - name: Park Jin-Seop
+          position: "Midfielder"
+        - name: Bae Jun-Ho
+          position: "Midfielder"
+        - name: Son Heung-Min
           position: "Forward"
-        - name: "Hwang Hee-chan"
+        - name: Hwang Hee-Chan
           position: "Forward"
-        - name: "Cho Gue-sung"
+        - name: Eom Ji-Sung
+          position: "Forward"
+        - name: Oh Hyeon-Gyu
+          position: "Forward"
+        - name: Cho Gue-Sung
+          position: "Forward"
+        - name: Yang Hyun-Jun
           position: "Forward"
     Australia:
-      manager: "Tony Popovic"
+      manager: Tony Popovic
       squad:
-        - name: "Mathew Ryan"
+        - name: Mathew Ryan
           position: "Goalkeeper"
-        - name: "Danny Vukovic"
+        - name: Paul Izzo
           position: "Goalkeeper"
-        - name: "Harry Souttar"
+        - name: Patrick Beach
+          position: "Goalkeeper"
+        - name: Milos Degenek
           position: "Defender"
-        - name: "Miloš Degenek"
+        - name: Jason Geria
           position: "Defender"
-        - name: "Jackson Irvine"
+        - name: Aziz Behich
+          position: "Defender"
+        - name: Cameron Burgess
+          position: "Defender"
+        - name: Harry Souttar
+          position: "Defender"
+        - name: Jacob Italiano
+          position: "Defender"
+        - name: Kai Trewin
+          position: "Defender"
+        - name: Jordan Bos
+          position: "Defender"
+        - name: Alessandro Circati
+          position: "Defender"
+        - name: Lucas Herrington
+          position: "Defender"
+        - name: Jackson Irvine
           position: "Midfielder"
-        - name: "Riley McGree"
+        - name: Awer Mabil
           position: "Midfielder"
-        - name: "Craig Goodwin"
+        - name: Ajdin Hrustic
+          position: "Midfielder"
+        - name: "Aiden O'Neill"
+          position: "Midfielder"
+        - name: Connor Metcalfe
+          position: "Midfielder"
+        - name: Cameron Devlin
+          position: "Midfielder"
+        - name: Cristian Volpato
+          position: "Midfielder"
+        - name: Paul Okon-Engstler
+          position: "Midfielder"
+        - name: Mathew Leckie
           position: "Forward"
-        - name: "Mathew Leckie"
+        - name: Mohamed Toure
           position: "Forward"
-        - name: "Mitchell Duke"
+        - name: Tete Yengi
+          position: "Forward"
+        - name: Nishan Velupillay
+          position: "Forward"
+        - name: Nestory Irankunda
           position: "Forward"
     Saudi Arabia:
-      manager: "Hervé Renard"
+      manager: Hervé Renard
       squad:
-        - name: "Mohammed Al-Owais"
+        - name: Ahmed Al-Kassar
           position: "Goalkeeper"
-        - name: "Ali Al-Bulaihi"
+        - name: Mohammed Al-Owais
+          position: "Goalkeeper"
+        - name: Nawaf Al-Aqidi
+          position: "Goalkeeper"
+        - name: Hassan Kadish
           position: "Defender"
-        - name: "Saud Abdulhamid"
+        - name: Hassan Al-Tambakti
           position: "Defender"
-        - name: "Salem Al-Dawsari"
+        - name: Abdulelah Al-Amri
+          position: "Defender"
+        - name: Saud Abdulhamid
+          position: "Defender"
+        - name: Ali Lajami
+          position: "Defender"
+        - name: Moteb Al-Harbi
+          position: "Defender"
+        - name: Nawaf Boushal
+          position: "Defender"
+        - name: Ali Majrashi
+          position: "Defender"
+        - name: Jehad Thakri
+          position: "Defender"
+        - name: Salem Al-Dawsari
           position: "Midfielder"
-        - name: "Salman Al-Faraj"
+        - name: Mohamed Kanno
           position: "Midfielder"
-        - name: "Firas Al-Buraikan"
+        - name: Nasser Al-Dawsari
+          position: "Midfielder"
+        - name: Abdullah Al-Khaibari
+          position: "Midfielder"
+        - name: Aiman Yahya
+          position: "Midfielder"
+        - name: Ziyad Al-Johani
+          position: "Midfielder"
+        - name: Musab Al-Juwayr
+          position: "Midfielder"
+        - name: Ala Al-Hajji
+          position: "Midfielder"
+        - name: Mohammed Abu Al-Shamat
+          position: "Midfielder"
+        - name: Saleh Al-Shehri
           position: "Forward"
-        - name: "Mohammed Al-Dawsari"
+        - name: Feras Al-Brikan
+          position: "Forward"
+        - name: Sultan Mandash
+          position: "Forward"
+        - name: Khalid Al-Ghannam
+          position: "Forward"
+        - name: Abdullah Al-Hamdan
           position: "Forward"
     Uzbekistan:
-      manager: "Srečko Katanec"
+      manager: Srečko Katanec
       squad:
-        - name: "Utkir Yusupov"
+        - name: Botirali Ergashev
           position: "Goalkeeper"
-        - name: "Abdukodir Khusanov"
+        - name: Utkir Yusupov
+          position: "Goalkeeper"
+        - name: Abduvohid Nematov
+          position: "Goalkeeper"
+        - name: Rustam Ashurmatov
           position: "Defender"
-        - name: "Sherzod Nasimov"
+        - name: Farrukh Sayfiev
           position: "Defender"
-        - name: "Otabek Shukurov"
+        - name: Umar Eshmurodov
+          position: "Defender"
+        - name: Khojiakbar Alijonov
+          position: "Defender"
+        - name: Avazbek Ulmasaliyev
+          position: "Defender"
+        - name: Sherzod Nasrullaev
+          position: "Defender"
+        - name: Abdukodir Khusanov
+          position: "Defender"
+        - name: Jakhongir Urozov
+          position: "Defender"
+        - name: Behruzjon Karimov
+          position: "Defender"
+        - name: Jamshid Iskanderov
           position: "Midfielder"
-        - name: "Jaloliddin Masharipov"
+        - name: Jaloliddin Masharipov
           position: "Midfielder"
-        - name: "Eldor Shomurodov"
+        - name: Odiljon Xamrobekov
+          position: "Midfielder"
+        - name: Dostonbek Khamdamov
+          position: "Midfielder"
+        - name: Otabek Shukurov
+          position: "Midfielder"
+        - name: Azizjon Ganiev
+          position: "Midfielder"
+        - name: Akmal Mozgovoy
+          position: "Midfielder"
+        - name: Oston Urunov
+          position: "Midfielder"
+        - name: Abbosbek Fayzullaev
+          position: "Midfielder"
+        - name: Abdulla Abdullaev
+          position: "Midfielder"
+        - name: Sherzod Esanov
+          position: "Midfielder"
+        - name: Igor Sergeev
           position: "Forward"
-        - name: "Bobur Abdixoliqov"
+        - name: Eldor Shomurodov
+          position: "Forward"
+        - name: Azizbek Amonov
           position: "Forward"
     Qatar:
-      manager: "Tintín Márquez"
+      manager: Julen Lopetegui
       squad:
-        - name: "Meshaal Barsham"
+        - name: Meshaal Barsham
           position: "Goalkeeper"
-        - name: "Lucas Mendes"
+        - name: Salah Zakaria
+          position: "Goalkeeper"
+        - name: Mahmoud Abunada
+          position: "Goalkeeper"
+        - name: Pedro Miguel
           position: "Defender"
-        - name: "Abdelkarim Hassan"
+        - name: Lucas Mendes
           position: "Defender"
-        - name: "Akram Afif"
+        - name: Boualem Khoukhi
+          position: "Defender"
+        - name: Sultan Al-Brake
+          position: "Defender"
+        - name: Homam Ahmed
+          position: "Defender"
+        - name: Jassem Gaber
+          position: "Defender"
+        - name: Ayoub Al-Oui
+          position: "Defender"
+        - name: Al-Hashmi Al-Hussain
+          position: "Defender"
+        - name: Issa Laye
+          position: "Defender"
+        - name: Abdulaziz Hatem
           position: "Midfielder"
-        - name: "Hassan Al-Haydos"
+        - name: Karim Boudiaf
           position: "Midfielder"
-        - name: "Almoez Ali"
+        - name: Assim Madibo
+          position: "Midfielder"
+        - name: Ahmed Fathy
+          position: "Midfielder"
+        - name: Mohamed Manai
+          position: "Midfielder"
+        - name: Edmílson Junior
+          position: "Forward"
+        - name: Mohammed Muntari
+          position: "Forward"
+        - name: Almoez Ali
+          position: "Forward"
+        - name: Akram Afif
+          position: "Forward"
+        - name: Hassan Al-Haydos
+          position: "Forward"
+        - name: Ahmed Alaaeldin
+          position: "Forward"
+        - name: Yusuf Abdurisag
+          position: "Forward"
+        - name: Ahmed Al-Ganehi
+          position: "Forward"
+        - name: Tahsin Jamshid
           position: "Forward"
     Iraq:
-      manager: "Jesús Casas"
+      manager: Jesús Casas
       squad:
-        - name: "Jalal Hassan"
+        - name: Fahad Talib
           position: "Goalkeeper"
-        - name: "Rebin Sulaka"
+        - name: Jalal Hassan
+          position: "Goalkeeper"
+        - name: Ahmed Basil
+          position: "Goalkeeper"
+        - name: Frans Putros
           position: "Defender"
-        - name: "Ali Adnan"
+        - name: Rebin Sulaka
           position: "Defender"
-        - name: "Amir Al-Ammari"
+        - name: Hussein Ali
+          position: "Defender"
+        - name: Munaf Younus
+          position: "Defender"
+        - name: Merchas Doski
+          position: "Defender"
+        - name: Ahmed Maknazi
+          position: "Defender"
+        - name: Mustafa Saadoon
+          position: "Defender"
+        - name: Akam Hashim
+          position: "Defender"
+        - name: Zaid Tahseen
+          position: "Defender"
+        - name: Ibrahim Bayesh
           position: "Midfielder"
-        - name: "Ali Jasim"
+        - name: Kevin Yakob
           position: "Midfielder"
-        - name: "Aymen Hussein"
+        - name: Aimar Sher
+          position: "Midfielder"
+        - name: Amir Al-Ammari
+          position: "Midfielder"
+        - name: Zidane Iqbal
+          position: "Midfielder"
+        - name: Marko Farji
+          position: "Midfielder"
+        - name: Zaid Ismael
+          position: "Midfielder"
+        - name: Aymen Hussein
           position: "Forward"
-        - name: "Amjad Attwan"
+        - name: Mohanad Ali
+          position: "Forward"
+        - name: Ali Yousif
+          position: "Forward"
+        - name: Ali Jasim
+          position: "Forward"
+        - name: Ahmed Qasim
+          position: "Forward"
+        - name: Youssef Amyn
+          position: "Forward"
+        - name: Ali Al-Hamadi
           position: "Forward"
     Jordan:
-      manager: "Jamal Sellami"
+      manager: Jamal Sellami
       squad:
-        - name: "Yazeed Abu Laila"
+        - name: Yazeed Abulaila
           position: "Goalkeeper"
-        - name: "Baha Faisal"
+        - name: Abdallah Al-Fakhouri
+          position: "Goalkeeper"
+        - name: Nour Bani Ateyah
+          position: "Goalkeeper"
+        - name: Ehsan Haddad
           position: "Defender"
-        - name: "Anas Bani Yaseen"
+        - name: Yazan Al-Arab
           position: "Defender"
-        - name: "Yazan Al-Naimat"
+        - name: Mohammad Abualnadi
+          position: "Defender"
+        - name: Saleem Obaid
+          position: "Defender"
+        - name: Abdallah Nasib
+          position: "Defender"
+        - name: Mohannad Abu Taha
+          position: "Defender"
+        - name: Mohammad Abu Hasheesh
+          position: "Defender"
+        - name: Husam Abu Dahab
+          position: "Defender"
+        - name: Saed Al-Rosan
+          position: "Defender"
+        - name: Mohammad Abughoush
+          position: "Defender"
+        - name: Anas Badawi
+          position: "Defender"
+        - name: Rajaei Ayed
           position: "Midfielder"
-        - name: "Abdallah Nasib"
+        - name: Noor Al-Rawabdeh
           position: "Midfielder"
-        - name: "Mousa Al-Tamari"
+        - name: Ibrahim Sadeh
+          position: "Midfielder"
+        - name: Mohammad Al-Daoud
+          position: "Midfielder"
+        - name: Nizar Al-Rashdan
+          position: "Midfielder"
+        - name: Amer Jamous
+          position: "Midfielder"
+        - name: Mahmoud Al-Mardi
           position: "Forward"
-        - name: "Ahmad Khalil"
+        - name: Mousa Al-Tamari
           position: "Forward"
-
+        - name: Mohammed Abu Zraiq
+          position: "Forward"
+        - name: Ali Olwan
+          position: "Forward"
+        - name: Odeh Fakhoury
+          position: "Forward"
+        - name: Ali Azaizeh
+          position: "Forward"
   CAF:
     Morocco:
-      manager: "Walid Regragui"
+      manager: Walid Regragui
       squad:
-        - name: "Yassine Bounou"
+        - name: Yassine Bounou
           position: "Goalkeeper"
-        - name: "Munir Mohand"
+        - name: Ahmed Reda Tagnaouti
           position: "Goalkeeper"
-        - name: "Achraf Hakimi"
+        - name: Munir El Kajoui
+          position: "Goalkeeper"
+        - name: Issa Diop
           position: "Defender"
-        - name: "Nayef Aguerd"
+        - name: Noussair Mazraoui
           position: "Defender"
-        - name: "Romain Saïss"
+        - name: Achraf Hakimi
           position: "Defender"
-        - name: "Sofyan Amrabat"
+        - name: Nayef Aguerd
+          position: "Defender"
+        - name: Anass Salah-Eddine
+          position: "Defender"
+        - name: Chadi Riad
+          position: "Defender"
+        - name: Zakaria El Ouahdi
+          position: "Defender"
+        - name: Redouane Halhal
+          position: "Defender"
+        - name: Youssef Belammari
+          position: "Defender"
+        - name: Sofyan Amrabat
           position: "Midfielder"
-        - name: "Azzedine Ounahi"
+        - name: Brahim Díaz
           position: "Midfielder"
-        - name: "Selim Amallah"
+        - name: Azzedine Ounahi
           position: "Midfielder"
-        - name: "Brahim Díaz"
+        - name: Ismael Saibari
+          position: "Midfielder"
+        - name: Neil El Aynaoui
+          position: "Midfielder"
+        - name: Bilal El Khannouss
+          position: "Midfielder"
+        - name: Ayyoub Bouaddi
+          position: "Midfielder"
+        - name: Samir El Mourabet
+          position: "Midfielder"
+        - name: Ayoub El Kaabi
           position: "Forward"
-        - name: "Hakim Ziyech"
+        - name: Soufiane Rahimi
           position: "Forward"
-        - name: "Youssef En-Nesyri"
+        - name: Abde Ezzalzouli
+          position: "Forward"
+        - name: Chemsdine Talbi
+          position: "Forward"
+        - name: Gessime Yassine
+          position: "Forward"
+        - name: Ayoube Amaimouni
           position: "Forward"
     Senegal:
-      manager: "Pape Thiaw"
+      manager: Pape Thiaw
       squad:
-        - name: "Édouard Mendy"
+        - name: Mory Diaw
           position: "Goalkeeper"
-        - name: "Seny Dieng"
+        - name: Édouard Mendy
           position: "Goalkeeper"
-        - name: "Kalidou Koulibaly"
+        - name: Yehvann Diouf
+          position: "Goalkeeper"
+        - name: Kalidou Koulibaly
           position: "Defender"
-        - name: "Ismail Jakobs"
+        - name: Moussa Niakhaté
           position: "Defender"
-        - name: "Idrissa Gueye"
+        - name: Abdoulaye Seck
+          position: "Defender"
+        - name: Ismail Jakobs
+          position: "Defender"
+        - name: Antoine Mendy
+          position: "Defender"
+        - name: Mamadou Sarr
+          position: "Defender"
+        - name: El Hadji Malick Diouf
+          position: "Defender"
+        - name: Lamine Camara
           position: "Midfielder"
-        - name: "Lamine Camara"
+        - name: Idrissa Gueye
           position: "Midfielder"
-        - name: "Pape Gueye"
+        - name: Krépin Diatta
           position: "Midfielder"
-        - name: "Sadio Mané"
+        - name: Pape Gueye
+          position: "Midfielder"
+        - name: Pathé Ciss
+          position: "Midfielder"
+        - name: Pape Matar Sarr
+          position: "Midfielder"
+        - name: Habib Diarra
+          position: "Midfielder"
+        - name: Bara Sapoko Ndiaye
+          position: "Midfielder"
+        - name: Sadio Mané
           position: "Forward"
-        - name: "Nicolas Jackson"
+        - name: Ismaïla Sarr
           position: "Forward"
-        - name: "Ismaila Sarr"
+        - name: Cherif Ndiaye
+          position: "Forward"
+        - name: Iliman Ndiaye
+          position: "Forward"
+        - name: Nicolas Jackson
+          position: "Forward"
+        - name: Bamba Dieng
+          position: "Forward"
+        - name: Assane Diao
+          position: "Forward"
+        - name: Ibrahim Mbaye
           position: "Forward"
     Egypt:
-      manager: "Hossam Hassan"
+      manager: Hossam Hassan
       squad:
-        - name: "Mohamed El Shenawy"
+        - name: Mohamed El Shenawy
           position: "Goalkeeper"
-        - name: "Kareem Hafez"
+        - name: Mahdy Soliman
           position: "Goalkeeper"
-        - name: "Mohamed Abdelmonem"
+        - name: Mostafa Shoubir
+          position: "Goalkeeper"
+        - name: Mohamed Alaa
+          position: "Goalkeeper"
+        - name: Mohamed Hany
           position: "Defender"
-        - name: "Ahmed Hegazi"
+        - name: Ramy Rabia
           position: "Defender"
-        - name: "Hamdi Fathi"
+        - name: Karim Hafez
+          position: "Defender"
+        - name: Mohamed Abdelmoneim
+          position: "Defender"
+        - name: Ahmed Fatouh
+          position: "Defender"
+        - name: Yasser Ibrahim
+          position: "Defender"
+        - name: Hossam Abdelmaguid
+          position: "Defender"
+        - name: Tarek Alaa
+          position: "Defender"
+        - name: Hamdy Fathy
           position: "Midfielder"
-        - name: "Mohamed Elneny"
+        - name: Nabil Donga
           position: "Midfielder"
-        - name: "Mahmoud Trezeguet"
+        - name: Emam Ashour
           position: "Midfielder"
-        - name: "Mohamed Salah"
+        - name: Mahmoud Saber
+          position: "Midfielder"
+        - name: Mohanad Lashin
+          position: "Midfielder"
+        - name: Marawan Attia
+          position: "Midfielder"
+        - name: Mostafa Zico
+          position: "Midfielder"
+        - name: Trézéguet
           position: "Forward"
-        - name: "Omar Marmoush"
+        - name: Mohamed Salah
           position: "Forward"
-        - name: "Mostafa Mohamed"
+        - name: Zizo
+          position: "Forward"
+        - name: Haissem Hassan
+          position: "Forward"
+        - name: Ibrahim Adel
+          position: "Forward"
+        - name: Omar Marmoush
+          position: "Forward"
+        - name: Hamza Abdelkarim
           position: "Forward"
     Algeria:
-      manager: "Vladimir Petković"
+      manager: Vladimir Petković
       squad:
-        - name: "Anthony Mandrea"
+        - name: Luca Zidane
           position: "Goalkeeper"
-        - name: "Rayan Aït-Nouri"
+        - name: Oussama Benbot
+          position: "Goalkeeper"
+        - name: Melvin Mastil
+          position: "Goalkeeper"
+        - name: Aïssa Mandi
           position: "Defender"
-        - name: "Aissa Mandi"
+        - name: Ramy Bensebaini
           position: "Defender"
-        - name: "Ramiz Zerrouki"
+        - name: Rayan Aït-Nouri
+          position: "Defender"
+        - name: Mohamed Amine Tougai
+          position: "Defender"
+        - name: Zineddine Belaïd
+          position: "Defender"
+        - name: Samir Chergui
+          position: "Defender"
+        - name: Jaouen Hadjam
+          position: "Defender"
+        - name: Rafik Belghali
+          position: "Defender"
+        - name: Achraf Abada
+          position: "Defender"
+        - name: Nabil Bentaleb
           position: "Midfielder"
-        - name: "Houssem Aouar"
+        - name: Houssem Aouar
           position: "Midfielder"
-        - name: "Riyad Mahrez"
+        - name: Hicham Boudaoui
+          position: "Midfielder"
+        - name: Ramiz Zerrouki
+          position: "Midfielder"
+        - name: Farès Chaïbi
+          position: "Midfielder"
+        - name: Yassine Titraoui
+          position: "Midfielder"
+        - name: Ibrahim Maza
+          position: "Midfielder"
+        - name: Riyad Mahrez
           position: "Forward"
-        - name: "Amine Gouiri"
+        - name: Amine Gouiri
           position: "Forward"
-        - name: "Islam Slimani"
+        - name: Mohamed Amoura
           position: "Forward"
-    Côte d'Ivoire:
-      manager: "Emerse Faé"
+        - name: Adil Boulbina
+          position: "Forward"
+        - name: Anis Hadj Moussa
+          position: "Forward"
+        - name: Nadhir Benbouali
+          position: "Forward"
+        - name: Farès Ghedjemis
+          position: "Forward"
+    Ivory Coast:
+      manager: Emerse Faé
       squad:
-        - name: "Yahia Fofana"
+        - name: Alban Lafont
           position: "Goalkeeper"
-        - name: "Evan Ndicka"
+        - name: Yahia Fofana
+          position: "Goalkeeper"
+        - name: Mohamed Koné
+          position: "Goalkeeper"
+        - name: Evan Ndicka
           position: "Defender"
-        - name: "Serge Aurier"
+        - name: Christopher Operi
           position: "Defender"
-        - name: "Franck Kessié"
+        - name: Ghislain Konan
+          position: "Defender"
+        - name: Odilon Kossounou
+          position: "Defender"
+        - name: Wilfried Singo
+          position: "Defender"
+        - name: Emmanuel Agbadou
+          position: "Defender"
+        - name: Ousmane Diomande
+          position: "Defender"
+        - name: Guela Doué
+          position: "Defender"
+        - name: Seko Fofana
           position: "Midfielder"
-        - name: "Seko Fofana"
+        - name: Jean Michaël Seri
           position: "Midfielder"
-        - name: "Jean Michaël Seri"
+        - name: Franck Kessié
           position: "Midfielder"
-        - name: "Simon Adingra"
+        - name: Ibrahim Sangaré
+          position: "Midfielder"
+        - name: Parfait Guiagon
+          position: "Midfielder"
+        - name: Christ Inao Oulaï
+          position: "Midfielder"
+        - name: Nicolas Pépé
           position: "Forward"
-        - name: "Sébastien Haller"
+        - name: Evann Guessand
           position: "Forward"
-        - name: "Nicolas Pépé"
+        - name: Amad Diallo
+          position: "Forward"
+        - name: Ange-Yoan Bonny
+          position: "Forward"
+        - name: Elye Wahi
+          position: "Forward"
+        - name: Simon Adingra
+          position: "Forward"
+        - name: Oumar Diakité
+          position: "Forward"
+        - name: Bazoumana Touré
+          position: "Forward"
+        - name: Yan Diomande
           position: "Forward"
     Tunisia:
-      manager: "Kais Yaâkoubi"
+      manager: Kais Yaâkoubi
       squad:
-        - name: "Aymen Dahmene"
+        - name: Sabri Ben Hessen
           position: "Goalkeeper"
-        - name: "Montassar Talbi"
+        - name: Aymen Dahmen
+          position: "Goalkeeper"
+        - name: Mouhib Chamakh
+          position: "Goalkeeper"
+        - name: Dylan Bronn
           position: "Defender"
-        - name: "Dylan Bronn"
+        - name: Yan Valery
           position: "Defender"
-        - name: "Aissa Laïdouni"
+        - name: Montassar Talbi
+          position: "Defender"
+        - name: Ali Abdi
+          position: "Defender"
+        - name: Mohamed Amine Ben Hamida
+          position: "Defender"
+        - name: Omar Rekik
+          position: "Defender"
+        - name: Moutaz Neffati
+          position: "Defender"
+        - name: Adem Arous
+          position: "Defender"
+        - name: Raed Chikhaoui
+          position: "Defender"
+        - name: Rani Khedira
           position: "Midfielder"
-        - name: "Ellyes Skhiri"
+        - name: Ellyes Skhiri
           position: "Midfielder"
-        - name: "Wahbi Khazri"
+        - name: Mortadha Ben Ouanes
           position: "Midfielder"
-        - name: "Youssef Msakni"
+        - name: Mohamed Hadj Mahmoud
+          position: "Midfielder"
+        - name: Hannibal Mejbri
+          position: "Midfielder"
+        - name: Anis Slimane
+          position: "Midfielder"
+        - name: Elias Achouri
+          position: "Midfielder"
+        - name: Firas Chaouat
           position: "Forward"
-        - name: "Sayfallah Ltaief"
+        - name: Sebastian Tounekti
+          position: "Forward"
+        - name: Ismaël Gharbi
+          position: "Forward"
+        - name: Elias Saad
+          position: "Forward"
+        - name: Hazem Mastouri
+          position: "Forward"
+        - name: Khalil Ayari
+          position: "Forward"
+        - name: Rayan Elloumi
           position: "Forward"
     South Africa:
-      manager: "Hugo Broos"
+      manager: Hugo Broos
       squad:
-        - name: "Ronwen Williams"
+        - name: Ricardo Goss
           position: "Goalkeeper"
-        - name: "Ricardo Goss"
+        - name: Ronwen Williams
           position: "Goalkeeper"
-        - name: "Sipho Chaine"
+        - name: Sipho Chaine
           position: "Goalkeeper"
-        - name: "Aubrey Modiba"
+        - name: Aubrey Modiba
           position: "Defender"
-        - name: "Khuliso Mudau"
+        - name: Nkosinathi Sibisi
           position: "Defender"
-        - name: "Khulumani Ndamane"
+        - name: Khuliso Mudau
           position: "Defender"
-        - name: "Nkosinathi Sibisi"
+        - name: Bradley Cross
           position: "Defender"
-        - name: "Bradley Cross"
+        - name: Olwethu Makhanya
           position: "Defender"
-        - name: "Samukele Kabini"
+        - name: Ime Okon
           position: "Defender"
-        - name: "Olwethu Makhanya"
+        - name: Thabang Matuludi
           position: "Defender"
-        - name: "Thabang Matuludi"
+        - name: Samukele Kabini
           position: "Defender"
-        - name: "Mbekezeli Mbokazi"
+        - name: Khulumani Ndamane
           position: "Defender"
-        - name: "Ime Okon"
+        - name: Mbekezeli Mbokazi
+          position: "Defender"
+        - name: Themba Zwane
           position: "Midfielder"
-        - name: "Oswin Appollis"
+        - name: Sphephelo Sithole
           position: "Midfielder"
-        - name: "Thalente Mbatha"
+        - name: Teboho Mokoena
           position: "Midfielder"
-        - name: "Relebohile Mofokeng"
+        - name: Thalente Mbatha
           position: "Midfielder"
-        - name: "Jayden Adams"
+        - name: Jayden Adams
           position: "Midfielder"
-        - name: "Teboho Mokoena"
+        - name: Kamogelo Sebelebele
           position: "Midfielder"
-        - name: "Themba Zwane"
-          position: "Midfielder"
-        - name: "Sphephelo Sithole"
-          position: "Midfielder"
-        - name: "Evidence Makgopa"
+        - name: Lyle Foster
           position: "Forward"
-        - name: "Tshepang Moremi"
+        - name: Oswin Appollis
           position: "Forward"
-        - name: "Lyle Foster"
+        - name: Iqraam Rayners
           position: "Forward"
-        - name: "Thapelo Maseko"
+        - name: Evidence Makgopa
           position: "Forward"
-        - name: "Iqraam Rayners"
+        - name: Tshepang Moremi
           position: "Forward"
-        - name: "Kamogelo Sebelebele"
+        - name: Thapelo Maseko
           position: "Forward"
-    Cape Verde:
-      manager: "Bubista"
-      squad:
-        - name: "Vozinha"
-          position: "Goalkeeper"
-        - name: "Roberto"
-          position: "Defender"
-        - name: "Stopira"
-          position: "Defender"
-        - name: "Ryan Mendes"
-          position: "Midfielder"
-        - name: "Jamiro Monteiro"
-          position: "Midfielder"
-        - name: "Garry Rodrigues"
-          position: "Forward"
-        - name: "Bebeto"
+        - name: Relebohile Mofokeng
           position: "Forward"
     Ghana:
-      manager: "Otto Addo"
+      manager: Otto Addo
       squad:
-        - name: "Joseph Wollacott"
+        - name: Lawrence Ati Zigi
           position: "Goalkeeper"
-        - name: "Lawrence Ati-Zigi"
+        - name: Joseph Anang
           position: "Goalkeeper"
-        - name: "Alexander Djiku"
+        - name: Benjamin Asare
+          position: "Goalkeeper"
+        - name: Baba Rahman
           position: "Defender"
-        - name: "Denis Odoi"
+        - name: Derrick Luckassen
           position: "Defender"
-        - name: "Thomas Partey"
+        - name: Abdul Mumin
+          position: "Defender"
+        - name: Jerome Opoku
+          position: "Defender"
+        - name: Gideon Mensah
+          position: "Defender"
+        - name: Alidu Seidu
+          position: "Defender"
+        - name: Marvin Senaya
+          position: "Defender"
+        - name: Jonas Adjetey
+          position: "Defender"
+        - name: Kojo Peprah Oppong
+          position: "Defender"
+        - name: Thomas Partey
           position: "Midfielder"
-        - name: "Mohammed Kudus"
+        - name: Elisha Owusu
           position: "Midfielder"
-        - name: "Daniel-Kofi Kyereh"
+        - name: Kwasi Sibo
           position: "Midfielder"
-        - name: "Andre Ayew"
+        - name: Augustine Boakye
           position: "Forward"
-        - name: "Jordan Ayew"
+        - name: Caleb Yirenkyi
+          position: "Midfielder"
+        - name: Jordan Ayew
           position: "Forward"
-        - name: "Inaki Williams"
+        - name: Iñaki Williams
+          position: "Forward"
+        - name: Brandon Thomas-Asante
+          position: "Forward"
+        - name: Antoine Semenyo
+          position: "Forward"
+        - name: Kamaldeen Sulemana
+          position: "Forward"
+        - name: Fatawu Issahaku
+          position: "Forward"
+        - name: Ernest Nuamah
+          position: "Forward"
+        - name: Christopher Bonsu Baah
+          position: "Forward"
+        - name: Prince Adu
           position: "Forward"
     DR Congo:
-      manager: "Sébastien Desabre"
+      manager: Sébastien Desabre
       squad:
-        - name: "Joël Kiassumbua"
+        - name: Lionel Mpasi
           position: "Goalkeeper"
-        - name: "Chancel Mbemba"
+        - name: Timothy Fayulu
+          position: "Goalkeeper"
+        - name: Matthieu Epolo
+          position: "Goalkeeper"
+        - name: Arthur Masuaku
           position: "Defender"
-        - name: "Arthur Masuaku"
+        - name: Chancel Mbemba
           position: "Defender"
-        - name: "Théo Bongonda"
+        - name: Joris Kayembe
+          position: "Defender"
+        - name: Axel Tuanzebe
+          position: "Defender"
+        - name: Aaron Wan-Bissaka
+          position: "Defender"
+        - name: Dylan Batubinsika
+          position: "Defender"
+        - name: Gédéon Kalulu
+          position: "Defender"
+        - name: Steve Kapuadi
+          position: "Defender"
+        - name: Gaël Kakuta
           position: "Midfielder"
-        - name: "Paul-José Mpoku"
+        - name: Aaron Tshibola
           position: "Midfielder"
-        - name: "Cédric Bakambu"
+        - name: Théo Bongonda
+          position: "Midfielder"
+        - name: Charles Pickel
+          position: "Midfielder"
+        - name: Samuel Moutoussamy
+          position: "Midfielder"
+        - name: Edo Kayembe
+          position: "Midfielder"
+        - name: Noah Sadiki
+          position: "Midfielder"
+        - name: "Ngal'ayel Mukau"
+          position: "Midfielder"
+        - name: Cédric Bakambu
           position: "Forward"
-        - name: "Yoane Wissa"
+        - name: Yoane Wissa
           position: "Forward"
-        - name: "Fiston Mayele"
+        - name: Simon Banza
           position: "Forward"
-
+        - name: Meschack Elia
+          position: "Forward"
+        - name: Nathanaël Mbuku
+          position: "Forward"
+        - name: Fiston Mayele
+          position: "Forward"
+        - name: Brian Cipenga
+          position: "Forward"
+    Cape Verde:
+      manager: Bubista
+      squad:
+        - name: Vozinha
+          position: "Goalkeeper"
+        - name: Márcio Rosa
+          position: "Goalkeeper"
+        - name: CJ dos Santos
+          position: "Goalkeeper"
+        - name: Stopira
+          position: "Defender"
+        - name: Steven Moreira
+          position: "Defender"
+        - name: Diney Borges
+          position: "Defender"
+        - name: Pico Lopes
+          position: "Defender"
+        - name: Logan Costa
+          position: "Defender"
+        - name: Sidny Lopes Cabral
+          position: "Defender"
+        - name: Wagner Pina
+          position: "Defender"
+        - name: Kelvin Pires
+          position: "Defender"
+        - name: Yannick Semedo
+          position: "Midfielder"
+        - name: Laros Duarte
+          position: "Midfielder"
+        - name: Jamiro Monteiro
+          position: "Midfielder"
+        - name: Deroy Duarte
+          position: "Midfielder"
+        - name: Telmo Arcanjo
+          position: "Midfielder"
+        - name: João Paulo
+          position: "Midfielder"
+        - name: Kevin Pina
+          position: "Midfielder"
+        - name: Ryan Mendes
+          position: "Forward"
+        - name: Garry Rodrigues
+          position: "Forward"
+        - name: Nuno da Costa
+          position: "Forward"
+        - name: Jovane Cabral
+          position: "Forward"
+        - name: Willy Semedo
+          position: "Forward"
+        - name: Gilson Benchimol
+          position: "Forward"
+        - name: Dailon Livramento
+          position: "Forward"
+        - name: Hélio Varela
+          position: "Forward"
   OFC:
     New Zealand:
-      manager: "Darren Bazeley"
+      manager: Darren Bazeley
       squad:
-        - name: "Alex Paulsen"
+        - name: Max Crocombe
           position: "Goalkeeper"
-        - name: "Liberato Cacace"
+        - name: Michael Woud
+          position: "Goalkeeper"
+        - name: Alex Paulsen
+          position: "Goalkeeper"
+        - name: Michael Boxall
           position: "Defender"
-        - name: "Winston Reid"
+        - name: Tommy Smith
           position: "Defender"
-        - name: "Marko Stamenic"
+        - name: Tim Payne
+          position: "Defender"
+        - name: Francis de Vries
+          position: "Defender"
+        - name: Liberato Cacace
+          position: "Defender"
+        - name: Callan Elliot
+          position: "Defender"
+        - name: Nando Pijnaker
+          position: "Defender"
+        - name: Finn Surman
+          position: "Defender"
+        - name: Tyler Bindon
+          position: "Defender"
+        - name: Ryan Thomas
           position: "Midfielder"
-        - name: "Joe Bell"
+        - name: Alex Rufer
           position: "Midfielder"
-        - name: "Chris Wood"
+        - name: Callum McCowatt
+          position: "Midfielder"
+        - name: Sarpreet Singh
+          position: "Midfielder"
+        - name: Joe Bell
+          position: "Midfielder"
+        - name: Marko Stamenic
+          position: "Midfielder"
+        - name: Matthew Garbett
+          position: "Midfielder"
+        - name: Lachlan Bayliss
+          position: "Midfielder"
+        - name: Chris Wood
           position: "Forward"
-        - name: "Matthew Garbett"
+        - name: Kosta Barbarouses
           position: "Forward"
-
+        - name: Elijah Just
+          position: "Forward"
+        - name: Ben Waine
+          position: "Forward"
+        - name: Jesse Randall
+          position: "Forward"
+        - name: Ben Old
+          position: "Forward"
