@@ -7,7 +7,6 @@ import { KnockoutBracket } from './KnockoutBracket';
 import { Groups } from './Groups';
 import { SquadModal } from './SquadModal';
 import { MatchModal } from './MatchModal';
-import { shiftDate, clampDate } from './data';
 import './App.css';
 
 const TOURNAMENT_START = new Date('2026-06-11T15:00:00-04:00');
@@ -84,12 +83,6 @@ export default function App() {
     return () => clearInterval(t);
   }, [autoRefresh]);
 
-  function handleDateShift(n) {
-    const nd = clampDate(shiftDate(wc.selectedDate, n));
-    wc.setSelectedDate(nd);
-    document.getElementById('dp').value = nd;
-  }
-
   const tabs = [
     { id: 'main', label: '📅 Match Day + Fixture' },
     { id: 'groups', label: '📊 Groups' },
@@ -105,13 +98,6 @@ export default function App() {
             <div style={{ fontSize: 'var(--fs-sm)', fontWeight: 700, color: 'var(--ac-gold)', letterSpacing: 1.5, textTransform: 'uppercase' }}>FIFA World Cup 2026</div>
             <div style={{ fontSize: 'var(--fs-xs)', color: 'var(--tx-dim)', letterSpacing: 0.5 }}>🇺🇸 USA · 🇨🇦 Canada · 🇲🇽 Mexico · Jun 11 – Jul 19</div>
           </div>
-        </div>
-        <div style={S.dateNav}>
-          <button style={S.dbtn} onClick={() => handleDateShift(-1)}>◀</button>
-          <input id="dp" type="date" defaultValue={wc.selectedDate} min="2026-06-11" max="2026-07-19"
-            onChange={e => wc.setSelectedDate(e.target.value)}
-            style={S.dpInput} />
-          <button style={S.dbtn} onClick={() => handleDateShift(1)}>▶</button>
         </div>
         {!isMobile && Date.now() < TOURNAMENT_START.getTime() && (
           <div style={S.counterBox}>
@@ -232,13 +218,11 @@ export default function App() {
 const S = {
   app: { background: 'var(--bg-app)', color: 'var(--tx-primary)', fontFamily: 'var(--font-sans)', height: '100vh', overflow: 'hidden', display: 'flex', flexDirection: 'column' },
   topbar: { background: 'var(--bg-topbar)', borderBottom: '1px solid var(--bd-main)', padding: '10px 16px', display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' },
-  dateNav: { display: 'flex', alignItems: 'center', gap: 5 },
   counterBox: { display: 'flex', flexDirection: 'column', gap: 1, minWidth: 180, padding: '4px 8px', border: '1px solid var(--bd-btn)', borderRadius: 6, background: 'var(--bg-input)' },
   counterLabel: { fontSize: 'var(--fs-xs)', letterSpacing: '.6px', textTransform: 'uppercase', color: 'var(--tx-muted)' },
   counterValue: { fontSize: 'var(--fs-sm)', fontWeight: 700, color: 'var(--ac-gold)' },
   tzLabel: { fontSize: 'var(--fs-xs)', color: 'var(--tx-dim)', letterSpacing: '.3px', marginTop: 1 },
   dbtn: { background: 'var(--bg-input)', border: '1px solid var(--bd-btn)', color: 'var(--tx-secondary)', fontSize: 'var(--fs-sm)', padding: '5px 10px', borderRadius: 6, cursor: 'pointer', fontFamily: 'var(--font-sans)' },
-  dpInput: { background: 'var(--bg-input)', border: '1px solid var(--bd-btn)', color: 'var(--tx-primary)', fontSize: 'var(--fs-sm)', padding: '5px 10px', borderRadius: 6, cursor: 'pointer', outline: 'none', fontFamily: 'var(--font-sans)' },
   tabs: { display: 'flex', background: 'var(--bg-tabs)', borderBottom: '1px solid var(--bd-main)' },
   tab: { padding: '9px 18px', fontSize: 'var(--fs-sm)', fontWeight: 500, color: 'var(--tx-muted)', cursor: 'pointer', borderBottom: '2px solid transparent', transition: 'all .15s', textTransform: 'uppercase', letterSpacing: '.6px' },
   tabActive: { color: 'var(--ac-gold)', borderBottomColor: 'var(--ac-gold)' },
