@@ -1,0 +1,139 @@
+{
+  "1": {
+    "homeScore": 2,
+    "awayScore": 0,
+    "homeTeamId": "203",
+    "awayTeamId": "467",
+    "events": [
+      {
+        "minute": "9'",
+        "player": "J. Qui�ones",
+        "teamId": "203",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "17'",
+        "player": "T. Mokoena",
+        "teamId": "467",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "23'",
+        "player": "B. Guti�rrez",
+        "teamId": "203",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "49'",
+        "player": "S. Sithole",
+        "teamId": "467",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": true
+      },
+      {
+        "minute": "67'",
+        "player": "R. Jim�nez",
+        "teamId": "203",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "74'",
+        "player": "N. Sibisi",
+        "teamId": "467",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "84'",
+        "player": "T. Zwane",
+        "teamId": "467",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": true
+      },
+      {
+        "minute": "90'+2'",
+        "player": "C. Montes",
+        "teamId": "203",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": true
+      }
+    ]
+  },
+  "2": {
+    "homeScore": 2,
+    "awayScore": 1,
+    "homeTeamId": "451",
+    "awayTeamId": "450",
+    "events": [
+      {
+        "minute": "59'",
+        "player": "L. Krejc�",
+        "teamId": "450",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "67'",
+        "player": "H. In-Beom",
+        "teamId": "451",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "80'",
+        "player": "O. Hyeon-Gyu",
+        "teamId": "451",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "90'+6'",
+        "player": "L. Gi-Hyuk",
+        "teamId": "451",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
+  "updated": "2026-06-12T14:30:59.516Z"
+}

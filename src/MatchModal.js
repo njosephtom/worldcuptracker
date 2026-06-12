@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { VENUES } from './data';
 import { FlagImg } from './FlagImg';
 
-// ── ESPN historical fetch (for finished matches no longer in live scoreboard) ──
+// ── ESPN helpers ──────────────────────────────────────────────────────────────
 const ESPN_SCOREBOARD = 'https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard';
 const ESPN_NAME_MAP = {
   'Czech Republic':'Czechia','Bosnia-Herzegovina':'Bosnia and Herzegovina',
@@ -14,6 +14,8 @@ const ESPN_NAME_MAP = {
 };
 function espnNorm(n) { return ESPN_NAME_MAP[n] || n; }
 function fixEnc(s) { if (!s) return s; try { return decodeURIComponent(escape(s)); } catch { return s; } }
+
+// Returns { homeTeamId, awayTeamId, homeScore, awayScore, events } or null
 async function fetchMatchEvents(matchDate, homeTeam, awayTeam) {
   const dateStr = matchDate.replace(/-/g, '');
   const res = await fetch(`${ESPN_SCOREBOARD}?dates=${dateStr}&ts=${Date.now()}`);
@@ -27,25 +29,78 @@ async function fetchMatchEvents(matchDate, homeTeam, awayTeam) {
     if (!home || !away) continue;
     if (espnNorm(home.team?.displayName) !== homeTeam) continue;
     if (espnNorm(away.team?.displayName) !== awayTeam) continue;
-    return (comp.details || [])
+    const events = (comp.details || [])
       .filter(d => d.scoringPlay || d.yellowCard || d.redCard)
       .map(d => ({
         minute:  d.clock?.displayValue || '',
         player:  fixEnc(d.athletesInvolved?.[0]?.shortName || ''),
         teamId:  d.team?.id || '',
-        goal:    d.scoringPlay,
-        ownGoal: d.ownGoal,
-        penalty: d.penaltyKick,
-        yellow:  d.yellowCard,
-        red:     d.redCard,
-        homeTeamId: home.team?.id || '',
-        awayTeamId: away.team?.id || '',
+        goal:    !!d.scoringPlay,
+        ownGoal: !!d.ownGoal,
+        penalty: !!d.penaltyKick,
+        yellow:  !!d.yellowCard,
+        red:     !!d.redCard,
       }));
+    return {
+      homeTeamId: home.team?.id || '',
+      awayTeamId: away.team?.id || '',
+      homeScore:  parseInt(home.score, 10) || 0,
+      awayScore:  parseInt(away.score, 10) || 0,
+      events,
+    };
   }
   return null;
 }
 
-// ── helpers ──────────────────────────────────────────────────────────────────
+// Module-level cache for /match-events.json so we only fetch it once per session
+// null = not fetched yet, false = fetch failed, object = loaded data
+let _staticCache = null;
+
+async function fetchStaticCache() {
+  if (_staticCache !== null) return _staticCache;
+  try {
+    const res = await fetch('/match-events.json');
+    if (!res.ok) { _staticCache = false; return false; }
+    _staticCache = await res.json();
+    return _staticCache;
+  } catch {
+    _staticCache = false;
+    return false;
+  }
+}
+
+// 3-tier event loader: localStorage → static JSON → ESPN live
+async function loadMatchEvents(matchId, matchDate, homeTeam, awayTeam) {
+  const lsKey = `wc-events-${matchId}`;
+
+  // Tier 1: localStorage (instant, no network)
+  try {
+    const raw = localStorage.getItem(lsKey);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (parsed?.events) return parsed;
+    }
+  } catch {}
+
+  // Tier 2: static /match-events.json (CDN-backed, updated by GitHub Actions)
+  const staticData = await fetchStaticCache();
+  if (staticData && staticData[String(matchId)]) {
+    const entry = staticData[String(matchId)];
+    try { localStorage.setItem(lsKey, JSON.stringify(entry)); } catch {}
+    return entry;
+  }
+
+  // Tier 3: ESPN live fetch (fallback)
+  const result = await fetchMatchEvents(matchDate, homeTeam, awayTeam);
+  if (result) {
+    try { localStorage.setItem(lsKey, JSON.stringify(result)); } catch {}
+    return result;
+  }
+
+  return null;
+}
+
+// ── other helpers ─────────────────────────────────────────────────────────────
 function parseMatchDateTime(date, timeET) {
   const str = timeET.replace(' ET', '').trim();
   const [timePart, period] = str.split(' ');
@@ -104,29 +159,28 @@ function EventsColumn({ team, events, teamId, align }) {
 // ── main component ────────────────────────────────────────────────────────────
 export function MatchModal({ match, onClose, use24h }) {
   const [now, setNow] = useState(Date.now());
-  const [extraEvents, setExtraEvents] = useState(null);
+  // extraData: { homeTeamId, awayTeamId, homeScore, awayScore, events } | null
+  const [extraData, setExtraData] = useState(null);
   const [loadingEvents, setLoadingEvents] = useState(false);
 
-  // 1-second ticker for live match minute
   useEffect(() => {
     const t = setInterval(() => setNow(Date.now()), 1000);
     return () => clearInterval(t);
   }, []);
 
-  // Fetch historical events when finished match has no events in live data
+  // Load events for finished matches that don't already have live event data
   useEffect(() => {
-    if (!match) { setExtraEvents(null); return; }
-    if (match.status !== 'finished') { setExtraEvents(null); return; }
-    if (match.events && match.events.length > 0) { setExtraEvents(null); return; }
+    if (!match) { setExtraData(null); return; }
+    if (match.status !== 'finished') { setExtraData(null); return; }
+    if (match.events && match.events.length > 0) { setExtraData(null); return; }
     let cancelled = false;
     setLoadingEvents(true);
-    fetchMatchEvents(match.d, match.h, match.a)
-      .then(evs => { if (!cancelled) { setExtraEvents(evs); setLoadingEvents(false); } })
+    loadMatchEvents(match.id, match.d, match.h, match.a)
+      .then(data => { if (!cancelled) { setExtraData(data); setLoadingEvents(false); } })
       .catch(() => { if (!cancelled) setLoadingEvents(false); });
     return () => { cancelled = true; };
   }, [match]);
 
-  // Close on Escape key
   useEffect(() => {
     const onKey = e => { if (e.key === 'Escape') onClose(); };
     window.addEventListener('keydown', onKey);
@@ -143,16 +197,15 @@ export function MatchModal({ match, onClose, use24h }) {
   const venue    = VENUES[match.v] || { city: match.v, name: '' };
   const roundLabel = match.round || `Group ${match.g}`;
 
-  const homeScore = match.homeScore ?? 0;
-  const awayScore = match.awayScore ?? 0;
+  const homeScore = match.homeScore ?? extraData?.homeScore ?? 0;
+  const awayScore = match.awayScore ?? extraData?.awayScore ?? 0;
   const homeWins  = finished && homeScore > awayScore;
   const awayWins  = finished && awayScore > homeScore;
 
-  // Use live events from match, or fetched historical events
-  const events      = (match.events && match.events.length > 0) ? match.events : (extraEvents || []);
-  const homeTeamId  = match.homeTeamId || (extraEvents?.[0]?.homeTeamId ?? '');
-  const awayTeamId  = match.awayTeamId || (extraEvents?.[0]?.awayTeamId ?? '');
-  const hasEvents   = events.length > 0;
+  const events     = (match.events && match.events.length > 0) ? match.events : (extraData?.events || []);
+  const homeTeamId = match.homeTeamId || extraData?.homeTeamId || '';
+  const awayTeamId = match.awayTeamId || extraData?.awayTeamId || '';
+  const hasEvents  = events.length > 0;
 
   return (
     <div style={S.backdrop} onClick={onClose}>
@@ -220,19 +273,9 @@ export function MatchModal({ match, onClose, use24h }) {
             <div style={S.evUpcoming}>No events recorded</div>
           ) : (
             <div style={S.eventsGrid}>
-              <EventsColumn
-                team={match.h}
-                events={events}
-                teamId={homeTeamId}
-                align="left"
-              />
+              <EventsColumn team={match.h} events={events} teamId={homeTeamId} align="left" />
               <div style={S.evDivider} />
-              <EventsColumn
-                team={match.a}
-                events={events}
-                teamId={awayTeamId}
-                align="right"
-              />
+              <EventsColumn team={match.a} events={events} teamId={awayTeamId} align="right" />
             </div>
           )}
         </div>
