@@ -213,5 +213,123 @@
       }
     ]
   },
-  "updated": "2026-06-13T01:36:44.883Z"
+  "4": {
+    "homeScore": 4,
+    "awayScore": 1,
+    "homeTeamId": "660",
+    "awayTeamId": "210",
+    "events": [
+      {
+        "minute": "7'",
+        "player": "D. Bobadilla",
+        "teamId": "660",
+        "goal": true,
+        "ownGoal": true,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "10'",
+        "player": "J. Cáceres",
+        "teamId": "210",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "31'",
+        "player": "F. Balogun",
+        "teamId": "660",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "45'+5'",
+        "player": "F. Balogun",
+        "teamId": "660",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "53'",
+        "player": "M. Almirón",
+        "teamId": "210",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "59'",
+        "player": "T. Adams",
+        "teamId": "660",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "73'",
+        "player": "Maurício",
+        "teamId": "210",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "79'",
+        "player": "D. Gómez",
+        "teamId": "210",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "88'",
+        "player": "A. Arce",
+        "teamId": "210",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "90'+3'",
+        "player": "J. Alonso",
+        "teamId": "210",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "90'+8'",
+        "player": "G. Reyna",
+        "teamId": "660",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      }
+    ]
+  },
+  "updated": "2026-06-13T06:11:25.216Z"
 }
