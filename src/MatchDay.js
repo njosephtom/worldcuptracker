@@ -1,6 +1,14 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { VENUES, flagLabel, fmtDate } from './data';
 import { FlagImg } from './FlagImg';
+import { VenueMap } from './VenueMap';
+
+const TZ_MAP = {
+  ET: 'America/New_York',
+  CT: 'America/Chicago',
+  MT: 'America/Denver',
+  PT: 'America/Los_Angeles',
+};
 
 // Tournament runs June–July 2026 (EDT = UTC-4)
 function parseMatchDateTime(date, timeET) {
@@ -28,7 +36,14 @@ function matchCountdown(matchDate, now) {
   return rh > 0 ? `in ${d}d ${rh}h` : `in ${d}d`;
 }
 
-function fmtLocalTime(matchDate, use24h) {
+function fmtLocalTime(matchDate, use24h, selectedTZ) {
+  const iana = selectedTZ && TZ_MAP[selectedTZ];
+  if (iana) {
+    return matchDate.toLocaleTimeString('en-US', {
+      hour: 'numeric', minute: '2-digit', hour12: !use24h,
+      timeZone: iana, timeZoneName: 'short',
+    });
+  }
   return matchDate.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit', hour12: !use24h });
 }
 
@@ -72,8 +87,9 @@ function liveMinute(matchDate, now) {
   return ' 90+';
 }
 
-export function MatchDay({ matches, today, use24h, onMatchClick, onTT, onMoveTT, onHideTT }) {
+export function MatchDay({ matches, today, use24h, selectedTZ, onMatchClick, onTT, onMoveTT, onHideTT }) {
   const [view, setView] = useState('all');
+  const [showMap, setShowMap] = useState(false);
   const [now, setNow] = useState(Date.now);
   const todayRef = useRef(null);
 
@@ -124,7 +140,12 @@ export function MatchDay({ matches, today, use24h, onMatchClick, onTT, onMoveTT,
       <div style={styles.panelHdr}>
         <div style={{ display: 'flex', alignItems: 'baseline', gap: 5, overflow: 'hidden', minWidth: 0 }}>
           <span style={{ color: 'var(--ac-gold)', fontWeight: 700, fontSize: 10 }}>⚡ Match Schedule</span>
-          {tzAbbr && (
+          {selectedTZ ? (
+            <span style={{ fontSize: 10, color: 'var(--tx-dim)', fontWeight: 400 }}>
+              Times in: <b style={{ color: 'var(--ac-gold)' }}>{selectedTZ}</b>
+              <span style={{ color: 'var(--tx-dim2)' }}> · click {selectedTZ} to revert to local</span>
+            </span>
+          ) : tzAbbr && (
             <span style={{ fontSize: 10, color: 'var(--tx-dim)', fontWeight: 400 }}>
               All times in your local time: <b style={{ color: 'var(--tx-secondary)' }}>{tzAbbr}</b>
               {userCity && <span style={{ color: 'var(--tx-dim2)' }}> · 📍 {userCity}</span>}
@@ -147,7 +168,7 @@ export function MatchDay({ matches, today, use24h, onMatchClick, onTT, onMoveTT,
         </div>
       </div>
 
-      {/* Match list */}
+      {/* Match list + Venue Map (single scrollable area) */}
       <div style={{ flex: 1, overflowY: 'auto', overflowX: 'hidden' }}>
         {dates.length === 0 ? (
           <div style={styles.noMatch}>
@@ -232,7 +253,7 @@ export function MatchDay({ matches, today, use24h, onMatchClick, onTT, onMoveTT,
                       {live && <div style={{ marginBottom: 1 }}><span style={styles.liveBadge}>● LIVE{m.clock ? ` · ${m.clock}` : liveMinute(md, now)}</span></div>}
                       {!ft && (
                         <div style={{ fontSize: 11, color: 'var(--tx-secondary)', fontWeight: 600, whiteSpace: 'nowrap', textAlign: 'right' }}>
-                          {fmtLocalTime(md, use24h)}
+                          {fmtLocalTime(md, use24h, selectedTZ)}
                           {!live && countdown && (
                             <span style={{ fontSize: 9, color: 'var(--ac-green)', fontWeight: 600, marginLeft: 4 }}>
                               ({countdown.replace(/^Starts in /, '').replace(/^in /, '').replace('Starting now', 'now')})
@@ -255,6 +276,44 @@ export function MatchDay({ matches, today, use24h, onMatchClick, onTT, onMoveTT,
             </div>
           );
         })}
+
+        {/* Venue Map section */}
+        {today && (
+          <div style={{ borderTop: '1px solid var(--bd-main)' }}>
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              padding: '6px 10px',
+              background: 'var(--bg-panel)',
+              borderBottom: showMap ? '1px solid var(--bd-main)' : 'none',
+              cursor: 'pointer',
+            }} onClick={() => setShowMap(v => !v)}>
+              <h2 style={{
+                margin: 0,
+                fontSize: 10,
+                fontWeight: 700,
+                color: 'var(--ac-gold)',
+                letterSpacing: 1.2,
+                textTransform: 'uppercase',
+              }}>
+                World Cup 2026 Venue Map
+              </h2>
+              <span style={{ fontSize: 10, color: 'var(--tx-dim)', userSelect: 'none' }}>
+                {showMap ? '▲ Hide' : '▼ Show'}
+              </span>
+            </div>
+            {showMap && (
+              <VenueMap
+                dayMatches={matches.filter(m => m.d === today)}
+                selectedDate={today}
+                onTT={onTT}
+                onMoveTT={onMoveTT}
+                onHideTT={onHideTT}
+              />
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

@@ -563,6 +563,20 @@ export function KnockoutBracket({ isMobile, mockEnabled = false, standings = {},
     <div style={{ height:'100%', display:'flex', flexDirection:'column',
       background:'var(--brk-bg)', fontFamily:'var(--font-sans)',
       position:'relative', userSelect:'none' }}>
+      <h2 style={{
+        margin: 0,
+        padding: '5px 12px',
+        fontSize: 10,
+        fontWeight: 700,
+        color: 'var(--ac-gold)',
+        letterSpacing: 1.2,
+        textTransform: 'uppercase',
+        flexShrink: 0,
+        borderBottom: '1px solid var(--brk-div)',
+        background: 'var(--brk-bg)',
+      }}>
+        World Cup 2026 Knockout Bracket
+      </h2>
       {isMobile
         ? <MobileBracket bdm={bdm} mockEnabled={mockEnabled} standings={standings}
             hoveredSlot={hoveredSlot} setHoveredSlot={setHoveredSlot}

@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>worldcuptracker.us — SEO Keyword Cluster Map</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0f1e; color: #e2e8f0; min-height: 100vh; }
+
+  header { background: #080d1a; border-bottom: 1px solid #1e293b; padding: 20px 32px; display: flex; align-items: center; gap: 16px; }
+  header h1 { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; }
+  header span { font-size: 0.8rem; color: #64748b; }
+  .badge { background: #16a34a; color: #fff; font-size: 0.7rem; font-weight: 600; padding: 3px 8px; border-radius: 99px; }
+
+  .stats-bar { display: flex; gap: 24px; padding: 16px 32px; background: #080d1a; border-bottom: 1px solid #1e293b; flex-wrap: wrap; }
+  .stat { text-align: center; }
+  .stat-num { font-size: 1.4rem; font-weight: 800; color: #38bdf8; }
+  .stat-label { font-size: 0.7rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  .main { display: grid; grid-template-columns: 340px 1fr; min-height: calc(100vh - 130px); }
+
+  /* Sidebar */
+  .sidebar { background: #080d1a; border-right: 1px solid #1e293b; padding: 20px; overflow-y: auto; max-height: calc(100vh - 130px); }
+  .sidebar h2 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #64748b; margin-bottom: 12px; }
+  .cluster-list { display: flex; flex-direction: column; gap: 6px; }
+  .cluster-btn { background: #0f172a; border: 1px solid #1e293b; border-radius: 8px; padding: 10px 12px; cursor: pointer; text-align: left; transition: all 0.15s; display: flex; align-items: center; gap: 10px; }
+  .cluster-btn:hover { border-color: #334155; background: #1e293b; }
+  .cluster-btn.active { border-color: var(--c); background: color-mix(in srgb, var(--c) 15%, #0f172a); }
+  .cluster-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--c); flex-shrink: 0; }
+  .cluster-name { font-size: 0.85rem; font-weight: 600; color: #cbd5e1; }
+  .cluster-count { font-size: 0.72rem; color: #64748b; }
+
+  .sidebar-section { margin-top: 24px; }
+  .spoke-list { display: flex; flex-direction: column; gap: 4px; }
+  .spoke-item { background: #0f172a; border: 1px solid #1e293b; border-left: 3px solid var(--c); border-radius: 4px; padding: 8px 10px; cursor: pointer; transition: all 0.15s; }
+  .spoke-item:hover { background: #1e293b; }
+  .spoke-item.active { background: color-mix(in srgb, var(--c) 10%, #0f172a); }
+  .spoke-kw { font-size: 0.78rem; font-weight: 600; color: #e2e8f0; }
+  .spoke-url { font-size: 0.68rem; color: #64748b; font-family: monospace; }
+  .spoke-badges { display: flex; gap: 4px; margin-top: 4px; }
+  .pill { font-size: 0.6rem; padding: 2px 6px; border-radius: 99px; font-weight: 600; }
+  .pill-vol-h { background: #7f1d1d; color: #fca5a5; }
+  .pill-vol-mh { background: #78350f; color: #fcd34d; }
+  .pill-vol-m { background: #1e3a5f; color: #93c5fd; }
+  .pill-comp-vh { background: #581c87; color: #e9d5ff; }
+  .pill-comp-h { background: #312e81; color: #c7d2fe; }
+  .pill-comp-m { background: #164e63; color: #a5f3fc; }
+  .pill-comp-lm { background: #14532d; color: #86efac; }
+  .pill-opp-star { background: #92400e; color: #fde68a; }
+  .pill-opp-star2 { background: #7c2d12; color: #fed7aa; }
+
+  /* Canvas area */
+  .canvas { padding: 24px; overflow: auto; }
+  .canvas h2 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #64748b; margin-bottom: 16px; }
+  .pillar-card { background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%); border: 2px solid #38bdf8; border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; }
+  .pillar-tag { font-size: 0.65rem; text-transform: uppercase; color: #38bdf8; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 6px; }
+  .pillar-title { font-size: 1.1rem; font-weight: 800; color: #f1f5f9; margin-bottom: 4px; }
+  .pillar-kw { font-size: 0.8rem; color: #94a3b8; }
+  .pillar-url { font-size: 0.72rem; color: #38bdf8; font-family: monospace; margin-top: 6px; }
+  .pillar-kws { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 10px; }
+  .kw-chip { font-size: 0.7rem; background: #1e3a5f; color: #93c5fd; padding: 3px 8px; border-radius: 99px; }
+
+  .clusters-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+  .cluster-card { background: #0f172a; border: 1px solid #1e293b; border-top: 3px solid var(--c); border-radius: 10px; padding: 16px; }
+  .cluster-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+  .cluster-icon { width: 28px; height: 28px; border-radius: 6px; background: color-mix(in srgb, var(--c) 20%, #0f172a); display: flex; align-items: center; justify-content: center; font-size: 14px; }
+  .cluster-title { font-size: 0.9rem; font-weight: 700; color: #e2e8f0; }
+  .cluster-desc { font-size: 0.7rem; color: #64748b; }
+  .spoke-cards { display: flex; flex-direction: column; gap: 8px; }
+  .spoke-card { background: #0a0f1e; border: 1px solid #1e293b; border-radius: 6px; padding: 10px 12px; }
+  .spoke-card-kw { font-size: 0.78rem; font-weight: 600; color: #cbd5e1; margin-bottom: 3px; }
+  .spoke-card-url { font-size: 0.68rem; color: color-mix(in srgb, var(--c) 80%, #64748b); font-family: monospace; }
+  .spoke-card-badges { display: flex; gap: 4px; margin-top: 5px; flex-wrap: wrap; }
+  .spoke-card-notes { font-size: 0.68rem; color: #64748b; margin-top: 6px; line-height: 1.4; border-top: 1px solid #1e293b; padding-top: 6px; }
+
+  /* Detail panel */
+  .detail-panel { display: none; position: fixed; right: 0; top: 0; bottom: 0; width: 400px; background: #080d1a; border-left: 1px solid #1e293b; z-index: 100; overflow-y: auto; padding: 24px; box-shadow: -8px 0 32px rgba(0,0,0,0.5); }
+  .detail-panel.open { display: block; }
+  .detail-close { position: absolute; top: 16px; right: 16px; background: #1e293b; border: none; color: #94a3b8; cursor: pointer; width: 28px; height: 28px; border-radius: 6px; font-size: 16px; display: flex; align-items: center; justify-content: center; }
+  .detail-close:hover { background: #334155; color: #e2e8f0; }
+  .detail-kw { font-size: 1.1rem; font-weight: 800; color: #f1f5f9; margin: 32px 0 4px; }
+  .detail-url { font-size: 0.8rem; font-family: monospace; color: #38bdf8; margin-bottom: 16px; }
+  .detail-section { margin-top: 16px; }
+  .detail-section h3 { font-size: 0.7rem; text-transform: uppercase; color: #64748b; letter-spacing: 0.1em; margin-bottom: 8px; }
+  .kw-list { display: flex; flex-direction: column; gap: 4px; }
+  .kw-list-item { font-size: 0.78rem; color: #cbd5e1; background: #0f172a; padding: 5px 8px; border-radius: 4px; }
+  .detail-notes { font-size: 0.8rem; color: #94a3b8; line-height: 1.6; background: #0f172a; border-radius: 6px; padding: 12px; }
+  .opp-badge { display: inline-block; margin-bottom: 12px; font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 99px; }
+  .opp-vh { background: #7c2d12; color: #fed7aa; }
+  .opp-h { background: #92400e; color: #fde68a; }
+  .opp-mh { background: #1e3a5f; color: #93c5fd; }
+  .opp-m { background: #1e293b; color: #94a3b8; }
+
+  /* Priority list */
+  .priority-section { margin-top: 24px; }
+  .priority-card { background: #0f172a; border: 1px solid #1e293b; border-radius: 8px; padding: 12px 14px; margin-bottom: 8px; display: flex; align-items: flex-start; gap: 12px; }
+  .priority-num { font-size: 0.8rem; font-weight: 800; color: #fde68a; background: #78350f; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .priority-kw { font-size: 0.82rem; font-weight: 600; color: #e2e8f0; }
+  .priority-why { font-size: 0.72rem; color: #64748b; margin-top: 2px; }
+
+  .tab-bar { display: flex; gap: 2px; margin-bottom: 20px; }
+  .tab { background: #0f172a; border: 1px solid #1e293b; border-radius: 6px; padding: 7px 14px; cursor: pointer; font-size: 0.78rem; color: #64748b; transition: all 0.15s; }
+  .tab:hover { color: #e2e8f0; background: #1e293b; }
+  .tab.active { background: #1e3a5f; color: #93c5fd; border-color: #2563eb; }
+
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* Links visualization */
+  .links-section { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .link-group { background: #0f172a; border: 1px solid #1e293b; border-radius: 8px; padding: 14px; }
+  .link-group h3 { font-size: 0.72rem; text-transform: uppercase; color: #64748b; letter-spacing: 0.08em; margin-bottom: 10px; }
+  .link-item { font-size: 0.72rem; color: #94a3b8; padding: 4px 0; border-bottom: 1px solid #1e293b; display: flex; align-items: center; gap: 6px; }
+  .link-item:last-child { border-bottom: none; }
+  .link-arrow { color: #334155; }
+  .link-from { color: #38bdf8; font-family: monospace; }
+  .link-to { color: #a78bfa; font-family: monospace; }
+  .link-anchor { color: #64748b; font-style: italic; font-size: 0.65rem; }
+
+  svg.cluster-svg { width: 100%; height: 520px; }
+
+  @media (max-width: 900px) {
+    .main { grid-template-columns: 1fr; }
+    .sidebar { max-height: none; }
+    .links-section { grid-template-columns: 1fr; }
+    .detail-panel { width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div style="font-size:0.7rem;color:#64748b;margin-bottom:2px;">SEO KEYWORD CLUSTER MAP</div>
+    <h1>worldcuptracker.us</h1>
+  </div>
+  <span>FIFA World Cup 2026 Tracker &nbsp;|&nbsp; Generated June 13, 2026</span>
+  <span class="badge">TOURNAMENT LIVE</span>
+</header>
+
+<div class="stats-bar">
+  <div class="stat"><div class="stat-num">48</div><div class="stat-label">Keywords</div></div>
+  <div class="stat"><div class="stat-num">5</div><div class="stat-label">Clusters</div></div>
+  <div class="stat"><div class="stat-num">12</div><div class="stat-label">Spoke Pages</div></div>
+  <div class="stat"><div class="stat-num">40</div><div class="stat-label">Internal Links</div></div>
+  <div class="stat"><div class="stat-num">~18,400</div><div class="stat-label">Est. Words</div></div>
+  <div class="stat"><div class="stat-num">4</div><div class="stat-label">Quick Wins</div></div>
+</div>
+
+<div class="main">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Clusters</h2>
+    <div class="cluster-list">
+      <div class="cluster-btn active" style="--c:#38bdf8" onclick="filterCluster('all')">
+        <div class="cluster-dot" style="background:#38bdf8"></div>
+        <div><div class="cluster-name">All Clusters</div><div class="cluster-count">12 spokes · 48 keywords</div></div>
+      </div>
+      <div class="cluster-btn" style="--c:#2563eb" onclick="filterCluster(0)">
+        <div class="cluster-dot" style="background:#2563eb"></div>
+        <div><div class="cluster-name">Real-time Match Hub</div><div class="cluster-count">2 spokes · 12 keywords</div></div>
+      </div>
+      <div class="cluster-btn" style="--c:#16a34a" onclick="filterCluster(1)">
+        <div class="cluster-dot" style="background:#16a34a"></div>
+        <div><div class="cluster-name">Group Stage Intelligence</div><div class="cluster-count">2 spokes · 10 keywords</div></div>
+      </div>
+      <div class="cluster-btn" style="--c:#dc2626" onclick="filterCluster(2)">
+        <div class="cluster-dot" style="background:#dc2626"></div>
+        <div><div class="cluster-name">Knockout Bracket</div><div class="cluster-count">2 spokes · 9 keywords</div></div>
+      </div>
+      <div class="cluster-btn" style="--c:#d97706" onclick="filterCluster(3)">
+        <div class="cluster-dot" style="background:#d97706"></div>
+        <div><div class="cluster-name">Venues & Stadiums ⭐</div><div class="cluster-count">3 spokes · 9 keywords</div></div>
+      </div>
+      <div class="cluster-btn" style="--c:#7c3aed" onclick="filterCluster(4)">
+        <div class="cluster-dot" style="background:#7c3aed"></div>
+        <div><div class="cluster-name">Team Squads</div><div class="cluster-count">3 spokes · 8 keywords</div></div>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <h2>Spoke Pages</h2>
+      <div class="spoke-list" id="spoke-list">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Canvas -->
+  <div class="canvas">
+    <div class="tab-bar">
+      <div class="tab active" onclick="switchTab('map')">Cluster Map</div>
+      <div class="tab" onclick="switchTab('keywords')">Keyword Table</div>
+      <div class="tab" onclick="switchTab('priority')">Quick Wins</div>
+      <div class="tab" onclick="switchTab('links')">Link Matrix</div>
+    </div>
+
+    <!-- MAP TAB -->
+    <div class="tab-content active" id="tab-map">
+      <div class="pillar-card">
+        <div class="pillar-tag">PILLAR PAGE · worldcuptracker.us/</div>
+        <div class="pillar-title">FIFA World Cup 2026 Live Tracker — Scores, Fixtures & Standings</div>
+        <div class="pillar-url">worldcuptracker.us &nbsp;·&nbsp; Status: LIVE ✅</div>
+        <div class="pillar-kws">
+          <span class="kw-chip">FIFA World Cup 2026 tracker</span>
+          <span class="kw-chip">World Cup 2026 live scores</span>
+          <span class="kw-chip">World Cup 2026 fixtures</span>
+          <span class="kw-chip">World Cup 2026 standings</span>
+          <span class="kw-chip">free World Cup 2026 tracker</span>
+        </div>
+      </div>
+
+      <div class="clusters-grid" id="clusters-grid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+
+    <!-- KEYWORDS TAB -->
+    <div class="tab-content" id="tab-keywords">
+      <h2>All 48 Keywords</h2>
+      <table style="width:100%;border-collapse:collapse;font-size:0.78rem;">
+        <thead>
+          <tr style="border-bottom:1px solid #1e293b;">
+            <th style="text-align:left;padding:8px 10px;color:#64748b;font-weight:600">#</th>
+            <th style="text-align:left;padding:8px 10px;color:#64748b;font-weight:600">Keyword</th>
+            <th style="text-align:left;padding:8px 10px;color:#64748b;font-weight:600">Volume</th>
+            <th style="text-align:left;padding:8px 10px;color:#64748b;font-weight:600">Competition</th>
+            <th style="text-align:left;padding:8px 10px;color:#64748b;font-weight:600">Cluster</th>
+            <th style="text-align:left;padding:8px 10px;color:#64748b;font-weight:600">URL</th>
+          </tr>
+        </thead>
+        <tbody id="kw-table">
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PRIORITY TAB -->
+    <div class="tab-content" id="tab-priority">
+      <h2>Top 10 Quick-Win Keywords</h2>
+      <p style="font-size:0.78rem;color:#64748b;margin-bottom:16px;">Ranked by: low competition × high feature advantage on worldcuptracker.us</p>
+      <div id="priority-list"></div>
+    </div>
+
+    <!-- LINKS TAB -->
+    <div class="tab-content" id="tab-links">
+      <h2>Internal Link Matrix</h2>
+      <p style="font-size:0.78rem;color:#64748b;margin-bottom:16px;">40 links total · Every spoke links to pillar (mandatory) · Pillar links to all spokes</p>
+      <div class="links-section" id="links-grid"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Detail Panel -->
+<div class="detail-panel" id="detail-panel">
+  <button class="detail-close" onclick="closeDetail()">✕</button>
+  <div id="detail-content"></div>
+</div>
+
+<script>
+const CLUSTERS = [
+  {
+    name: "Real-time Match Hub", color: "#2563eb", icon: "⚡",
+    desc: "Live scores, today's fixtures, and timezone-aware schedule",
+    spokes: [
+      {
+        title: "World Cup 2026 Schedule by Time Zone",
+        keyword: "World Cup 2026 time zone schedule",
+        url: "/schedule", volume: "medium", competition: "medium", opportunity: "very-high",
+        secondary: ["World Cup 2026 kickoff times ET","World Cup 2026 match times Eastern","2026 World Cup schedule all time zones","World Cup 2026 schedule Pacific time"],
+        notes: "worldcuptracker.us already has a built-in ET/CT/MT/PT/Toronto timezone toggle — unique UX feature. Zero direct competitors target this keyword. Highest-confidence quick win in this cluster.",
+        template: "how-to", words: 1400
+      },
+      {
+        title: "World Cup 2026 Matches Today — Live Updates",
+        keyword: "World Cup 2026 matches today",
+        url: "/today", volume: "high", competition: "very-high", opportunity: "medium",
+        secondary: ["World Cup 2026 today","today World Cup 2026 games","World Cup 2026 live today","2026 World Cup today schedule"],
+        notes: "ESPN, Sofascore, LiveScore dominate. Win via freshness — auto-refreshing SPA content may earn a ranking if it becomes fast enough for Google to crawl as fresh.",
+        template: "listicle", words: 1200
+      }
+    ]
+  },
+  {
+    name: "Group Stage Intelligence", color: "#16a34a", icon: "📊",
+    desc: "Group standings, tables, and qualification scenarios",
+    spokes: [
+      {
+        title: "World Cup 2026 Group Standings — Live Tables All 12 Groups",
+        keyword: "World Cup 2026 group standings",
+        url: "/groups", volume: "high", competition: "high", opportunity: "medium-high",
+        secondary: ["World Cup 2026 group tables","2026 World Cup all 12 groups","World Cup 2026 group A standings","World Cup 2026 qualification scenarios","World Cup 2026 group stage results"],
+        notes: "Add fragment anchors (#group-a through #group-l) — people searching 'World Cup 2026 Group B standings' will find specific sections. Live data gives freshness edge.",
+        template: "listicle", words: 1600
+      },
+      {
+        title: "World Cup 2026 Format Explained — 48 Teams & How to Qualify",
+        keyword: "World Cup 2026 format explained",
+        url: "/format", volume: "medium", competition: "medium", opportunity: "high",
+        secondary: ["How does World Cup 2026 work","World Cup 2026 48 teams format","World Cup 2026 how many teams","World Cup 2026 third place teams qualify"],
+        notes: "Evergreen explainer through entire tournament. ESPN and FIFA rank here but a focused page with embedded live standings outranks static editorial pages.",
+        template: "explainer", words: 1500
+      }
+    ]
+  },
+  {
+    name: "Knockout Bracket", color: "#dc2626", icon: "🏆",
+    desc: "Interactive bracket, Round of 32, knockout stage",
+    spokes: [
+      {
+        title: "World Cup 2026 Knockout Bracket — Round of 32 to Final",
+        keyword: "World Cup 2026 bracket",
+        url: "/bracket", volume: "high", competition: "high", opportunity: "medium-high",
+        secondary: ["World Cup 2026 knockout bracket","World Cup 2026 round of 32 bracket","World Cup 2026 bracket results","World Cup 2026 quarter-finals bracket"],
+        notes: "Interactive bracket is core app feature. Volume spikes dramatically from June 28 (Round of 32 start). Create dedicated page now to capture ranking before knockout phase.",
+        template: "how-to", words: 1400
+      },
+      {
+        title: "World Cup 2026 Round of 32 Explained — Third Place Teams",
+        keyword: "World Cup 2026 round of 32",
+        url: "/round-of-32", volume: "medium-high", competition: "medium", opportunity: "high",
+        secondary: ["World Cup 2026 round of 32 explained","48 team World Cup format","World Cup 2026 third place teams","how do third place teams qualify World Cup 2026"],
+        notes: "New format = high search demand. Fox News, Fox Sports rank for this — but a page that explains AND shows the live bracket outranks static articles.",
+        template: "explainer", words: 1300
+      }
+    ]
+  },
+  {
+    name: "Venues & Stadiums", color: "#d97706", icon: "🏟️",
+    desc: "Interactive map, city guides, venue spotlights",
+    spokes: [
+      {
+        title: "World Cup 2026 Stadium Map — All 16 Venues",
+        keyword: "World Cup 2026 stadium map",
+        url: "/venues", volume: "medium-high", competition: "medium", opportunity: "very-high",
+        secondary: ["World Cup 2026 venues map","World Cup 2026 stadiums","World Cup 2026 venue map interactive","World Cup 2026 all 16 stadiums","2026 World Cup venue guide"],
+        notes: "⭐⭐ HIGHEST PRIORITY. worldcuptracker.us already has a live interactive SVG map with color-coded venues, capacities, and match-filtering. NO major sports data site (ESPN/Sofascore/LiveScore) has an interactive map. This is unique and rankable.",
+        template: "ultimate-guide", words: 2000
+      },
+      {
+        title: "World Cup 2026 USA Venues — 11 Stadiums & City Guides",
+        keyword: "World Cup 2026 USA stadiums",
+        url: "/venues/usa", volume: "medium", competition: "medium", opportunity: "high",
+        secondary: ["World Cup 2026 cities USA","World Cup games Dallas 2026","World Cup 2026 Miami matches","World Cup 2026 New York games","World Cup 2026 Los Angeles schedule","World Cup 2026 Houston matches","World Cup 2026 Atlanta schedule","World Cup 2026 Seattle venue","World Cup 2026 Kansas City","World Cup 2026 Philadelphia games"],
+        notes: "Each city as H2 section targets long-tail '[City] World Cup 2026 matches' queries individually. 10 cities × low competition = high aggregate traffic opportunity.",
+        template: "listicle", words: 1800
+      },
+      {
+        title: "MetLife Stadium — 2026 World Cup Final Venue",
+        keyword: "MetLife Stadium World Cup 2026",
+        url: "/venues/metlife", volume: "medium", competition: "low-medium", opportunity: "very-high",
+        secondary: ["World Cup 2026 final venue","World Cup 2026 New York","World Cup 2026 final location","New Jersey World Cup 2026 stadium","World Cup 2026 final stadium"],
+        notes: "⭐⭐ VERY HIGH OPPORTUNITY. The final venue is the most-searched single stadium. Minimal editorial competition outside ticket/travel sites. Strong chance to rank page 1.",
+        template: "explainer", words: 1200
+      }
+    ]
+  },
+  {
+    name: "Team Squads", color: "#7c3aed", icon: "👕",
+    desc: "Rosters, squad lists, and country-specific pages",
+    spokes: [
+      {
+        title: "World Cup 2026 All 48 Team Squads & Rosters",
+        keyword: "World Cup 2026 team squads",
+        url: "/squads", volume: "medium-high", competition: "high", opportunity: "medium",
+        secondary: ["World Cup 2026 rosters","2026 World Cup all teams players","World Cup 2026 squad lists","FIFA World Cup 2026 player lists"],
+        notes: "ESPN, NBC Sports, Sky Sports dominate. Differentiate by linking each team's squad to live group standing + remaining fixtures from the tracker.",
+        template: "listicle", words: 1600
+      },
+      {
+        title: "USA World Cup 2026 — USMNT Squad, Schedule & Results",
+        keyword: "USA World Cup 2026 squad",
+        url: "/teams/usa", volume: "high", competition: "high", opportunity: "medium-high",
+        secondary: ["USMNT World Cup 2026","USA World Cup 2026 schedule","United States World Cup 2026","USMNT 2026 roster","USA Group D 2026"],
+        notes: "Largest US audience segment. Only page that combines squad + live Group D standings + remaining fixtures. USA beat Paraguay 4-1 on June 12 — capitalize on momentum now.",
+        template: "ultimate-guide", words: 2000
+      },
+      {
+        title: "Top Favorites at World Cup 2026 — Brazil, Argentina, France & England",
+        keyword: "Brazil World Cup 2026 squad",
+        url: "/teams/favorites", volume: "high", competition: "high", opportunity: "medium",
+        secondary: ["Argentina World Cup 2026 squad","France World Cup 2026 squad","England World Cup 2026 squad","Spain World Cup 2026 roster","2026 World Cup favorites"],
+        notes: "Multiple high-volume team queries in one page. Include group performance data and bracket path from live tracker to differentiate from static squad lists.",
+        template: "comparison", words: 1800
+      }
+    ]
+  }
+];
+
+const KEYWORDS = [
+  { n:1, kw:"FIFA World Cup 2026 tracker", vol:"high", comp:"high", cluster:"Pillar", url:"/" },
+  { n:2, kw:"World Cup 2026 live scores", vol:"high", comp:"very-high", cluster:"Pillar", url:"/" },
+  { n:3, kw:"World Cup 2026 fixtures", vol:"high", comp:"very-high", cluster:"Cluster 0", url:"/schedule" },
+  { n:4, kw:"World Cup 2026 schedule", vol:"high", comp:"very-high", cluster:"Cluster 0", url:"/schedule" },
+  { n:5, kw:"World Cup 2026 results", vol:"high", comp:"very-high", cluster:"Cluster 0", url:"/today" },
+  { n:6, kw:"2026 World Cup scores today", vol:"high", comp:"very-high", cluster:"Cluster 0", url:"/today" },
+  { n:7, kw:"World Cup 2026 matches today", vol:"high", comp:"very-high", cluster:"Cluster 0", url:"/today" },
+  { n:8, kw:"World Cup 2026 time zone schedule ⭐", vol:"medium", comp:"medium", cluster:"Cluster 0", url:"/schedule" },
+  { n:9, kw:"World Cup 2026 kickoff times ET", vol:"medium", comp:"medium", cluster:"Cluster 0", url:"/schedule" },
+  { n:10, kw:"World Cup 2026 match times Eastern", vol:"medium", comp:"medium", cluster:"Cluster 0", url:"/schedule" },
+  { n:11, kw:"2026 World Cup schedule all time zones ⭐", vol:"medium", comp:"low-medium", cluster:"Cluster 0", url:"/schedule" },
+  { n:12, kw:"free World Cup 2026 tracker", vol:"medium", comp:"medium", cluster:"Pillar", url:"/" },
+  { n:13, kw:"World Cup 2026 group standings", vol:"high", comp:"high", cluster:"Cluster 1", url:"/groups" },
+  { n:14, kw:"World Cup 2026 group tables", vol:"high", comp:"high", cluster:"Cluster 1", url:"/groups" },
+  { n:15, kw:"World Cup 2026 all 12 groups", vol:"medium", comp:"medium", cluster:"Cluster 1", url:"/groups" },
+  { n:16, kw:"World Cup 2026 group A standings", vol:"medium", comp:"medium", cluster:"Cluster 1", url:"/groups" },
+  { n:17, kw:"World Cup 2026 qualification scenarios", vol:"medium", comp:"medium", cluster:"Cluster 1", url:"/groups" },
+  { n:18, kw:"World Cup 2026 group stage results", vol:"high", comp:"high", cluster:"Cluster 1", url:"/groups" },
+  { n:19, kw:"World Cup 2026 format explained ⭐", vol:"medium", comp:"medium", cluster:"Cluster 1", url:"/format" },
+  { n:20, kw:"How does World Cup 2026 work", vol:"medium", comp:"medium", cluster:"Cluster 1", url:"/format" },
+  { n:21, kw:"World Cup 2026 48 teams format", vol:"medium", comp:"medium", cluster:"Cluster 1", url:"/format" },
+  { n:22, kw:"World Cup 2026 third place teams qualify ⭐", vol:"medium", comp:"low-medium", cluster:"Cluster 1", url:"/format" },
+  { n:23, kw:"World Cup 2026 bracket", vol:"high", comp:"high", cluster:"Cluster 2", url:"/bracket" },
+  { n:24, kw:"World Cup 2026 knockout bracket", vol:"high", comp:"high", cluster:"Cluster 2", url:"/bracket" },
+  { n:25, kw:"World Cup 2026 round of 32 bracket ⭐", vol:"med-high", comp:"medium", cluster:"Cluster 2", url:"/bracket" },
+  { n:26, kw:"World Cup 2026 bracket predictions", vol:"med-high", comp:"medium", cluster:"Cluster 2", url:"/bracket" },
+  { n:27, kw:"World Cup 2026 quarter-finals schedule", vol:"medium", comp:"medium", cluster:"Cluster 2", url:"/bracket" },
+  { n:28, kw:"World Cup 2026 round of 32 ⭐", vol:"med-high", comp:"medium", cluster:"Cluster 2", url:"/round-of-32" },
+  { n:29, kw:"World Cup 2026 round of 32 explained ⭐", vol:"medium", comp:"low-medium", cluster:"Cluster 2", url:"/round-of-32" },
+  { n:30, kw:"48 team World Cup format", vol:"medium", comp:"medium", cluster:"Cluster 2", url:"/round-of-32" },
+  { n:31, kw:"how do third place teams qualify World Cup", vol:"medium", comp:"low-medium", cluster:"Cluster 2", url:"/round-of-32" },
+  { n:32, kw:"World Cup 2026 stadium map ⭐⭐", vol:"med-high", comp:"medium", cluster:"Cluster 3", url:"/venues" },
+  { n:33, kw:"World Cup 2026 venues map ⭐⭐", vol:"medium", comp:"medium", cluster:"Cluster 3", url:"/venues" },
+  { n:34, kw:"World Cup 2026 stadiums", vol:"med-high", comp:"medium", cluster:"Cluster 3", url:"/venues" },
+  { n:35, kw:"World Cup 2026 venue guide", vol:"medium", comp:"low-medium", cluster:"Cluster 3", url:"/venues" },
+  { n:36, kw:"World Cup 2026 USA stadiums ⭐", vol:"medium", comp:"medium", cluster:"Cluster 3", url:"/venues/usa" },
+  { n:37, kw:"World Cup 2026 [city] matches (×10) ⭐", vol:"medium", comp:"low-medium", cluster:"Cluster 3", url:"/venues/usa" },
+  { n:38, kw:"MetLife Stadium World Cup 2026 ⭐⭐", vol:"medium", comp:"low-medium", cluster:"Cluster 3", url:"/venues/metlife" },
+  { n:39, kw:"World Cup 2026 final venue ⭐⭐", vol:"medium", comp:"low-medium", cluster:"Cluster 3", url:"/venues/metlife" },
+  { n:40, kw:"World Cup 2026 New York", vol:"medium", comp:"medium", cluster:"Cluster 3", url:"/venues/metlife" },
+  { n:41, kw:"World Cup 2026 team squads", vol:"med-high", comp:"high", cluster:"Cluster 4", url:"/squads" },
+  { n:42, kw:"World Cup 2026 rosters", vol:"medium", comp:"high", cluster:"Cluster 4", url:"/squads" },
+  { n:43, kw:"2026 World Cup all teams players", vol:"medium", comp:"high", cluster:"Cluster 4", url:"/squads" },
+  { n:44, kw:"USA World Cup 2026 squad ⭐", vol:"high", comp:"high", cluster:"Cluster 4", url:"/teams/usa" },
+  { n:45, kw:"USMNT World Cup 2026", vol:"high", comp:"high", cluster:"Cluster 4", url:"/teams/usa" },
+  { n:46, kw:"USA World Cup 2026 schedule", vol:"high", comp:"high", cluster:"Cluster 4", url:"/teams/usa" },
+  { n:47, kw:"Brazil World Cup 2026 squad", vol:"high", comp:"high", cluster:"Cluster 4", url:"/teams/favorites" },
+  { n:48, kw:"Argentina World Cup 2026 squad", vol:"high", comp:"high", cluster:"Cluster 4", url:"/teams/favorites" }
+];
+
+const QUICK_WINS = [
+  { rank:1, kw:"World Cup 2026 stadium map", why:"Interactive SVG map is already built — no competitor site has this feature", opp:"very-high" },
+  { rank:2, kw:"MetLife Stadium World Cup 2026", why:"Final venue has high interest + low editorial competition", opp:"very-high" },
+  { rank:3, kw:"World Cup 2026 time zone schedule", why:"Built-in ET/CT/MT/PT toggle is unique — no direct competitors target this term", opp:"very-high" },
+  { rank:4, kw:"World Cup 2026 round of 32 explained", why:"New format = confusion = high search demand, medium competition", opp:"high" },
+  { rank:5, kw:"World Cup 2026 venues map", why:"Interactive map differentiator again — high image/visual intent favors tools", opp:"very-high" },
+  { rank:6, kw:"World Cup 2026 format explained", why:"Evergreen explainer through group stage, moderate competition", opp:"high" },
+  { rank:7, kw:"World Cup 2026 USA stadiums", why:"10 city-specific sections aggregate long-tail traffic, low per-term competition", opp:"high" },
+  { rank:8, kw:"free World Cup 2026 tracker", why:"Tool category where the site IS the product — direct commercial intent match", opp:"high" },
+  { rank:9, kw:"USA World Cup 2026 squad", why:"Unique value: squad + live Group D standings + fixtures on one page (USMNT won 4-1 vs Paraguay)", opp:"medium-high" },
+  { rank:10, kw:"2026 World Cup schedule all time zones", why:"Highly specific long-tail — almost zero competition, unique timezone feature", opp:"high" }
+];
+
+const LINKS_DATA = {
+  mandatory: [
+    { from:"pillar (/)", to:"/schedule", anchor:"schedule by time zone" },
+    { from:"pillar (/)", to:"/today", anchor:"today's matches" },
+    { from:"pillar (/)", to:"/groups", anchor:"group standings" },
+    { from:"pillar (/)", to:"/format", anchor:"format explained" },
+    { from:"pillar (/)", to:"/bracket", anchor:"knockout bracket" },
+    { from:"pillar (/)", to:"/round-of-32", anchor:"round of 32" },
+    { from:"pillar (/)", to:"/venues", anchor:"stadium map" },
+    { from:"pillar (/)", to:"/venues/usa", anchor:"USA venues" },
+    { from:"pillar (/)", to:"/venues/metlife", anchor:"MetLife Final" },
+    { from:"pillar (/)", to:"/squads", anchor:"team squads" },
+    { from:"pillar (/)", to:"/teams/usa", anchor:"USA squad" },
+    { from:"pillar (/)", to:"/teams/favorites", anchor:"top favorites" }
+  ],
+  backlinks: [
+    { from:"/schedule", to:"pillar (/)", anchor:"FIFA WC 2026 live tracker" },
+    { from:"/today", to:"pillar (/)", anchor:"FIFA WC 2026 live tracker" },
+    { from:"/groups", to:"pillar (/)", anchor:"FIFA WC 2026 live tracker" },
+    { from:"/format", to:"pillar (/)", anchor:"FIFA WC 2026 live tracker" },
+    { from:"/bracket", to:"pillar (/)", anchor:"FIFA WC 2026 live tracker" },
+    { from:"/round-of-32", to:"pillar (/)", anchor:"FIFA WC 2026 live tracker" },
+    { from:"/venues", to:"pillar (/)", anchor:"FIFA WC 2026 live tracker" },
+    { from:"/venues/usa", to:"pillar (/)", anchor:"FIFA WC 2026 live tracker" },
+    { from:"/venues/metlife", to:"pillar (/)", anchor:"FIFA WC 2026 live tracker" },
+    { from:"/squads", to:"pillar (/)", anchor:"FIFA WC 2026 live tracker" },
+    { from:"/teams/usa", to:"pillar (/)", anchor:"FIFA WC 2026 live tracker" },
+    { from:"/teams/favorites", to:"pillar (/)", anchor:"FIFA WC 2026 live tracker" }
+  ],
+  spokenSpoke: [
+    { from:"/schedule", to:"/today", anchor:"today's matches" },
+    { from:"/today", to:"/schedule", anchor:"full schedule by TZ" },
+    { from:"/groups", to:"/format", anchor:"how groups work" },
+    { from:"/format", to:"/groups", anchor:"live group standings" },
+    { from:"/bracket", to:"/round-of-32", anchor:"round of 32 rules" },
+    { from:"/round-of-32", to:"/bracket", anchor:"live bracket" },
+    { from:"/venues", to:"/venues/usa", anchor:"USA venues" },
+    { from:"/venues/usa", to:"/venues", anchor:"interactive map" },
+    { from:"/venues/usa", to:"/venues/metlife", anchor:"MetLife final" },
+    { from:"/venues/metlife", to:"/venues", anchor:"all stadiums map" },
+    { from:"/squads", to:"/teams/usa", anchor:"USA squad" },
+    { from:"/teams/usa", to:"/squads", anchor:"all 48 squads" },
+    { from:"/teams/usa", to:"/teams/favorites", anchor:"top favorites" },
+    { from:"/teams/favorites", to:"/squads", anchor:"all team rosters" }
+  ],
+  crossCluster: [
+    { from:"/today", to:"/groups", anchor:"live group standings" },
+    { from:"/format", to:"/round-of-32", anchor:"round of 32 format" },
+    { from:"/bracket", to:"/schedule", anchor:"match times by TZ" },
+    { from:"/venues/usa", to:"/teams/usa", anchor:"USA team at WC" }
+  ]
+};
+
+function volPill(v) {
+  const m = { "high":"pill-vol-h", "med-high":"pill-vol-mh", "medium-high":"pill-vol-mh", "medium":"pill-vol-m" };
+  return `<span class="pill ${m[v]||'pill-vol-m'}">${v}</span>`;
+}
+function compPill(c) {
+  const m = { "very-high":"pill-comp-vh", "high":"pill-comp-h", "medium":"pill-comp-m", "low-medium":"pill-comp-lm" };
+  return `<span class="pill ${m[c]||'pill-comp-m'}">${c}</span>`;
+}
+function oppPill(o) {
+  const m = { "very-high":"pill-opp-star2", "high":"pill-opp-star", "medium-high":"pill-comp-m" };
+  const labels = { "very-high":"⭐⭐ Very High", "high":"⭐ High", "medium-high":"Medium-High", "medium":"Medium" };
+  return `<span class="pill ${m[o]||'pill-comp-lm'}">${labels[o]||o}</span>`;
+}
+
+function buildSpokeList() {
+  const el = document.getElementById('spoke-list');
+  let html = '';
+  CLUSTERS.forEach((c, ci) => {
+    c.spokes.forEach((s, si) => {
+      html += `<div class="spoke-item" style="--c:${c.color}" onclick="showDetail(${ci},${si})">
+        <div class="spoke-kw">${s.keyword}</div>
+        <div class="spoke-url">${s.url}</div>
+        <div class="spoke-badges">${volPill(s.volume)}${oppPill(s.opportunity)}</div>
+      </div>`;
+    });
+  });
+  el.innerHTML = html;
+}
+
+function buildClustersGrid() {
+  const el = document.getElementById('clusters-grid');
+  let html = '';
+  CLUSTERS.forEach((c, ci) => {
+    html += `<div class="cluster-card" style="--c:${c.color}">
+      <div class="cluster-header">
+        <div class="cluster-icon">${c.icon}</div>
+        <div><div class="cluster-title">${c.name}</div><div class="cluster-desc">${c.desc}</div></div>
+      </div>
+      <div class="spoke-cards">`;
+    c.spokes.forEach((s, si) => {
+      html += `<div class="spoke-card" onclick="showDetail(${ci},${si})" style="cursor:pointer">
+        <div class="spoke-card-kw">${s.keyword}</div>
+        <div class="spoke-card-url" style="--c:${c.color}">${s.url}</div>
+        <div class="spoke-card-badges">${volPill(s.volume)}${compPill(s.competition)}${oppPill(s.opportunity)}</div>
+        <div class="spoke-card-notes">${s.notes.length > 100 ? s.notes.substring(0,100)+'...' : s.notes}</div>
+      </div>`;
+    });
+    html += '</div></div>';
+  });
+  el.innerHTML = html;
+}
+
+function buildKwTable() {
+  const el = document.getElementById('kw-table');
+  const clusterColors = { "Pillar":"#38bdf8","Cluster 0":"#2563eb","Cluster 1":"#16a34a","Cluster 2":"#dc2626","Cluster 3":"#d97706","Cluster 4":"#7c3aed" };
+  let html = '';
+  KEYWORDS.forEach(k => {
+    const c = clusterColors[k.cluster] || '#64748b';
+    html += `<tr style="border-bottom:1px solid #1e293b">
+      <td style="padding:7px 10px;color:#64748b">${k.n}</td>
+      <td style="padding:7px 10px;color:#e2e8f0">${k.kw}</td>
+      <td style="padding:7px 10px">${volPill(k.vol)}</td>
+      <td style="padding:7px 10px">${compPill(k.comp)}</td>
+      <td style="padding:7px 10px"><span style="font-size:0.7rem;color:${c}">${k.cluster}</span></td>
+      <td style="padding:7px 10px;font-family:monospace;font-size:0.7rem;color:#64748b">${k.url}</td>
+    </tr>`;
+  });
+  el.innerHTML = html;
+}
+
+function buildPriorityList() {
+  const el = document.getElementById('priority-list');
+  const oppClass = { "very-high":"opp-vh","high":"opp-h","medium-high":"opp-mh","medium":"opp-m" };
+  let html = '';
+  QUICK_WINS.forEach(w => {
+    html += `<div class="priority-card">
+      <div class="priority-num">${w.rank}</div>
+      <div>
+        <div class="priority-kw">${w.kw}</div>
+        <div class="priority-why">${w.why}</div>
+        <div style="margin-top:6px"><span class="opp-badge ${oppClass[w.opp]||'opp-m'}">${w.opp.replace('-',' ')} opportunity</span></div>
+      </div>
+    </div>`;
+  });
+  el.innerHTML = html;
+}
+
+function buildLinksGrid() {
+  const el = document.getElementById('links-grid');
+  function renderGroup(title, links) {
+    const items = links.map(l =>
+      `<div class="link-item"><span class="link-from">${l.from}</span><span class="link-arrow">→</span><span class="link-to">${l.to}</span><span class="link-anchor">"${l.anchor}"</span></div>`
+    ).join('');
+    return `<div class="link-group"><h3>${title} (${links.length})</h3>${items}</div>`;
+  }
+  el.innerHTML =
+    renderGroup('Pillar → Spokes', LINKS_DATA.mandatory) +
+    renderGroup('Spokes → Pillar', LINKS_DATA.backlinks) +
+    renderGroup('Spoke ↔ Spoke (within cluster)', LINKS_DATA.spokenSpoke) +
+    renderGroup('Cross-Cluster Links', LINKS_DATA.crossCluster);
+}
+
+function showDetail(ci, si) {
+  const c = CLUSTERS[ci];
+  const s = c.spokes[si];
+  const oppClass = { "very-high":"opp-vh","high":"opp-h","medium-high":"opp-mh","medium":"opp-m" };
+  const secondaryHtml = s.secondary.map(k => `<div class="kw-list-item">${k}</div>`).join('');
+  document.getElementById('detail-content').innerHTML = `
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+      <div style="width:10px;height:10px;border-radius:50%;background:${c.color}"></div>
+      <span style="font-size:0.7rem;color:#64748b">${c.name}</span>
+    </div>
+    <div class="detail-kw">${s.keyword}</div>
+    <div class="detail-url">worldcuptracker.us${s.url}</div>
+    <span class="opp-badge ${oppClass[s.opportunity]||'opp-m'}">${s.opportunity.replace('-',' ')} opportunity</span>
+    <div style="display:flex;gap:8px;margin-bottom:16px">${volPill(s.volume)}${compPill(s.competition)}</div>
+    <div class="detail-section">
+      <h3>Page Title</h3>
+      <div style="font-size:0.82rem;color:#e2e8f0;margin-bottom:4px">${s.title}</div>
+    </div>
+    <div class="detail-section">
+      <h3>Template · Word Count</h3>
+      <div style="font-size:0.78rem;color:#94a3b8">${s.template} · ${s.words.toLocaleString()} words</div>
+    </div>
+    <div class="detail-section">
+      <h3>Secondary Keywords</h3>
+      <div class="kw-list">${secondaryHtml}</div>
+    </div>
+    <div class="detail-section">
+      <h3>Why This Site Wins</h3>
+      <div class="detail-notes">${s.notes}</div>
+    </div>
+  `;
+  document.getElementById('detail-panel').classList.add('open');
+}
+
+function closeDetail() {
+  document.getElementById('detail-panel').classList.remove('open');
+}
+
+function switchTab(tab) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('tab-' + tab).classList.add('active');
+}
+
+function filterCluster(idx) {
+  document.querySelectorAll('.cluster-btn').forEach(b => b.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  const grid = document.getElementById('clusters-grid');
+  const cards = grid.querySelectorAll('.cluster-card');
+  cards.forEach((card, i) => {
+    card.style.display = (idx === 'all' || i === idx) ? 'block' : 'none';
+  });
+  const spokes = document.getElementById('spoke-list').querySelectorAll('.spoke-item');
+  let si = 0;
+  CLUSTERS.forEach((c, ci) => {
+    c.spokes.forEach(() => {
+      spokes[si].style.display = (idx === 'all' || ci === idx) ? 'flex' : 'none';
+      si++;
+    });
+  });
+}
+
+buildSpokeList();
+buildClustersGrid();
+buildKwTable();
+buildPriorityList();
+buildLinksGrid();
+</script>
+</body>
+</html>

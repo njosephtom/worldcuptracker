@@ -5,6 +5,20 @@ import { FlagImg } from './FlagImg';
 export function Groups({ standings, matches, onTeamSelect, isMobile }) {
   const cols = isMobile ? '1fr' : 'repeat(4, minmax(0, 1fr))';
   return (
+    <div>
+      <h2 style={{
+        margin: 0,
+        padding: '7px 12px',
+        fontSize: 10,
+        fontWeight: 700,
+        color: 'var(--ac-gold)',
+        letterSpacing: 1.2,
+        textTransform: 'uppercase',
+        background: 'var(--bg-panel)',
+        borderBottom: '1px solid var(--bd-main)',
+      }}>
+        World Cup 2026 Group Standings
+      </h2>
     <div style={{ display: 'grid', gridTemplateColumns: cols, gap: 10, padding: 12, fontFamily: 'var(--font-sans)' }}>
       {Object.keys(GROUPS).map(g => {
         const sorted = GROUPS[g].teams.map(n => {
@@ -76,6 +90,7 @@ export function Groups({ standings, matches, onTeamSelect, isMobile }) {
           </div>
         );
       })}
+    </div>
     </div>
   );
 }

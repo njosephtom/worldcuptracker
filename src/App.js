@@ -12,6 +12,13 @@ import './App.css';
 const TOURNAMENT_START = new Date('2026-06-11T15:00:00-04:00');
 const MOBILE_BREAKPOINT = 900;
 
+const TZ_OPTIONS = [
+  { label: 'ET', iana: 'America/New_York' },
+  { label: 'CT', iana: 'America/Chicago' },
+  { label: 'MT', iana: 'America/Denver' },
+  { label: 'PT', iana: 'America/Los_Angeles' },
+];
+
 function getTZAbbr() {
   try {
     return new Intl.DateTimeFormat(undefined, { timeZoneName: 'short' })
@@ -42,6 +49,7 @@ export default function App() {
   const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth < MOBILE_BREAKPOINT);
   const [isDark, setIsDark] = useState(() => localStorage.getItem('wc-theme') !== 'light');
   const [use24h, setUse24h] = useState(() => localStorage.getItem('wc-clock') === '24h');
+  const [selectedTZ, setSelectedTZ] = useState(() => localStorage.getItem('wc-tz') || null);
   const [tzAbbr] = useState(getTZAbbr);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const refreshingRef = useRef(false);
@@ -151,6 +159,35 @@ export default function App() {
           >
             {isDark ? '☀️' : '🌙'}
           </button>
+          <div style={{ display: 'flex', background: 'var(--bg-input)', border: '1px solid var(--bd-btn)', borderRadius: 6, overflow: 'hidden' }}
+               title="Show match times in a North American timezone">
+            {TZ_OPTIONS.map(({ label, iana }, i) => (
+              <button
+                key={label}
+                style={{
+                  ...S.dbtn,
+                  border: 'none',
+                  borderRight: i < TZ_OPTIONS.length - 1 ? '1px solid var(--bd-btn)' : 'none',
+                  borderRadius: 0,
+                  fontSize: 10,
+                  padding: '4px 7px',
+                  background: selectedTZ === label ? 'rgba(240,192,64,0.18)' : 'transparent',
+                  color: selectedTZ === label ? 'var(--ac-gold)' : 'var(--tx-dim)',
+                  fontWeight: selectedTZ === label ? 700 : 400,
+                  transition: 'all .12s',
+                }}
+                onClick={() => setSelectedTZ(v => {
+                  const next = v === label ? null : label;
+                  if (next) localStorage.setItem('wc-tz', next);
+                  else localStorage.removeItem('wc-tz');
+                  return next;
+                })}
+                title={`Show match times in ${label} (${iana})`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
           <button
             style={{ ...S.dbtn, fontSize: 14, padding: '3px 8px', lineHeight: 1, opacity: isRefreshing ? 0.5 : 1, transition: 'opacity .2s' }}
             onClick={handleRefresh}
@@ -186,6 +223,7 @@ export default function App() {
               matches={wc.matches}
               today={wc.today}
               use24h={use24h}
+              selectedTZ={selectedTZ}
               onMatchClick={m => setSelectedMatch(m)}
               onTT={show} onMoveTT={move} onHideTT={hide}
             />
