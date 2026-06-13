@@ -1,5 +1,5 @@
 import React from 'react';
-import { GROUPS, TEAM_CC } from './data';
+import { GROUPS, TEAM_CC, cmpTeams } from './data';
 import { FlagImg } from './FlagImg';
 
 const GC = {
@@ -136,7 +136,7 @@ export function Bracket({ matches, standings, onTeamSelect, onTT, onMoveTT, onHi
       GROUPS[g].teams.map(n => {
         const s = standings[n] || { mp: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, pts: 0 };
         return { name: n, ...s };
-      }).sort((a, b) => b.pts - a.pts || (b.gf - b.ga) - (a.gf - a.ga) || b.gf - a.gf)
+      }).sort(cmpTeams)
     ])
   );
 

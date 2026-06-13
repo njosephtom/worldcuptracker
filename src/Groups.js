@@ -1,5 +1,5 @@
 import React from 'react';
-import { GROUPS, flagLabel } from './data';
+import { GROUPS, flagLabel, cmpTeams } from './data';
 import { FlagImg } from './FlagImg';
 
 export function Groups({ standings, matches, onTeamSelect, isMobile }) {
@@ -24,7 +24,7 @@ export function Groups({ standings, matches, onTeamSelect, isMobile }) {
         const sorted = GROUPS[g].teams.map(n => {
           const s = standings[n] || { mp:0,w:0,d:0,l:0,gf:0,ga:0,pts:0 };
           return { name: n, ...s };
-        }).sort((a,b) => b.pts-a.pts||(b.gf-b.ga)-(a.gf-a.ga)||b.gf-a.gf);
+        }).sort(cmpTeams);
 
         const gMatches = matches.filter(m => m.g === g);
         const upcoming = gMatches.filter(m => m.status === 'upcoming').slice(0, 3);

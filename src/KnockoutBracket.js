@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { FlagImg } from './FlagImg';
-import { TEAM_CC, GROUPS } from './data';
+import { TEAM_CC, GROUPS, cmpTeams } from './data';
 import { MOCK_RESULTS } from './mockBracket';
 import trophyUrl from './trophy.svg';
 
@@ -263,7 +263,7 @@ function BracketGroupCard({ g, standings, onTT, onMoveTT, onHideTT }) {
     return (GROUPS[g]?.teams || []).map(name => {
       const s = standings[name] || { mp:0, w:0, d:0, l:0, gf:0, ga:0, pts:0 };
       return { name, ...s };
-    }).sort((a,b) => b.pts - a.pts || (b.gf - b.ga) - (a.gf - a.ga) || b.gf - a.gf);
+    }).sort(cmpTeams);
   }, [g, standings]);
 
   return (

@@ -259,6 +259,32 @@ export function clampDate(d) {
   return d;
 }
 
+// FIFA Men's World Ranking — June 11 2026 (published on tournament start date)
+// Source: ESPN / whereig.com / FIFA.com
+export const FIFA_RANKING = {
+  'Argentina': 1, 'Spain': 2, 'France': 3, 'England': 4, 'Portugal': 5,
+  'Brazil': 6, 'Morocco': 7, 'Netherlands': 8, 'Belgium': 9, 'Germany': 10,
+  'Croatia': 11, 'Colombia': 13, 'Mexico': 14, 'Senegal': 15, 'Uruguay': 16,
+  'United States': 17, 'Japan': 18, 'Switzerland': 19, 'Iran': 20,
+  'Turkey': 22, 'Ecuador': 23, 'Austria': 24, 'South Korea': 25,
+  'Australia': 27, 'Algeria': 28, 'Egypt': 29, 'Canada': 30, 'Norway': 31,
+  'Ivory Coast': 33, 'Panama': 34, 'Sweden': 38, 'Czechia': 40,
+  'Paraguay': 41, 'Scotland': 42, 'Tunisia': 45, 'DR Congo': 46,
+  'Uzbekistan': 50, 'Qatar': 56, 'Iraq': 57, 'South Africa': 60,
+  'Saudi Arabia': 61, 'Jordan': 63, 'Bosnia and Herzegovina': 64,
+  'Cape Verde': 67, 'Ghana': 73, 'Curaçao': 82, 'Haiti': 83, 'New Zealand': 85,
+};
+
+// Canonical group-stage sort: Pts → GD → GF → FIFA ranking (lower = better)
+export function cmpTeams(a, b) {
+  return (
+    b.pts - a.pts ||
+    (b.gf - b.ga) - (a.gf - a.ga) ||
+    b.gf - a.gf ||
+    (FIFA_RANKING[a.name] || 999) - (FIFA_RANKING[b.name] || 999)
+  );
+}
+
 export function fmtDate(d) {
   const [y,m,dd] = d.split('-');
   return new Date(y, m-1, dd).toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
@@ -299,5 +325,5 @@ export function computeStandings(matches, liveData) {
 export function getGroupStandings(group, standings) {
   return GROUPS[group].teams
     .map(t => ({name:t, ...(standings[t]||{mp:0,w:0,d:0,l:0,gf:0,ga:0,pts:0})}))
-    .sort((a,b) => b.pts - a.pts || (b.gf-b.ga)-(a.gf-a.ga) || b.gf - a.gf);
+    .sort(cmpTeams);
 }
