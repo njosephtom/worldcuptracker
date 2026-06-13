@@ -211,6 +211,8 @@ export default function App() {
         <a href="/privacy.html" style={S.footerLink} target="_blank" rel="noopener noreferrer">Privacy Policy</a>
         <span> &nbsp;·&nbsp; &copy; 2026 worldcuptracker.us</span>
       </div>
+
+      <Analytics />
     </div>
   );
 }
