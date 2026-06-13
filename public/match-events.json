@@ -379,15 +379,15 @@
       },
       {
         "minute": "90'+4'",
-        "player": "B. Khoukhi",
+        "player": "M. Muheim",
         "teamId": "4398",
         "goal": true,
-        "ownGoal": false,
+        "ownGoal": true,
         "penalty": false,
         "yellow": false,
         "red": false
       }
     ]
   },
-  "updated": "2026-06-13T21:22:01.575Z"
+  "updated": "2026-06-13T22:35:47.856Z"
 }
