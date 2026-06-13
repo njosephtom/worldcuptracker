@@ -331,5 +331,63 @@
       }
     ]
   },
-  "updated": "2026-06-13T20:00:04.067Z"
+  "5": {
+    "homeScore": 1,
+    "awayScore": 1,
+    "homeTeamId": "4398",
+    "awayTeamId": "475",
+    "events": [
+      {
+        "minute": "16'",
+        "player": "M. Abunada",
+        "teamId": "4398",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "17'",
+        "player": "B. Embolo",
+        "teamId": "475",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": true,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "23'",
+        "player": "J. Gaber",
+        "teamId": "4398",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "42'",
+        "player": "D. Zakaria",
+        "teamId": "475",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "90'+4'",
+        "player": "B. Khoukhi",
+        "teamId": "4398",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      }
+    ]
+  },
+  "updated": "2026-06-13T21:22:01.575Z"
 }
