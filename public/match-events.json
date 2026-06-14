@@ -621,5 +621,83 @@
       }
     ]
   },
-  "updated": "2026-06-14T21:50:00.286Z"
+  "10": {
+    "homeScore": 2,
+    "awayScore": 2,
+    "homeTeamId": "449",
+    "awayTeamId": "627",
+    "events": [
+      {
+        "minute": "51'",
+        "player": "V. van Dijk",
+        "teamId": "449",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "57'",
+        "player": "K. Nakamura",
+        "teamId": "627",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "61'",
+        "player": "C. Summerville",
+        "teamId": "449",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "64'",
+        "player": "C. Summerville",
+        "teamId": "449",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "83'",
+        "player": "M. Depay",
+        "teamId": "449",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "89'",
+        "player": "D. Kamada",
+        "teamId": "627",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "90'+1'",
+        "player": "M. van de Ven",
+        "teamId": "449",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
+  "updated": "2026-06-14T23:02:16.139Z"
 }
