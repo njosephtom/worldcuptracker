@@ -33,19 +33,23 @@ export function useWorldCup(autoRefresh = true) {
       if (mock) return { ...m, status: 'finished', homeScore: mock.hs, awayScore: mock.as };
     }
 
-    // Merge ESPN live/finished data when available
-    const key = `${m.h}|${m.a}`;
-    const live = liveScores[key];
-    if (live) {
+    // Merge ESPN live/finished data when available.
+    // Also check the reversed key because ESPN assigns home/away for neutral-venue
+    // games independently — it may list Turkey as "home" when our MATCHES has Australia.
+    const key    = `${m.h}|${m.a}`;
+    const revKey = `${m.a}|${m.h}`;
+    const raw    = liveScores[key] || liveScores[revKey];
+    const flipped = !liveScores[key] && !!liveScores[revKey];
+    if (raw) {
       return {
         ...m,
-        status:     live.status,
-        homeScore:  live.homeScore,
-        awayScore:  live.awayScore,
-        clock:      live.clock,
-        homeTeamId: live.homeTeamId,
-        awayTeamId: live.awayTeamId,
-        events:     live.events,
+        status:     raw.status,
+        homeScore:  flipped ? raw.awayScore : raw.homeScore,
+        awayScore:  flipped ? raw.homeScore : raw.awayScore,
+        clock:      raw.clock,
+        homeTeamId: flipped ? raw.awayTeamId : raw.homeTeamId,
+        awayTeamId: flipped ? raw.homeTeamId : raw.awayTeamId,
+        events:     raw.events,
       };
     }
 

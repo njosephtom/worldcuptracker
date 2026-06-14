@@ -97,10 +97,25 @@ export function useLiveScores(paused = false) {
 
   const fetchScores = useCallback(async () => {
     try {
-      const res = await fetch(`${ESPN_URL}?ts=${Date.now()}`);
-      if (!res.ok) return;
-      const data = await res.json();
-      setScores(parseESPN(data));
+      const now = new Date();
+      // Fetch both the user's local date AND the ET date so games that start near
+      // midnight ET (e.g. 9 PM PDT = midnight ET) are always included.
+      const localDate = now.toLocaleDateString('en-CA').replace(/-/g, '');
+      const etDate    = now.toLocaleDateString('en-CA', { timeZone: 'America/New_York' }).replace(/-/g, '');
+      const dates     = [...new Set([localDate, etDate])];
+
+      const results = await Promise.all(
+        dates.map(d =>
+          fetch(`${ESPN_URL}?dates=${d}&ts=${Date.now()}`)
+            .then(r => r.ok ? r.json() : {})
+            .catch(() => ({}))
+        )
+      );
+
+      // Merge — if same game appears in both responses the later entry wins (fine)
+      const merged = {};
+      results.forEach(data => Object.assign(merged, parseESPN(data)));
+      setScores(merged);
     } catch { /* network error — keep last good data */ }
   }, []);
 
