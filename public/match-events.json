@@ -533,5 +533,93 @@
       }
     ]
   },
-  "updated": "2026-06-14T18:50:23.788Z"
+  "9": {
+    "homeScore": 7,
+    "awayScore": 1,
+    "homeTeamId": "481",
+    "awayTeamId": "11678",
+    "events": [
+      {
+        "minute": "6'",
+        "player": "F. Nmecha",
+        "teamId": "481",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "21'",
+        "player": "L. Comenencia",
+        "teamId": "11678",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "38'",
+        "player": "N. Schlotterbeck",
+        "teamId": "481",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "45'+5'",
+        "player": "K. Havertz",
+        "teamId": "481",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": true,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "47'",
+        "player": "J. Musiala",
+        "teamId": "481",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "68'",
+        "player": "N. Brown",
+        "teamId": "481",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "78'",
+        "player": "D. Undav",
+        "teamId": "481",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "88'",
+        "player": "K. Havertz",
+        "teamId": "481",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      }
+    ]
+  },
+  "updated": "2026-06-14T20:15:12.958Z"
 }
