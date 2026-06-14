@@ -389,5 +389,111 @@
       }
     ]
   },
-  "updated": "2026-06-14T00:01:00.795Z"
+  "6": {
+    "homeScore": 1,
+    "awayScore": 1,
+    "homeTeamId": "205",
+    "awayTeamId": "2869",
+    "events": [
+      {
+        "minute": "21'",
+        "player": "I. Saibari",
+        "teamId": "2869",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "32'",
+        "player": "Vinícius Júnior",
+        "teamId": "205",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "37'",
+        "player": "Casemiro",
+        "teamId": "205",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "43'",
+        "player": "R. Ibañez",
+        "teamId": "205",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
+  "7": {
+    "homeScore": 0,
+    "awayScore": 1,
+    "homeTeamId": "2654",
+    "awayTeamId": "580",
+    "events": [
+      {
+        "minute": "28'",
+        "player": "J. McGinn",
+        "teamId": "580",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "39'",
+        "player": "J. Bellegarde",
+        "teamId": "2654",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "46'",
+        "player": "A. Hickey",
+        "teamId": "580",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "90'+1'",
+        "player": "F. Curtis",
+        "teamId": "580",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "90'+5'",
+        "player": "K. McLean",
+        "teamId": "580",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
+  "updated": "2026-06-14T05:14:43.437Z"
 }
