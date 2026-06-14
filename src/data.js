@@ -285,6 +285,18 @@ export function cmpTeams(a, b) {
   );
 }
 
+// Factory version that accepts a live rankings map (from public/fifa_ranking.yaml)
+export function makeCmpTeams(rankings) {
+  return function cmp(a, b) {
+    return (
+      b.pts - a.pts ||
+      (b.gf - b.ga) - (a.gf - a.ga) ||
+      b.gf - a.gf ||
+      (rankings[a.name] || 999) - (rankings[b.name] || 999)
+    );
+  };
+}
+
 export function fmtDate(d) {
   const [y,m,dd] = d.split('-');
   return new Date(y, m-1, dd).toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});

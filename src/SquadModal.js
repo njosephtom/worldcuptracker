@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { flagLabel } from './data';
 import { getFallbackTeamSquad, getTeamSquad } from './squads';
 
-export function SquadModal({ team, onClose }) {
+export function SquadModal({ team, onClose, fifaRankings }) {
   const [squad, setSquad] = useState({ coach: 'Unknown', players: [] });
   const [loading, setLoading] = useState(true);
 
@@ -37,7 +37,12 @@ export function SquadModal({ team, onClose }) {
       <div style={styles.modal} onClick={(event) => event.stopPropagation()}>
         <div style={styles.header}>
           <div>
-            <div style={styles.title}>{flagLabel(team)}</div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <div style={styles.title}>{flagLabel(team)}</div>
+              {fifaRankings?.[team] && (
+                <span style={styles.rankBadge}>FIFA #{fifaRankings[team]}</span>
+              )}
+            </div>
             <div style={styles.subtitle}>Coach: {squad.coach}</div>
           </div>
           <button type="button" onClick={onClose} style={styles.closeButton}>Close</button>
@@ -149,5 +154,15 @@ const styles = {
     color: 'var(--tx-subtitle)',
     fontSize: 12,
     padding: '6px 2px',
+  },
+  rankBadge: {
+    fontSize: 10,
+    fontWeight: 700,
+    color: 'var(--ac-gold)',
+    background: 'rgba(240,192,64,0.12)',
+    border: '1px solid rgba(240,192,64,0.3)',
+    borderRadius: 5,
+    padding: '2px 6px',
+    letterSpacing: '.4px',
   },
 };

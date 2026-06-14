@@ -1,9 +1,10 @@
-import React from 'react';
-import { GROUPS, flagLabel, cmpTeams } from './data';
+import React, { useMemo } from 'react';
+import { GROUPS, flagLabel, makeCmpTeams, FIFA_RANKING } from './data';
 import { FlagImg } from './FlagImg';
 
-export function Groups({ standings, matches, onTeamSelect, isMobile }) {
+export function Groups({ standings, matches, onTeamSelect, isMobile, fifaRankings }) {
   const cols = isMobile ? '1fr' : 'repeat(4, minmax(0, 1fr))';
+  const cmpTeams = useMemo(() => makeCmpTeams(fifaRankings || FIFA_RANKING), [fifaRankings]);
   return (
     <div>
       <h2 style={{
@@ -54,6 +55,9 @@ export function Groups({ standings, matches, onTeamSelect, isMobile }) {
                 <span style={{ fontSize: 'var(--fs-xs)', color: i < 2 ? 'var(--ac-green)' : 'var(--tx-dim)', width: 11, fontWeight: i < 2 ? 700 : 400, flexShrink: 0 }}>{i+1}</span>
                 <FlagImg name={t.name} w={20} h={14} />
                 <span style={{ flex: 1, color: 'var(--tx-team)', fontSize: 'var(--fs-sm)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', lineHeight: 1.4 }}>{t.name}</span>
+                {(fifaRankings || FIFA_RANKING)[t.name] && (
+                  <span style={{ fontSize: 9, color: 'var(--tx-dim2)', fontWeight: 500, flexShrink: 0 }}>#{(fifaRankings || FIFA_RANKING)[t.name]}</span>
+                )}
                 {[t.mp,t.w,t.d,t.l].map((v,j) => (
                   <span key={j} style={{ fontSize: 'var(--fs-xs)', color: 'var(--tx-muted)', width: 18, textAlign: 'center' }}>{v}</span>
                 ))}

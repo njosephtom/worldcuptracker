@@ -7,6 +7,8 @@ import { KnockoutBracket } from './KnockoutBracket';
 import { Groups } from './Groups';
 import { SquadModal } from './SquadModal';
 import { MatchModal } from './MatchModal';
+import { FIFA_RANKING } from './data';
+import { loadFifaRankings } from './squads';
 import './App.css';
 
 const TOURNAMENT_START = new Date('2026-06-11T15:00:00-04:00');
@@ -41,7 +43,12 @@ function countdownText(targetDate) {
 
 export default function App() {
   const [autoRefresh, setAutoRefresh] = useState(() => localStorage.getItem('wc-autorefresh') !== 'off');
+  const [fifaRankings, setFifaRankings] = useState(FIFA_RANKING);
   const wc = useWorldCup(autoRefresh);
+
+  useEffect(() => {
+    loadFifaRankings().then(r => { if (r) setFifaRankings(r); });
+  }, []);
   const { tooltip, show, move, hide } = useTooltip();
   const [selectedTeam, setSelectedTeam] = useState(null);
   const [selectedMatch, setSelectedMatch] = useState(null);
@@ -234,11 +241,11 @@ export default function App() {
       {/* GROUPS TAB */}
       {wc.activeTab === 'groups' && (
         <div style={{ flex: 1, minHeight: 0, overflowY: 'auto' }}>
-          <Groups matches={wc.matches} standings={wc.standings} onTeamSelect={setSelectedTeam} isMobile={isMobile} />
+          <Groups matches={wc.matches} standings={wc.standings} onTeamSelect={setSelectedTeam} isMobile={isMobile} fifaRankings={fifaRankings} />
         </div>
       )}
 
-      <SquadModal team={selectedTeam} onClose={() => setSelectedTeam(null)} />
+      <SquadModal team={selectedTeam} onClose={() => setSelectedTeam(null)} fifaRankings={fifaRankings} />
       <MatchModal match={selectedMatch} onClose={() => setSelectedMatch(null)} use24h={use24h} />
       <TooltipPortal tooltip={tooltip} />
       <Analytics />

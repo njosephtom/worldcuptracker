@@ -201,6 +201,32 @@ const TEAM_NAME_ALIASES = {
   'Ivory Coast': "Côte d'Ivoire",
 };
 
+// Maps country names used in public/fifa_ranking.yaml → internal app names
+const RANKING_COUNTRY_MAP = {
+  "Türkiye":          "Turkey",
+  "Côte d'Ivoire":   "Ivory Coast",
+  "Korea Republic":   "South Korea",
+  "Czech Republic":   "Czechia",
+  "Congo DR":         "DR Congo",
+};
+
+export async function loadFifaRankings() {
+  try {
+    const res = await fetch(`/fifa_ranking.yaml?ts=${Date.now()}`);
+    if (!res.ok) return null;
+    const doc = parse(await res.text());
+    const map = {};
+    (doc.rankings || []).forEach(r => {
+      if (!r.rank || !r.country) return;
+      const name = RANKING_COUNTRY_MAP[r.country] || r.country;
+      map[name] = r.rank;
+    });
+    return map;
+  } catch {
+    return null;
+  }
+}
+
 function buildYamlTeamSquads(doc) {
   const confederations = doc?.confederations || {};
   const teams = {};

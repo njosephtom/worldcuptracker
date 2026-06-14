@@ -1,0 +1,1082 @@
+metadata:
+  title: "FIFA World Rankings"
+  approximate_date: "June 2025"
+  source: "FIFA"
+  note: "Rankings and points are approximate based on data through August 2025. Russia suspended from FIFA competitions since March 2022."
+  total_nations: 211
+  confederations:
+    - name: "UEFA"
+      region: "Europe"
+      members: 55
+    - name: "CONMEBOL"
+      region: "South America"
+      members: 10
+    - name: "CONCACAF"
+      region: "North/Central America & Caribbean"
+      members: 41
+    - name: "CAF"
+      region: "Africa"
+      members: 54
+    - name: "AFC"
+      region: "Asia"
+      members: 47
+    - name: "OFC"
+      region: "Oceania"
+      members: 11
+
+rankings:
+  - rank: 1
+    country: "Argentina"
+    confederation: "CONMEBOL"
+    points: 1843.18
+
+  - rank: 2
+    country: "France"
+    confederation: "UEFA"
+    points: 1832.56
+
+  - rank: 3
+    country: "Spain"
+    confederation: "UEFA"
+    points: 1820.44
+
+  - rank: 4
+    country: "England"
+    confederation: "UEFA"
+    points: 1795.02
+
+  - rank: 5
+    country: "Brazil"
+    confederation: "CONMEBOL"
+    points: 1786.31
+
+  - rank: 6
+    country: "Portugal"
+    confederation: "UEFA"
+    points: 1764.28
+
+  - rank: 7
+    country: "Belgium"
+    confederation: "UEFA"
+    points: 1751.09
+
+  - rank: 8
+    country: "Netherlands"
+    confederation: "UEFA"
+    points: 1740.35
+
+  - rank: 9
+    country: "Germany"
+    confederation: "UEFA"
+    points: 1729.62
+
+  - rank: 10
+    country: "Italy"
+    confederation: "UEFA"
+    points: 1719.88
+
+  - rank: 11
+    country: "Croatia"
+    confederation: "UEFA"
+    points: 1700.41
+
+  - rank: 12
+    country: "Morocco"
+    confederation: "CAF"
+    points: 1686.17
+
+  - rank: 13
+    country: "United States"
+    confederation: "CONCACAF"
+    points: 1672.34
+
+  - rank: 14
+    country: "Uruguay"
+    confederation: "CONMEBOL"
+    points: 1665.89
+
+  - rank: 15
+    country: "Colombia"
+    confederation: "CONMEBOL"
+    points: 1659.43
+
+  - rank: 16
+    country: "Senegal"
+    confederation: "CAF"
+    points: 1651.27
+
+  - rank: 17
+    country: "Mexico"
+    confederation: "CONCACAF"
+    points: 1638.54
+
+  - rank: 18
+    country: "Japan"
+    confederation: "AFC"
+    points: 1633.18
+
+  - rank: 19
+    country: "Denmark"
+    confederation: "UEFA"
+    points: 1621.76
+
+  - rank: 20
+    country: "Austria"
+    confederation: "UEFA"
+    points: 1618.32
+
+  - rank: 21
+    country: "Switzerland"
+    confederation: "UEFA"
+    points: 1608.54
+
+  - rank: 22
+    country: "Ecuador"
+    confederation: "CONMEBOL"
+    points: 1598.71
+
+  - rank: 23
+    country: "Algeria"
+    confederation: "CAF"
+    points: 1587.63
+
+  - rank: 24
+    country: "Chile"
+    confederation: "CONMEBOL"
+    points: 1579.42
+
+  - rank: 25
+    country: "Iran"
+    confederation: "AFC"
+    points: 1572.18
+
+  - rank: 26
+    country: "Serbia"
+    confederation: "UEFA"
+    points: 1563.45
+
+  - rank: 27
+    country: "Hungary"
+    confederation: "UEFA"
+    points: 1554.28
+
+  - rank: 28
+    country: "Türkiye"
+    confederation: "UEFA"
+    points: 1545.67
+
+  - rank: 29
+    country: "Czech Republic"
+    confederation: "UEFA"
+    points: 1536.89
+
+  - rank: 30
+    country: "Australia"
+    confederation: "AFC"
+    points: 1527.34
+
+  - rank: 31
+    country: "Ukraine"
+    confederation: "UEFA"
+    points: 1518.76
+
+  - rank: 32
+    country: "Poland"
+    confederation: "UEFA"
+    points: 1509.43
+
+  - rank: 33
+    country: "Egypt"
+    confederation: "CAF"
+    points: 1499.81
+
+  - rank: 34
+    country: "Peru"
+    confederation: "CONMEBOL"
+    points: 1490.27
+
+  - rank: 35
+    country: "Côte d'Ivoire"
+    confederation: "CAF"
+    points: 1481.54
+
+  - rank: 36
+    country: "Korea Republic"
+    confederation: "AFC"
+    points: 1472.83
+
+  - rank: 37
+    country: "Canada"
+    confederation: "CONCACAF"
+    points: 1463.97
+
+  - rank: 38
+    country: "Nigeria"
+    confederation: "CAF"
+    points: 1455.32
+
+  - rank: 39
+    country: "Saudi Arabia"
+    confederation: "AFC"
+    points: 1446.68
+
+  - rank: 40
+    country: "Tunisia"
+    confederation: "CAF"
+    points: 1438.04
+
+  - rank: 41
+    country: "Qatar"
+    confederation: "AFC"
+    points: 1429.41
+
+  - rank: 42
+    country: "Slovakia"
+    confederation: "UEFA"
+    points: 1420.77
+
+  - rank: 43
+    country: "Wales"
+    confederation: "UEFA"
+    points: 1412.14
+
+  - rank: 44
+    country: "Romania"
+    confederation: "UEFA"
+    points: 1403.50
+
+  - rank: 45
+    country: "Greece"
+    confederation: "UEFA"
+    points: 1394.87
+
+  - rank: 46
+    country: "Paraguay"
+    confederation: "CONMEBOL"
+    points: 1386.23
+
+  - rank: 47
+    country: "Bolivia"
+    confederation: "CONMEBOL"
+    points: 1377.60
+
+  - rank: 48
+    country: "Costa Rica"
+    confederation: "CONCACAF"
+    points: 1368.96
+
+  - rank: 49
+    country: "Cameroon"
+    confederation: "CAF"
+    points: 1360.33
+
+  - rank: 50
+    country: "South Africa"
+    confederation: "CAF"
+    points: 1351.69
+
+  - rank: 51
+    country: "Venezuela"
+    confederation: "CONMEBOL"
+    points: 1343.06
+
+  - rank: 52
+    country: "Scotland"
+    confederation: "UEFA"
+    points: 1334.42
+
+  - rank: 53
+    country: "Norway"
+    confederation: "UEFA"
+    points: 1325.79
+
+  - rank: 54
+    country: "Sweden"
+    confederation: "UEFA"
+    points: 1317.15
+
+  - rank: 55
+    country: "Israel"
+    confederation: "UEFA"
+    points: 1308.52
+
+  - rank: 56
+    country: "Republic of Ireland"
+    confederation: "UEFA"
+    points: 1299.88
+
+  - rank: 57
+    country: "Honduras"
+    confederation: "CONCACAF"
+    points: 1291.25
+
+  - rank: 58
+    country: "Northern Ireland"
+    confederation: "UEFA"
+    points: 1282.61
+
+  - rank: 59
+    country: "Panama"
+    confederation: "CONCACAF"
+    points: 1273.98
+
+  - rank: 60
+    country: "Albania"
+    confederation: "UEFA"
+    points: 1265.34
+
+  - rank: 61
+    country: "Ghana"
+    confederation: "CAF"
+    points: 1256.71
+
+  - rank: 62
+    country: "Mali"
+    confederation: "CAF"
+    points: 1248.07
+
+  - rank: 63
+    country: "Burkina Faso"
+    confederation: "CAF"
+    points: 1239.44
+
+  - rank: 64
+    country: "Cape Verde"
+    confederation: "CAF"
+    points: 1230.80
+
+  - rank: 65
+    country: "Curaçao"
+    confederation: "CONCACAF"
+    points: 1222.17
+
+  - rank: 66
+    country: "Bosnia and Herzegovina"
+    confederation: "UEFA"
+    points: 1213.53
+
+  - rank: 67
+    country: "Guatemala"
+    confederation: "CONCACAF"
+    points: 1204.90
+
+  - rank: 68
+    country: "El Salvador"
+    confederation: "CONCACAF"
+    points: 1196.26
+
+  - rank: 69
+    country: "Georgia"
+    confederation: "UEFA"
+    points: 1187.63
+
+  - rank: 70
+    country: "China PR"
+    confederation: "AFC"
+    points: 1178.99
+
+  - rank: 71
+    country: "Jamaica"
+    confederation: "CONCACAF"
+    points: 1170.36
+
+  - rank: 72
+    country: "Finland"
+    confederation: "UEFA"
+    points: 1161.72
+
+  - rank: 73
+    country: "Bulgaria"
+    confederation: "UEFA"
+    points: 1153.09
+
+  - rank: 74
+    country: "Gabon"
+    confederation: "CAF"
+    points: 1144.45
+
+  - rank: 75
+    country: "Congo DR"
+    confederation: "CAF"
+    points: 1135.82
+
+  - rank: 76
+    country: "Haiti"
+    confederation: "CONCACAF"
+    points: 1127.18
+
+  - rank: 77
+    country: "Kenya"
+    confederation: "CAF"
+    points: 1118.55
+
+  - rank: 78
+    country: "Zambia"
+    confederation: "CAF"
+    points: 1109.91
+
+  - rank: 79
+    country: "Uganda"
+    confederation: "CAF"
+    points: 1101.28
+
+  - rank: 80
+    country: "Azerbaijan"
+    confederation: "UEFA"
+    points: 1092.64
+
+  - rank: 81
+    country: "Jordan"
+    confederation: "AFC"
+    points: 1084.01
+
+  - rank: 82
+    country: "Iraq"
+    confederation: "AFC"
+    points: 1075.37
+
+  - rank: 83
+    country: "UAE"
+    confederation: "AFC"
+    points: 1066.74
+
+  - rank: 84
+    country: "Uzbekistan"
+    confederation: "AFC"
+    points: 1058.10
+
+  - rank: 85
+    country: "Libya"
+    confederation: "CAF"
+    points: 1049.47
+
+  - rank: 86
+    country: "Congo"
+    confederation: "CAF"
+    points: 1040.83
+
+  - rank: 87
+    country: "Trinidad and Tobago"
+    confederation: "CONCACAF"
+    points: 1032.20
+
+  - rank: 88
+    country: "Guyana"
+    confederation: "CONCACAF"
+    points: 1023.56
+
+  - rank: 89
+    country: "Cuba"
+    confederation: "CONCACAF"
+    points: 1014.93
+
+  - rank: 90
+    country: "Vietnam"
+    confederation: "AFC"
+    points: 1006.29
+
+  - rank: 91
+    country: "Thailand"
+    confederation: "AFC"
+    points: 997.66
+
+  - rank: 92
+    country: "India"
+    confederation: "AFC"
+    points: 989.02
+
+  - rank: 93
+    country: "Slovenia"
+    confederation: "UEFA"
+    points: 980.39
+
+  - rank: 94
+    country: "Mozambique"
+    confederation: "CAF"
+    points: 971.75
+
+  - rank: 95
+    country: "Myanmar"
+    confederation: "AFC"
+    points: 963.12
+
+  - rank: 96
+    country: "Belarus"
+    confederation: "UEFA"
+    points: 954.48
+
+  - rank: 97
+    country: "North Macedonia"
+    confederation: "UEFA"
+    points: 945.85
+
+  - rank: 98
+    country: "Armenia"
+    confederation: "UEFA"
+    points: 937.21
+
+  - rank: 99
+    country: "Iceland"
+    confederation: "UEFA"
+    points: 928.58
+
+  - rank: 100
+    country: "Indonesia"
+    confederation: "AFC"
+    points: 919.94
+
+  - rank: 101
+    country: "Singapore"
+    confederation: "AFC"
+    points: 911.31
+
+  - rank: 102
+    country: "Philippines"
+    confederation: "AFC"
+    points: 902.67
+
+  - rank: 103
+    country: "Faroe Islands"
+    confederation: "UEFA"
+    points: 894.04
+
+  - rank: 104
+    country: "Estonia"
+    confederation: "UEFA"
+    points: 885.40
+
+  - rank: 105
+    country: "Kosovo"
+    confederation: "UEFA"
+    points: 876.77
+
+  - rank: 106
+    country: "Montenegro"
+    confederation: "UEFA"
+    points: 868.13
+
+  - rank: 107
+    country: "Lithuania"
+    confederation: "UEFA"
+    points: 859.50
+
+  - rank: 108
+    country: "Latvia"
+    confederation: "UEFA"
+    points: 850.86
+
+  - rank: 109
+    country: "Moldova"
+    confederation: "UEFA"
+    points: 842.23
+
+  - rank: 110
+    country: "Suriname"
+    confederation: "CONCACAF"
+    points: 833.59
+
+  - rank: 111
+    country: "Rwanda"
+    confederation: "CAF"
+    points: 824.96
+
+  - rank: 112
+    country: "Namibia"
+    confederation: "CAF"
+    points: 816.32
+
+  - rank: 113
+    country: "Tanzania"
+    confederation: "CAF"
+    points: 807.69
+
+  - rank: 114
+    country: "Zimbabwe"
+    confederation: "CAF"
+    points: 799.05
+
+  - rank: 115
+    country: "Benin"
+    confederation: "CAF"
+    points: 790.42
+
+  - rank: 116
+    country: "Guinea"
+    confederation: "CAF"
+    points: 781.78
+
+  - rank: 117
+    country: "Malawi"
+    confederation: "CAF"
+    points: 773.15
+
+  - rank: 118
+    country: "Bahrain"
+    confederation: "AFC"
+    points: 764.51
+
+  - rank: 119
+    country: "Kuwait"
+    confederation: "AFC"
+    points: 755.88
+
+  - rank: 120
+    country: "Oman"
+    confederation: "AFC"
+    points: 747.24
+
+  - rank: 121
+    country: "Liberia"
+    confederation: "CAF"
+    points: 738.61
+
+  - rank: 122
+    country: "Guinea-Bissau"
+    confederation: "CAF"
+    points: 729.97
+
+  - rank: 123
+    country: "Mauritania"
+    confederation: "CAF"
+    points: 721.34
+
+  - rank: 124
+    country: "Angola"
+    confederation: "CAF"
+    points: 712.70
+
+  - rank: 125
+    country: "Madagascar"
+    confederation: "CAF"
+    points: 704.07
+
+  - rank: 126
+    country: "Gambia"
+    confederation: "CAF"
+    points: 695.43
+
+  - rank: 127
+    country: "Niger"
+    confederation: "CAF"
+    points: 686.80
+
+  - rank: 128
+    country: "Togo"
+    confederation: "CAF"
+    points: 678.16
+
+  - rank: 129
+    country: "Equatorial Guinea"
+    confederation: "CAF"
+    points: 669.53
+
+  - rank: 130
+    country: "Lebanon"
+    confederation: "AFC"
+    points: 660.89
+
+  - rank: 131
+    country: "Palestine"
+    confederation: "AFC"
+    points: 652.26
+
+  - rank: 132
+    country: "Syria"
+    confederation: "AFC"
+    points: 643.62
+
+  - rank: 133
+    country: "Sudan"
+    confederation: "CAF"
+    points: 635.00
+
+  - rank: 134
+    country: "Comoros"
+    confederation: "CAF"
+    points: 626.37
+
+  - rank: 135
+    country: "Ethiopia"
+    confederation: "CAF"
+    points: 617.73
+
+  - rank: 136
+    country: "Eswatini"
+    confederation: "CAF"
+    points: 609.10
+
+  - rank: 137
+    country: "Sierra Leone"
+    confederation: "CAF"
+    points: 600.46
+
+  - rank: 138
+    country: "Djibouti"
+    confederation: "CAF"
+    points: 591.83
+
+  - rank: 139
+    country: "Central African Republic"
+    confederation: "CAF"
+    points: 583.19
+
+  - rank: 140
+    country: "Lesotho"
+    confederation: "CAF"
+    points: 574.56
+
+  - rank: 141
+    country: "Eritrea"
+    confederation: "CAF"
+    points: 565.92
+
+  - rank: 142
+    country: "Botswana"
+    confederation: "CAF"
+    points: 557.29
+
+  - rank: 143
+    country: "São Tomé and Príncipe"
+    confederation: "CAF"
+    points: 548.65
+
+  - rank: 144
+    country: "Burundi"
+    confederation: "CAF"
+    points: 540.02
+
+  - rank: 145
+    country: "Chad"
+    confederation: "CAF"
+    points: 531.38
+
+  - rank: 146
+    country: "Somalia"
+    confederation: "CAF"
+    points: 522.75
+
+  - rank: 147
+    country: "South Sudan"
+    confederation: "CAF"
+    points: 514.11
+
+  - rank: 148
+    country: "Malaysia"
+    confederation: "AFC"
+    points: 505.48
+
+  - rank: 149
+    country: "Hong Kong"
+    confederation: "AFC"
+    points: 496.84
+
+  - rank: 150
+    country: "Chinese Taipei"
+    confederation: "AFC"
+    points: 488.21
+
+  - rank: 151
+    country: "Maldives"
+    confederation: "AFC"
+    points: 479.57
+
+  - rank: 152
+    country: "Yemen"
+    confederation: "AFC"
+    points: 470.94
+
+  - rank: 153
+    country: "Afghanistan"
+    confederation: "AFC"
+    points: 462.30
+
+  - rank: 154
+    country: "Kyrgyzstan"
+    confederation: "AFC"
+    points: 453.67
+
+  - rank: 155
+    country: "Tajikistan"
+    confederation: "AFC"
+    points: 445.03
+
+  - rank: 156
+    country: "Bangladesh"
+    confederation: "AFC"
+    points: 436.40
+
+  - rank: 157
+    country: "Nepal"
+    confederation: "AFC"
+    points: 427.76
+
+  - rank: 158
+    country: "Sri Lanka"
+    confederation: "AFC"
+    points: 419.13
+
+  - rank: 159
+    country: "Laos"
+    confederation: "AFC"
+    points: 410.49
+
+  - rank: 160
+    country: "Cambodia"
+    confederation: "AFC"
+    points: 401.86
+
+  - rank: 161
+    country: "Mongolia"
+    confederation: "AFC"
+    points: 393.22
+
+  - rank: 162
+    country: "Bhutan"
+    confederation: "AFC"
+    points: 384.59
+
+  - rank: 163
+    country: "Pakistan"
+    confederation: "AFC"
+    points: 375.95
+
+  - rank: 164
+    country: "Macau"
+    confederation: "AFC"
+    points: 367.32
+
+  - rank: 165
+    country: "Brunei"
+    confederation: "AFC"
+    points: 358.68
+
+  - rank: 166
+    country: "Guam"
+    confederation: "AFC"
+    points: 350.05
+
+  - rank: 167
+    country: "Timor-Leste"
+    confederation: "AFC"
+    points: 341.41
+
+  - rank: 168
+    country: "Northern Mariana Islands"
+    confederation: "AFC"
+    points: 332.78
+
+  - rank: 169
+    country: "Korea DPR"
+    confederation: "AFC"
+    points: 324.14
+
+  - rank: 170
+    country: "New Zealand"
+    confederation: "OFC"
+    points: 315.51
+
+  - rank: 171
+    country: "Fiji"
+    confederation: "OFC"
+    points: 306.87
+
+  - rank: 172
+    country: "Papua New Guinea"
+    confederation: "OFC"
+    points: 298.24
+
+  - rank: 173
+    country: "Solomon Islands"
+    confederation: "OFC"
+    points: 289.60
+
+  - rank: 174
+    country: "New Caledonia"
+    confederation: "OFC"
+    points: 280.97
+
+  - rank: 175
+    country: "Tahiti"
+    confederation: "OFC"
+    points: 272.33
+
+  - rank: 176
+    country: "Vanuatu"
+    confederation: "OFC"
+    points: 263.70
+
+  - rank: 177
+    country: "Samoa"
+    confederation: "OFC"
+    points: 255.06
+
+  - rank: 178
+    country: "Cook Islands"
+    confederation: "OFC"
+    points: 246.43
+
+  - rank: 179
+    country: "Tonga"
+    confederation: "OFC"
+    points: 237.79
+
+  - rank: 180
+    country: "American Samoa"
+    confederation: "OFC"
+    points: 229.16
+
+  - rank: 181
+    country: "Nicaragua"
+    confederation: "CONCACAF"
+    points: 220.52
+
+  - rank: 182
+    country: "Belize"
+    confederation: "CONCACAF"
+    points: 211.89
+
+  - rank: 183
+    country: "Dominican Republic"
+    confederation: "CONCACAF"
+    points: 203.25
+
+  - rank: 184
+    country: "Dominica"
+    confederation: "CONCACAF"
+    points: 194.62
+
+  - rank: 185
+    country: "Grenada"
+    confederation: "CONCACAF"
+    points: 185.98
+
+  - rank: 186
+    country: "Saint Vincent and the Grenadines"
+    confederation: "CONCACAF"
+    points: 177.35
+
+  - rank: 187
+    country: "Antigua and Barbuda"
+    confederation: "CONCACAF"
+    points: 168.71
+
+  - rank: 188
+    country: "Saint Kitts and Nevis"
+    confederation: "CONCACAF"
+    points: 160.08
+
+  - rank: 189
+    country: "Saint Lucia"
+    confederation: "CONCACAF"
+    points: 151.44
+
+  - rank: 190
+    country: "Barbados"
+    confederation: "CONCACAF"
+    points: 142.81
+
+  - rank: 191
+    country: "Bermuda"
+    confederation: "CONCACAF"
+    points: 134.17
+
+  - rank: 192
+    country: "Bahamas"
+    confederation: "CONCACAF"
+    points: 125.54
+
+  - rank: 193
+    country: "Cayman Islands"
+    confederation: "CONCACAF"
+    points: 116.90
+
+  - rank: 194
+    country: "Montserrat"
+    confederation: "CONCACAF"
+    points: 108.27
+
+  - rank: 195
+    country: "British Virgin Islands"
+    confederation: "CONCACAF"
+    points: 99.63
+
+  - rank: 196
+    country: "US Virgin Islands"
+    confederation: "CONCACAF"
+    points: 91.00
+
+  - rank: 197
+    country: "Turks and Caicos Islands"
+    confederation: "CONCACAF"
+    points: 82.36
+
+  - rank: 198
+    country: "Aruba"
+    confederation: "CONCACAF"
+    points: 73.73
+
+  - rank: 199
+    country: "Puerto Rico"
+    confederation: "CONCACAF"
+    points: 65.09
+
+  - rank: 200
+    country: "Andorra"
+    confederation: "UEFA"
+    points: 56.46
+
+  - rank: 201
+    country: "San Marino"
+    confederation: "UEFA"
+    points: 47.82
+
+  - rank: 202
+    country: "Gibraltar"
+    confederation: "UEFA"
+    points: 39.19
+
+  - rank: 203
+    country: "Liechtenstein"
+    confederation: "UEFA"
+    points: 30.55
+
+  - rank: 204
+    country: "Luxembourg"
+    confederation: "UEFA"
+    points: 21.92
+
+  - rank: 205
+    country: "Malta"
+    confederation: "UEFA"
+    points: 13.28
+
+  - rank: 206
+    country: "Cyprus"
+    confederation: "UEFA"
+    points: 8.50
+
+  - rank: 207
+    country: "French Guiana"
+    confederation: "CONCACAF"
+    points: 6.20
+
+  - rank: 208
+    country: "Saint Martin"
+    confederation: "CONCACAF"
+    points: 4.80
+
+  - rank: 209
+    country: "Sint Maarten"
+    confederation: "CONCACAF"
+    points: 3.40
+
+  - rank: 210
+    country: "Anguilla"
+    confederation: "CONCACAF"
+    points: 2.10
+
+  - rank: 211
+    country: "Russia"
+    confederation: "UEFA"
+    points: null
+    status: "Suspended from FIFA competitions since March 2022"
