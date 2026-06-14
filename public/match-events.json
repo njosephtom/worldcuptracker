@@ -495,5 +495,43 @@
       }
     ]
   },
-  "updated": "2026-06-14T05:14:43.437Z"
+  "8": {
+    "homeScore": 2,
+    "awayScore": 0,
+    "homeTeamId": "628",
+    "awayTeamId": "465",
+    "events": [
+      {
+        "minute": "27'",
+        "player": "N. Irankunda",
+        "teamId": "628",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "75'",
+        "player": "C. Metcalfe",
+        "teamId": "628",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "86'",
+        "player": "Y. Akgün",
+        "teamId": "465",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
+  "updated": "2026-06-14T11:51:17.833Z"
 }
