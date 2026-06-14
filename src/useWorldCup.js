@@ -64,6 +64,24 @@ export function useWorldCup(autoRefresh = true) {
       };
     }
 
+    // Today's games that have already finished but dropped off ESPN live:
+    // use the static cache so scores still appear even after the live feed clears.
+    if (m.d === today) {
+      const cached = cachedEvents[String(m.id)];
+      if (cached) {
+        return {
+          ...m,
+          status:     'finished',
+          homeScore:  cached.homeScore,
+          awayScore:  cached.awayScore,
+          homeTeamId: cached.homeTeamId,
+          awayTeamId: cached.awayTeamId,
+          events:     cached.events,
+          clock:      undefined,
+        };
+      }
+    }
+
     return { ...m, status: 'upcoming', homeScore: undefined, awayScore: undefined, clock: undefined };
   });
 

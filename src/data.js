@@ -249,8 +249,11 @@ export const MATCHES = [
 ];
 
 export function todayStr() {
-  // Use ET (tournament timezone) so "today" matches the scheduled game date
-  return new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
+  // Use the user's local timezone so "Today" matches their local calendar date.
+  // The ET-forcing approach caused PT/CT users to see the next day's date 1–3 h
+  // before their local midnight. Past-match detection in useWorldCup.js now also
+  // checks cachedEvents so today's finished games still show their scores.
+  return new Date().toLocaleDateString('en-CA');
 }
 
 export function clampDate(d) {
