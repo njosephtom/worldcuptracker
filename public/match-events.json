@@ -863,5 +863,73 @@
       }
     ]
   },
-  "updated": "2026-06-15T19:40:27.036Z"
+  "40": {
+    "homeScore": 1,
+    "awayScore": 1,
+    "homeTeamId": "459",
+    "awayTeamId": "2620",
+    "events": [
+      {
+        "minute": "13'",
+        "player": "M. Attia",
+        "teamId": "2620",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "14'",
+        "player": "T. Castagne",
+        "teamId": "459",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "19'",
+        "player": "E. Ashour",
+        "teamId": "2620",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "34'",
+        "player": "A. Fatouh",
+        "teamId": "2620",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "66'",
+        "player": "M. Hany",
+        "teamId": "459",
+        "goal": true,
+        "ownGoal": true,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "75'",
+        "player": "M. De Cuyper",
+        "teamId": "459",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
+  "updated": "2026-06-15T22:12:42.145Z"
 }
