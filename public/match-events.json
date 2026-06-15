@@ -699,5 +699,63 @@
       }
     ]
   },
-  "updated": "2026-06-14T23:02:16.139Z"
+  "11": {
+    "homeScore": 1,
+    "awayScore": 0,
+    "homeTeamId": "4789",
+    "awayTeamId": "209",
+    "events": [
+      {
+        "minute": "28'",
+        "player": "S. Fofana",
+        "teamId": "4789",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "38'",
+        "player": "F. Kessié",
+        "teamId": "4789",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "40'",
+        "player": "G. Doué",
+        "teamId": "4789",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "73'",
+        "player": "J. Porozo",
+        "teamId": "209",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "90'",
+        "player": "A. Diallo",
+        "teamId": "4789",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      }
+    ]
+  },
+  "updated": "2026-06-15T01:44:41.511Z"
 }
