@@ -757,5 +757,83 @@
       }
     ]
   },
-  "updated": "2026-06-15T01:44:41.511Z"
+  "13": {
+    "homeScore": 5,
+    "awayScore": 1,
+    "homeTeamId": "466",
+    "awayTeamId": "659",
+    "events": [
+      {
+        "minute": "7'",
+        "player": "Y. Ayari",
+        "teamId": "466",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "30'",
+        "player": "A. Isak",
+        "teamId": "466",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "43'",
+        "player": "O. Rekik",
+        "teamId": "659",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "54'",
+        "player": "R. Khedira",
+        "teamId": "659",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "59'",
+        "player": "V. Gyökeres",
+        "teamId": "466",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "84'",
+        "player": "M. Svanberg",
+        "teamId": "466",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "90'+6'",
+        "player": "Y. Ayari",
+        "teamId": "466",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      }
+    ]
+  },
+  "updated": "2026-06-15T07:11:50.415Z"
 }
