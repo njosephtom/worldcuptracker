@@ -757,6 +757,34 @@
       }
     ]
   },
+  "12": {
+    "homeScore": 0,
+    "awayScore": 0,
+    "homeTeamId": "164",
+    "awayTeamId": "2597",
+    "events": [
+      {
+        "minute": "16'",
+        "player": "S. Lopes Cabral",
+        "teamId": "2597",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "90'+3'",
+        "player": "Pedri",
+        "teamId": "164",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
   "13": {
     "homeScore": 5,
     "awayScore": 1,
@@ -835,5 +863,5 @@
       }
     ]
   },
-  "updated": "2026-06-15T15:40:08.520Z"
+  "updated": "2026-06-15T19:40:27.036Z"
 }
