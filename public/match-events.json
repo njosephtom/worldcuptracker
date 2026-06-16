@@ -901,6 +901,54 @@
       }
     ]
   },
+  "17": {
+    "homeScore": 3,
+    "awayScore": 1,
+    "homeTeamId": "478",
+    "awayTeamId": "654",
+    "events": [
+      {
+        "minute": "66'",
+        "player": "K. Mbappé",
+        "teamId": "478",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "82'",
+        "player": "B. Barcola",
+        "teamId": "478",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "90'+5'",
+        "player": "I. Mbaye",
+        "teamId": "654",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "90'+6'",
+        "player": "K. Mbappé",
+        "teamId": "478",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      }
+    ]
+  },
   "40": {
     "homeScore": 1,
     "awayScore": 1,
@@ -1027,5 +1075,5 @@
       }
     ]
   },
-  "updated": "2026-06-16T19:01:09.713Z"
+  "updated": "2026-06-16T21:59:25.051Z"
 }
