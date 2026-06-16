@@ -863,6 +863,44 @@
       }
     ]
   },
+  "14": {
+    "homeScore": 1,
+    "awayScore": 1,
+    "homeTeamId": "655",
+    "awayTeamId": "212",
+    "events": [
+      {
+        "minute": "41'",
+        "player": "A. Al-Amri",
+        "teamId": "655",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "44'",
+        "player": "A. Al-Amri",
+        "teamId": "655",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "80'",
+        "player": "M. Araújo",
+        "teamId": "212",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      }
+    ]
+  },
   "40": {
     "homeScore": 1,
     "awayScore": 1,
@@ -931,5 +969,5 @@
       }
     ]
   },
-  "updated": "2026-06-15T22:12:42.145Z"
+  "updated": "2026-06-16T00:08:37.211Z"
 }
