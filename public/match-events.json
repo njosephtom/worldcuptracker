@@ -928,7 +928,7 @@
         "red": false
       },
       {
-        "minute": "19'",
+        "minute": "20'",
         "player": "E. Ashour",
         "teamId": "2620",
         "goal": true,
@@ -969,5 +969,63 @@
       }
     ]
   },
-  "updated": "2026-06-16T00:08:37.211Z"
+  "42": {
+    "homeScore": 2,
+    "awayScore": 2,
+    "homeTeamId": "469",
+    "awayTeamId": "2666",
+    "events": [
+      {
+        "minute": "7'",
+        "player": "E. Just",
+        "teamId": "2666",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "32'",
+        "player": "R. Rezaeian",
+        "teamId": "469",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "54'",
+        "player": "E. Just",
+        "teamId": "2666",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "64'",
+        "player": "M. Mohebbi",
+        "teamId": "469",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "89'",
+        "player": "E. Hajsafi",
+        "teamId": "469",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
+  "updated": "2026-06-16T05:43:19.415Z"
 }
