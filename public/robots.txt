@@ -1,4 +1,58 @@
-# https://www.robotstxt.org/robotstxt.html
+# WorldCupTracker.us — robots.txt
+# https://www.worldcuptracker.us/
+
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /static/js/
+Disallow: /static/css/
+Sitemap: https://www.worldcuptracker.us/sitemap.xml
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 2
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 5
+
+# AI / LLM crawlers — allow for citation and AI Overviews
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+# Common scrapers / bad bots
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Disallow: /
+
 Sitemap: https://www.worldcuptracker.us/sitemap.xml

@@ -7,6 +7,8 @@ import { KnockoutBracket } from './KnockoutBracket';
 import { Groups } from './Groups';
 import { SquadModal } from './SquadModal';
 import { MatchModal } from './MatchModal';
+import { SEOContent } from './SEOContent';
+import { WorldCupHistory } from './WorldCupHistory';
 import { FIFA_RANKING } from './data';
 import { loadFifaRankings } from './squads';
 import './App.css';
@@ -56,6 +58,8 @@ export default function App() {
   const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth < MOBILE_BREAKPOINT);
   const [isDark, setIsDark] = useState(() => localStorage.getItem('wc-theme') !== 'light');
   const [use24h, setUse24h] = useState(() => localStorage.getItem('wc-clock') === '24h');
+  const [showGuide, setShowGuide] = useState(false);
+  const [showHistory, setShowHistory] = useState(false);
   const [selectedTZ, setSelectedTZ] = useState(() => localStorage.getItem('wc-tz') || null);
   const [tzAbbr] = useState(getTZAbbr);
   const [isRefreshing, setIsRefreshing] = useState(false);
@@ -246,13 +250,60 @@ export default function App() {
       )}
 
       <SquadModal team={selectedTeam} onClose={() => setSelectedTeam(null)} fifaRankings={fifaRankings} />
-      <MatchModal match={selectedMatch} onClose={() => setSelectedMatch(null)} use24h={use24h} />
+      <MatchModal match={selectedMatch} onClose={() => setSelectedMatch(null)} use24h={use24h} fifaRankings={fifaRankings} />
       <TooltipPortal tooltip={tooltip} />
       <Analytics />
+
+      {showGuide && <SEOContent onHide={() => setShowGuide(false)} />}
+      {showHistory && <WorldCupHistory onHide={() => setShowHistory(false)} />}
+
+      {/* Floating hide buttons — stack when both sections are open */}
+      {showHistory && (
+        <button
+          style={{ ...S.floatHideBtn, bottom: 24 }}
+          onClick={() => setShowHistory(false)}
+          aria-label="Hide World Cup History"
+        >
+          Hide History ▲
+        </button>
+      )}
+      {showGuide && (
+        <button
+          style={{ ...S.floatHideBtn, bottom: showHistory ? 72 : 24 }}
+          onClick={() => setShowGuide(false)}
+          aria-label="Hide World Cup Guide"
+        >
+          Hide Guide ▲
+        </button>
+      )}
 
       {/* Footer */}
       <div style={S.footer}>
         <span>Not affiliated with FIFA &nbsp;·&nbsp;</span>
+        <button
+          style={S.footerBtn}
+          onClick={() => {
+            setShowGuide(v => {
+              if (!v) setTimeout(() => document.getElementById('wc2026-guide')?.scrollIntoView({ behavior: 'smooth' }), 30);
+              return !v;
+            });
+          }}
+        >
+          {showGuide ? 'Hide Guide ▲' : 'World Cup Guide ▼'}
+        </button>
+        <span> &nbsp;·&nbsp; </span>
+        <button
+          style={S.footerBtn}
+          onClick={() => {
+            setShowHistory(v => {
+              if (!v) setTimeout(() => document.getElementById('wc-history')?.scrollIntoView({ behavior: 'smooth' }), 30);
+              return !v;
+            });
+          }}
+        >
+          {showHistory ? 'Hide History ▲' : 'World Cup History ▼'}
+        </button>
+        <span> &nbsp;·&nbsp; </span>
         <a href="/privacy.html" style={S.footerLink} target="_blank" rel="noopener noreferrer">Privacy Policy</a>
         <span> &nbsp;·&nbsp; &copy; 2026 worldcuptracker.us</span>
       </div>
@@ -261,7 +312,7 @@ export default function App() {
 }
 
 const S = {
-  app: { background: 'var(--bg-app)', color: 'var(--tx-primary)', fontFamily: 'var(--font-sans)', height: '100vh', overflow: 'hidden', display: 'flex', flexDirection: 'column' },
+  app: { background: 'var(--bg-app)', color: 'var(--tx-primary)', fontFamily: 'var(--font-sans)', minHeight: '100vh', overflowY: 'auto', display: 'flex', flexDirection: 'column' },
   topbar: { background: 'var(--bg-topbar)', borderBottom: '1px solid var(--bd-main)', padding: '10px 16px', display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' },
   counterBox: { display: 'flex', flexDirection: 'column', gap: 1, minWidth: 180, padding: '4px 8px', border: '1px solid var(--bd-btn)', borderRadius: 6, background: 'var(--bg-input)' },
   counterLabel: { fontSize: 'var(--fs-xs)', letterSpacing: '.6px', textTransform: 'uppercase', color: 'var(--tx-muted)' },
@@ -271,7 +322,7 @@ const S = {
   tabs: { display: 'flex', background: 'var(--bg-tabs)', borderBottom: '1px solid var(--bd-main)' },
   tab: { padding: '9px 18px', fontSize: 'var(--fs-sm)', fontWeight: 500, color: 'var(--tx-muted)', cursor: 'pointer', borderBottom: '2px solid transparent', transition: 'all .15s', textTransform: 'uppercase', letterSpacing: '.6px' },
   tabActive: { color: 'var(--ac-gold)', borderBottomColor: 'var(--ac-gold)' },
-  unified: { display: 'grid', gridTemplateColumns: '1.7fr 1fr', flex: 1, minHeight: 0, overflow: 'hidden' },
+  unified: { display: 'grid', gridTemplateColumns: '1.7fr 1fr', height: 'calc(100vh - 130px)', minHeight: 400, overflow: 'hidden' },
   unifiedMobile: { gridTemplateColumns: '1fr', gridTemplateRows: 'minmax(340px, 55vh) minmax(320px, 45vh)' },
   colLeft: { borderRight: '1px solid var(--bd-main)', display: 'flex', flexDirection: 'column', overflow: 'hidden', minHeight: 0 },
   colRight: { display: 'flex', flexDirection: 'column', overflow: 'hidden', minHeight: 0 },
@@ -279,5 +330,14 @@ const S = {
   colRightMobile: { minHeight: 0 },
   spinner: { width: 12, height: 12, borderRadius: '50%', border: '2px solid var(--bd-main)', borderTopColor: 'var(--ac-gold)', display: 'inline-block', animation: 'spin .7s linear infinite' },
   footer: { flexShrink: 0, borderTop: '1px solid var(--bd-main)', padding: '5px 16px', fontSize: 10, color: 'var(--tx-muted)', textAlign: 'center', background: 'var(--bg-topbar)' },
-  footerLink: { color: 'var(--ac-gold)', textDecoration: 'none', fontWeight: 500 },
+  footerLink: { color: 'inherit', textDecoration: 'underline', textUnderlineOffset: 2 },
+  footerBtn: { background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: 'var(--ac-gold)', fontWeight: 600, fontSize: 10, fontFamily: 'var(--font-sans)' },
+  floatHideBtn: {
+    position: 'fixed', bottom: 24, right: 20, zIndex: 9000,
+    background: 'var(--bg-inner)', border: '1px solid var(--bd-btn)',
+    color: 'var(--ac-gold)', fontWeight: 700, fontSize: 11,
+    fontFamily: 'var(--font-sans)', letterSpacing: '.4px',
+    padding: '9px 18px', borderRadius: 24, cursor: 'pointer',
+    boxShadow: '0 4px 20px rgba(0,0,0,.45)',
+  },
 };

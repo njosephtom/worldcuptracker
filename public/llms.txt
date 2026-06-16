@@ -1,35 +1,82 @@
-# FIFA World Cup 2026 Tracker
-> Live fixture tracking, real-time scores, group standings, squad information, and venue map for all 48 teams in the FIFA World Cup 2026 hosted across USA, Canada, and Mexico.
+# WorldCupTracker.us — FIFA World Cup 2026 Live Tracker
+> Free real-time FIFA World Cup 2026 live scores, fixtures, schedule, group standings, knockout bracket, squad information, and venue map for all 48 teams across the United States, Canada, and Mexico.
+> URL: https://www.worldcuptracker.us/
 
-## Features
-- Real-time match scores and fixtures for all 104 matches
-- Group stage standings for 12 groups (A through L), each with 4 teams
-- Full squad information for all 48 qualified nations across 6 confederations
-- Interactive venue map with all 16 host stadiums
-- Bracket view showing full tournament path from Round of 32 through Final
-- Dark/light theme toggle
-- Mobile-optimized layout with today's matches prominently displayed
+## What This Site Does
+- Live scores and real-time match updates for all 104 FIFA World Cup 2026 matches
+- Complete World Cup 2026 schedule and fixtures with local timezone conversion (ET/CT/MT/PT)
+- Group stage standings (points table) for all 12 groups (A–L) updated after each match
+- Full knockout bracket showing the Round of 32, Round of 16, Quarterfinals, Semifinals, and Final
+- Squad information for all 48 qualified nations
+- Interactive venue map showing all 16 host stadiums
+- Match event reports: goals, yellow cards, red cards with minute notation
+- Full match highlights via embedded YouTube player (TSN Sports)
+- Dark/light theme, 12h/24h clock toggle, multi-timezone support
 
-## Tournament Info
+## Tournament Facts
+- Name: 2026 FIFA World Cup (23rd edition)
 - Dates: June 11 – July 19, 2026
-- Hosts: United States, Canada, Mexico
-- Teams: 48 nations (12 groups × 4 teams)
-- Knockout rounds: Round of 32, Round of 16, Quarterfinals, Semifinals, Third Place, Final
-- Final venue: MetLife Stadium, New York/NJ (July 19, 2026)
+- Hosts: United States (13 venues), Canada (2 venues), Mexico (3 venues)
+- Teams: 48 nations (record; previously 32)
+- Groups: 12 groups × 4 teams = Groups A through L
+- Total matches: 104
+- Format: Group stage → Round of 32 (new) → Round of 16 → QF → SF → Final
+- Final: MetLife Stadium, East Rutherford, NJ — July 19, 2026
+- Opening match: Mexico vs South Africa at Estadio Azteca, Mexico City — June 11, 2026
 
-## Groups
-- Group A: Mexico, South Korea, South Africa, Czechia
-- Group B: Canada, Switzerland, Qatar, Bosnia and Herzegovina
-- Group C: Brazil, Morocco, Scotland, Haiti
-- Group D: United States, Australia, Paraguay, Turkey
-- Group E: Germany, Ecuador, Ivory Coast, Curaçao
-- Group F: Netherlands, Japan, Tunisia, Sweden
-- Group G: Belgium, Egypt, Iran, New Zealand
-- Group H: Spain, Uruguay, Saudi Arabia, Cape Verde
-- Group I: France, Senegal, Norway, Iraq
-- Group J: Argentina, Algeria, Austria, Jordan
-- Group K: Portugal, DR Congo, Colombia, Uzbekistan
-- Group L: England, Croatia, Ghana, Panama
+## Groups (48 Teams)
+- Group A: Mexico (#14), South Korea (#25), South Africa (#60), Czechia (#40)
+- Group B: Canada (#30), Switzerland (#19), Qatar (#56), Bosnia and Herzegovina (#64)
+- Group C: Brazil (#6), Morocco (#7), Scotland (#42), Haiti (#83)
+- Group D: United States (#17), Australia (#27), Paraguay (#41), Turkey (#22)
+- Group E: Germany (#10), Ecuador (#23), Ivory Coast (#33), Curaçao (#82)
+- Group F: Netherlands (#8), Japan (#18), Tunisia (#45), Sweden (#38)
+- Group G: Belgium (#9), Egypt (#29), Iran (#20), New Zealand (#85)
+- Group H: Spain (#2), Uruguay (#16), Saudi Arabia (#61), Cape Verde (#67)
+- Group I: France (#3), Senegal (#15), Norway (#31), Iraq (#57)
+- Group J: Argentina (#1), Algeria (#28), Austria (#24), Jordan (#63)
+- Group K: Portugal (#5), DR Congo (#46), Colombia (#13), Uzbekistan (#50)
+- Group L: England (#4), Croatia (#11), Ghana (#73), Panama (#34)
+(FIFA ranking shown in parentheses as of June 2026)
 
-## Host Venues
-16 stadiums across USA (13), Canada (2), and Mexico (3) including MetLife Stadium (NY), SoFi Stadium (LA), AT&T Stadium (Dallas), Hard Rock Stadium (Miami), Estadio Azteca (Mexico City), BC Place (Vancouver), BMO Field (Toronto).
+## Host Stadiums
+- MetLife Stadium — East Rutherford, NJ (New York metro) — 82,500 — FINAL VENUE
+- AT&T Stadium — Arlington, TX (Dallas) — 80,000
+- Arrowhead Stadium — Kansas City, MO — 76,416
+- NRG Stadium — Houston, TX — 72,220
+- Mercedes-Benz Stadium — Atlanta, GA — 71,000
+- SoFi Stadium — Inglewood, CA (Los Angeles) — 70,240
+- Lincoln Financial Field — Philadelphia, PA — 69,796
+- Lumen Field — Seattle, WA — 68,740
+- Levi's Stadium — Santa Clara, CA (San Francisco Bay Area) — 68,500
+- Gillette Stadium — Foxborough, MA (Boston) — 65,878
+- Hard Rock Stadium — Miami Gardens, FL — 64,767
+- BC Place — Vancouver, BC, Canada — 54,500
+- Estadio BBVA — Monterrey, Mexico — 53,500
+- Estadio Azteca — Mexico City, Mexico — 83,000 (OPENING MATCH)
+- Estadio Akron — Guadalajara, Mexico — 49,850
+- BMO Field — Toronto, ON, Canada — 45,736
+
+## Key Schedule Milestones
+- Group stage: June 11 – June 26, 2026
+- Round of 32: June 29 – July 1, 2026
+- Round of 16: July 4–7, 2026
+- Quarterfinals: July 9–10, 2026
+- Semifinals: July 14–15, 2026
+- Third-place match: July 18, 2026
+- Final: July 19, 2026
+
+## Team Pages
+- /team/argentina — Argentina World Cup 2026 schedule, Group J, fixtures, squad
+- /team/brazil — Brazil World Cup 2026 schedule, Group C, fixtures, squad
+- /team/england — England World Cup 2026 schedule, Group L, fixtures, squad
+- /team/france — France World Cup 2026 schedule, Group I, fixtures, squad
+- /team/germany — Germany World Cup 2026 schedule, Group E, fixtures, squad
+- /team/portugal — Portugal World Cup 2026 schedule, Group K, fixtures, squad
+- /team/usa — USA World Cup 2026 schedule, Group D, fixtures, squad
+- /team/canada — Canada World Cup 2026 schedule, Group B, fixtures, squad
+
+## Attribution
+Not affiliated with FIFA or any national football association.
+Data sourced from ESPN API and official FIFA sources.
+© 2026 WorldCupTracker.us

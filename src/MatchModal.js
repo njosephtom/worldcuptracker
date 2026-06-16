@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { VENUES } from './data';
 import { FlagImg } from './FlagImg';
+import { useYouTubeHighlight, ytName, youtubeSearchUrl } from './useYouTubeHighlight';
 
 // ── ESPN helpers ──────────────────────────────────────────────────────────────
 const ESPN_SCOREBOARD = 'https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard';
@@ -133,13 +134,14 @@ function eventIcon(ev) {
   return '';
 }
 
-function EventsColumn({ team, events, teamId, align }) {
+function EventsColumn({ team, events, teamId, align, rank }) {
   const teamEvents = (events || []).filter(e => e.teamId === teamId);
   return (
     <div style={{ ...S.eventsCol, alignItems: align === 'right' ? 'flex-end' : 'flex-start' }}>
       <div style={{ ...S.evColHeader, flexDirection: align === 'right' ? 'row-reverse' : 'row' }}>
         <FlagImg name={team} w={18} h={12} />
         <span style={S.evTeamName}>{team}</span>
+        {rank && <span style={S.evRank}>#{rank}</span>}
       </div>
       {teamEvents.length === 0 ? (
         <div style={S.evEmpty}>–</div>
@@ -157,11 +159,20 @@ function EventsColumn({ team, events, teamId, align }) {
 }
 
 // ── main component ────────────────────────────────────────────────────────────
-export function MatchModal({ match, onClose, use24h }) {
+export function MatchModal({ match, onClose, use24h, fifaRankings }) {
   const [now, setNow] = useState(Date.now());
   // extraData: { homeTeamId, awayTeamId, homeScore, awayScore, events } | null
   const [extraData, setExtraData] = useState(null);
   const [loadingEvents, setLoadingEvents] = useState(false);
+  // Whether the user has clicked to activate the iframe player (replaces thumbnail)
+  const [playerActive, setPlayerActive] = useState(false);
+
+  const isFinished = match?.status === 'finished';
+  const { videoId, title: ytTitle, thumbnail: ytThumbnail, status: ytStatus, loading: ytLoading } =
+    useYouTubeHighlight(match?.h, match?.a, isFinished, match?.id);
+
+  // Reset player state when a different match is opened
+  useEffect(() => { setPlayerActive(false); }, [match?.id]);
 
   useEffect(() => {
     const t = setInterval(() => setNow(Date.now()), 1000);
@@ -273,12 +284,90 @@ export function MatchModal({ match, onClose, use24h }) {
             <div style={S.evUpcoming}>No events recorded</div>
           ) : (
             <div style={S.eventsGrid}>
-              <EventsColumn team={match.h} events={events} teamId={homeTeamId} align="left" />
+              <EventsColumn team={match.h} events={events} teamId={homeTeamId} align="left" rank={fifaRankings?.[match.h]} />
               <div style={S.evDivider} />
-              <EventsColumn team={match.a} events={events} teamId={awayTeamId} align="right" />
+              <EventsColumn team={match.a} events={events} teamId={awayTeamId} align="right" rank={fifaRankings?.[match.a]} />
             </div>
           )}
         </div>
+
+        {/* ── YouTube Highlights ── */}
+        {finished && ytStatus !== 'not-found' && (
+          <div style={S.ytSection}>
+            <div style={S.ytLabel}>Full Match Highlights</div>
+
+            {/* Skeleton while loading */}
+            {ytLoading && (
+              <div style={{ animation: 'pulse 1.4s ease-in-out infinite' }}>
+                <div style={S.ytSkelVideo} />
+                <div style={S.ytSkelTitle} />
+              </div>
+            )}
+
+            {/* Found — thumbnail click-to-play, then iframe */}
+            {!ytLoading && ytStatus === 'found' && videoId && (
+              <div>
+                {ytTitle && <div style={S.ytVideoTitle}>{ytTitle}</div>}
+                <div style={S.ytPlayerWrap}>
+                  {!playerActive ? (
+                    <div
+                      style={{ ...S.ytAbsFill, cursor: 'pointer', borderRadius: 10, overflow: 'hidden' }}
+                      onClick={() => setPlayerActive(true)}
+                      role="button"
+                      aria-label="Play highlights"
+                    >
+                      <img
+                        src={ytThumbnail || `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
+                        alt={`${match.h} vs ${match.a} highlights`}
+                        style={{ ...S.ytAbsFill, objectFit: 'cover' }}
+                      />
+                      <div style={S.ytPlayOverlay}>
+                        <div style={S.ytPlayCircle}>▶</div>
+                      </div>
+                    </div>
+                  ) : (
+                    <iframe
+                      src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`}
+                      title={ytTitle || `${match.h} vs ${match.a} Highlights`}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      style={S.ytIframe}
+                    />
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* Pending — cron job will find it soon */}
+            {!ytLoading && ytStatus === 'pending' && (
+              <div style={S.ytPending}>
+                <span style={{ marginRight: 6 }}>⏳</span>
+                Highlights are being processed — check back in a few hours.
+              </div>
+            )}
+
+            {/* Error fallback — show YouTube search link */}
+            {!ytLoading && ytStatus !== 'found' && ytStatus !== 'pending' && (
+              <a
+                href={youtubeSearchUrl(match.h, match.a)}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={S.ytFallback}
+              >
+                <span style={S.ytPlay}>▶</span>
+                <div>
+                  <div style={{ fontWeight: 600, fontSize: 12, color: 'var(--tx-secondary)' }}>
+                    Watch Full Highlights on YouTube
+                  </div>
+                  <div style={S.ytTitle}>
+                    "{ytName(match.h)} vs. {ytName(match.a)} Full Highlights | FIFA World Cup 2026"
+                  </div>
+                </div>
+              </a>
+            )}
+          </div>
+        )}
 
       </div>
     </div>
@@ -393,5 +482,86 @@ const S = {
   evUpcoming: {
     fontSize: 12, color: 'var(--tx-dim)', textAlign: 'center',
     padding: '16px 0',
+  },
+  evRank: {
+    fontSize: 9, fontWeight: 600, color: 'var(--tx-dim2)',
+    background: 'var(--bg-inner)', padding: '1px 5px',
+    borderRadius: 4, flexShrink: 0,
+  },
+  ytSection: {
+    borderTop: '1px solid var(--bd-main)',
+    padding: '12px 20px 20px',
+  },
+  ytLabel: {
+    fontSize: 9, fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase',
+    color: 'var(--tx-muted)', marginBottom: 10,
+  },
+  ytPlayerWrap: {
+    position: 'relative', width: '100%',
+    paddingBottom: '56.25%', // 16:9
+    height: 0, borderRadius: 10, overflow: 'hidden',
+    background: '#000',
+  },
+  ytAbsFill: {
+    position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
+  },
+  ytIframe: {
+    position: 'absolute', top: 0, left: 0,
+    width: '100%', height: '100%',
+    border: 'none',
+  },
+  ytPlayOverlay: {
+    position: 'absolute', inset: 0,
+    display: 'flex', alignItems: 'center', justifyContent: 'center',
+    background: 'rgba(0,0,0,0.35)',
+    transition: 'background .15s',
+  },
+  ytPlayCircle: {
+    width: 60, height: 60,
+    background: '#ff0000',
+    borderRadius: '50%',
+    display: 'flex', alignItems: 'center', justifyContent: 'center',
+    fontSize: 20, color: '#fff',
+    paddingLeft: 3,  // optical center for ▶
+    boxShadow: '0 4px 18px rgba(0,0,0,.55)',
+    flexShrink: 0,
+  },
+  ytVideoTitle: {
+    fontSize: 11, fontWeight: 600,
+    color: 'var(--tx-secondary)',
+    marginBottom: 8,
+    lineHeight: 1.4,
+    overflow: 'hidden',
+    display: '-webkit-box',
+    WebkitLineClamp: 2,
+    WebkitBoxOrient: 'vertical',
+  },
+  ytSkelVideo: {
+    width: '100%', paddingBottom: '56.25%',
+    background: 'var(--bg-inner)',
+    borderRadius: 10,
+  },
+  ytSkelTitle: {
+    height: 10, width: '65%',
+    background: 'var(--bg-inner)',
+    borderRadius: 4, marginTop: 8,
+  },
+  ytPending: {
+    fontSize: 12, color: 'var(--tx-dim)',
+    display: 'flex', alignItems: 'center',
+    padding: '14px 0',
+  },
+  ytFallback: {
+    display: 'flex', alignItems: 'center', gap: 12,
+    textDecoration: 'none',
+    background: 'rgba(255,0,0,0.07)',
+    border: '1px solid rgba(255,0,0,0.18)',
+    borderRadius: 10, padding: '12px 16px',
+  },
+  ytPlay: {
+    fontSize: 22, color: '#ff0000', flexShrink: 0,
+  },
+  ytTitle: {
+    fontSize: 9, color: 'var(--tx-dim2)', fontStyle: 'italic', marginTop: 3,
   },
 };

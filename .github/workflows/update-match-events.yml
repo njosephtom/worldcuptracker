@@ -2,8 +2,8 @@ name: Update Match Events
 
 on:
   schedule:
-    # Every 30 minutes during tournament hours (10:00–02:00 UTC = 06:00 ET–22:00 ET)
-    - cron: '*/30 10-23,0-2 * * *'
+    # Every 30 minutes, PDT 12pm–11pm (PDT = UTC−7 → 19:00–06:00 UTC)
+    - cron: '*/30 19-23,0-6 * * *'
   workflow_dispatch:
 
 permissions:
