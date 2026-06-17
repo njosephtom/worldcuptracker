@@ -142,16 +142,65 @@
     "attempts": 1,
     "searchQuery": "[TSN] Sweden vs. Tunisia Full Highlights | FIFA World Cup 2026"
   },
+  "14": {
+    "videoId": "Tz9R1OYdTSs",
+    "title": "Saudi Arabia vs Uruguay Extended Highlights 🌎🏆 2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/Tz9R1OYdTSs/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-17T06:09:16.714Z",
+    "lastAttemptAt": "2026-06-17T06:09:16.714Z",
+    "attempts": 1,
+    "searchQuery": "[global] Saudi Arabia vs. Uruguay Full Highlights | FIFA World Cup 2026"
+  },
+  "17": {
+    "videoId": "WxOfHAy6obs",
+    "title": "FRANCE DOMINATE! France 3-1 Senegal | Full Match Highlights | FIFA World Cup 2026",
+    "thumbnail": "https://i.ytimg.com/vi/WxOfHAy6obs/hqdefault.jpg",
+    "channelTitle": "moneycontrol",
+    "status": "found",
+    "fetchedAt": "2026-06-17T06:09:16.714Z",
+    "lastAttemptAt": "2026-06-17T06:09:16.714Z",
+    "attempts": 1,
+    "searchQuery": "[global] France vs. Senegal Full Highlights | FIFA World Cup 2026"
+  },
+  "18": {
+    "videoId": "ku1hsMdKDXQ",
+    "title": "Iraq vs Norway Extended Highlights 🌎🏆2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/ku1hsMdKDXQ/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-17T06:09:16.714Z",
+    "lastAttemptAt": "2026-06-17T06:09:16.714Z",
+    "attempts": 1,
+    "searchQuery": "[global] Iraq vs. Norway Full Highlights | FIFA World Cup 2026"
+  },
   "40": {
-    "status": "pending",
+    "videoId": "0IQd36iZGVs",
+    "title": "Spain draws?! Late drama for Belgium, Uruguay &amp; Iran Matchday 5 🤯 2026 FIFA World Cup™ Best Moments",
+    "thumbnail": "https://i.ytimg.com/vi/0IQd36iZGVs/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
     "fetchedAt": "2026-06-16T22:35:26.133Z",
-    "lastAttemptAt": "2026-06-16T22:35:26.133Z",
-    "attempts": 1
+    "lastAttemptAt": "2026-06-17T06:09:16.714Z",
+    "attempts": 2,
+    "searchQuery": "[global] Belgium vs. Iran Full Highlights | FIFA World Cup 2026"
+  },
+  "42": {
+    "videoId": "UZ_7qFbFYRY",
+    "title": "Iran vs New Zealand Extended Highlights 🌎🏆 2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/UZ_7qFbFYRY/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-17T06:09:16.714Z",
+    "lastAttemptAt": "2026-06-17T06:09:16.714Z",
+    "attempts": 1,
+    "searchQuery": "[global] Egypt vs. New Zealand Full Highlights | FIFA World Cup 2026"
   },
   "_meta": {
-    "updatedAt": "2026-06-16T22:35:26.133Z",
-    "totalFound": 13,
-    "totalPending": 1,
-    "quotaUsed": 1701
+    "updatedAt": "2026-06-17T06:09:16.714Z",
+    "totalFound": 18,
+    "totalPending": 0,
+    "quotaUsed": 1001
   }
 }
