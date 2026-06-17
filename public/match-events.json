@@ -949,6 +949,74 @@
       }
     ]
   },
+  "18": {
+    "homeScore": 1,
+    "awayScore": 4,
+    "homeTeamId": "4375",
+    "awayTeamId": "464",
+    "events": [
+      {
+        "minute": "29'",
+        "player": "E. Haaland",
+        "teamId": "464",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "39'",
+        "player": "A. Hussein",
+        "teamId": "4375",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "43'",
+        "player": "E. Haaland",
+        "teamId": "464",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "76'",
+        "player": "L. Østigard",
+        "teamId": "464",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "86'",
+        "player": "Z. Tahseen",
+        "teamId": "4375",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "90'+6'",
+        "player": "A. Hussein",
+        "teamId": "464",
+        "goal": true,
+        "ownGoal": true,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      }
+    ]
+  },
   "40": {
     "homeScore": 1,
     "awayScore": 1,
@@ -1075,5 +1143,5 @@
       }
     ]
   },
-  "updated": "2026-06-16T23:26:27.551Z"
+  "updated": "2026-06-17T02:41:28.847Z"
 }
