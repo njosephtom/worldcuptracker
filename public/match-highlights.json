@@ -175,6 +175,39 @@
     "attempts": 1,
     "searchQuery": "[global] Iraq vs. Norway Full Highlights | FIFA World Cup 2026"
   },
+  "19": {
+    "videoId": "GtyuIf7zykA",
+    "title": "Argentina vs Algeria Extended Highlights 🌎🏆 2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/GtyuIf7zykA/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-17T21:07:30.884Z",
+    "lastAttemptAt": "2026-06-17T21:07:30.884Z",
+    "attempts": 1,
+    "searchQuery": "[global] Argentina vs. Algeria Full Highlights | FIFA World Cup 2026"
+  },
+  "20": {
+    "videoId": "yOPRItttrPU",
+    "title": "Austria vs Jordan Extended Highlights 🌎🏆2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/yOPRItttrPU/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-17T21:07:30.884Z",
+    "lastAttemptAt": "2026-06-17T21:07:30.884Z",
+    "attempts": 1,
+    "searchQuery": "[global] Austria vs. Jordan Full Highlights | FIFA World Cup 2026"
+  },
+  "21": {
+    "videoId": "SjumRdNESKg",
+    "title": "Portugal vs DR Congo Extended Highlights 🌎🏆2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/SjumRdNESKg/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-17T21:07:30.884Z",
+    "lastAttemptAt": "2026-06-17T21:07:30.884Z",
+    "attempts": 1,
+    "searchQuery": "[global] Portugal vs. DR Congo Full Highlights | FIFA World Cup 2026"
+  },
   "40": {
     "videoId": "0IQd36iZGVs",
     "title": "Spain draws?! Late drama for Belgium, Uruguay &amp; Iran Matchday 5 🤯 2026 FIFA World Cup™ Best Moments",
@@ -198,9 +231,9 @@
     "searchQuery": "[global] Egypt vs. New Zealand Full Highlights | FIFA World Cup 2026"
   },
   "_meta": {
-    "updatedAt": "2026-06-17T06:09:16.714Z",
-    "totalFound": 18,
+    "updatedAt": "2026-06-17T21:07:30.884Z",
+    "totalFound": 21,
     "totalPending": 0,
-    "quotaUsed": 1001
+    "quotaUsed": 601
   }
 }
