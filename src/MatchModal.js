@@ -291,8 +291,8 @@ export function MatchModal({ match, onClose, use24h, fifaRankings }) {
           )}
         </div>
 
-        {/* ── YouTube Highlights ── */}
-        {finished && ytStatus !== 'not-found' && (
+        {/* ── YouTube Highlights (shown 30 min after estimated full time) ── */}
+        {finished && ytStatus !== 'not-found' && (now > md.getTime() + 150 * 60000) && (
           <div style={S.ytSection}>
             <div style={S.ytLabel}>Full Match Highlights</div>
 
