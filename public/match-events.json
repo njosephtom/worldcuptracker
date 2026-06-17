@@ -775,7 +775,7 @@
       },
       {
         "minute": "90'+3'",
-        "player": "Pedri",
+        "player": "Pedri ",
         "teamId": "164",
         "goal": false,
         "ownGoal": false,
@@ -1113,6 +1113,74 @@
       }
     ]
   },
+  "21": {
+    "homeScore": 1,
+    "awayScore": 1,
+    "homeTeamId": "482",
+    "awayTeamId": "2850",
+    "events": [
+      {
+        "minute": "6'",
+        "player": "J. Neves",
+        "teamId": "482",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "13'",
+        "player": "B. Silva",
+        "teamId": "482",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "32'",
+        "player": "C. Mbemba",
+        "teamId": "2850",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "45'+5'",
+        "player": "Y. Wissa",
+        "teamId": "2850",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "88'",
+        "player": "N. Semedo",
+        "teamId": "482",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "90'+2'",
+        "player": "T. Araújo",
+        "teamId": "482",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
   "40": {
     "homeScore": 1,
     "awayScore": 1,
@@ -1239,5 +1307,5 @@
       }
     ]
   },
-  "updated": "2026-06-17T08:22:09.759Z"
+  "updated": "2026-06-17T20:59:58.253Z"
 }
