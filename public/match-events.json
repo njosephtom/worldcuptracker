@@ -1017,6 +1017,102 @@
       }
     ]
   },
+  "19": {
+    "homeScore": 3,
+    "awayScore": 0,
+    "homeTeamId": "202",
+    "awayTeamId": "624",
+    "events": [
+      {
+        "minute": "17'",
+        "player": "L. Messi",
+        "teamId": "202",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "60'",
+        "player": "L. Messi",
+        "teamId": "202",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "76'",
+        "player": "L. Messi",
+        "teamId": "202",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      }
+    ]
+  },
+  "20": {
+    "homeScore": 3,
+    "awayScore": 1,
+    "homeTeamId": "474",
+    "awayTeamId": "2917",
+    "events": [
+      {
+        "minute": "21'",
+        "player": "R. Schmid",
+        "teamId": "474",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "50'",
+        "player": "A. Olwan",
+        "teamId": "2917",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "76'",
+        "player": "Y. Al-Arab",
+        "teamId": "474",
+        "goal": true,
+        "ownGoal": true,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "77'",
+        "player": "M. Sabitzer",
+        "teamId": "474",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "90'+12'",
+        "player": "M. Arnautovic",
+        "teamId": "474",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": true,
+        "yellow": false,
+        "red": false
+      }
+    ]
+  },
   "40": {
     "homeScore": 1,
     "awayScore": 1,
@@ -1143,5 +1239,5 @@
       }
     ]
   },
-  "updated": "2026-06-17T02:41:28.847Z"
+  "updated": "2026-06-17T08:22:09.759Z"
 }
