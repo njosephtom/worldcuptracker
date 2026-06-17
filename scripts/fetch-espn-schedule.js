@@ -80,7 +80,7 @@ const STATIC_TIMES = {
   'Qatar|Switzerland':                { d:'2026-06-13', t:'3:00 PM ET'  },
   'Brazil|Morocco':                   { d:'2026-06-13', t:'6:00 PM ET'  },
   'Haiti|Scotland':                   { d:'2026-06-13', t:'9:00 PM ET'  },
-  'Australia|Turkey':                 { d:'2026-06-14', t:'12:00 PM ET' },
+  'Australia|Turkey':                 { d:'2026-06-13', t:'11:00 PM ET' },
   'Germany|Curaçao':                  { d:'2026-06-14', t:'3:00 PM ET'  },
   'Netherlands|Japan':                { d:'2026-06-14', t:'6:00 PM ET'  },
   'Ivory Coast|Ecuador':              { d:'2026-06-14', t:'8:00 PM ET'  },
