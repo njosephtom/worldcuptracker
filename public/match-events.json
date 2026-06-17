@@ -1307,5 +1307,73 @@
       }
     ]
   },
-  "updated": "2026-06-17T21:31:57.774Z"
+  "22": {
+    "homeScore": 4,
+    "awayScore": 2,
+    "homeTeamId": "448",
+    "awayTeamId": "477",
+    "events": [
+      {
+        "minute": "12'",
+        "player": "H. Kane",
+        "teamId": "448",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": true,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "36'",
+        "player": "M. Baturina",
+        "teamId": "477",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "42'",
+        "player": "H. Kane",
+        "teamId": "448",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "45'+5'",
+        "player": "P. Musa",
+        "teamId": "477",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "47'",
+        "player": "J. Bellingham",
+        "teamId": "448",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "85'",
+        "player": "M. Rashford",
+        "teamId": "448",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      }
+    ]
+  },
+  "updated": "2026-06-17T22:45:58.327Z"
 }
