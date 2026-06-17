@@ -7,6 +7,34 @@ export const isDevMode =
   process.env.NODE_ENV === 'development' ||
   (typeof window !== 'undefined' && window.location.hostname === 'localhost');
 
+function mergeSchedule(staticMatches, scheduleData) {
+  if (!scheduleData?.matches?.length) return staticMatches;
+
+  const byKey = {};
+  scheduleData.matches.forEach(em => {
+    if (em.h && em.a) {
+      byKey[`${em.h}|${em.a}`] = em;
+    }
+  });
+
+  return staticMatches.map(m => {
+    const em = byKey[`${m.h}|${m.a}`] || byKey[`${m.a}|${m.h}`];
+    if (!em) return m;
+
+    const flipped = !byKey[`${m.h}|${m.a}`];
+    const updates = {};
+    if (em.d) updates.d = em.d;
+    if (em.t) updates.t = em.t;
+    if (em.v) updates.v = em.v;
+    if (em.status === 'finished') {
+      updates.status    = 'finished';
+      updates.homeScore = flipped ? em.awayScore : em.homeScore;
+      updates.awayScore = flipped ? em.homeScore : em.awayScore;
+    }
+    return { ...m, ...updates };
+  });
+}
+
 export function useWorldCup(autoRefresh = true) {
   const today   = todayStr();
   const initial = clampDate(today);
@@ -14,6 +42,7 @@ export function useWorldCup(autoRefresh = true) {
   const [activeTab,    setActiveTab]    = useState('main');
   const [mockEnabled,  setMockEnabled]  = useState(false);
   const [cachedEvents, setCachedEvents] = useState({});
+  const [matchSchedule, setMatchSchedule] = useState(null);
 
   // Load static match-events.json once on mount for past match scores
   useEffect(() => {
@@ -23,10 +52,20 @@ export function useWorldCup(autoRefresh = true) {
       .catch(() => {});
   }, []);
 
+  // Load match schedule (updated daily by GitHub Actions from ESPN)
+  useEffect(() => {
+    fetch('/match-schedule.json')
+      .then(r => r.ok ? r.json() : null)
+      .then(data => { if (data) setMatchSchedule(data); })
+      .catch(() => {});
+  }, []);
+
   // Live scores polled from ESPN every 60 s
   const liveScores = useLiveScores(!autoRefresh);
 
-  const matches = MATCHES.map(m => {
+  const baseMatches = mergeSchedule(MATCHES, matchSchedule);
+
+  const matches = baseMatches.map(m => {
     // Dev mock takes priority
     if (mockEnabled && m.g) {
       const mock = MOCK_RESULTS[m.id];
