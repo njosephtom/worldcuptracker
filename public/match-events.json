@@ -758,34 +758,6 @@
     ]
   },
   "12": {
-    "homeScore": 0,
-    "awayScore": 0,
-    "homeTeamId": "164",
-    "awayTeamId": "2597",
-    "events": [
-      {
-        "minute": "16'",
-        "player": "S. Lopes Cabral",
-        "teamId": "2597",
-        "goal": false,
-        "ownGoal": false,
-        "penalty": false,
-        "yellow": true,
-        "red": false
-      },
-      {
-        "minute": "90'+3'",
-        "player": "Pedri ",
-        "teamId": "164",
-        "goal": false,
-        "ownGoal": false,
-        "penalty": false,
-        "yellow": true,
-        "red": false
-      }
-    ]
-  },
-  "13": {
     "homeScore": 5,
     "awayScore": 1,
     "homeTeamId": "466",
@@ -863,11 +835,107 @@
       }
     ]
   },
+  "13": {
+    "homeScore": 0,
+    "awayScore": 0,
+    "homeTeamId": "164",
+    "awayTeamId": "2597",
+    "events": [
+      {
+        "minute": "16'",
+        "player": "S. Lopes Cabral",
+        "teamId": "2597",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "90'+3'",
+        "player": "Pedri ",
+        "teamId": "164",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
   "14": {
     "homeScore": 1,
     "awayScore": 1,
-    "homeTeamId": "655",
-    "awayTeamId": "212",
+    "homeTeamId": "459",
+    "awayTeamId": "2620",
+    "events": [
+      {
+        "minute": "13'",
+        "player": "M. Attia",
+        "teamId": "2620",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "14'",
+        "player": "T. Castagne",
+        "teamId": "459",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "20'",
+        "player": "E. Ashour",
+        "teamId": "2620",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "34'",
+        "player": "A. Fatouh",
+        "teamId": "2620",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "66'",
+        "player": "M. Hany",
+        "teamId": "459",
+        "goal": true,
+        "ownGoal": true,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "75'",
+        "player": "M. De Cuyper",
+        "teamId": "459",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
+  "15": {
+    "homeScore": 1,
+    "awayScore": 1,
+    "homeTeamId": "212",
+    "awayTeamId": "655",
     "events": [
       {
         "minute": "41'",
@@ -897,6 +965,64 @@
         "ownGoal": false,
         "penalty": false,
         "yellow": false,
+        "red": false
+      }
+    ]
+  },
+  "16": {
+    "homeScore": 2,
+    "awayScore": 2,
+    "homeTeamId": "469",
+    "awayTeamId": "2666",
+    "events": [
+      {
+        "minute": "7'",
+        "player": "E. Just",
+        "teamId": "2666",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "32'",
+        "player": "R. Rezaeian",
+        "teamId": "469",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "54'",
+        "player": "E. Just",
+        "teamId": "2666",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "64'",
+        "player": "M. Mohebbi",
+        "teamId": "469",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "89'",
+        "player": "E. Hajsafi",
+        "teamId": "469",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
         "red": false
       }
     ]
@@ -950,10 +1076,10 @@
     ]
   },
   "18": {
-    "homeScore": 1,
-    "awayScore": 4,
-    "homeTeamId": "4375",
-    "awayTeamId": "464",
+    "homeScore": 4,
+    "awayScore": 1,
+    "homeTeamId": "464",
+    "awayTeamId": "4375",
     "events": [
       {
         "minute": "29'",
@@ -1181,131 +1307,5 @@
       }
     ]
   },
-  "40": {
-    "homeScore": 1,
-    "awayScore": 1,
-    "homeTeamId": "459",
-    "awayTeamId": "2620",
-    "events": [
-      {
-        "minute": "13'",
-        "player": "M. Attia",
-        "teamId": "2620",
-        "goal": false,
-        "ownGoal": false,
-        "penalty": false,
-        "yellow": true,
-        "red": false
-      },
-      {
-        "minute": "14'",
-        "player": "T. Castagne",
-        "teamId": "459",
-        "goal": false,
-        "ownGoal": false,
-        "penalty": false,
-        "yellow": true,
-        "red": false
-      },
-      {
-        "minute": "20'",
-        "player": "E. Ashour",
-        "teamId": "2620",
-        "goal": true,
-        "ownGoal": false,
-        "penalty": false,
-        "yellow": false,
-        "red": false
-      },
-      {
-        "minute": "34'",
-        "player": "A. Fatouh",
-        "teamId": "2620",
-        "goal": false,
-        "ownGoal": false,
-        "penalty": false,
-        "yellow": true,
-        "red": false
-      },
-      {
-        "minute": "66'",
-        "player": "M. Hany",
-        "teamId": "459",
-        "goal": true,
-        "ownGoal": true,
-        "penalty": false,
-        "yellow": false,
-        "red": false
-      },
-      {
-        "minute": "75'",
-        "player": "M. De Cuyper",
-        "teamId": "459",
-        "goal": false,
-        "ownGoal": false,
-        "penalty": false,
-        "yellow": true,
-        "red": false
-      }
-    ]
-  },
-  "42": {
-    "homeScore": 2,
-    "awayScore": 2,
-    "homeTeamId": "469",
-    "awayTeamId": "2666",
-    "events": [
-      {
-        "minute": "7'",
-        "player": "E. Just",
-        "teamId": "2666",
-        "goal": true,
-        "ownGoal": false,
-        "penalty": false,
-        "yellow": false,
-        "red": false
-      },
-      {
-        "minute": "32'",
-        "player": "R. Rezaeian",
-        "teamId": "469",
-        "goal": true,
-        "ownGoal": false,
-        "penalty": false,
-        "yellow": false,
-        "red": false
-      },
-      {
-        "minute": "54'",
-        "player": "E. Just",
-        "teamId": "2666",
-        "goal": true,
-        "ownGoal": false,
-        "penalty": false,
-        "yellow": false,
-        "red": false
-      },
-      {
-        "minute": "64'",
-        "player": "M. Mohebbi",
-        "teamId": "469",
-        "goal": true,
-        "ownGoal": false,
-        "penalty": false,
-        "yellow": false,
-        "red": false
-      },
-      {
-        "minute": "89'",
-        "player": "E. Hajsafi",
-        "teamId": "469",
-        "goal": false,
-        "ownGoal": false,
-        "penalty": false,
-        "yellow": true,
-        "red": false
-      }
-    ]
-  },
-  "updated": "2026-06-17T20:59:58.253Z"
+  "updated": "2026-06-17T21:31:57.774Z"
 }

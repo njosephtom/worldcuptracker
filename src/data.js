@@ -170,7 +170,7 @@ export const MATCHES = [
   {id:33,d:'2026-06-20',t:'1:00 PM ET',h:'Netherlands',a:'Sweden',g:'F',v:'nrg'},
   {id:34,d:'2026-06-20',t:'4:00 PM ET',h:'Germany',a:'Ivory Coast',g:'E',v:'bmo'},
   {id:35,d:'2026-06-20',t:'8:00 PM ET',h:'Ecuador',a:'Curaçao',g:'E',v:'arrowhead'},
-  {id:104,d:'2026-06-21',t:'12:00 AM ET',h:'Tunisia',a:'Japan',g:'F',v:'bbva'},
+  {id:104,d:'2026-06-20',t:'12:00 AM ET',h:'Tunisia',a:'Japan',g:'F',v:'bbva'},
   {id:36,d:'2026-06-21',t:'12:00 PM ET',h:'Spain',a:'Saudi Arabia',g:'H',v:'mercedes'},
   {id:37,d:'2026-06-21',t:'3:00 PM ET',h:'Belgium',a:'Iran',g:'G',v:'sofi'},
   {id:38,d:'2026-06-21',t:'6:00 PM ET',h:'Uruguay',a:'Cape Verde',g:'H',v:'hardrock'},

@@ -109,9 +109,13 @@ const MATCHES = [
   {id:71, d:'2026-06-27', h:'Argentina',                 a:'Jordan'},
 ];
 
-// Build lookup: "HomeTeam|AwayTeam" → matchId
+// Build lookup: "HomeTeam|AwayTeam" → { id, flipped }
+// Also index the reverse key since ESPN assigns home/away independently for neutral venues
 const NAME_TO_ID = {};
-MATCHES.forEach(m => { NAME_TO_ID[`${m.h}|${m.a}`] = m.id; });
+MATCHES.forEach(m => {
+  NAME_TO_ID[`${m.h}|${m.a}`] = { id: m.id, flipped: false };
+  NAME_TO_ID[`${m.a}|${m.h}`] = { id: m.id, flipped: true };
+});
 
 function todayET() {
   return new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
@@ -150,8 +154,10 @@ function parseEvents(data, cache) {
 
     const homeTeam = norm(home.team?.displayName || '');
     const awayTeam = norm(away.team?.displayName || '');
-    const matchId  = NAME_TO_ID[`${homeTeam}|${awayTeam}`];
-    if (!matchId) continue;
+    const match = NAME_TO_ID[`${homeTeam}|${awayTeam}`];
+    if (!match) continue;
+
+    const { id: matchId, flipped } = match;
 
     const events = (comp.details || [])
       .filter(d => d.scoringPlay || d.yellowCard || d.redCard)
@@ -166,14 +172,16 @@ function parseEvents(data, cache) {
         red:     !!d.redCard,
       }));
 
+    const hs = parseInt(home.score, 10) || 0;
+    const as = parseInt(away.score, 10) || 0;
     cache[String(matchId)] = {
-      homeScore:  parseInt(home.score, 10) || 0,
-      awayScore:  parseInt(away.score, 10) || 0,
-      homeTeamId: home.team?.id || '',
-      awayTeamId: away.team?.id || '',
+      homeScore:  flipped ? as : hs,
+      awayScore:  flipped ? hs : as,
+      homeTeamId: flipped ? (away.team?.id || '') : (home.team?.id || ''),
+      awayTeamId: flipped ? (home.team?.id || '') : (away.team?.id || ''),
       events,
     };
-    console.log(`  ✓ [${matchId}] ${homeTeam} ${cache[matchId].homeScore}-${cache[matchId].awayScore} ${awayTeam} (${events.length} events)`);
+    console.log(`  ✓ [${matchId}] ${flipped ? awayTeam : homeTeam} ${cache[matchId].homeScore}-${cache[matchId].awayScore} ${flipped ? homeTeam : awayTeam} (${events.length} events)`);
   }
 }
 

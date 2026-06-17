@@ -97,6 +97,7 @@ const STATIC_TIMES = {
   'England|Croatia':                  { d:'2026-06-17', t:'4:00 PM ET'  },
   'Ghana|Panama':                     { d:'2026-06-17', t:'7:00 PM ET'  },
   'Uzbekistan|Colombia':              { d:'2026-06-17', t:'10:00 PM ET' },
+  'Tunisia|Japan':                    { d:'2026-06-20', t:'12:00 AM ET' },
 };
 
 function norm(name) { return ESPN_NAME_MAP[name] || name; }

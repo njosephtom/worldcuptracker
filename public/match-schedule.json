@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-17T21:17:56.664Z",
+  "updated": "2026-06-17T21:29:38.959Z",
   "matches": [
     {
       "espnId": "760415",
@@ -502,11 +502,12 @@
       "espnId": "760449",
       "h": "Tunisia",
       "a": "Japan",
-      "d": "2026-06-21",
+      "d": "2026-06-20",
       "t": "12:00 AM ET",
       "v": "bbva",
       "venueName": "Estadio BBVA",
       "status": "upcoming",
+      "localTZ": "CT",
       "g": "F"
     },
     {
