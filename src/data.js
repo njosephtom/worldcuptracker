@@ -283,11 +283,10 @@ export const FIFA_RANKING = {
   'Cape Verde': 67, 'Ghana': 73, 'Curaçao': 82, 'Haiti': 83, 'New Zealand': 85,
 };
 
-// Canonical group-stage sort: Pts → GD → GF → FIFA ranking (lower = better)
+// Canonical group-stage sort: Pts → GF → FIFA ranking (lower = better)
 export function cmpTeams(a, b) {
   return (
     b.pts - a.pts ||
-    (b.gf - b.ga) - (a.gf - a.ga) ||
     b.gf - a.gf ||
     (FIFA_RANKING[a.name] || 999) - (FIFA_RANKING[b.name] || 999)
   );
@@ -298,7 +297,6 @@ export function makeCmpTeams(rankings) {
   return function cmp(a, b) {
     return (
       b.pts - a.pts ||
-      (b.gf - b.ga) - (a.gf - a.ga) ||
       b.gf - a.gf ||
       (rankings[a.name] || 999) - (rankings[b.name] || 999)
     );
