@@ -274,6 +274,17 @@
     "attempts": 1,
     "searchQuery": "[global] Czechia vs. South Africa Full Highlights | FIFA World Cup 2026"
   },
+  "26": {
+    "videoId": "Yv0XgBgtoi0",
+    "title": "Mexico vs South Korea Betting Picks &amp; Predictions | World Cup 2026",
+    "thumbnail": "https://i.ytimg.com/vi/Yv0XgBgtoi0/hqdefault.jpg",
+    "channelTitle": "The Action Network: Sports Betting Picks & Tips",
+    "status": "found",
+    "fetchedAt": "2026-06-18T21:43:35.449Z",
+    "lastAttemptAt": "2026-06-18T21:43:35.449Z",
+    "attempts": 1,
+    "searchQuery": "[global] Mexico vs. South Korea Full Highlights | FIFA World Cup 2026"
+  },
   "40": {
     "status": "pending",
     "fetchedAt": "2026-06-16T22:35:26.133Z",
@@ -287,9 +298,9 @@
     "attempts": 0
   },
   "_meta": {
-    "updatedAt": "2026-06-18T21:27:00.973Z",
-    "totalFound": 25,
+    "updatedAt": "2026-06-18T21:43:35.449Z",
+    "totalFound": 26,
     "totalPending": 2,
-    "quotaUsed": 401
+    "quotaUsed": 201
   }
 }
