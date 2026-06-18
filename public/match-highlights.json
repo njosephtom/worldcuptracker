@@ -121,17 +121,6 @@
     "searchQuery": "[TSN] Cote d'Ivoire vs. Ecuador Full Highlights | FIFA World Cup 2026"
   },
   "12": {
-    "videoId": "YUD8Fq3gLWE",
-    "title": "Spain vs. Cabo Verde Full Highlights | FIFA World Cup 2026",
-    "thumbnail": "https://i.ytimg.com/vi/YUD8Fq3gLWE/hqdefault.jpg",
-    "channelTitle": "TSN",
-    "status": "found",
-    "fetchedAt": "2026-06-16T22:35:26.133Z",
-    "lastAttemptAt": "2026-06-16T22:35:26.133Z",
-    "attempts": 1,
-    "searchQuery": "[TSN] Spain vs. Cabo Verde Full Highlights | FIFA World Cup 2026"
-  },
-  "13": {
     "videoId": "TC9tqtH0CkA",
     "title": "Sweden vs. Tunisia Full Highlights | FIFA World Cup 2026",
     "thumbnail": "https://i.ytimg.com/vi/TC9tqtH0CkA/hqdefault.jpg",
@@ -142,18 +131,18 @@
     "attempts": 1,
     "searchQuery": "[TSN] Sweden vs. Tunisia Full Highlights | FIFA World Cup 2026"
   },
-  "14": {
-    "videoId": "Tz9R1OYdTSs",
-    "title": "Saudi Arabia vs Uruguay Extended Highlights 🌎🏆 2026 FIFA World Cup™",
-    "thumbnail": "https://i.ytimg.com/vi/Tz9R1OYdTSs/hqdefault.jpg",
-    "channelTitle": "FOX Sports",
+  "13": {
+    "videoId": "YUD8Fq3gLWE",
+    "title": "Spain vs. Cabo Verde Full Highlights | FIFA World Cup 2026",
+    "thumbnail": "https://i.ytimg.com/vi/YUD8Fq3gLWE/hqdefault.jpg",
+    "channelTitle": "TSN",
     "status": "found",
-    "fetchedAt": "2026-06-17T06:09:16.714Z",
-    "lastAttemptAt": "2026-06-17T06:09:16.714Z",
+    "fetchedAt": "2026-06-16T22:35:26.133Z",
+    "lastAttemptAt": "2026-06-16T22:35:26.133Z",
     "attempts": 1,
-    "searchQuery": "[global] Saudi Arabia vs. Uruguay Full Highlights | FIFA World Cup 2026"
+    "searchQuery": "[TSN] Spain vs. Cabo Verde Full Highlights | FIFA World Cup 2026"
   },
-  "15": {
+  "14": {
     "videoId": "o_3t0d8x9JY",
     "title": "Belgium vs Egypt Highlights 🌎🏆2026 FIFA World Cup™",
     "thumbnail": "https://i.ytimg.com/vi/o_3t0d8x9JY/hqdefault.jpg",
@@ -163,6 +152,17 @@
     "lastAttemptAt": "2026-06-18T00:14:55.170Z",
     "attempts": 1,
     "searchQuery": "[global] Belgium vs. Egypt Full Highlights | FIFA World Cup 2026"
+  },
+  "15": {
+    "videoId": "Tz9R1OYdTSs",
+    "title": "Saudi Arabia vs Uruguay Extended Highlights 🌎🏆 2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/Tz9R1OYdTSs/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-17T06:09:16.714Z",
+    "lastAttemptAt": "2026-06-17T06:09:16.714Z",
+    "attempts": 1,
+    "searchQuery": "[global] Saudi Arabia vs. Uruguay Full Highlights | FIFA World Cup 2026"
   },
   "16": {
     "videoId": "UZ_7qFbFYRY",
@@ -231,17 +231,6 @@
     "searchQuery": "[global] Portugal vs. DR Congo Full Highlights | FIFA World Cup 2026"
   },
   "22": {
-    "videoId": "hFO9DhasJ2A",
-    "title": "Ghana vs Panama Extended Highlights 🌎🏆 2026 FIFA World Cup™",
-    "thumbnail": "https://i.ytimg.com/vi/hFO9DhasJ2A/hqdefault.jpg",
-    "channelTitle": "FOX Sports",
-    "status": "found",
-    "fetchedAt": "2026-06-18T00:14:55.170Z",
-    "lastAttemptAt": "2026-06-18T21:27:00.973Z",
-    "attempts": 1,
-    "searchQuery": "[global] England vs. Panama Full Highlights | FIFA World Cup 2026"
-  },
-  "23": {
     "videoId": "lGoe9nxRfyU",
     "title": "England vs Croatia Extended Highlights 🌎🏆 2026 FIFA World Cup™",
     "thumbnail": "https://i.ytimg.com/vi/lGoe9nxRfyU/hqdefault.jpg",
@@ -250,7 +239,18 @@
     "fetchedAt": "2026-06-18T05:54:11.884Z",
     "lastAttemptAt": "2026-06-18T21:27:00.973Z",
     "attempts": 1,
-    "searchQuery": "[global] Croatia vs. Ghana Full Highlights | FIFA World Cup 2026"
+    "searchQuery": "[global] England vs. Croatia Full Highlights | FIFA World Cup 2026"
+  },
+  "23": {
+    "videoId": "hFO9DhasJ2A",
+    "title": "Ghana vs Panama Extended Highlights 🌎🏆 2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/hFO9DhasJ2A/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-18T00:14:55.170Z",
+    "lastAttemptAt": "2026-06-18T21:27:00.973Z",
+    "attempts": 1,
+    "searchQuery": "[global] Ghana vs. Panama Full Highlights | FIFA World Cup 2026"
   },
   "24": {
     "videoId": "Qb3ipZFspnc",
