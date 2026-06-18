@@ -1375,5 +1375,121 @@
       }
     ]
   },
-  "updated": "2026-06-18T00:06:39.884Z"
+  "23": {
+    "homeScore": 1,
+    "awayScore": 0,
+    "homeTeamId": "4469",
+    "awayTeamId": "2659",
+    "events": [
+      {
+        "minute": "16'",
+        "player": "C. Yirenkyi",
+        "teamId": "4469",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "72'",
+        "player": "C. Blackman",
+        "teamId": "2659",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "90'+5'",
+        "player": "C. Yirenkyi",
+        "teamId": "4469",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "90'+9'",
+        "player": "C. Harvey",
+        "teamId": "2659",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
+  "24": {
+    "homeScore": 1,
+    "awayScore": 3,
+    "homeTeamId": "2570",
+    "awayTeamId": "208",
+    "events": [
+      {
+        "minute": "7'",
+        "player": "J. Mojica",
+        "teamId": "208",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "34'",
+        "player": "A. Khusanov",
+        "teamId": "2570",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "40'",
+        "player": "D. Muñoz",
+        "teamId": "208",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "60'",
+        "player": "A. Fayzullaev",
+        "teamId": "2570",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "65'",
+        "player": "L. Díaz",
+        "teamId": "208",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "90'+9'",
+        "player": "J. Campaz",
+        "teamId": "208",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      }
+    ]
+  },
+  "updated": "2026-06-18T05:11:54.941Z"
 }
