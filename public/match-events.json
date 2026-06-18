@@ -1491,5 +1491,63 @@
       }
     ]
   },
-  "updated": "2026-06-18T07:07:24.546Z"
+  "25": {
+    "homeScore": 1,
+    "awayScore": 1,
+    "homeTeamId": "450",
+    "awayTeamId": "467",
+    "events": [
+      {
+        "minute": "6'",
+        "player": "M. Sadílek",
+        "teamId": "450",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "33'",
+        "player": "T. Mokoena",
+        "teamId": "467",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "40'",
+        "player": "T. Mbatha",
+        "teamId": "467",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "75'",
+        "player": "L. Krejcí",
+        "teamId": "450",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "83'",
+        "player": "T. Mokoena",
+        "teamId": "467",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": true,
+        "yellow": false,
+        "red": false
+      }
+    ]
+  },
+  "updated": "2026-06-18T19:42:20.664Z"
 }
