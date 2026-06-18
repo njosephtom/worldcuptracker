@@ -153,6 +153,28 @@
     "attempts": 1,
     "searchQuery": "[global] Saudi Arabia vs. Uruguay Full Highlights | FIFA World Cup 2026"
   },
+  "15": {
+    "videoId": "o_3t0d8x9JY",
+    "title": "Belgium vs Egypt Highlights 🌎🏆2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/o_3t0d8x9JY/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-18T00:14:55.170Z",
+    "lastAttemptAt": "2026-06-18T00:14:55.170Z",
+    "attempts": 1,
+    "searchQuery": "[global] Belgium vs. Egypt Full Highlights | FIFA World Cup 2026"
+  },
+  "16": {
+    "videoId": "UZ_7qFbFYRY",
+    "title": "Iran vs New Zealand Extended Highlights 🌎🏆 2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/UZ_7qFbFYRY/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-18T00:14:55.170Z",
+    "lastAttemptAt": "2026-06-18T00:14:55.170Z",
+    "attempts": 1,
+    "searchQuery": "[global] Iran vs. New Zealand Full Highlights | FIFA World Cup 2026"
+  },
   "17": {
     "videoId": "WxOfHAy6obs",
     "title": "FRANCE DOMINATE! France 3-1 Senegal | Full Match Highlights | FIFA World Cup 2026",
@@ -208,6 +230,17 @@
     "attempts": 1,
     "searchQuery": "[global] Portugal vs. DR Congo Full Highlights | FIFA World Cup 2026"
   },
+  "22": {
+    "videoId": "Wfnyqr68MtM",
+    "title": "🔴GHANA vs PANAMA LIVE TODAY ⚽ FIFA WORLD CUP 2026 GROUP L ⚽ FOOTBALL GAMEPLAY HD",
+    "thumbnail": "https://i.ytimg.com/vi/Wfnyqr68MtM/hqdefault.jpg",
+    "channelTitle": "Mas Tedi Pes",
+    "status": "found",
+    "fetchedAt": "2026-06-18T00:14:55.170Z",
+    "lastAttemptAt": "2026-06-18T00:14:55.170Z",
+    "attempts": 1,
+    "searchQuery": "[global] England vs. Panama Full Highlights | FIFA World Cup 2026"
+  },
   "40": {
     "videoId": "0IQd36iZGVs",
     "title": "Spain draws?! Late drama for Belgium, Uruguay &amp; Iran Matchday 5 🤯 2026 FIFA World Cup™ Best Moments",
@@ -231,8 +264,8 @@
     "searchQuery": "[global] Egypt vs. New Zealand Full Highlights | FIFA World Cup 2026"
   },
   "_meta": {
-    "updatedAt": "2026-06-17T21:07:30.884Z",
-    "totalFound": 21,
+    "updatedAt": "2026-06-18T00:14:55.170Z",
+    "totalFound": 24,
     "totalPending": 0,
     "quotaUsed": 601
   }
