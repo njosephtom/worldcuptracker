@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-17T21:34:33.719Z",
+  "updated": "2026-06-18T20:24:39.329Z",
   "matches": [
     {
       "espnId": "760415",
@@ -110,11 +110,12 @@
       "espnId": "760421",
       "h": "Australia",
       "a": "Turkey",
-      "d": "2026-06-13",
-      "t": "11:00 PM ET",
+      "d": "2026-06-14",
+      "t": "12:00 AM ET",
       "v": "bcplace",
       "venueName": "BC Place",
       "status": "finished",
+      "localTime": "9:00 PM PT",
       "localTZ": "PT",
       "g": "D",
       "homeScore": 2,
@@ -289,11 +290,12 @@
       "espnId": "760431",
       "h": "Austria",
       "a": "Jordan",
-      "d": "2026-06-16",
-      "t": "9:00 PM ET",
+      "d": "2026-06-17",
+      "t": "12:00 AM ET",
       "v": "levis",
       "venueName": "Levi's Stadium",
       "status": "finished",
+      "localTime": "9:00 PM PT",
       "localTZ": "PT",
       "g": "J",
       "homeScore": 3,
@@ -322,11 +324,11 @@
       "t": "4:00 PM ET",
       "v": "att",
       "venueName": "AT&T Stadium",
-      "status": "live",
+      "status": "finished",
       "localTime": "3:00 PM CT",
       "localTZ": "CT",
       "g": "L",
-      "homeScore": 3,
+      "homeScore": 4,
       "awayScore": 2
     },
     {
@@ -337,10 +339,12 @@
       "t": "7:00 PM ET",
       "v": "bmo",
       "venueName": "BMO Field",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "7:00 PM ET",
       "localTZ": "ET",
-      "g": "L"
+      "g": "L",
+      "homeScore": 1,
+      "awayScore": 0
     },
     {
       "espnId": "760436",
@@ -350,10 +354,12 @@
       "t": "10:00 PM ET",
       "v": "azteca",
       "venueName": "Estadio Banorte",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "8:00 PM CT",
       "localTZ": "CT",
-      "g": "K"
+      "g": "K",
+      "homeScore": 1,
+      "awayScore": 3
     },
     {
       "espnId": "760438",
@@ -363,10 +369,12 @@
       "t": "12:00 PM ET",
       "v": "mercedes",
       "venueName": "Mercedes-Benz Stadium",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "12:00 PM ET",
       "localTZ": "ET",
-      "g": "A"
+      "g": "A",
+      "homeScore": 1,
+      "awayScore": 1
     },
     {
       "espnId": "760439",
@@ -376,10 +384,12 @@
       "t": "3:00 PM ET",
       "v": "sofi",
       "venueName": "SoFi Stadium",
-      "status": "upcoming",
+      "status": "live",
       "localTime": "12:00 PM PT",
       "localTZ": "PT",
-      "g": "B"
+      "g": "B",
+      "homeScore": 0,
+      "awayScore": 0
     },
     {
       "espnId": "760440",
@@ -502,11 +512,12 @@
       "espnId": "760449",
       "h": "Tunisia",
       "a": "Japan",
-      "d": "2026-06-20",
+      "d": "2026-06-21",
       "t": "12:00 AM ET",
       "v": "bbva",
       "venueName": "Estadio BBVA",
       "status": "upcoming",
+      "localTime": "10:00 PM CT",
       "localTZ": "CT",
       "g": "F"
     },
