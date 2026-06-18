@@ -231,16 +231,26 @@
     "searchQuery": "[global] Portugal vs. DR Congo Full Highlights | FIFA World Cup 2026"
   },
   "22": {
-    "status": "pending",
+    "videoId": "hFO9DhasJ2A",
+    "title": "Ghana vs Panama Extended Highlights 🌎🏆 2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/hFO9DhasJ2A/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
     "fetchedAt": "2026-06-18T00:14:55.170Z",
-    "lastAttemptAt": "2026-06-18T00:14:55.170Z",
-    "attempts": 0
+    "lastAttemptAt": "2026-06-18T21:27:00.973Z",
+    "attempts": 1,
+    "searchQuery": "[global] England vs. Panama Full Highlights | FIFA World Cup 2026"
   },
   "23": {
-    "status": "pending",
+    "videoId": "lGoe9nxRfyU",
+    "title": "England vs Croatia Extended Highlights 🌎🏆 2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/lGoe9nxRfyU/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
     "fetchedAt": "2026-06-18T05:54:11.884Z",
-    "lastAttemptAt": "2026-06-18T05:54:11.884Z",
-    "attempts": 0
+    "lastAttemptAt": "2026-06-18T21:27:00.973Z",
+    "attempts": 1,
+    "searchQuery": "[global] Croatia vs. Ghana Full Highlights | FIFA World Cup 2026"
   },
   "24": {
     "videoId": "Qb3ipZFspnc",
@@ -277,9 +287,9 @@
     "attempts": 0
   },
   "_meta": {
-    "updatedAt": "2026-06-18T19:45:47.673Z",
-    "totalFound": 23,
-    "totalPending": 4,
-    "quotaUsed": 201
+    "updatedAt": "2026-06-18T21:27:00.973Z",
+    "totalFound": 25,
+    "totalPending": 2,
+    "quotaUsed": 401
   }
 }
