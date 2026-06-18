@@ -263,6 +263,17 @@
     "attempts": 1,
     "searchQuery": "[global] Uzbekistan vs. Colombia Full Highlights | FIFA World Cup 2026"
   },
+  "25": {
+    "videoId": "jijCaWH_IxM",
+    "title": "Czechia vs South Africa Extended Highlights 🌎🏆 2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/jijCaWH_IxM/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-18T19:45:47.673Z",
+    "lastAttemptAt": "2026-06-18T19:45:47.673Z",
+    "attempts": 1,
+    "searchQuery": "[global] Czechia vs. South Africa Full Highlights | FIFA World Cup 2026"
+  },
   "40": {
     "videoId": "0IQd36iZGVs",
     "title": "Spain draws?! Late drama for Belgium, Uruguay &amp; Iran Matchday 5 🤯 2026 FIFA World Cup™ Best Moments",
@@ -286,9 +297,9 @@
     "searchQuery": "[global] Egypt vs. New Zealand Full Highlights | FIFA World Cup 2026"
   },
   "_meta": {
-    "updatedAt": "2026-06-18T05:54:11.884Z",
-    "totalFound": 26,
+    "updatedAt": "2026-06-18T19:45:47.673Z",
+    "totalFound": 27,
     "totalPending": 0,
-    "quotaUsed": 401
+    "quotaUsed": 201
   }
 }
