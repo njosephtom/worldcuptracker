@@ -1549,5 +1549,103 @@
       }
     ]
   },
-  "updated": "2026-06-18T20:46:57.068Z"
+  "26": {
+    "homeScore": 4,
+    "awayScore": 1,
+    "homeTeamId": "475",
+    "awayTeamId": "452",
+    "events": [
+      {
+        "minute": "59'",
+        "player": "A. Dedic",
+        "teamId": "452",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "61'",
+        "player": "E. Dzeko",
+        "teamId": "452",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "65'",
+        "player": "N. Elvedi",
+        "teamId": "475",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "74'",
+        "player": "J. Manzambi",
+        "teamId": "475",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "80'",
+        "player": "T. Muharemovic",
+        "teamId": "452",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": true
+      },
+      {
+        "minute": "84'",
+        "player": "R. Vargas",
+        "teamId": "475",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "90'",
+        "player": "J. Manzambi",
+        "teamId": "475",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "90'+3'",
+        "player": "E. Mahmic",
+        "teamId": "452",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "90'+7'",
+        "player": "G. Xhaka",
+        "teamId": "475",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": true,
+        "yellow": false,
+        "red": false
+      }
+    ]
+  },
+  "updated": "2026-06-18T21:39:39.721Z"
 }
