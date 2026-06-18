@@ -231,26 +231,16 @@
     "searchQuery": "[global] Portugal vs. DR Congo Full Highlights | FIFA World Cup 2026"
   },
   "22": {
-    "videoId": "Wfnyqr68MtM",
-    "title": "🔴GHANA vs PANAMA LIVE TODAY ⚽ FIFA WORLD CUP 2026 GROUP L ⚽ FOOTBALL GAMEPLAY HD",
-    "thumbnail": "https://i.ytimg.com/vi/Wfnyqr68MtM/hqdefault.jpg",
-    "channelTitle": "Mas Tedi Pes",
-    "status": "found",
+    "status": "pending",
     "fetchedAt": "2026-06-18T00:14:55.170Z",
     "lastAttemptAt": "2026-06-18T00:14:55.170Z",
-    "attempts": 1,
-    "searchQuery": "[global] England vs. Panama Full Highlights | FIFA World Cup 2026"
+    "attempts": 0
   },
   "23": {
-    "videoId": "lGoe9nxRfyU",
-    "title": "England vs Croatia Extended Highlights 🌎🏆 2026 FIFA World Cup™",
-    "thumbnail": "https://i.ytimg.com/vi/lGoe9nxRfyU/hqdefault.jpg",
-    "channelTitle": "FOX Sports",
-    "status": "found",
+    "status": "pending",
     "fetchedAt": "2026-06-18T05:54:11.884Z",
     "lastAttemptAt": "2026-06-18T05:54:11.884Z",
-    "attempts": 1,
-    "searchQuery": "[global] Croatia vs. Ghana Full Highlights | FIFA World Cup 2026"
+    "attempts": 0
   },
   "24": {
     "videoId": "Qb3ipZFspnc",
@@ -275,31 +265,21 @@
     "searchQuery": "[global] Czechia vs. South Africa Full Highlights | FIFA World Cup 2026"
   },
   "40": {
-    "videoId": "0IQd36iZGVs",
-    "title": "Spain draws?! Late drama for Belgium, Uruguay &amp; Iran Matchday 5 🤯 2026 FIFA World Cup™ Best Moments",
-    "thumbnail": "https://i.ytimg.com/vi/0IQd36iZGVs/hqdefault.jpg",
-    "channelTitle": "FOX Sports",
-    "status": "found",
+    "status": "pending",
     "fetchedAt": "2026-06-16T22:35:26.133Z",
     "lastAttemptAt": "2026-06-17T06:09:16.714Z",
-    "attempts": 2,
-    "searchQuery": "[global] Belgium vs. Iran Full Highlights | FIFA World Cup 2026"
+    "attempts": 0
   },
   "42": {
-    "videoId": "UZ_7qFbFYRY",
-    "title": "Iran vs New Zealand Extended Highlights 🌎🏆 2026 FIFA World Cup™",
-    "thumbnail": "https://i.ytimg.com/vi/UZ_7qFbFYRY/hqdefault.jpg",
-    "channelTitle": "FOX Sports",
-    "status": "found",
+    "status": "pending",
     "fetchedAt": "2026-06-17T06:09:16.714Z",
     "lastAttemptAt": "2026-06-17T06:09:16.714Z",
-    "attempts": 1,
-    "searchQuery": "[global] Egypt vs. New Zealand Full Highlights | FIFA World Cup 2026"
+    "attempts": 0
   },
   "_meta": {
     "updatedAt": "2026-06-18T19:45:47.673Z",
-    "totalFound": 27,
-    "totalPending": 0,
+    "totalFound": 23,
+    "totalPending": 4,
     "quotaUsed": 201
   }
 }

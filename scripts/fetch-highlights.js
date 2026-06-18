@@ -141,6 +141,7 @@ function scoreTitle(title, home, away) {
   if (t.includes('full'))      s += 1;
   if (t.includes('world cup')) s += 2;
   if (t.includes('2026'))      s += 1;
+  if (t.includes('best moments') || t.includes('matchday') || t.includes('gameplay')) s -= 4;
   return s;
 }
 
@@ -219,7 +220,7 @@ async function ytSearch(apiKey, q, home, away, channelId, publishedAfter) {
       const score = scoreTitle(title, home, away);
       if (score > bestScore) { bestScore = score; best = item; }
     }
-    if (!best || bestScore < 4) return null;  // both team names not found
+    if (!best || bestScore < 6) return null;  // require both team names (3+3)
 
     const snip  = best.snippet;
     const thumb = snip.thumbnails?.maxres?.url
