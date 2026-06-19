@@ -307,6 +307,12 @@
     "attempts": 1,
     "searchQuery": "[TSN] Mexico vs. South Korea Full Highlights | FIFA World Cup 2026"
   },
+  "29": {
+    "status": "pending",
+    "fetchedAt": "2026-06-19T23:25:10.784Z",
+    "lastAttemptAt": "2026-06-19T23:25:10.784Z",
+    "attempts": 1
+  },
   "40": {
     "status": "pending",
     "attempts": 0
@@ -316,9 +322,9 @@
     "attempts": 0
   },
   "_meta": {
-    "updatedAt": "2026-06-19T21:27:43.974Z",
+    "updatedAt": "2026-06-19T23:25:10.784Z",
     "totalFound": 28,
-    "totalPending": 2,
-    "quotaUsed": 1
+    "totalPending": 3,
+    "quotaUsed": 301
   }
 }
