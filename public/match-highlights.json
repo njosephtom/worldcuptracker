@@ -296,6 +296,17 @@
     "attempts": 1,
     "searchQuery": "[TSN] Canada vs. Qatar Full Highlights | FIFA World Cup 2026"
   },
+  "28": {
+    "videoId": "F1sMvm6D-0Y",
+    "title": "Mexico vs South Korea Extended Highlights 🌎🏆 2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/F1sMvm6D-0Y/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-19T04:34:29.858Z",
+    "lastAttemptAt": "2026-06-19T04:34:29.858Z",
+    "attempts": 1,
+    "searchQuery": "[global] Mexico vs. South Korea Full Highlights | FIFA World Cup 2026"
+  },
   "40": {
     "status": "pending",
     "fetchedAt": "2026-06-16T22:35:26.133Z",
@@ -309,9 +320,9 @@
     "attempts": 0
   },
   "_meta": {
-    "updatedAt": "2026-06-19T01:59:44.307Z",
-    "totalFound": 27,
+    "updatedAt": "2026-06-19T04:34:29.858Z",
+    "totalFound": 28,
     "totalPending": 2,
-    "quotaUsed": 101
+    "quotaUsed": 201
   }
 }
