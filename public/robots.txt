@@ -3,14 +3,16 @@
 
 User-agent: *
 Allow: /
-Disallow: /static/js/
-Disallow: /static/css/
 Sitemap: https://www.worldcuptracker.us/sitemap.xml
 
 # Google
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 2
+
+# Google AdSense crawler
+User-agent: Mediapartners-Google
+Allow: /
 
 # Bing
 User-agent: Bingbot

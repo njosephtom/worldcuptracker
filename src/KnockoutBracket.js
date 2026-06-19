@@ -58,6 +58,72 @@ const BD = {
  102: { r:'Bronze', p:0, h:'TBD', a:'TBD'                        },
 };
 
+// ─── Resolve a bracket slot label to a team name from standings ───────────────
+function resolveSlot(label, standings) {
+  if (!label || label === 'TBD') return label;
+  const match = label.match(/^(\d)\s+([A-L])$/);
+  if (match) {
+    const pos = parseInt(match[1], 10);
+    const group = match[2];
+    const teams = (GROUPS[group]?.teams || [])
+      .map(n => ({ name: n, ...(standings[n] || { mp:0,w:0,d:0,l:0,gf:0,ga:0,pts:0 }) }))
+      .sort(cmpTeams);
+    return teams[pos - 1]?.name || label;
+  }
+  return label;
+}
+
+function resolveBest3rd(standings) {
+  const thirdPlaced = [];
+  Object.keys(GROUPS).forEach(g => {
+    const sorted = (GROUPS[g]?.teams || [])
+      .map(n => ({ name: n, group: g, ...(standings[n] || { mp:0,w:0,d:0,l:0,gf:0,ga:0,pts:0 }) }))
+      .sort(cmpTeams);
+    if (sorted[2]) thirdPlaced.push(sorted[2]);
+  });
+  thirdPlaced.sort(cmpTeams);
+  const best8 = thirdPlaced.slice(0, 8);
+  const qualGroups = new Set(best8.map(t => t.group));
+  return { best8, qualGroups };
+}
+
+function resolve3rdSlot(label, standings, best8, qualGroups) {
+  if (!label || !label.startsWith('3+')) return label;
+  const slotGroups = label.slice(2).split('');
+  const eligible = best8.filter(t => slotGroups.includes(t.group));
+  if (eligible.length > 0) return eligible[0].name;
+  return label;
+}
+
+function buildPredictionBDM(standings) {
+  const { best8, qualGroups } = resolveBest3rd(standings);
+  const used3rd = new Set();
+  const out = {};
+
+  Object.entries(BD).forEach(([id, m]) => {
+    if (m.r === 'R32') {
+      let h = resolveSlot(m.h, standings);
+      let a = m.a;
+      if (a && a.startsWith('3+')) {
+        const slotGroups = a.slice(2).split('');
+        const eligible = best8.filter(t => slotGroups.includes(t.group) && !used3rd.has(t.group));
+        if (eligible.length > 0) {
+          a = eligible[0].name;
+          used3rd.add(eligible[0].group);
+        } else {
+          a = resolve3rdSlot(m.a, standings, best8, qualGroups);
+        }
+      } else {
+        a = resolveSlot(a, standings);
+      }
+      out[+id] = { ...m, h, a };
+    } else {
+      out[+id] = { ...m };
+    }
+  });
+  return out;
+}
+
 // ─── Merge mock results into bracket (computed per-render based on toggle) ────
 function buildBDM(enabled) {
   const out = {};
@@ -555,28 +621,49 @@ function PathLegend({ slot, onClear }) {
 }
 
 // ─── Root export ──────────────────────────────────────────────────────────────
-export function KnockoutBracket({ isMobile, mockEnabled = false, standings = {}, onTT, onMoveTT, onHideTT }) {
+export function KnockoutBracket({ isMobile, mockEnabled = false, standings = {}, predictionMode = false, onTogglePrediction, onTT, onMoveTT, onHideTT }) {
   const [hoveredSlot, setHoveredSlot] = useState(null);
-  const bdm = useMemo(() => buildBDM(mockEnabled), [mockEnabled]);
+  const mockBDM = useMemo(() => buildBDM(mockEnabled), [mockEnabled]);
+  const predBDM = useMemo(() => buildPredictionBDM(standings), [standings]);
+  const bdm = predictionMode ? predBDM : mockBDM;
 
   return (
     <div style={{ height:'100%', display:'flex', flexDirection:'column',
       background:'var(--brk-bg)', fontFamily:'var(--font-sans)',
       position:'relative', userSelect:'none' }}>
-      <h2 style={{
+      <div style={{
         margin: 0,
         padding: '5px 12px',
         fontSize: 10,
         fontWeight: 700,
-        color: 'var(--ac-gold)',
         letterSpacing: 1.2,
         textTransform: 'uppercase',
         flexShrink: 0,
         borderBottom: '1px solid var(--brk-div)',
         background: 'var(--brk-bg)',
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       }}>
-        World Cup 2026 Knockout Bracket
-      </h2>
+        <span style={{ color: 'var(--ac-gold)' }}>
+          {predictionMode ? 'R32 Prediction — Bracket' : 'World Cup 2026 Knockout Bracket'}
+        </span>
+        {onTogglePrediction && (
+          <button
+            onClick={onTogglePrediction}
+            title={predictionMode ? 'Show official bracket' : 'Fill bracket with predicted teams based on current group standings'}
+            style={{
+              background: predictionMode ? 'rgba(240,192,64,0.15)' : 'transparent',
+              border: predictionMode ? '1px solid rgba(240,192,64,0.4)' : '1px solid var(--brk-bd)',
+              color: predictionMode ? 'var(--ac-gold)' : 'var(--brk-dim)',
+              fontSize: 9, fontWeight: predictionMode ? 700 : 500,
+              padding: '2px 8px', borderRadius: 4, cursor: 'pointer',
+              fontFamily: 'var(--font-sans)', letterSpacing: 0.3,
+              transition: 'all .15s',
+            }}
+          >
+            🔮 Predict
+          </button>
+        )}
+      </div>
       {isMobile
         ? <MobileBracket bdm={bdm} mockEnabled={mockEnabled} standings={standings}
             hoveredSlot={hoveredSlot} setHoveredSlot={setHoveredSlot}
