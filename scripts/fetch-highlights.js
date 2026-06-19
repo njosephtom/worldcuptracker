@@ -5,7 +5,7 @@
 // Strategy:
 //   1. Read match-events.json — only finished matches appear there
 //   2. For each finished match without a highlight, search TSN Sports channel on YouTube
-//   3. Fall back to global YouTube search if TSN doesn't have it
+//   3. Validate that both team names appear in the video title
 //   4. Retry up to MAX_ATTEMPTS times (every 6h), then give up
 //   5. Write results to public/match-highlights.json (served as static CDN asset)
 //
@@ -23,7 +23,7 @@ const TSN_HANDLE      = 'TSN_Sports';
 const MAX_ATTEMPTS    = 8;   // 8 × 6h = 48h of retrying before giving up
 const MIN_RETRY_H     = 5.5; // skip if last attempt was < 5.5h ago
 
-// YouTube title name mapping (same as frontend)
+// YouTube title name mapping — used for building search queries
 /** @type {Record<string,string>} */
 const YT_NAME_MAP = {
   'Cape Verde':              'Cabo Verde',
@@ -34,6 +34,29 @@ const YT_NAME_MAP = {
 };
 /** @param {string} n @returns {string} */
 function ytName(n) { return YT_NAME_MAP[n] || n; }
+
+// All known aliases for matching team names in video titles (TSN uses
+// different names than the frontend, e.g. "Korea Republic", "Türkiye")
+/** @type {Record<string,string[]>} */
+const YT_ALIASES = {
+  'South Korea':             ['south korea', 'korea republic', 'korea'],
+  'Turkey':                  ['turkey', 'türkiye', 'turkiye'],
+  'Curaçao':                 ['curaçao', 'curacao'],
+  'Cape Verde':              ['cape verde', 'cabo verde'],
+  'United States':           ['united states', 'usa', 'u.s.a'],
+  'Bosnia and Herzegovina':  ['bosnia'],
+  'Ivory Coast':             ['ivory coast', "cote d'ivoire", "côte d'ivoire"],
+  'DR Congo':                ['dr congo', 'congo dr'],
+  'New Zealand':             ['new zealand'],
+};
+
+/** Check if a team name (or any of its aliases) appears in a title */
+function teamInTitle(title, team) {
+  const t = title.toLowerCase();
+  const aliases = YT_ALIASES[team];
+  if (aliases) return aliases.some(a => t.includes(a));
+  return t.includes(team.toLowerCase());
+}
 
 // All group-stage matches with team names
 // Knockout IDs (72–103) are excluded: teams are TBD until bracket fills
@@ -128,18 +151,16 @@ function hoursSince(isoDate) {
 
 /**
  * Score how well a YouTube title matches the expected match.
+ * Both team names MUST appear in the title (via aliases).
  * @param {string} title
  * @param {string} home
  * @param {string} away
- * @returns {number}
+ * @returns {number}  0 if either team missing, 6+ if both present
  */
 function scoreTitle(title, home, away) {
-  const t  = title.toLowerCase();
-  const h  = ytName(home).toLowerCase();
-  const a  = ytName(away).toLowerCase();
-  let s = 0;
-  if (t.includes(h))           s += 3;
-  if (t.includes(a))           s += 3;
+  if (!teamInTitle(title, home) || !teamInTitle(title, away)) return 0;
+  const t = title.toLowerCase();
+  let s = 6;
   if (t.includes('highlight')) s += 2;
   if (t.includes('full'))      s += 1;
   if (t.includes('world cup')) s += 2;
@@ -243,34 +264,31 @@ async function ytSearch(apiKey, q, home, away, channelId, publishedAfter) {
 }
 
 /**
- * Try multiple queries (TSN first, then global) for a match's highlights.
+ * Search TSN Sports channel for a match's highlights (no global fallback).
  * @param {string} apiKey
- * @param {string} channelId
+ * @param {string} channelId   TSN channel ID
  * @param {string} home
  * @param {string} away
  * @param {string} matchDate   YYYY-MM-DD
  * @returns {Promise<{videoId:string,title:string,thumbnail:string,channelTitle:string,query:string}|null>}
  */
 async function findHighlight(apiKey, channelId, home, away, matchDate) {
+  if (!channelId) {
+    log('  TSN channel ID not resolved — skipping');
+    return null;
+  }
   const h  = ytName(home);
   const a  = ytName(away);
   const queries = [
     `${h} vs. ${a} Full Highlights | FIFA World Cup 2026`,
     `${h} vs ${a} highlights FIFA World Cup 2026`,
+    `${home} vs ${away} highlights World Cup 2026`,
   ];
 
   for (const q of queries) {
-    // Try TSN channel first
-    if (channelId) {
-      log(`  Search TSN: "${q}"`);
-      const r = await ytSearch(apiKey, q, home, away, channelId, matchDate);
-      if (r) return { ...r, query: `[TSN] ${q}` };
-      await sleep(300);
-    }
-    // Fall back to global search
-    log(`  Search global: "${q}"`);
-    const r = await ytSearch(apiKey, q, home, away, undefined, matchDate);
-    if (r) return { ...r, query: `[global] ${q}` };
+    log(`  Search TSN: "${q}"`);
+    const r = await ytSearch(apiKey, q, home, away, channelId, matchDate);
+    if (r) return { ...r, query: `[TSN] ${q}` };
     await sleep(300);
   }
   return null;
@@ -282,6 +300,16 @@ function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 // ── Main ───────────────────────────────────────────────────────────────────────
 
 async function main() {
+  // Load .env.local if env var not already set
+  if (!process.env.REACT_APP_YOUTUBE_API_KEY && !process.env.YOUTUBE_API_KEY) {
+    const envPath = path.join(__dirname, '../.env.local');
+    if (fs.existsSync(envPath)) {
+      for (const line of fs.readFileSync(envPath, 'utf8').split('\n')) {
+        const m = line.match(/^\s*([\w]+)\s*=\s*(.+)\s*$/);
+        if (m) process.env[m[1]] = m[2];
+      }
+    }
+  }
   const apiKey = process.env.REACT_APP_YOUTUBE_API_KEY || process.env.YOUTUBE_API_KEY;
   if (!apiKey) {
     console.error('ERROR: No YouTube API key. Set REACT_APP_YOUTUBE_API_KEY or YOUTUBE_API_KEY.');

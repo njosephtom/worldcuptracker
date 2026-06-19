@@ -14,7 +14,7 @@ export function youtubeSearchUrl(home, away) {
   const q = encodeURIComponent(
     `${ytName(home)} vs. ${ytName(away)} Full Highlights | FIFA World Cup 2026`
   );
-  return `https://www.youtube.com/results?search_query=${q}`;
+  return `https://www.youtube.com/@TSN_Sports/search?query=${q}`;
 }
 
 // ── Tier 1: static match-highlights.json ─────────────────────────────────────
