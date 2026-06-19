@@ -1755,5 +1755,43 @@
       }
     ]
   },
-  "updated": "2026-06-19T01:54:50.268Z"
+  "28": {
+    "homeScore": 1,
+    "awayScore": 0,
+    "homeTeamId": "203",
+    "awayTeamId": "451",
+    "events": [
+      {
+        "minute": "4'",
+        "player": "L. Kang-In",
+        "teamId": "451",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "50'",
+        "player": "L. Romo",
+        "teamId": "203",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "58'",
+        "player": "P. Seung-Ho",
+        "teamId": "451",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
+  "updated": "2026-06-19T03:04:30.150Z"
 }
