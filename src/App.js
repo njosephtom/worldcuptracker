@@ -304,6 +304,8 @@ export default function App() {
           {showHistory ? 'Hide History ▲' : 'World Cup History ▼'}
         </button>
         <span> &nbsp;·&nbsp; </span>
+        <a href="/about.html" style={S.footerLink} target="_blank" rel="noopener noreferrer">About</a>
+        <span> &nbsp;·&nbsp; </span>
         <a href="/privacy.html" style={S.footerLink} target="_blank" rel="noopener noreferrer">Privacy Policy</a>
         <span> &nbsp;·&nbsp; &copy; 2026 worldcuptracker.us</span>
       </div>
