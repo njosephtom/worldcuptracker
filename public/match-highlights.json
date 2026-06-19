@@ -285,6 +285,17 @@
     "attempts": 1,
     "searchQuery": "[global] Mexico vs. South Korea Full Highlights | FIFA World Cup 2026"
   },
+  "27": {
+    "videoId": "BiX3u1_tJGw",
+    "title": "Can Canada beat Qatar and notch its first ever tournament win?",
+    "thumbnail": "https://i.ytimg.com/vi/BiX3u1_tJGw/hqdefault.jpg",
+    "channelTitle": "TSN",
+    "status": "found",
+    "fetchedAt": "2026-06-19T01:59:44.307Z",
+    "lastAttemptAt": "2026-06-19T01:59:44.307Z",
+    "attempts": 1,
+    "searchQuery": "[TSN] Canada vs. Qatar Full Highlights | FIFA World Cup 2026"
+  },
   "40": {
     "status": "pending",
     "fetchedAt": "2026-06-16T22:35:26.133Z",
@@ -298,9 +309,9 @@
     "attempts": 0
   },
   "_meta": {
-    "updatedAt": "2026-06-18T23:35:41.398Z",
-    "totalFound": 26,
+    "updatedAt": "2026-06-19T01:59:44.307Z",
+    "totalFound": 27,
     "totalPending": 2,
-    "quotaUsed": 1
+    "quotaUsed": 101
   }
 }
