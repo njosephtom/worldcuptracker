@@ -1793,5 +1793,103 @@
       }
     ]
   },
-  "updated": "2026-06-19T20:57:10.465Z"
+  "29": {
+    "homeScore": 2,
+    "awayScore": 0,
+    "homeTeamId": "660",
+    "awayTeamId": "628",
+    "events": [
+      {
+        "minute": "11'",
+        "player": "C. Burgess",
+        "teamId": "660",
+        "goal": true,
+        "ownGoal": true,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "16'",
+        "player": "J. Bos",
+        "teamId": "628",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "32'",
+        "player": "A. Circati",
+        "teamId": "628",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "43'",
+        "player": "A. Freeman",
+        "teamId": "660",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "56'",
+        "player": "A. Robinson",
+        "teamId": "660",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "88'",
+        "player": "H. Souttar",
+        "teamId": "628",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "89'",
+        "player": "F. Balogun",
+        "teamId": "660",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "89'",
+        "player": "J. Italiano",
+        "teamId": "628",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "90'+3'",
+        "player": "C. Richards",
+        "teamId": "660",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
+  "updated": "2026-06-19T21:28:48.946Z"
 }
