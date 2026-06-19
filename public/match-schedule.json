@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-18T20:24:39.329Z",
+  "updated": "2026-06-19T18:40:32.815Z",
   "matches": [
     {
       "espnId": "760415",
@@ -384,12 +384,12 @@
       "t": "3:00 PM ET",
       "v": "sofi",
       "venueName": "SoFi Stadium",
-      "status": "live",
+      "status": "finished",
       "localTime": "12:00 PM PT",
       "localTZ": "PT",
       "g": "B",
-      "homeScore": 0,
-      "awayScore": 0
+      "homeScore": 4,
+      "awayScore": 1
     },
     {
       "espnId": "760440",
@@ -399,10 +399,12 @@
       "t": "6:00 PM ET",
       "v": "bcplace",
       "venueName": "BC Place",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "3:00 PM PT",
       "localTZ": "PT",
-      "g": "B"
+      "g": "B",
+      "homeScore": 6,
+      "awayScore": 0
     },
     {
       "espnId": "760441",
@@ -412,10 +414,12 @@
       "t": "9:00 PM ET",
       "v": "akron",
       "venueName": "Estadio Akron",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "7:00 PM CT",
       "localTZ": "CT",
-      "g": "A"
+      "g": "A",
+      "homeScore": 1,
+      "awayScore": 0
     },
     {
       "espnId": "760442",
@@ -1063,7 +1067,7 @@
     },
     {
       "espnId": "760491",
-      "h": "Group A Winner",
+      "h": "Mexico",
       "a": "Third Place Group C/E/F/H/I",
       "d": "2026-06-30",
       "t": "9:00 PM ET",
