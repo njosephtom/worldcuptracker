@@ -1647,5 +1647,113 @@
       }
     ]
   },
-  "updated": "2026-06-18T23:31:45.277Z"
+  "27": {
+    "homeScore": 6,
+    "awayScore": 0,
+    "homeTeamId": "206",
+    "awayTeamId": "4398",
+    "events": [
+      {
+        "minute": "9'",
+        "player": "D. Cornelius",
+        "teamId": "206",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "16'",
+        "player": "C. Larin",
+        "teamId": "206",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "29'",
+        "player": "J. David",
+        "teamId": "206",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "33'",
+        "player": "H. Ahmed",
+        "teamId": "4398",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": true
+      },
+      {
+        "minute": "45'+3'",
+        "player": "J. David",
+        "teamId": "206",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "53'",
+        "player": "A. Madibo",
+        "teamId": "4398",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": true
+      },
+      {
+        "minute": "62'",
+        "player": "A. Fathy",
+        "teamId": "4398",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "64'",
+        "player": "N. Saliba",
+        "teamId": "206",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "75'",
+        "player": "M. Manai",
+        "teamId": "206",
+        "goal": true,
+        "ownGoal": true,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "90'+2'",
+        "player": "J. David",
+        "teamId": "206",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      }
+    ]
+  },
+  "updated": "2026-06-19T00:38:20.980Z"
 }
