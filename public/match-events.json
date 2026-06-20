@@ -1891,5 +1891,43 @@
       }
     ]
   },
-  "updated": "2026-06-19T23:51:02.218Z"
+  "30": {
+    "homeScore": 0,
+    "awayScore": 1,
+    "homeTeamId": "580",
+    "awayTeamId": "2869",
+    "events": [
+      {
+        "minute": "2'",
+        "player": "I. Saibari",
+        "teamId": "2869",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "23'",
+        "player": "I. Diop",
+        "teamId": "2869",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "65'",
+        "player": "A. Robertson",
+        "teamId": "580",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
+  "updated": "2026-06-20T00:29:48.477Z"
 }
