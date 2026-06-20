@@ -2065,5 +2065,103 @@
       }
     ]
   },
-  "updated": "2026-06-20T06:50:33.877Z"
+  "33": {
+    "homeScore": 5,
+    "awayScore": 1,
+    "homeTeamId": "449",
+    "awayTeamId": "466",
+    "events": [
+      {
+        "minute": "5'",
+        "player": "B. Brobbey",
+        "teamId": "449",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "17'",
+        "player": "B. Brobbey",
+        "teamId": "449",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "47'",
+        "player": "C. Gakpo",
+        "teamId": "449",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "53'",
+        "player": "G. Gudmundsson",
+        "teamId": "466",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "54'",
+        "player": "C. Gakpo",
+        "teamId": "449",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "59'",
+        "player": "A. Elanga",
+        "teamId": "466",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "75'",
+        "player": "Y. Ayari",
+        "teamId": "466",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "80'",
+        "player": "L. Bergvall",
+        "teamId": "466",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "89'",
+        "player": "C. Summerville",
+        "teamId": "449",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      }
+    ]
+  },
+  "updated": "2026-06-20T19:30:00.587Z"
 }
