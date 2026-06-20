@@ -2007,5 +2007,63 @@
       }
     ]
   },
-  "updated": "2026-06-20T03:44:33.283Z"
+  "32": {
+    "homeScore": 0,
+    "awayScore": 1,
+    "homeTeamId": "465",
+    "awayTeamId": "210",
+    "events": [
+      {
+        "minute": "2'",
+        "player": "M. Galarza",
+        "teamId": "210",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "4'",
+        "player": "M. Galarza",
+        "teamId": "210",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "45'+3'",
+        "player": "M. Almirón",
+        "teamId": "210",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": true
+      },
+      {
+        "minute": "63'",
+        "player": "",
+        "teamId": "465",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "71'",
+        "player": "E. Elmali",
+        "teamId": "465",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
+  "updated": "2026-06-20T05:27:09.947Z"
 }
