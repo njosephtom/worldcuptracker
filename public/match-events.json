@@ -1929,5 +1929,83 @@
       }
     ]
   },
-  "updated": "2026-06-20T02:23:18.071Z"
+  "31": {
+    "homeScore": 3,
+    "awayScore": 0,
+    "homeTeamId": "205",
+    "awayTeamId": "2654",
+    "events": [
+      {
+        "minute": "4'",
+        "player": "C. Arcus",
+        "teamId": "2654",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "23'",
+        "player": "M. Cunha",
+        "teamId": "205",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "36'",
+        "player": "M. Cunha",
+        "teamId": "205",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "45'+3'",
+        "player": "Vinícius Júnior",
+        "teamId": "205",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "45'+4'",
+        "player": "F. Pierrot",
+        "teamId": "2654",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "65'",
+        "player": "D. Santos",
+        "teamId": "205",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "72'",
+        "player": "D. Jean Jacques",
+        "teamId": "2654",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
+  "updated": "2026-06-20T03:44:33.283Z"
 }
