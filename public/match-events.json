@@ -2163,5 +2163,43 @@
       }
     ]
   },
-  "updated": "2026-06-20T21:55:08.919Z"
+  "34": {
+    "homeScore": 2,
+    "awayScore": 1,
+    "homeTeamId": "481",
+    "awayTeamId": "4789",
+    "events": [
+      {
+        "minute": "30'",
+        "player": "F. Kessié",
+        "teamId": "4789",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "68'",
+        "player": "D. Undav",
+        "teamId": "481",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "90'+4'",
+        "player": "D. Undav",
+        "teamId": "481",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      }
+    ]
+  },
+  "updated": "2026-06-20T22:24:12.615Z"
 }
