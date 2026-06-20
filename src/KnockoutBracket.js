@@ -646,7 +646,7 @@ export function KnockoutBracket({ isMobile, mockEnabled = false, standings = {},
         <span style={{ color: 'var(--ac-gold)' }}>
           {predictionMode ? 'R32 Prediction — Bracket' : 'World Cup 2026 Knockout Bracket'}
         </span>
-        {onTogglePrediction && (
+        {onTogglePrediction && Date.now() < new Date('2026-06-29T00:00:00-04:00').getTime() && (
           <button
             onClick={onTogglePrediction}
             title={predictionMode ? 'Show official bracket' : 'Fill bracket with predicted teams based on current group standings'}
