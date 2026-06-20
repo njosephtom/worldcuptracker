@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-19T18:40:32.815Z",
+  "updated": "2026-06-20T18:33:46.706Z",
   "matches": [
     {
       "espnId": "760415",
@@ -429,10 +429,12 @@
       "t": "3:00 PM ET",
       "v": "lumen",
       "venueName": "Lumen Field",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "12:00 PM PT",
       "localTZ": "PT",
-      "g": "D"
+      "g": "D",
+      "homeScore": 2,
+      "awayScore": 0
     },
     {
       "espnId": "760445",
@@ -442,10 +444,12 @@
       "t": "6:00 PM ET",
       "v": "gillette",
       "venueName": "Gillette Stadium",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "6:00 PM ET",
       "localTZ": "ET",
-      "g": "C"
+      "g": "C",
+      "homeScore": 0,
+      "awayScore": 1
     },
     {
       "espnId": "760444",
@@ -455,10 +459,12 @@
       "t": "8:30 PM ET",
       "v": "lincoln",
       "venueName": "Lincoln Financial Field",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "8:30 PM ET",
       "localTZ": "ET",
-      "g": "C"
+      "g": "C",
+      "homeScore": 3,
+      "awayScore": 0
     },
     {
       "espnId": "760443",
@@ -468,10 +474,12 @@
       "t": "11:00 PM ET",
       "v": "levis",
       "venueName": "Levi's Stadium",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "8:00 PM PT",
       "localTZ": "PT",
-      "g": "D"
+      "g": "D",
+      "homeScore": 0,
+      "awayScore": 1
     },
     {
       "espnId": "760447",
@@ -481,10 +489,12 @@
       "t": "1:00 PM ET",
       "v": "nrg",
       "venueName": "NRG Stadium",
-      "status": "upcoming",
+      "status": "live",
       "localTime": "12:00 PM CT",
       "localTZ": "CT",
-      "g": "F"
+      "g": "F",
+      "homeScore": 4,
+      "awayScore": 1
     },
     {
       "espnId": "760448",
@@ -1103,7 +1113,7 @@
     },
     {
       "espnId": "760494",
-      "h": "Group D Winner",
+      "h": "United States",
       "a": "Third Place Group B/E/F/I/J",
       "d": "2026-07-01",
       "t": "8:00 PM ET",
