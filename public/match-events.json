@@ -2337,6 +2337,44 @@
       }
     ]
   },
+  "37": {
+    "homeScore": 0,
+    "awayScore": 0,
+    "homeTeamId": "459",
+    "awayTeamId": "469",
+    "events": [
+      {
+        "minute": "3'",
+        "player": "R. Lukaku",
+        "teamId": "459",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "33'",
+        "player": "S. Ezatolahi",
+        "teamId": "469",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "66'",
+        "player": "N. Ngoy",
+        "teamId": "459",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": true
+      }
+    ]
+  },
   "104": {
     "homeScore": 0,
     "awayScore": 4,
@@ -2385,5 +2423,5 @@
       }
     ]
   },
-  "updated": "2026-06-21T20:59:08.056Z"
+  "updated": "2026-06-21T21:36:53.734Z"
 }
