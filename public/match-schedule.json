@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-21T04:18:09.826Z",
+  "updated": "2026-06-21T18:35:13.642Z",
   "matches": [
     {
       "espnId": "760415",
@@ -534,12 +534,12 @@
       "t": "12:00 AM ET",
       "v": "bbva",
       "venueName": "Estadio BBVA",
-      "status": "live",
+      "status": "finished",
       "localTime": "10:00 PM CT",
       "localTZ": "CT",
       "g": "F",
       "homeScore": 0,
-      "awayScore": 1
+      "awayScore": 4
     },
     {
       "espnId": "760453",
@@ -549,10 +549,12 @@
       "t": "12:00 PM ET",
       "v": "mercedes",
       "venueName": "Mercedes-Benz Stadium",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "12:00 PM ET",
       "localTZ": "ET",
-      "g": "H"
+      "g": "H",
+      "homeScore": 4,
+      "awayScore": 0
     },
     {
       "espnId": "760451",
