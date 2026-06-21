@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-20T18:33:46.706Z",
+  "updated": "2026-06-21T04:18:09.826Z",
   "matches": [
     {
       "espnId": "760415",
@@ -489,11 +489,11 @@
       "t": "1:00 PM ET",
       "v": "nrg",
       "venueName": "NRG Stadium",
-      "status": "live",
+      "status": "finished",
       "localTime": "12:00 PM CT",
       "localTZ": "CT",
       "g": "F",
-      "homeScore": 4,
+      "homeScore": 5,
       "awayScore": 1
     },
     {
@@ -504,10 +504,12 @@
       "t": "4:00 PM ET",
       "v": "bmo",
       "venueName": "BMO Field",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "4:00 PM ET",
       "localTZ": "ET",
-      "g": "E"
+      "g": "E",
+      "homeScore": 2,
+      "awayScore": 1
     },
     {
       "espnId": "760446",
@@ -517,10 +519,12 @@
       "t": "8:00 PM ET",
       "v": "arrowhead",
       "venueName": "GEHA Field at Arrowhead Stadium",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "7:00 PM CT",
       "localTZ": "CT",
-      "g": "E"
+      "g": "E",
+      "homeScore": 0,
+      "awayScore": 0
     },
     {
       "espnId": "760449",
@@ -530,10 +534,12 @@
       "t": "12:00 AM ET",
       "v": "bbva",
       "venueName": "Estadio BBVA",
-      "status": "upcoming",
+      "status": "live",
       "localTime": "10:00 PM CT",
       "localTZ": "CT",
-      "g": "F"
+      "g": "F",
+      "homeScore": 0,
+      "awayScore": 1
     },
     {
       "espnId": "760453",
@@ -1029,7 +1035,7 @@
     },
     {
       "espnId": "760489",
-      "h": "Group E Winner",
+      "h": "Germany",
       "a": "Third Place Group A/B/C/D/F",
       "d": "2026-06-29",
       "t": "4:30 PM ET",
