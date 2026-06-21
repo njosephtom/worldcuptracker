@@ -2269,5 +2269,53 @@
       }
     ]
   },
-  "updated": "2026-06-21T05:11:50.090Z"
+  "104": {
+    "homeScore": 0,
+    "awayScore": 4,
+    "homeTeamId": "659",
+    "awayTeamId": "627",
+    "events": [
+      {
+        "minute": "4'",
+        "player": "D. Kamada",
+        "teamId": "627",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "31'",
+        "player": "A. Ueda",
+        "teamId": "627",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "69'",
+        "player": "J. Ito",
+        "teamId": "627",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "83'",
+        "player": "A. Ueda",
+        "teamId": "627",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      }
+    ]
+  },
+  "updated": "2026-06-21T07:07:27.867Z"
 }
