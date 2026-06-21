@@ -218,6 +218,19 @@ async function main() {
           etTime = fmtTime(startDate, 'America/New_York') + ' ET';
         }
 
+        // Matches between midnight and 5 AM ET are late-night games that belong
+        // to the previous calendar day (e.g. 10 PM Monterrey = 12 AM ET next day).
+        // Use the venue's local date so the match groups under the correct match day.
+        if (!placeholder && venueCode) {
+          const vtz = VENUE_TZ[venueCode];
+          if (vtz) {
+            const venueDate = fmtDate(startDate, vtz.iana);
+            if (venueDate && venueDate < etDate) {
+              etDate = venueDate;
+            }
+          }
+        }
+
         const vtz = VENUE_TZ[venueCode];
         let localTime = null;
         let localTZ   = null;
