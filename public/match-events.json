@@ -2269,6 +2269,74 @@
       }
     ]
   },
+  "36": {
+    "homeScore": 4,
+    "awayScore": 0,
+    "homeTeamId": "164",
+    "awayTeamId": "655",
+    "events": [
+      {
+        "minute": "10'",
+        "player": "L. Yamal",
+        "teamId": "164",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "21'",
+        "player": "M. Oyarzabal",
+        "teamId": "164",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "24'",
+        "player": "M. Oyarzabal",
+        "teamId": "164",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "30'",
+        "player": "S. Al-Dawsari",
+        "teamId": "655",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "49'",
+        "player": "H. Al-Tambakti",
+        "teamId": "164",
+        "goal": true,
+        "ownGoal": true,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "60'",
+        "player": "M. Kanno",
+        "teamId": "655",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
   "104": {
     "homeScore": 0,
     "awayScore": 4,
@@ -2317,5 +2385,5 @@
       }
     ]
   },
-  "updated": "2026-06-21T07:07:27.867Z"
+  "updated": "2026-06-21T19:30:17.101Z"
 }
