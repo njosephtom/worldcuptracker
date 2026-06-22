@@ -2541,6 +2541,74 @@
       }
     ]
   },
+  "40": {
+    "homeScore": 2,
+    "awayScore": 0,
+    "homeTeamId": "202",
+    "awayTeamId": "474",
+    "events": [
+      {
+        "minute": "38'",
+        "player": "L. Messi",
+        "teamId": "202",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "40'",
+        "player": "S. Posch",
+        "teamId": "474",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "76'",
+        "player": "F. Medina",
+        "teamId": "202",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "76'",
+        "player": "K. Laimer",
+        "teamId": "474",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "90'+2'",
+        "player": "L. Paredes",
+        "teamId": "202",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "90'+5'",
+        "player": "L. Messi",
+        "teamId": "202",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      }
+    ]
+  },
   "104": {
     "homeScore": 0,
     "awayScore": 4,
@@ -2589,5 +2657,5 @@
       }
     ]
   },
-  "updated": "2026-06-22T07:16:09.095Z"
+  "updated": "2026-06-22T20:01:54.543Z"
 }
