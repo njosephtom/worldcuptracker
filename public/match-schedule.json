@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-21T18:35:13.642Z",
+  "updated": "2026-06-22T19:09:28.306Z",
   "matches": [
     {
       "espnId": "760415",
@@ -564,10 +564,12 @@
       "t": "3:00 PM ET",
       "v": "sofi",
       "venueName": "SoFi Stadium",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "12:00 PM PT",
       "localTZ": "PT",
-      "g": "G"
+      "g": "G",
+      "homeScore": 0,
+      "awayScore": 0
     },
     {
       "espnId": "760450",
@@ -577,10 +579,12 @@
       "t": "6:00 PM ET",
       "v": "hardrock",
       "venueName": "Hard Rock Stadium",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "6:00 PM ET",
       "localTZ": "ET",
-      "g": "H"
+      "g": "H",
+      "homeScore": 2,
+      "awayScore": 2
     },
     {
       "espnId": "760452",
@@ -590,10 +594,12 @@
       "t": "9:00 PM ET",
       "v": "bcplace",
       "venueName": "BC Place",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "6:00 PM PT",
       "localTZ": "PT",
-      "g": "G"
+      "g": "G",
+      "homeScore": 1,
+      "awayScore": 3
     },
     {
       "espnId": "760456",
@@ -603,10 +609,12 @@
       "t": "1:00 PM ET",
       "v": "att",
       "venueName": "AT&T Stadium",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "12:00 PM CT",
       "localTZ": "CT",
-      "g": "J"
+      "g": "J",
+      "homeScore": 2,
+      "awayScore": 0
     },
     {
       "espnId": "760457",
