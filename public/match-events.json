@@ -2463,6 +2463,84 @@
       }
     ]
   },
+  "39": {
+    "homeScore": 1,
+    "awayScore": 3,
+    "homeTeamId": "2666",
+    "awayTeamId": "2620",
+    "events": [
+      {
+        "minute": "15'",
+        "player": "F. Surman",
+        "teamId": "2666",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "17'",
+        "player": "M. Lashin",
+        "teamId": "2620",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "20'",
+        "player": "S. Singh",
+        "teamId": "2666",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "34'",
+        "player": "C. McCowatt",
+        "teamId": "2666",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "58'",
+        "player": "M. Zico",
+        "teamId": "2620",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "67'",
+        "player": "M. Salah",
+        "teamId": "2620",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "82'",
+        "player": "Trézéguet",
+        "teamId": "2620",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      }
+    ]
+  },
   "104": {
     "homeScore": 0,
     "awayScore": 4,
@@ -2511,5 +2589,5 @@
       }
     ]
   },
-  "updated": "2026-06-22T01:54:02.074Z"
+  "updated": "2026-06-22T03:04:21.370Z"
 }
