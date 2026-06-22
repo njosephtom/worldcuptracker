@@ -358,8 +358,8 @@
   "37": {
     "status": "pending",
     "fetchedAt": "2026-06-21T23:31:49.315Z",
-    "lastAttemptAt": "2026-06-21T23:31:49.315Z",
-    "attempts": 1
+    "lastAttemptAt": "2026-06-22T06:49:47.421Z",
+    "attempts": 2
   },
   "38": {
     "status": "pending",
@@ -388,9 +388,9 @@
     "attempts": 2
   },
   "_meta": {
-    "updatedAt": "2026-06-22T04:35:00.032Z",
+    "updatedAt": "2026-06-22T06:49:47.421Z",
     "totalFound": 28,
     "totalPending": 14,
-    "quotaUsed": 3301
+    "quotaUsed": 301
   }
 }
