@@ -308,70 +308,120 @@
     "searchQuery": "[TSN] Mexico vs. South Korea Full Highlights | FIFA World Cup 2026"
   },
   "29": {
-    "status": "pending",
+    "videoId": "JtVWijjUAuM",
+    "title": "USA vs. Australia Full Highlights | FIFA World Cup 2026",
+    "thumbnail": "https://i.ytimg.com/vi/JtVWijjUAuM/hqdefault.jpg",
+    "channelTitle": "TSN",
+    "status": "found",
     "fetchedAt": "2026-06-19T23:25:10.784Z",
-    "lastAttemptAt": "2026-06-22T04:35:00.032Z",
-    "attempts": 6
+    "lastAttemptAt": "2026-06-22T16:08:00.041Z",
+    "attempts": 1,
+    "searchQuery": "[TSN] USA vs. Australia Full Highlights | FIFA World Cup 2026"
   },
   "30": {
-    "status": "pending",
+    "videoId": "Fyy3eu5miq4",
+    "title": "Scotland vs. Morocco Full Highlights | FIFA World Cup 2026",
+    "thumbnail": "https://i.ytimg.com/vi/Fyy3eu5miq4/hqdefault.jpg",
+    "channelTitle": "TSN",
+    "status": "found",
     "fetchedAt": "2026-06-20T01:45:13.077Z",
-    "lastAttemptAt": "2026-06-22T04:35:00.032Z",
-    "attempts": 5
+    "lastAttemptAt": "2026-06-22T16:08:00.041Z",
+    "attempts": 1,
+    "searchQuery": "[TSN] Scotland vs. Morocco Full Highlights | FIFA World Cup 2026"
   },
   "31": {
-    "status": "pending",
+    "videoId": "Z2KoX5crIjQ",
+    "title": "Brazil vs. Haiti Full Highlights | FIFA World Cup 2026",
+    "thumbnail": "https://i.ytimg.com/vi/Z2KoX5crIjQ/hqdefault.jpg",
+    "channelTitle": "TSN",
+    "status": "found",
     "fetchedAt": "2026-06-20T04:31:33.622Z",
-    "lastAttemptAt": "2026-06-22T04:35:00.032Z",
-    "attempts": 5
+    "lastAttemptAt": "2026-06-22T16:08:00.041Z",
+    "attempts": 1,
+    "searchQuery": "[TSN] Brazil vs. Haiti Full Highlights | FIFA World Cup 2026"
   },
   "32": {
-    "status": "pending",
+    "videoId": "g6yUhVI-2ZE",
+    "title": "Türkiye vs. Paraguay Full Highlights | FIFA World Cup 2026",
+    "thumbnail": "https://i.ytimg.com/vi/g6yUhVI-2ZE/hqdefault.jpg",
+    "channelTitle": "TSN",
+    "status": "found",
     "fetchedAt": "2026-06-20T06:31:51.775Z",
-    "lastAttemptAt": "2026-06-22T04:35:00.032Z",
-    "attempts": 5
+    "lastAttemptAt": "2026-06-22T16:08:00.041Z",
+    "attempts": 1,
+    "searchQuery": "[TSN] Turkey vs. Paraguay Full Highlights | FIFA World Cup 2026"
   },
   "33": {
-    "status": "pending",
+    "videoId": "pH39DPyBzzQ",
+    "title": "Netherlands vs. Sweden Full Highlights | FIFA World Cup 2026",
+    "thumbnail": "https://i.ytimg.com/vi/pH39DPyBzzQ/hqdefault.jpg",
+    "channelTitle": "TSN",
+    "status": "found",
     "fetchedAt": "2026-06-20T19:33:05.073Z",
-    "lastAttemptAt": "2026-06-22T04:35:00.032Z",
-    "attempts": 4
+    "lastAttemptAt": "2026-06-22T16:08:00.041Z",
+    "attempts": 1,
+    "searchQuery": "[TSN] Netherlands vs. Sweden Full Highlights | FIFA World Cup 2026"
   },
   "34": {
     "status": "pending",
     "fetchedAt": "2026-06-20T23:29:22.867Z",
-    "lastAttemptAt": "2026-06-22T04:35:00.032Z",
-    "attempts": 4
+    "attempts": 1,
+    "lastAttemptAt": "2026-06-22T16:08:00.041Z"
   },
   "35": {
-    "status": "pending",
+    "videoId": "GqZtSOJ_lt4",
+    "title": "Ecuador vs. Curaçao Full Highlights | FIFA World Cup 2026",
+    "thumbnail": "https://i.ytimg.com/vi/GqZtSOJ_lt4/hqdefault.jpg",
+    "channelTitle": "TSN",
+    "status": "found",
     "fetchedAt": "2026-06-21T04:34:09.784Z",
-    "lastAttemptAt": "2026-06-22T04:35:00.032Z",
-    "attempts": 3
+    "lastAttemptAt": "2026-06-22T16:08:00.041Z",
+    "attempts": 1,
+    "searchQuery": "[TSN] Ecuador vs. Curaçao Full Highlights | FIFA World Cup 2026"
   },
   "36": {
-    "status": "pending",
+    "videoId": "e5nMfOFdklw",
+    "title": "Spain vs. Saudi Arabia Full Highlights | FIFA World Cup 2026",
+    "thumbnail": "https://i.ytimg.com/vi/e5nMfOFdklw/hqdefault.jpg",
+    "channelTitle": "TSN",
+    "status": "found",
     "fetchedAt": "2026-06-21T19:33:31.052Z",
-    "lastAttemptAt": "2026-06-22T04:35:00.032Z",
-    "attempts": 2
+    "lastAttemptAt": "2026-06-22T16:08:00.041Z",
+    "attempts": 1,
+    "searchQuery": "[TSN] Spain vs. Saudi Arabia Full Highlights | FIFA World Cup 2026"
   },
   "37": {
-    "status": "pending",
+    "videoId": "jZtC6FnJum4",
+    "title": "Belgium vs. IR Iran Full Highlights | FIFA World Cup 2026",
+    "thumbnail": "https://i.ytimg.com/vi/jZtC6FnJum4/hqdefault.jpg",
+    "channelTitle": "TSN",
+    "status": "found",
     "fetchedAt": "2026-06-21T23:31:49.315Z",
-    "lastAttemptAt": "2026-06-22T06:49:47.421Z",
-    "attempts": 2
+    "lastAttemptAt": "2026-06-22T16:08:00.041Z",
+    "attempts": 1,
+    "searchQuery": "[TSN] Belgium vs. Iran Full Highlights | FIFA World Cup 2026"
   },
   "38": {
-    "status": "pending",
+    "videoId": "e4OAH2q4738",
+    "title": "Uruguay vs. Cabo Verde Full Highlights | FIFA World Cup 2026",
+    "thumbnail": "https://i.ytimg.com/vi/e4OAH2q4738/hqdefault.jpg",
+    "channelTitle": "TSN",
+    "status": "found",
     "fetchedAt": "2026-06-22T04:35:00.032Z",
-    "lastAttemptAt": "2026-06-22T04:35:00.032Z",
-    "attempts": 1
+    "lastAttemptAt": "2026-06-22T16:08:00.041Z",
+    "attempts": 1,
+    "searchQuery": "[TSN] Uruguay vs. Cabo Verde Full Highlights | FIFA World Cup 2026"
   },
   "39": {
-    "status": "pending",
+    "videoId": "sTBkTZv9hBY",
+    "title": "New Zealand vs. Egypt Full Highlights | FIFA World Cup 2026",
+    "thumbnail": "https://i.ytimg.com/vi/sTBkTZv9hBY/hqdefault.jpg",
+    "channelTitle": "TSN",
+    "status": "found",
     "fetchedAt": "2026-06-22T04:35:00.032Z",
-    "lastAttemptAt": "2026-06-22T04:35:00.032Z",
-    "attempts": 1
+    "lastAttemptAt": "2026-06-22T16:08:00.041Z",
+    "attempts": 1,
+    "searchQuery": "[TSN] New Zealand vs. Egypt Full Highlights | FIFA World Cup 2026"
   },
   "40": {
     "status": "pending",
@@ -382,15 +432,20 @@
     "attempts": 0
   },
   "104": {
-    "status": "pending",
+    "videoId": "3ESRyAZNh5A",
+    "title": "Tunisia vs. Japan Full Highlights | FIFA World Cup 2026",
+    "thumbnail": "https://i.ytimg.com/vi/3ESRyAZNh5A/hqdefault.jpg",
+    "channelTitle": "TSN",
+    "status": "found",
     "fetchedAt": "2026-06-21T19:33:31.052Z",
-    "lastAttemptAt": "2026-06-22T04:35:00.032Z",
-    "attempts": 2
+    "lastAttemptAt": "2026-06-22T16:08:00.041Z",
+    "attempts": 1,
+    "searchQuery": "[TSN] Tunisia vs. Japan Full Highlights | FIFA World Cup 2026"
   },
   "_meta": {
-    "updatedAt": "2026-06-22T06:49:47.421Z",
-    "totalFound": 28,
-    "totalPending": 14,
-    "quotaUsed": 301
+    "updatedAt": "2026-06-22T16:08:00.041Z",
+    "totalFound": 39,
+    "totalPending": 3,
+    "quotaUsed": 1601
   }
 }

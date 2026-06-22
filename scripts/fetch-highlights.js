@@ -10,7 +10,7 @@
 //   5. Write results to public/match-highlights.json (served as static CDN asset)
 //
 // Quota: ~100 units per search. 10,000 units/day ≈ 100 searches.
-// ~4 matches/day × 2 queries each = ~800 units/day — well within free tier.
+// ~4 matches/day × up to 5 queries each = ~2,000 units/day — within free tier.
 
 'use strict';
 const fs   = require('fs');
@@ -205,16 +205,16 @@ async function resolveTSNChannelId(apiKey) {
  * @param {string} [publishedAfter]  ISO date string
  * @returns {Promise<{videoId:string,title:string,thumbnail:string,channelTitle:string}|null>}
  */
-async function ytSearch(apiKey, q, home, away, channelId, publishedAfter) {
+async function ytSearch(apiKey, q, home, away, channelId, publishedAfter, { duration } = {}) {
   const params = new URLSearchParams({
     part: 'snippet',
     q,
     type: 'video',
-    videoDuration: 'medium',  // 4–20 min — ideal for highlights, excludes 90-min replays
     maxResults: '5',
     order: 'relevance',
     key: apiKey,
   });
+  if (duration) params.set('videoDuration', duration);
   if (channelId) params.set('channelId', channelId);
   // Only use publishedAfter for past dates — YouTube rejects future dates with 400
   if (publishedAfter && new Date(publishedAfter) < new Date()) {
@@ -264,19 +264,15 @@ async function ytSearch(apiKey, q, home, away, channelId, publishedAfter) {
 }
 
 /**
- * Search TSN Sports channel for a match's highlights (no global fallback).
+ * Search for a match's highlights: TSN channel first, then global fallback.
  * @param {string} apiKey
- * @param {string} channelId   TSN channel ID
+ * @param {string} channelId   TSN channel ID (can be empty)
  * @param {string} home
  * @param {string} away
  * @param {string} matchDate   YYYY-MM-DD
  * @returns {Promise<{videoId:string,title:string,thumbnail:string,channelTitle:string,query:string}|null>}
  */
 async function findHighlight(apiKey, channelId, home, away, matchDate) {
-  if (!channelId) {
-    log('  TSN channel ID not resolved — skipping');
-    return null;
-  }
   const h  = ytName(home);
   const a  = ytName(away);
   const queries = [
@@ -285,12 +281,29 @@ async function findHighlight(apiKey, channelId, home, away, matchDate) {
     `${home} vs ${away} highlights World Cup 2026`,
   ];
 
-  for (const q of queries) {
-    log(`  Search TSN: "${q}"`);
-    const r = await ytSearch(apiKey, q, home, away, channelId, matchDate);
-    if (r) return { ...r, query: `[TSN] ${q}` };
+  // Pass 1: TSN channel, medium duration (4–20 min)
+  if (channelId) {
+    for (const q of queries) {
+      log(`  Search TSN (medium): "${q}"`);
+      const r = await ytSearch(apiKey, q, home, away, channelId, matchDate, { duration: 'medium' });
+      if (r) return { ...r, query: `[TSN] ${q}` };
+      await sleep(300);
+    }
+
+    // Pass 2: TSN channel, any duration (catches extended highlights)
+    const q2 = queries[0];
+    log(`  Search TSN (any duration): "${q2}"`);
+    const r2 = await ytSearch(apiKey, q2, home, away, channelId, matchDate);
+    if (r2) return { ...r2, query: `[TSN-any] ${q2}` };
     await sleep(300);
   }
+
+  // Pass 3: global search fallback (no channel filter)
+  const gq = `${h} vs ${a} Full Highlights FIFA World Cup 2026`;
+  log(`  Search global: "${gq}"`);
+  const rg = await ytSearch(apiKey, gq, home, away, null, matchDate);
+  if (rg) return { ...rg, query: `[global] ${gq}` };
+
   return null;
 }
 
