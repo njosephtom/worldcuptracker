@@ -53,7 +53,9 @@ function parseESPN(data) {
         sName === 'STATUS_SECOND_HALF' ||
         sName === 'STATUS_HALFTIME'    ||
         sName === 'STATUS_EXTRA_TIME'  ||
-        sName === 'STATUS_PENALTY')     status = 'live';
+        sName === 'STATUS_PENALTY'     ||
+        sName === 'STATUS_DELAYED'     ||
+        sName === 'STATUS_SUSPENDED')   status = 'live';
     if (sName === 'STATUS_FINAL' ||
         sName === 'STATUS_FULL_TIME' ||
         sName === 'STATUS_END_PERIOD')   status = 'finished';
@@ -78,13 +80,15 @@ function parseESPN(data) {
       }));
 
     // key matches our MATCHES: home team first
+    const delayed = sName === 'STATUS_DELAYED' || sName === 'STATUS_SUSPENDED';
+
     scores[`${homeTeam}|${awayTeam}`] = {
       homeScore:  parseInt(home.score, 10) || 0,
       awayScore:  parseInt(away.score, 10) || 0,
       homeTeamId: home.team?.id || '',
       awayTeamId: away.team?.id || '',
       status,
-      clock,
+      clock: delayed ? (sName === 'STATUS_SUSPENDED' ? 'Suspended' : 'Delayed') : clock,
       events,
     };
   });
