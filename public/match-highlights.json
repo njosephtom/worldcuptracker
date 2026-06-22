@@ -424,8 +424,15 @@
     "searchQuery": "[TSN] New Zealand vs. Egypt Full Highlights | FIFA World Cup 2026"
   },
   "40": {
-    "status": "pending",
-    "attempts": 0
+    "videoId": "JakdhltyECE",
+    "title": "Argentina vs Austria Extended Highlights 🌎🏆 2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/JakdhltyECE/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-22T20:04:16.006Z",
+    "lastAttemptAt": "2026-06-22T20:04:16.006Z",
+    "attempts": 1,
+    "searchQuery": "[global] Argentina vs Austria Full Highlights FIFA World Cup 2026"
   },
   "42": {
     "status": "pending",
@@ -443,9 +450,9 @@
     "searchQuery": "[TSN] Tunisia vs. Japan Full Highlights | FIFA World Cup 2026"
   },
   "_meta": {
-    "updatedAt": "2026-06-22T16:08:00.041Z",
-    "totalFound": 39,
-    "totalPending": 3,
-    "quotaUsed": 1601
+    "updatedAt": "2026-06-22T20:04:16.006Z",
+    "totalFound": 40,
+    "totalPending": 2,
+    "quotaUsed": 501
   }
 }
