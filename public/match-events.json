@@ -2375,6 +2375,94 @@
       }
     ]
   },
+  "38": {
+    "homeScore": 2,
+    "awayScore": 2,
+    "homeTeamId": "212",
+    "awayTeamId": "2597",
+    "events": [
+      {
+        "minute": "5'",
+        "player": "S. Lopes Cabral",
+        "teamId": "2597",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "20'",
+        "player": "R. Bentancur",
+        "teamId": "212",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "21'",
+        "player": "K. Pina",
+        "teamId": "2597",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "44'",
+        "player": "M. Araújo",
+        "teamId": "212",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "45'+6'",
+        "player": "A. Canobbio",
+        "teamId": "212",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "58'",
+        "player": "M. Olivera",
+        "teamId": "212",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "61'",
+        "player": "H. Varela",
+        "teamId": "2597",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "90'+3'",
+        "player": "D. Borges",
+        "teamId": "2597",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
   "104": {
     "homeScore": 0,
     "awayScore": 4,
@@ -2423,5 +2511,5 @@
       }
     ]
   },
-  "updated": "2026-06-21T23:56:45.363Z"
+  "updated": "2026-06-22T00:56:40.886Z"
 }
