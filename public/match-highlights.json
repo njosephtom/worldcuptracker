@@ -483,6 +483,17 @@
     "attempts": 1,
     "searchQuery": "[global] Portugal vs Uzbekistan Full Highlights FIFA World Cup 2026"
   },
+  "45": {
+    "videoId": "ebuYwC7lwCk",
+    "title": "England vs Ghana Extended Highlights 🌎🏆 2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/ebuYwC7lwCk/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-23T23:26:36.128Z",
+    "lastAttemptAt": "2026-06-23T23:26:36.128Z",
+    "attempts": 1,
+    "searchQuery": "[global] England vs Ghana Full Highlights FIFA World Cup 2026"
+  },
   "104": {
     "videoId": "3ESRyAZNh5A",
     "title": "Tunisia vs. Japan Full Highlights | FIFA World Cup 2026",
@@ -495,9 +506,9 @@
     "searchQuery": "[TSN] Tunisia vs. Japan Full Highlights | FIFA World Cup 2026"
   },
   "_meta": {
-    "updatedAt": "2026-06-23T21:35:05.758Z",
-    "totalFound": 45,
+    "updatedAt": "2026-06-23T23:26:36.128Z",
+    "totalFound": 46,
     "totalPending": 0,
-    "quotaUsed": 1
+    "quotaUsed": 501
   }
 }
