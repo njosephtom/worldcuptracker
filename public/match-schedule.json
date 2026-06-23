@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-22T19:09:28.306Z",
+  "updated": "2026-06-23T18:46:01.771Z",
   "matches": [
     {
       "espnId": "760415",
@@ -624,10 +624,12 @@
       "t": "5:00 PM ET",
       "v": "lincoln",
       "venueName": "Lincoln Financial Field",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "5:00 PM ET",
       "localTZ": "ET",
-      "g": "I"
+      "g": "I",
+      "homeScore": 3,
+      "awayScore": 0
     },
     {
       "espnId": "760454",
@@ -637,10 +639,12 @@
       "t": "8:00 PM ET",
       "v": "metlife",
       "venueName": "MetLife Stadium",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "8:00 PM ET",
       "localTZ": "ET",
-      "g": "I"
+      "g": "I",
+      "homeScore": 3,
+      "awayScore": 2
     },
     {
       "espnId": "760455",
@@ -650,10 +654,12 @@
       "t": "11:00 PM ET",
       "v": "levis",
       "venueName": "Levi's Stadium",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "8:00 PM PT",
       "localTZ": "PT",
-      "g": "J"
+      "g": "J",
+      "homeScore": 1,
+      "awayScore": 2
     },
     {
       "espnId": "760461",
@@ -663,10 +669,12 @@
       "t": "1:00 PM ET",
       "v": "nrg",
       "venueName": "NRG Stadium",
-      "status": "upcoming",
+      "status": "live",
       "localTime": "12:00 PM CT",
       "localTZ": "CT",
-      "g": "K"
+      "g": "K",
+      "homeScore": 4,
+      "awayScore": 0
     },
     {
       "espnId": "760458",
@@ -1189,7 +1197,7 @@
     },
     {
       "espnId": "760500",
-      "h": "Group J Winner",
+      "h": "Argentina",
       "a": "Group H 2nd Place",
       "d": "2026-07-03",
       "t": "6:00 PM ET",
