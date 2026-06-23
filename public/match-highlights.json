@@ -461,6 +461,17 @@
     "attempts": 1,
     "searchQuery": "[global] Norway vs Senegal Full Highlights FIFA World Cup 2026"
   },
+  "43": {
+    "videoId": "qq3eMBEUbzY",
+    "title": "Jordan vs Algeria Extended Highlights 🌎🏆 2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/qq3eMBEUbzY/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-23T06:24:53.664Z",
+    "lastAttemptAt": "2026-06-23T06:24:53.664Z",
+    "attempts": 1,
+    "searchQuery": "[global] Jordan vs Algeria Full Highlights FIFA World Cup 2026"
+  },
   "104": {
     "videoId": "3ESRyAZNh5A",
     "title": "Tunisia vs. Japan Full Highlights | FIFA World Cup 2026",
@@ -473,8 +484,8 @@
     "searchQuery": "[TSN] Tunisia vs. Japan Full Highlights | FIFA World Cup 2026"
   },
   "_meta": {
-    "updatedAt": "2026-06-23T04:25:50.863Z",
-    "totalFound": 43,
+    "updatedAt": "2026-06-23T06:24:53.664Z",
+    "totalFound": 44,
     "totalPending": 0,
     "quotaUsed": 501
   }
