@@ -2715,6 +2715,64 @@
       }
     ]
   },
+  "43": {
+    "homeScore": 1,
+    "awayScore": 2,
+    "homeTeamId": "2917",
+    "awayTeamId": "624",
+    "events": [
+      {
+        "minute": "36'",
+        "player": "N. Al-Rashdan",
+        "teamId": "2917",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "44'",
+        "player": "R. Zerrouki",
+        "teamId": "624",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "64'",
+        "player": "H. Abu Dahab",
+        "teamId": "2917",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "69'",
+        "player": "N. Benbouali",
+        "teamId": "624",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "82'",
+        "player": "A. Gouiri",
+        "teamId": "624",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      }
+    ]
+  },
   "104": {
     "homeScore": 0,
     "awayScore": 4,
@@ -2763,5 +2821,5 @@
       }
     ]
   },
-  "updated": "2026-06-23T04:48:29.906Z"
+  "updated": "2026-06-23T06:21:37.425Z"
 }
