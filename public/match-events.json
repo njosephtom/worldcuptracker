@@ -2851,6 +2851,34 @@
       }
     ]
   },
+  "45": {
+    "homeScore": 0,
+    "awayScore": 0,
+    "homeTeamId": "448",
+    "awayTeamId": "4469",
+    "events": [
+      {
+        "minute": "41'",
+        "player": "D. Rice",
+        "teamId": "448",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "60'",
+        "player": "I. Williams",
+        "teamId": "4469",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
   "104": {
     "homeScore": 0,
     "awayScore": 4,
@@ -2899,5 +2927,5 @@
       }
     ]
   },
-  "updated": "2026-06-23T21:31:26.274Z"
+  "updated": "2026-06-23T22:24:46.469Z"
 }
