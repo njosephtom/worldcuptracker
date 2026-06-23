@@ -2609,6 +2609,54 @@
       }
     ]
   },
+  "41": {
+    "homeScore": 3,
+    "awayScore": 0,
+    "homeTeamId": "478",
+    "awayTeamId": "4375",
+    "events": [
+      {
+        "minute": "6'",
+        "player": "A. Al-Ammari",
+        "teamId": "4375",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "14'",
+        "player": "K. Mbappé",
+        "teamId": "478",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "54'",
+        "player": "K. Mbappé",
+        "teamId": "478",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "66'",
+        "player": "O. Dembélé",
+        "teamId": "478",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      }
+    ]
+  },
   "104": {
     "homeScore": 0,
     "awayScore": 4,
@@ -2657,5 +2705,5 @@
       }
     ]
   },
-  "updated": "2026-06-23T00:30:22.600Z"
+  "updated": "2026-06-23T01:37:24.838Z"
 }
