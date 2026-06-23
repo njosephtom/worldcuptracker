@@ -439,6 +439,17 @@
     "attempts": 1,
     "searchQuery": "[global] Argentina vs Austria Full Highlights FIFA World Cup 2026"
   },
+  "41": {
+    "videoId": "7L0M3MR6gUs",
+    "title": "FRANCE vs IRAQ • FIFA WORLD CUP 2026 • FULL MATCH HIGHLIGHTS #france #iraq #worldcup",
+    "thumbnail": "https://i.ytimg.com/vi/7L0M3MR6gUs/hqdefault.jpg",
+    "channelTitle": "eFootball",
+    "status": "found",
+    "fetchedAt": "2026-06-23T01:42:37.228Z",
+    "lastAttemptAt": "2026-06-23T01:42:37.228Z",
+    "attempts": 1,
+    "searchQuery": "[global] France vs Iraq Full Highlights FIFA World Cup 2026"
+  },
   "42": {
     "status": "pending",
     "attempts": 0
@@ -455,9 +466,9 @@
     "searchQuery": "[TSN] Tunisia vs. Japan Full Highlights | FIFA World Cup 2026"
   },
   "_meta": {
-    "updatedAt": "2026-06-22T23:32:32.640Z",
-    "totalFound": 41,
+    "updatedAt": "2026-06-23T01:42:37.228Z",
+    "totalFound": 42,
     "totalPending": 1,
-    "quotaUsed": 1
+    "quotaUsed": 501
   }
 }
