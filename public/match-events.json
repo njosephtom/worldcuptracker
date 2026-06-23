@@ -2773,6 +2773,84 @@
       }
     ]
   },
+  "44": {
+    "homeScore": 5,
+    "awayScore": 0,
+    "homeTeamId": "482",
+    "awayTeamId": "2570",
+    "events": [
+      {
+        "minute": "6'",
+        "player": "C. Ronaldo",
+        "teamId": "482",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "14'",
+        "player": "O. Xamrobekov",
+        "teamId": "2570",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "17'",
+        "player": "N. Mendes",
+        "teamId": "482",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "39'",
+        "player": "C. Ronaldo",
+        "teamId": "482",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "60'",
+        "player": "A. Nematov",
+        "teamId": "482",
+        "goal": true,
+        "ownGoal": true,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "68'",
+        "player": "R. Veiga",
+        "teamId": "482",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "87'",
+        "player": "R. Leão",
+        "teamId": "482",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      }
+    ]
+  },
   "104": {
     "homeScore": 0,
     "awayScore": 4,
@@ -2821,5 +2899,5 @@
       }
     ]
   },
-  "updated": "2026-06-23T07:45:28.841Z"
+  "updated": "2026-06-23T19:33:59.760Z"
 }
