@@ -2965,6 +2965,142 @@
       }
     ]
   },
+  "48": {
+    "homeScore": 3,
+    "awayScore": 1,
+    "homeTeamId": "452",
+    "awayTeamId": "4398",
+    "events": [
+      {
+        "minute": "29'",
+        "player": "K. Alajbegovic",
+        "teamId": "452",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "34'",
+        "player": "M. Abunada",
+        "teamId": "452",
+        "goal": true,
+        "ownGoal": true,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "42'",
+        "player": "H. Al-Haydos",
+        "teamId": "4398",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "78'",
+        "player": "A. Fathy",
+        "teamId": "4398",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "80'",
+        "player": "E. Mahmic",
+        "teamId": "452",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "82'",
+        "player": "E. Mahmic",
+        "teamId": "452",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
+  "49": {
+    "homeScore": 2,
+    "awayScore": 1,
+    "homeTeamId": "475",
+    "awayTeamId": "206",
+    "events": [
+      {
+        "minute": "32'",
+        "player": "C. Larin",
+        "teamId": "206",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "32'",
+        "player": "G. Xhaka",
+        "teamId": "475",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "46'",
+        "player": "R. Vargas",
+        "teamId": "475",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "57'",
+        "player": "J. Manzambi",
+        "teamId": "475",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "76'",
+        "player": "P. David",
+        "teamId": "206",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "87'",
+        "player": "L. Millar",
+        "teamId": "206",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
   "104": {
     "homeScore": 0,
     "awayScore": 4,
@@ -3013,5 +3149,5 @@
       }
     ]
   },
-  "updated": "2026-06-24T20:32:11.152Z"
+  "updated": "2026-06-24T21:29:04.406Z"
 }
