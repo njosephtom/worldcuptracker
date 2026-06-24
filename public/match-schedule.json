@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-23T18:46:01.771Z",
+  "updated": "2026-06-24T18:39:14.811Z",
   "matches": [
     {
       "espnId": "760415",
@@ -669,11 +669,11 @@
       "t": "1:00 PM ET",
       "v": "nrg",
       "venueName": "NRG Stadium",
-      "status": "live",
+      "status": "finished",
       "localTime": "12:00 PM CT",
       "localTZ": "CT",
       "g": "K",
-      "homeScore": 4,
+      "homeScore": 5,
       "awayScore": 0
     },
     {
@@ -684,10 +684,12 @@
       "t": "4:00 PM ET",
       "v": "gillette",
       "venueName": "Gillette Stadium",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "4:00 PM ET",
       "localTZ": "ET",
-      "g": "L"
+      "g": "L",
+      "homeScore": 0,
+      "awayScore": 0
     },
     {
       "espnId": "760460",
@@ -697,10 +699,12 @@
       "t": "7:00 PM ET",
       "v": "bmo",
       "venueName": "BMO Field",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "7:00 PM ET",
       "localTZ": "ET",
-      "g": "L"
+      "g": "L",
+      "homeScore": 0,
+      "awayScore": 1
     },
     {
       "espnId": "760459",
@@ -710,10 +714,12 @@
       "t": "10:00 PM ET",
       "v": "akron",
       "venueName": "Estadio Akron",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "8:00 PM CT",
       "localTZ": "CT",
-      "g": "K"
+      "g": "K",
+      "homeScore": 1,
+      "awayScore": 0
     },
     {
       "espnId": "760462",
