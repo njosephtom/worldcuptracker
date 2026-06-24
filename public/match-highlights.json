@@ -516,6 +516,28 @@
     "attempts": 1,
     "searchQuery": "[global] Colombia vs DR Congo Full Highlights FIFA World Cup 2026"
   },
+  "48": {
+    "videoId": "mk6m1LJdkrI",
+    "title": "Bosnia and Herzegovina vs Qatar Extended Highlights 🌎🏆 2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/mk6m1LJdkrI/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-24T21:32:19.771Z",
+    "lastAttemptAt": "2026-06-24T21:32:19.771Z",
+    "attempts": 1,
+    "searchQuery": "[global] Bosnia vs Qatar Full Highlights FIFA World Cup 2026"
+  },
+  "49": {
+    "videoId": "pObYkmGnk24",
+    "title": "Switzerland vs Canada Extended Highlights 🌎🏆 2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/pObYkmGnk24/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-24T21:32:19.771Z",
+    "lastAttemptAt": "2026-06-24T21:32:19.771Z",
+    "attempts": 1,
+    "searchQuery": "[global] Switzerland vs Canada Full Highlights FIFA World Cup 2026"
+  },
   "104": {
     "videoId": "3ESRyAZNh5A",
     "title": "Tunisia vs. Japan Full Highlights | FIFA World Cup 2026",
@@ -528,9 +550,9 @@
     "searchQuery": "[TSN] Tunisia vs. Japan Full Highlights | FIFA World Cup 2026"
   },
   "_meta": {
-    "updatedAt": "2026-06-24T19:34:24.873Z",
-    "totalFound": 48,
+    "updatedAt": "2026-06-24T21:32:19.771Z",
+    "totalFound": 50,
     "totalPending": 0,
-    "quotaUsed": 1
+    "quotaUsed": 1001
   }
 }
