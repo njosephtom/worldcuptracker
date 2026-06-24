@@ -2917,6 +2917,54 @@
       }
     ]
   },
+  "47": {
+    "homeScore": 1,
+    "awayScore": 0,
+    "homeTeamId": "208",
+    "awayTeamId": "2850",
+    "events": [
+      {
+        "minute": "56'",
+        "player": "J. Lucumí",
+        "teamId": "208",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "76'",
+        "player": "D. Muñoz",
+        "teamId": "208",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "90'+3'",
+        "player": "C. Pickel",
+        "teamId": "2850",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "90'+4'",
+        "player": "J. Lerma",
+        "teamId": "208",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
   "104": {
     "homeScore": 0,
     "awayScore": 4,
@@ -2965,5 +3013,5 @@
       }
     ]
   },
-  "updated": "2026-06-24T03:44:37.469Z"
+  "updated": "2026-06-24T05:17:16.924Z"
 }
