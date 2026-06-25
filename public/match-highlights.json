@@ -560,6 +560,28 @@
     "attempts": 1,
     "searchQuery": "[global] Scotland vs Brazil Full Highlights FIFA World Cup 2026"
   },
+  "52": {
+    "videoId": "IR891e2-JBc",
+    "title": "Czechia vs Mexico Extended Highlights 🌎🏆 2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/IR891e2-JBc/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-25T04:27:27.023Z",
+    "lastAttemptAt": "2026-06-25T04:27:27.023Z",
+    "attempts": 1,
+    "searchQuery": "[global] Czechia vs Mexico Full Highlights FIFA World Cup 2026"
+  },
+  "53": {
+    "videoId": "A7PTebEdius",
+    "title": "South Africa vs South Korea Extended Highlights 🌎🏆 2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/A7PTebEdius/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-25T04:27:27.023Z",
+    "lastAttemptAt": "2026-06-25T04:27:27.023Z",
+    "attempts": 1,
+    "searchQuery": "[global] South Korea vs South Africa Full Highlights FIFA World Cup 2026"
+  },
   "104": {
     "videoId": "3ESRyAZNh5A",
     "title": "Tunisia vs. Japan Full Highlights | FIFA World Cup 2026",
@@ -572,8 +594,8 @@
     "searchQuery": "[TSN] Tunisia vs. Japan Full Highlights | FIFA World Cup 2026"
   },
   "_meta": {
-    "updatedAt": "2026-06-25T01:44:20.556Z",
-    "totalFound": 52,
+    "updatedAt": "2026-06-25T04:27:27.023Z",
+    "totalFound": 54,
     "totalPending": 0,
     "quotaUsed": 1001
   }
