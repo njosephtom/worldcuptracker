@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-24T18:39:14.811Z",
+  "updated": "2026-06-25T18:48:34.871Z",
   "matches": [
     {
       "espnId": "760415",
@@ -729,10 +729,12 @@
       "t": "3:00 PM ET",
       "v": "lumen",
       "venueName": "Lumen Field",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "12:00 PM PT",
       "localTZ": "PT",
-      "g": "B"
+      "g": "B",
+      "homeScore": 3,
+      "awayScore": 1
     },
     {
       "espnId": "760463",
@@ -742,10 +744,12 @@
       "t": "3:00 PM ET",
       "v": "bcplace",
       "venueName": "BC Place",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "12:00 PM PT",
       "localTZ": "PT",
-      "g": "B"
+      "g": "B",
+      "homeScore": 2,
+      "awayScore": 1
     },
     {
       "espnId": "760464",
@@ -755,10 +759,12 @@
       "t": "6:00 PM ET",
       "v": "mercedes",
       "venueName": "Mercedes-Benz Stadium",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "6:00 PM ET",
       "localTZ": "ET",
-      "g": "C"
+      "g": "C",
+      "homeScore": 4,
+      "awayScore": 2
     },
     {
       "espnId": "760465",
@@ -768,10 +774,12 @@
       "t": "6:00 PM ET",
       "v": "hardrock",
       "venueName": "Hard Rock Stadium",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "6:00 PM ET",
       "localTZ": "ET",
-      "g": "C"
+      "g": "C",
+      "homeScore": 0,
+      "awayScore": 3
     },
     {
       "espnId": "760467",
@@ -781,10 +789,12 @@
       "t": "9:00 PM ET",
       "v": "azteca",
       "venueName": "Estadio Banorte",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "7:00 PM CT",
       "localTZ": "CT",
-      "g": "A"
+      "g": "A",
+      "homeScore": 0,
+      "awayScore": 3
     },
     {
       "espnId": "760466",
@@ -794,10 +804,12 @@
       "t": "9:00 PM ET",
       "v": "bbva",
       "venueName": "Estadio BBVA",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "7:00 PM CT",
       "localTZ": "CT",
-      "g": "A"
+      "g": "A",
+      "homeScore": 1,
+      "awayScore": 0
     },
     {
       "espnId": "760473",
@@ -1035,8 +1047,8 @@
     },
     {
       "espnId": "760486",
-      "h": "Group A 2nd Place",
-      "a": "Group B 2nd Place",
+      "h": "South Africa",
+      "a": "Canada",
       "d": "2026-06-28",
       "t": "3:00 PM ET",
       "v": "sofi",
@@ -1047,7 +1059,7 @@
     },
     {
       "espnId": "760487",
-      "h": "Group C Winner",
+      "h": "Brazil",
       "a": "Group F 2nd Place",
       "d": "2026-06-29",
       "t": "1:00 PM ET",
@@ -1072,7 +1084,7 @@
     {
       "espnId": "760488",
       "h": "Group F Winner",
-      "a": "Group C 2nd Place",
+      "a": "Morocco",
       "d": "2026-06-29",
       "t": "9:00 PM ET",
       "v": "bbva",
@@ -1179,7 +1191,7 @@
     },
     {
       "espnId": "760498",
-      "h": "Group B Winner",
+      "h": "Switzerland",
       "a": "Third Place Group E/F/G/I/J",
       "d": "2026-07-02",
       "t": "11:00 PM ET",
