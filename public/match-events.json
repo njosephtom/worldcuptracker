@@ -3101,6 +3101,172 @@
       }
     ]
   },
+  "50": {
+    "homeScore": 4,
+    "awayScore": 2,
+    "homeTeamId": "2869",
+    "awayTeamId": "2654",
+    "events": [
+      {
+        "minute": "10'",
+        "player": "Y. Bounou",
+        "teamId": "2654",
+        "goal": true,
+        "ownGoal": true,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "39'",
+        "player": "A. Hakimi",
+        "teamId": "2869",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "43'",
+        "player": "W. Isidor",
+        "teamId": "2654",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "45'+1'",
+        "player": "I. Saibari",
+        "teamId": "2869",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "78'",
+        "player": "S. Rahimi",
+        "teamId": "2869",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "79'",
+        "player": "J. Placide",
+        "teamId": "2654",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "80'",
+        "player": "D. Nazon",
+        "teamId": "2654",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "89'",
+        "player": "G. Yassine",
+        "teamId": "2869",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "90'+3'",
+        "player": "J. Casimir",
+        "teamId": "2654",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
+  "51": {
+    "homeScore": 0,
+    "awayScore": 3,
+    "homeTeamId": "580",
+    "awayTeamId": "205",
+    "events": [
+      {
+        "minute": "7'",
+        "player": "Vinícius Júnior",
+        "teamId": "205",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "45'+3'",
+        "player": "Vinícius Júnior",
+        "teamId": "205",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "60'",
+        "player": "M. Cunha",
+        "teamId": "205",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "62'",
+        "player": "Danilo",
+        "teamId": "205",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "82'",
+        "player": "Fabinho",
+        "teamId": "205",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "89'",
+        "player": "R. Christie",
+        "teamId": "580",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
   "104": {
     "homeScore": 0,
     "awayScore": 4,
@@ -3149,5 +3315,5 @@
       }
     ]
   },
-  "updated": "2026-06-24T23:50:57.466Z"
+  "updated": "2026-06-25T00:29:54.019Z"
 }
