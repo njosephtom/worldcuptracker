@@ -582,6 +582,28 @@
     "attempts": 1,
     "searchQuery": "[global] South Korea vs South Africa Full Highlights FIFA World Cup 2026"
   },
+  "54": {
+    "videoId": "dEKDIFwTfVo",
+    "title": "Curacao vs Ivory Coast 0-2 Highlights | All Goals | Full Match Highlights | FIFA World Cup 2026",
+    "thumbnail": "https://i.ytimg.com/vi/dEKDIFwTfVo/hqdefault.jpg",
+    "channelTitle": "moneycontrol",
+    "status": "found",
+    "fetchedAt": "2026-06-25T23:31:18.037Z",
+    "lastAttemptAt": "2026-06-25T23:31:18.037Z",
+    "attempts": 1,
+    "searchQuery": "[global] Curaçao vs Cote d'Ivoire Full Highlights FIFA World Cup 2026"
+  },
+  "55": {
+    "videoId": "L4AmC_L4Cdw",
+    "title": "Ecuador vs Germany Extended Highlights 🌎🏆 2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/L4AmC_L4Cdw/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-25T23:31:18.037Z",
+    "lastAttemptAt": "2026-06-25T23:31:18.037Z",
+    "attempts": 1,
+    "searchQuery": "[global] Ecuador vs Germany Full Highlights FIFA World Cup 2026"
+  },
   "104": {
     "videoId": "3ESRyAZNh5A",
     "title": "Tunisia vs. Japan Full Highlights | FIFA World Cup 2026",
@@ -594,9 +616,9 @@
     "searchQuery": "[TSN] Tunisia vs. Japan Full Highlights | FIFA World Cup 2026"
   },
   "_meta": {
-    "updatedAt": "2026-06-25T21:34:30.645Z",
-    "totalFound": 54,
+    "updatedAt": "2026-06-25T23:31:18.037Z",
+    "totalFound": 56,
     "totalPending": 0,
-    "quotaUsed": 1
+    "quotaUsed": 1001
   }
 }
