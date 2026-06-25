@@ -3267,6 +3267,92 @@
       }
     ]
   },
+  "52": {
+    "homeScore": 0,
+    "awayScore": 3,
+    "homeTeamId": "450",
+    "awayTeamId": "203",
+    "events": [
+      {
+        "minute": "55'",
+        "player": "M. Chávez",
+        "teamId": "203",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "61'",
+        "player": "J. Quiñones",
+        "teamId": "203",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "64'",
+        "player": "E. Álvarez",
+        "teamId": "203",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "90'+4'",
+        "player": "Á. Fidalgo",
+        "teamId": "203",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      }
+    ]
+  },
+  "53": {
+    "homeScore": 0,
+    "awayScore": 1,
+    "homeTeamId": "451",
+    "awayTeamId": "467",
+    "events": [
+      {
+        "minute": "63'",
+        "player": "T. Maseko",
+        "teamId": "467",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "73'",
+        "player": "A. Modiba",
+        "teamId": "467",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "79'",
+        "player": "C. Gue-Sung",
+        "teamId": "451",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
   "104": {
     "homeScore": 0,
     "awayScore": 4,
@@ -3315,5 +3401,5 @@
       }
     ]
   },
-  "updated": "2026-06-25T02:18:38.949Z"
+  "updated": "2026-06-25T03:44:10.100Z"
 }
