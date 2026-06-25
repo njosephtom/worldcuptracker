@@ -3353,6 +3353,142 @@
       }
     ]
   },
+  "54": {
+    "homeScore": 0,
+    "awayScore": 2,
+    "homeTeamId": "11678",
+    "awayTeamId": "4789",
+    "events": [
+      {
+        "minute": "7'",
+        "player": "N. Pépé",
+        "teamId": "4789",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "35'",
+        "player": "N. Pépé",
+        "teamId": "4789",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "64'",
+        "player": "N. Pépé",
+        "teamId": "4789",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "75'",
+        "player": "J. Bacuna",
+        "teamId": "11678",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "83'",
+        "player": "G. Kastaneer",
+        "teamId": "11678",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
+  "55": {
+    "homeScore": 2,
+    "awayScore": 1,
+    "homeTeamId": "209",
+    "awayTeamId": "481",
+    "events": [
+      {
+        "minute": "2'",
+        "player": "L. Sané",
+        "teamId": "481",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "9'",
+        "player": "N. Angulo",
+        "teamId": "209",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "43'",
+        "player": "P. Hincapié",
+        "teamId": "209",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "44'",
+        "player": "A. Pavlovic",
+        "teamId": "481",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "50'",
+        "player": "A. Franco",
+        "teamId": "209",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "77'",
+        "player": "G. Plata",
+        "teamId": "209",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "89'",
+        "player": "G. Plata",
+        "teamId": "209",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
   "104": {
     "homeScore": 0,
     "awayScore": 4,
@@ -3401,5 +3537,5 @@
       }
     ]
   },
-  "updated": "2026-06-25T21:30:52.027Z"
+  "updated": "2026-06-25T22:28:28.086Z"
 }
