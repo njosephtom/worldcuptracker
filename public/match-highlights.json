@@ -538,6 +538,28 @@
     "attempts": 1,
     "searchQuery": "[global] Switzerland vs Canada Full Highlights FIFA World Cup 2026"
   },
+  "50": {
+    "videoId": "f_sD-LWRZNg",
+    "title": "Morocco vs Haiti Full Match Highlights | Morocco 4-2 Haiti | FIFA World Cup 2026",
+    "thumbnail": "https://i.ytimg.com/vi/f_sD-LWRZNg/hqdefault.jpg",
+    "channelTitle": "Cricup24",
+    "status": "found",
+    "fetchedAt": "2026-06-25T01:44:20.556Z",
+    "lastAttemptAt": "2026-06-25T01:44:20.556Z",
+    "attempts": 1,
+    "searchQuery": "[global] Morocco vs Haiti Full Highlights FIFA World Cup 2026"
+  },
+  "51": {
+    "videoId": "fWN13Oe4kA0",
+    "title": "Scotland vs Brazil Extended Highlights 🌎🏆 2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/fWN13Oe4kA0/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-25T01:44:20.556Z",
+    "lastAttemptAt": "2026-06-25T01:44:20.556Z",
+    "attempts": 1,
+    "searchQuery": "[global] Scotland vs Brazil Full Highlights FIFA World Cup 2026"
+  },
   "104": {
     "videoId": "3ESRyAZNh5A",
     "title": "Tunisia vs. Japan Full Highlights | FIFA World Cup 2026",
@@ -550,9 +572,9 @@
     "searchQuery": "[TSN] Tunisia vs. Japan Full Highlights | FIFA World Cup 2026"
   },
   "_meta": {
-    "updatedAt": "2026-06-24T23:27:46.116Z",
-    "totalFound": 50,
+    "updatedAt": "2026-06-25T01:44:20.556Z",
+    "totalFound": 52,
     "totalPending": 0,
-    "quotaUsed": 1
+    "quotaUsed": 1001
   }
 }
