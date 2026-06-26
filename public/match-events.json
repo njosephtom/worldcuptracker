@@ -3595,6 +3595,102 @@
       }
     ]
   },
+  "58": {
+    "homeScore": 0,
+    "awayScore": 0,
+    "homeTeamId": "210",
+    "awayTeamId": "628",
+    "events": [
+      {
+        "minute": "46'",
+        "player": "J. Irvine",
+        "teamId": "628",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "77'",
+        "player": "D. Gómez",
+        "teamId": "210",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
+  "59": {
+    "homeScore": 3,
+    "awayScore": 2,
+    "homeTeamId": "465",
+    "awayTeamId": "660",
+    "events": [
+      {
+        "minute": "3'",
+        "player": "A. Trusty",
+        "teamId": "660",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "10'",
+        "player": "A. Güler",
+        "teamId": "465",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "19'",
+        "player": "S. Berhalter",
+        "teamId": "660",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "31'",
+        "player": "B. Yilmaz",
+        "teamId": "465",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "49'",
+        "player": "S. Berhalter",
+        "teamId": "660",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "90'+8'",
+        "player": "K. Ayhan",
+        "teamId": "465",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      }
+    ]
+  },
   "104": {
     "homeScore": 0,
     "awayScore": 4,
@@ -3643,5 +3739,5 @@
       }
     ]
   },
-  "updated": "2026-06-26T03:02:48.861Z"
+  "updated": "2026-06-26T04:54:27.345Z"
 }
