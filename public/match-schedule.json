@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-25T18:48:34.871Z",
+  "updated": "2026-06-26T18:40:14.659Z",
   "matches": [
     {
       "espnId": "760415",
@@ -819,10 +819,12 @@
       "t": "4:00 PM ET",
       "v": "lincoln",
       "venueName": "Lincoln Financial Field",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "4:00 PM ET",
       "localTZ": "ET",
-      "g": "E"
+      "g": "E",
+      "homeScore": 0,
+      "awayScore": 2
     },
     {
       "espnId": "760468",
@@ -832,10 +834,12 @@
       "t": "4:00 PM ET",
       "v": "metlife",
       "venueName": "MetLife Stadium",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "4:00 PM ET",
       "localTZ": "ET",
-      "g": "E"
+      "g": "E",
+      "homeScore": 2,
+      "awayScore": 1
     },
     {
       "espnId": "760471",
@@ -845,10 +849,12 @@
       "t": "7:00 PM ET",
       "v": "att",
       "venueName": "AT&T Stadium",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "6:00 PM CT",
       "localTZ": "CT",
-      "g": "F"
+      "g": "F",
+      "homeScore": 1,
+      "awayScore": 1
     },
     {
       "espnId": "760472",
@@ -858,10 +864,12 @@
       "t": "7:00 PM ET",
       "v": "arrowhead",
       "venueName": "GEHA Field at Arrowhead Stadium",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "6:00 PM CT",
       "localTZ": "CT",
-      "g": "F"
+      "g": "F",
+      "homeScore": 1,
+      "awayScore": 3
     },
     {
       "espnId": "760469",
@@ -871,10 +879,12 @@
       "t": "10:00 PM ET",
       "v": "levis",
       "venueName": "Levi's Stadium",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "7:00 PM PT",
       "localTZ": "PT",
-      "g": "D"
+      "g": "D",
+      "homeScore": 0,
+      "awayScore": 0
     },
     {
       "espnId": "760470",
@@ -884,10 +894,12 @@
       "t": "10:00 PM ET",
       "v": "sofi",
       "venueName": "SoFi Stadium",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "7:00 PM PT",
       "localTZ": "PT",
-      "g": "D"
+      "g": "D",
+      "homeScore": 3,
+      "awayScore": 2
     },
     {
       "espnId": "760475",
@@ -1055,19 +1067,21 @@
       "venueName": "SoFi Stadium",
       "status": "upcoming",
       "localTime": "12:00 PM PT",
-      "localTZ": "PT"
+      "localTZ": "PT",
+      "round": "R32"
     },
     {
       "espnId": "760487",
       "h": "Brazil",
-      "a": "Group F 2nd Place",
+      "a": "Japan",
       "d": "2026-06-29",
       "t": "1:00 PM ET",
       "v": "nrg",
       "venueName": "NRG Stadium",
       "status": "upcoming",
       "localTime": "12:00 PM CT",
-      "localTZ": "CT"
+      "localTZ": "CT",
+      "round": "R32"
     },
     {
       "espnId": "760489",
@@ -1079,11 +1093,12 @@
       "venueName": "Gillette Stadium",
       "status": "upcoming",
       "localTime": "4:30 PM ET",
-      "localTZ": "ET"
+      "localTZ": "ET",
+      "round": "R32"
     },
     {
       "espnId": "760488",
-      "h": "Group F Winner",
+      "h": "Netherlands",
       "a": "Morocco",
       "d": "2026-06-29",
       "t": "9:00 PM ET",
@@ -1091,11 +1106,12 @@
       "venueName": "Estadio BBVA",
       "status": "upcoming",
       "localTime": "7:00 PM CT",
-      "localTZ": "CT"
+      "localTZ": "CT",
+      "round": "R32"
     },
     {
       "espnId": "760490",
-      "h": "Group E 2nd Place",
+      "h": "Ivory Coast",
       "a": "Group I 2nd Place",
       "d": "2026-06-30",
       "t": "1:00 PM ET",
@@ -1103,7 +1119,8 @@
       "venueName": "AT&T Stadium",
       "status": "upcoming",
       "localTime": "12:00 PM CT",
-      "localTZ": "CT"
+      "localTZ": "CT",
+      "round": "R32"
     },
     {
       "espnId": "760492",
@@ -1115,7 +1132,8 @@
       "venueName": "MetLife Stadium",
       "status": "upcoming",
       "localTime": "5:00 PM ET",
-      "localTZ": "ET"
+      "localTZ": "ET",
+      "round": "R32"
     },
     {
       "espnId": "760491",
@@ -1127,7 +1145,8 @@
       "venueName": "Estadio Banorte",
       "status": "upcoming",
       "localTime": "7:00 PM CT",
-      "localTZ": "CT"
+      "localTZ": "CT",
+      "round": "R32"
     },
     {
       "espnId": "760495",
@@ -1139,7 +1158,8 @@
       "venueName": "Mercedes-Benz Stadium",
       "status": "upcoming",
       "localTime": "12:00 PM ET",
-      "localTZ": "ET"
+      "localTZ": "ET",
+      "round": "R32"
     },
     {
       "espnId": "760493",
@@ -1151,19 +1171,21 @@
       "venueName": "Lumen Field",
       "status": "upcoming",
       "localTime": "1:00 PM PT",
-      "localTZ": "PT"
+      "localTZ": "PT",
+      "round": "R32"
     },
     {
       "espnId": "760494",
       "h": "United States",
-      "a": "Third Place Group B/E/F/I/J",
+      "a": "Bosnia and Herzegovina",
       "d": "2026-07-01",
       "t": "8:00 PM ET",
       "v": "levis",
       "venueName": "Levi's Stadium",
       "status": "upcoming",
       "localTime": "5:00 PM PT",
-      "localTZ": "PT"
+      "localTZ": "PT",
+      "round": "R32"
     },
     {
       "espnId": "760497",
@@ -1175,7 +1197,8 @@
       "venueName": "SoFi Stadium",
       "status": "upcoming",
       "localTime": "12:00 PM PT",
-      "localTZ": "PT"
+      "localTZ": "PT",
+      "round": "R32"
     },
     {
       "espnId": "760496",
@@ -1187,7 +1210,8 @@
       "venueName": "BMO Field",
       "status": "upcoming",
       "localTime": "7:00 PM ET",
-      "localTZ": "ET"
+      "localTZ": "ET",
+      "round": "R32"
     },
     {
       "espnId": "760498",
@@ -1199,11 +1223,12 @@
       "venueName": "BC Place",
       "status": "upcoming",
       "localTime": "8:00 PM PT",
-      "localTZ": "PT"
+      "localTZ": "PT",
+      "round": "R32"
     },
     {
       "espnId": "760499",
-      "h": "Group D 2nd Place",
+      "h": "Australia",
       "a": "Group G 2nd Place",
       "d": "2026-07-03",
       "t": "2:00 PM ET",
@@ -1211,7 +1236,8 @@
       "venueName": "AT&T Stadium",
       "status": "upcoming",
       "localTime": "1:00 PM CT",
-      "localTZ": "CT"
+      "localTZ": "CT",
+      "round": "R32"
     },
     {
       "espnId": "760500",
@@ -1223,7 +1249,8 @@
       "venueName": "Hard Rock Stadium",
       "status": "upcoming",
       "localTime": "6:00 PM ET",
-      "localTZ": "ET"
+      "localTZ": "ET",
+      "round": "R32"
     },
     {
       "espnId": "760501",
@@ -1235,7 +1262,8 @@
       "venueName": "GEHA Field at Arrowhead Stadium",
       "status": "upcoming",
       "localTime": "8:30 PM CT",
-      "localTZ": "CT"
+      "localTZ": "CT",
+      "round": "R32"
     },
     {
       "espnId": "760502",
@@ -1247,7 +1275,8 @@
       "venueName": "NRG Stadium",
       "status": "upcoming",
       "localTime": "12:00 PM CT",
-      "localTZ": "CT"
+      "localTZ": "CT",
+      "round": "R16"
     },
     {
       "espnId": "760503",
@@ -1259,7 +1288,8 @@
       "venueName": "Lincoln Financial Field",
       "status": "upcoming",
       "localTime": "5:00 PM ET",
-      "localTZ": "ET"
+      "localTZ": "ET",
+      "round": "R16"
     },
     {
       "espnId": "760504",
@@ -1271,7 +1301,8 @@
       "venueName": "MetLife Stadium",
       "status": "upcoming",
       "localTime": "4:00 PM ET",
-      "localTZ": "ET"
+      "localTZ": "ET",
+      "round": "R16"
     },
     {
       "espnId": "760505",
@@ -1283,7 +1314,8 @@
       "venueName": "Estadio Banorte",
       "status": "upcoming",
       "localTime": "6:00 PM CT",
-      "localTZ": "CT"
+      "localTZ": "CT",
+      "round": "R16"
     },
     {
       "espnId": "760506",
@@ -1295,7 +1327,8 @@
       "venueName": "AT&T Stadium",
       "status": "upcoming",
       "localTime": "2:00 PM CT",
-      "localTZ": "CT"
+      "localTZ": "CT",
+      "round": "R16"
     },
     {
       "espnId": "760507",
@@ -1307,7 +1340,8 @@
       "venueName": "Lumen Field",
       "status": "upcoming",
       "localTime": "5:00 PM PT",
-      "localTZ": "PT"
+      "localTZ": "PT",
+      "round": "R16"
     },
     {
       "espnId": "760509",
@@ -1319,7 +1353,8 @@
       "venueName": "Mercedes-Benz Stadium",
       "status": "upcoming",
       "localTime": "12:00 PM ET",
-      "localTZ": "ET"
+      "localTZ": "ET",
+      "round": "R16"
     },
     {
       "espnId": "760508",
@@ -1331,7 +1366,8 @@
       "venueName": "BC Place",
       "status": "upcoming",
       "localTime": "1:00 PM PT",
-      "localTZ": "PT"
+      "localTZ": "PT",
+      "round": "R16"
     },
     {
       "espnId": "760510",
@@ -1343,7 +1379,8 @@
       "venueName": "Gillette Stadium",
       "status": "upcoming",
       "localTime": "4:00 PM ET",
-      "localTZ": "ET"
+      "localTZ": "ET",
+      "round": "QF"
     },
     {
       "espnId": "760511",
@@ -1355,7 +1392,8 @@
       "venueName": "SoFi Stadium",
       "status": "upcoming",
       "localTime": "12:00 PM PT",
-      "localTZ": "PT"
+      "localTZ": "PT",
+      "round": "QF"
     },
     {
       "espnId": "760512",
@@ -1367,7 +1405,8 @@
       "venueName": "Hard Rock Stadium",
       "status": "upcoming",
       "localTime": "5:00 PM ET",
-      "localTZ": "ET"
+      "localTZ": "ET",
+      "round": "QF"
     },
     {
       "espnId": "760513",
@@ -1379,7 +1418,8 @@
       "venueName": "GEHA Field at Arrowhead Stadium",
       "status": "upcoming",
       "localTime": "8:00 PM CT",
-      "localTZ": "CT"
+      "localTZ": "CT",
+      "round": "QF"
     },
     {
       "espnId": "760514",
@@ -1391,7 +1431,8 @@
       "venueName": "AT&T Stadium",
       "status": "upcoming",
       "localTime": "2:00 PM CT",
-      "localTZ": "CT"
+      "localTZ": "CT",
+      "round": "SF"
     },
     {
       "espnId": "760515",
@@ -1403,7 +1444,8 @@
       "venueName": "Mercedes-Benz Stadium",
       "status": "upcoming",
       "localTime": "3:00 PM ET",
-      "localTZ": "ET"
+      "localTZ": "ET",
+      "round": "SF"
     },
     {
       "espnId": "760516",
@@ -1427,7 +1469,8 @@
       "venueName": "MetLife Stadium",
       "status": "upcoming",
       "localTime": "3:00 PM ET",
-      "localTZ": "ET"
+      "localTZ": "ET",
+      "round": "Final"
     }
   ]
 }
