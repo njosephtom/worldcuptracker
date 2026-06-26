@@ -648,6 +648,28 @@
     "attempts": 1,
     "searchQuery": "[global] Turkey vs USA Full Highlights FIFA World Cup 2026"
   },
+  "60": {
+    "videoId": "VB1B9bkj2xc",
+    "title": "Norway vs France Extended Highlights 🌎🏆 2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/VB1B9bkj2xc/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-26T21:31:49.794Z",
+    "lastAttemptAt": "2026-06-26T21:31:49.794Z",
+    "attempts": 1,
+    "searchQuery": "[global] Norway vs France Full Highlights FIFA World Cup 2026"
+  },
+  "61": {
+    "videoId": "bqTAOW7MYAE",
+    "title": "WATCH FIFA World Cup 2026 | Senegal vs Iraq | Crucial Group I match awaits both teams | LIVE",
+    "thumbnail": "https://i.ytimg.com/vi/bqTAOW7MYAE/hqdefault.jpg",
+    "channelTitle": "The Daily Guardian",
+    "status": "found",
+    "fetchedAt": "2026-06-26T21:31:49.794Z",
+    "lastAttemptAt": "2026-06-26T21:31:49.794Z",
+    "attempts": 1,
+    "searchQuery": "[global] Iraq vs Senegal Full Highlights FIFA World Cup 2026"
+  },
   "104": {
     "videoId": "3ESRyAZNh5A",
     "title": "Tunisia vs. Japan Full Highlights | FIFA World Cup 2026",
@@ -660,9 +682,9 @@
     "searchQuery": "[TSN] Tunisia vs. Japan Full Highlights | FIFA World Cup 2026"
   },
   "_meta": {
-    "updatedAt": "2026-06-26T19:34:50.314Z",
-    "totalFound": 60,
+    "updatedAt": "2026-06-26T21:31:49.794Z",
+    "totalFound": 62,
     "totalPending": 0,
-    "quotaUsed": 1
+    "quotaUsed": 1001
   }
 }
