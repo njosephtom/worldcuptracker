@@ -604,6 +604,28 @@
     "attempts": 1,
     "searchQuery": "[global] Ecuador vs Germany Full Highlights FIFA World Cup 2026"
   },
+  "56": {
+    "videoId": "upG5ae3uO_0",
+    "title": "Japan vs Sweden 1-1 Highlights | Nakamura Keito | FIFA World Cup 2026 Full Match Highlights",
+    "thumbnail": "https://i.ytimg.com/vi/upG5ae3uO_0/hqdefault.jpg",
+    "channelTitle": "It’s Lavender",
+    "status": "found",
+    "fetchedAt": "2026-06-26T01:46:20.612Z",
+    "lastAttemptAt": "2026-06-26T01:46:20.612Z",
+    "attempts": 1,
+    "searchQuery": "[global] Japan vs Sweden Full Highlights FIFA World Cup 2026"
+  },
+  "57": {
+    "videoId": "o0AmHN-XnOs",
+    "title": "Tunisia vs Netherlands Extended Highlights 🌎🏆 2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/o0AmHN-XnOs/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-26T01:46:20.612Z",
+    "lastAttemptAt": "2026-06-26T01:46:20.612Z",
+    "attempts": 1,
+    "searchQuery": "[global] Tunisia vs Netherlands Full Highlights FIFA World Cup 2026"
+  },
   "104": {
     "videoId": "3ESRyAZNh5A",
     "title": "Tunisia vs. Japan Full Highlights | FIFA World Cup 2026",
@@ -616,8 +638,8 @@
     "searchQuery": "[TSN] Tunisia vs. Japan Full Highlights | FIFA World Cup 2026"
   },
   "_meta": {
-    "updatedAt": "2026-06-25T23:31:18.037Z",
-    "totalFound": 56,
+    "updatedAt": "2026-06-26T01:46:20.612Z",
+    "totalFound": 58,
     "totalPending": 0,
     "quotaUsed": 1001
   }
