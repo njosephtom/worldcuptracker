@@ -626,6 +626,28 @@
     "attempts": 1,
     "searchQuery": "[global] Tunisia vs Netherlands Full Highlights FIFA World Cup 2026"
   },
+  "58": {
+    "videoId": "NdgZtyReLbY",
+    "title": "Paraguay vs Australia Extended Highlights 🌎🏆  2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/NdgZtyReLbY/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-26T06:25:39.616Z",
+    "lastAttemptAt": "2026-06-26T06:25:39.616Z",
+    "attempts": 1,
+    "searchQuery": "[global] Paraguay vs Australia Full Highlights FIFA World Cup 2026"
+  },
+  "59": {
+    "videoId": "7JJLMyKBG90",
+    "title": "Türkiye vs United States Extended Highlights 🌎🏆 2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/7JJLMyKBG90/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-26T06:25:39.616Z",
+    "lastAttemptAt": "2026-06-26T06:25:39.616Z",
+    "attempts": 1,
+    "searchQuery": "[global] Turkey vs USA Full Highlights FIFA World Cup 2026"
+  },
   "104": {
     "videoId": "3ESRyAZNh5A",
     "title": "Tunisia vs. Japan Full Highlights | FIFA World Cup 2026",
@@ -638,9 +660,9 @@
     "searchQuery": "[TSN] Tunisia vs. Japan Full Highlights | FIFA World Cup 2026"
   },
   "_meta": {
-    "updatedAt": "2026-06-26T04:30:42.861Z",
-    "totalFound": 58,
+    "updatedAt": "2026-06-26T06:25:39.616Z",
+    "totalFound": 60,
     "totalPending": 0,
-    "quotaUsed": 1
+    "quotaUsed": 1001
   }
 }
