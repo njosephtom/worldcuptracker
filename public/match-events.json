@@ -3691,6 +3691,192 @@
       }
     ]
   },
+  "60": {
+    "homeScore": 1,
+    "awayScore": 4,
+    "homeTeamId": "464",
+    "awayTeamId": "478",
+    "events": [
+      {
+        "minute": "7'",
+        "player": "O. Dembélé",
+        "teamId": "478",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "10'",
+        "player": "P. Berg",
+        "teamId": "464",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "20'",
+        "player": "O. Dembélé",
+        "teamId": "478",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "21'",
+        "player": "T. Aasgaard",
+        "teamId": "464",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "32'",
+        "player": "O. Dembélé",
+        "teamId": "478",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "74'",
+        "player": "A. Tchouaméni",
+        "teamId": "478",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "90'+4'",
+        "player": "D. Doué",
+        "teamId": "478",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      }
+    ]
+  },
+  "61": {
+    "homeScore": 0,
+    "awayScore": 5,
+    "homeTeamId": "4375",
+    "awayTeamId": "654",
+    "events": [
+      {
+        "minute": "4'",
+        "player": "H. Diarra",
+        "teamId": "654",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "13'",
+        "player": "R. Sulaka",
+        "teamId": "4375",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": true
+      },
+      {
+        "minute": "18'",
+        "player": "A. Seck",
+        "teamId": "654",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "56'",
+        "player": "I. Sarr",
+        "teamId": "654",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "59'",
+        "player": "P. Gueye",
+        "teamId": "654",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "71'",
+        "player": "P. Gueye",
+        "teamId": "654",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "75'",
+        "player": "A. Al-Ammari",
+        "teamId": "4375",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "81'",
+        "player": "P. Gueye",
+        "teamId": "654",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "82'",
+        "player": "I. Ndiaye",
+        "teamId": "654",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "90'",
+        "player": "M. Doski",
+        "teamId": "4375",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
   "104": {
     "homeScore": 0,
     "awayScore": 4,
@@ -3739,5 +3925,5 @@
       }
     ]
   },
-  "updated": "2026-06-26T20:31:39.874Z"
+  "updated": "2026-06-26T21:27:36.935Z"
 }
