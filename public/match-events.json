@@ -3489,6 +3489,112 @@
       }
     ]
   },
+  "56": {
+    "homeScore": 1,
+    "awayScore": 1,
+    "homeTeamId": "627",
+    "awayTeamId": "466",
+    "events": [
+      {
+        "minute": "32'",
+        "player": "I. Hien",
+        "teamId": "466",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "56'",
+        "player": "D. Maeda",
+        "teamId": "627",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "62'",
+        "player": "A. Elanga",
+        "teamId": "466",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "77'",
+        "player": "S. Taniguchi",
+        "teamId": "627",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "85'",
+        "player": "V. Gyökeres",
+        "teamId": "466",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
+  "57": {
+    "homeScore": 1,
+    "awayScore": 3,
+    "homeTeamId": "659",
+    "awayTeamId": "449",
+    "events": [
+      {
+        "minute": "3'",
+        "player": "E. Skhiri",
+        "teamId": "449",
+        "goal": true,
+        "ownGoal": true,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "7'",
+        "player": "B. Brobbey",
+        "teamId": "449",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "54'",
+        "player": "H. Mastouri",
+        "teamId": "659",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "62'",
+        "player": "J. van Hecke",
+        "teamId": "449",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      }
+    ]
+  },
   "104": {
     "homeScore": 0,
     "awayScore": 4,
@@ -3537,5 +3643,5 @@
       }
     ]
   },
-  "updated": "2026-06-26T00:38:33.454Z"
+  "updated": "2026-06-26T01:40:42.503Z"
 }
