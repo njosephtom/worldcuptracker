@@ -3877,6 +3877,122 @@
       }
     ]
   },
+  "62": {
+    "homeScore": 0,
+    "awayScore": 0,
+    "homeTeamId": "2597",
+    "awayTeamId": "655",
+    "events": [
+      {
+        "minute": "4'",
+        "player": "S. Abdulhamid",
+        "teamId": "655",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "9'",
+        "player": "W. Pina",
+        "teamId": "2597",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "67'",
+        "player": "N. Al-Dawsari",
+        "teamId": "655",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "90'+3'",
+        "player": "F. Al-Brikan",
+        "teamId": "655",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
+  "63": {
+    "homeScore": 0,
+    "awayScore": 1,
+    "homeTeamId": "212",
+    "awayTeamId": "164",
+    "events": [
+      {
+        "minute": "42'",
+        "player": "Á. Baena",
+        "teamId": "164",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "46'",
+        "player": "Á. Baena",
+        "teamId": "164",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "54'",
+        "player": "J. Sanabria",
+        "teamId": "212",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "58'",
+        "player": "G. Varela",
+        "teamId": "212",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "90'+3'",
+        "player": "N. de la Cruz",
+        "teamId": "212",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "90'+5'",
+        "player": "A. Canobbio",
+        "teamId": "212",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": true
+      }
+    ]
+  },
   "104": {
     "homeScore": 0,
     "awayScore": 4,
@@ -3925,5 +4041,5 @@
       }
     ]
   },
-  "updated": "2026-06-27T01:22:46.167Z"
+  "updated": "2026-06-27T02:17:06.284Z"
 }
