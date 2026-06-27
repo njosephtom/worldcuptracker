@@ -4179,6 +4179,122 @@
       }
     ]
   },
+  "66": {
+    "homeScore": 1,
+    "awayScore": 2,
+    "homeTeamId": "4469",
+    "awayTeamId": "477",
+    "events": [
+      {
+        "minute": "31'",
+        "player": "P. Sucic",
+        "teamId": "477",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "68'",
+        "player": "I. Perisic",
+        "teamId": "477",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "73'",
+        "player": "D. Luckassen",
+        "teamId": "4469",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "83'",
+        "player": "N. Vlasic",
+        "teamId": "477",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "90'+4'",
+        "player": "K. Oppong",
+        "teamId": "4469",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
+  "67": {
+    "homeScore": 0,
+    "awayScore": 2,
+    "homeTeamId": "2659",
+    "awayTeamId": "448",
+    "events": [
+      {
+        "minute": "53'",
+        "player": "J. Fajardo",
+        "teamId": "2659",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "60'",
+        "player": "J. Quansah",
+        "teamId": "448",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "62'",
+        "player": "J. Bellingham",
+        "teamId": "448",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "67'",
+        "player": "H. Kane",
+        "teamId": "448",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "84'",
+        "player": "A. Andrade",
+        "teamId": "2659",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
   "104": {
     "homeScore": 0,
     "awayScore": 4,
@@ -4227,5 +4343,5 @@
       }
     ]
   },
-  "updated": "2026-06-27T22:47:18.085Z"
+  "updated": "2026-06-27T23:20:46.544Z"
 }
