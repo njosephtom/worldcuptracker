@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-26T18:40:14.659Z",
+  "updated": "2026-06-27T18:28:31.671Z",
   "matches": [
     {
       "espnId": "760415",
@@ -909,10 +909,12 @@
       "t": "3:00 PM ET",
       "v": "gillette",
       "venueName": "Gillette Stadium",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "3:00 PM ET",
       "localTZ": "ET",
-      "g": "I"
+      "g": "I",
+      "homeScore": 1,
+      "awayScore": 4
     },
     {
       "espnId": "760474",
@@ -922,10 +924,12 @@
       "t": "3:00 PM ET",
       "v": "bmo",
       "venueName": "BMO Field",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "3:00 PM ET",
       "localTZ": "ET",
-      "g": "I"
+      "g": "I",
+      "homeScore": 5,
+      "awayScore": 0
     },
     {
       "espnId": "760478",
@@ -935,10 +939,12 @@
       "t": "8:00 PM ET",
       "v": "nrg",
       "venueName": "NRG Stadium",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "7:00 PM CT",
       "localTZ": "CT",
-      "g": "H"
+      "g": "H",
+      "homeScore": 0,
+      "awayScore": 0
     },
     {
       "espnId": "760479",
@@ -948,10 +954,12 @@
       "t": "8:00 PM ET",
       "v": "akron",
       "venueName": "Estadio Akron",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "6:00 PM CT",
       "localTZ": "CT",
-      "g": "H"
+      "g": "H",
+      "homeScore": 0,
+      "awayScore": 1
     },
     {
       "espnId": "760476",
@@ -961,10 +969,12 @@
       "t": "11:00 PM ET",
       "v": "lumen",
       "venueName": "Lumen Field",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "8:00 PM PT",
       "localTZ": "PT",
-      "g": "G"
+      "g": "G",
+      "homeScore": 1,
+      "awayScore": 1
     },
     {
       "espnId": "760477",
@@ -974,10 +984,12 @@
       "t": "11:00 PM ET",
       "v": "bcplace",
       "venueName": "BC Place",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "8:00 PM PT",
       "localTZ": "PT",
-      "g": "G"
+      "g": "G",
+      "homeScore": 1,
+      "awayScore": 5
     },
     {
       "espnId": "760480",
@@ -1086,7 +1098,7 @@
     {
       "espnId": "760489",
       "h": "Germany",
-      "a": "Third Place Group A/B/C/D/F",
+      "a": "Paraguay",
       "d": "2026-06-29",
       "t": "4:30 PM ET",
       "v": "gillette",
@@ -1112,7 +1124,7 @@
     {
       "espnId": "760490",
       "h": "Ivory Coast",
-      "a": "Group I 2nd Place",
+      "a": "Norway",
       "d": "2026-06-30",
       "t": "1:00 PM ET",
       "v": "att",
@@ -1124,8 +1136,8 @@
     },
     {
       "espnId": "760492",
-      "h": "Group I Winner",
-      "a": "Third Place Group C/D/F/G/H",
+      "h": "France",
+      "a": "Sweden",
       "d": "2026-06-30",
       "t": "5:00 PM ET",
       "v": "metlife",
@@ -1163,7 +1175,7 @@
     },
     {
       "espnId": "760493",
-      "h": "Group G Winner",
+      "h": "Belgium",
       "a": "Third Place Group A/E/H/I/J",
       "d": "2026-07-01",
       "t": "4:00 PM ET",
@@ -1189,7 +1201,7 @@
     },
     {
       "espnId": "760497",
-      "h": "Group H Winner",
+      "h": "Spain",
       "a": "Group J 2nd Place",
       "d": "2026-07-02",
       "t": "3:00 PM ET",
@@ -1229,7 +1241,7 @@
     {
       "espnId": "760499",
       "h": "Australia",
-      "a": "Group G 2nd Place",
+      "a": "Egypt",
       "d": "2026-07-03",
       "t": "2:00 PM ET",
       "v": "att",
@@ -1242,7 +1254,7 @@
     {
       "espnId": "760500",
       "h": "Argentina",
-      "a": "Group H 2nd Place",
+      "a": "Cape Verde",
       "d": "2026-07-03",
       "t": "6:00 PM ET",
       "v": "hardrock",
