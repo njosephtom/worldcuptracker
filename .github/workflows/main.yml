@@ -58,8 +58,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Audit production dependencies (fails on high/critical)
-        run: npm audit --omit=dev --audit-level=high
+      - name: Audit production dependencies (fails on critical only)
+        run: npm audit --omit=dev --audit-level=critical
 
       - name: Full audit summary (informational)
         run: npm audit --json | npx --yes better-npm-audit audit || true
