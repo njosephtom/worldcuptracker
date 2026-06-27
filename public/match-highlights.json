@@ -714,6 +714,28 @@
     "attempts": 1,
     "searchQuery": "[global] Belgium vs New Zealand Full Highlights FIFA World Cup 2026"
   },
+  "66": {
+    "videoId": "j4wJ3nGXuas",
+    "title": "Croatia vs Ghana Extended Highlights 🌎🏆 2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/j4wJ3nGXuas/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-27T23:24:38.230Z",
+    "lastAttemptAt": "2026-06-27T23:24:38.230Z",
+    "attempts": 1,
+    "searchQuery": "[global] Ghana vs Croatia Full Highlights FIFA World Cup 2026"
+  },
+  "67": {
+    "videoId": "JOPTAAFb3_s",
+    "title": "Panama vs England Extended Highlights 🌎🏆 2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/JOPTAAFb3_s/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-27T23:24:38.230Z",
+    "lastAttemptAt": "2026-06-27T23:24:38.230Z",
+    "attempts": 1,
+    "searchQuery": "[global] Panama vs England Full Highlights FIFA World Cup 2026"
+  },
   "104": {
     "videoId": "3ESRyAZNh5A",
     "title": "Tunisia vs. Japan Full Highlights | FIFA World Cup 2026",
@@ -726,9 +748,9 @@
     "searchQuery": "[TSN] Tunisia vs. Japan Full Highlights | FIFA World Cup 2026"
   },
   "_meta": {
-    "updatedAt": "2026-06-27T21:25:28.573Z",
-    "totalFound": 66,
+    "updatedAt": "2026-06-27T23:24:38.230Z",
+    "totalFound": 68,
     "totalPending": 0,
-    "quotaUsed": 1
+    "quotaUsed": 1001
   }
 }
