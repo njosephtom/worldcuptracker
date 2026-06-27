@@ -3993,6 +3993,192 @@
       }
     ]
   },
+  "64": {
+    "homeScore": 1,
+    "awayScore": 1,
+    "homeTeamId": "469",
+    "awayTeamId": "2620",
+    "events": [
+      {
+        "minute": "5'",
+        "player": "M. Saber",
+        "teamId": "2620",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "14'",
+        "player": "R. Rezaeian",
+        "teamId": "469",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "19'",
+        "player": "H. Kanani",
+        "teamId": "469",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "20'",
+        "player": "M. Saber",
+        "teamId": "2620",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "42'",
+        "player": "Y. Ibrahim",
+        "teamId": "2620",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "43'",
+        "player": "A. Nemati",
+        "teamId": "469",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "79'",
+        "player": "S. Ezatolahi",
+        "teamId": "469",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "90'+2'",
+        "player": "M. Lashin",
+        "teamId": "2620",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "90'+4'",
+        "player": "S. Khalilzadeh",
+        "teamId": "469",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      }
+    ]
+  },
+  "65": {
+    "homeScore": 5,
+    "awayScore": 1,
+    "homeTeamId": "459",
+    "awayTeamId": "2666",
+    "events": [
+      {
+        "minute": "28'",
+        "player": "L. Trossard",
+        "teamId": "459",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "46'",
+        "player": "M. Stamenic",
+        "teamId": "2666",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "50'",
+        "player": "L. Trossard",
+        "teamId": "459",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "56'",
+        "player": "E. Just",
+        "teamId": "2666",
+        "goal": false,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": true,
+        "red": false
+      },
+      {
+        "minute": "66'",
+        "player": "K. De Bruyne",
+        "teamId": "459",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "84'",
+        "player": "E. Just",
+        "teamId": "2666",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "86'",
+        "player": "R. Lukaku",
+        "teamId": "459",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      },
+      {
+        "minute": "90'+4'",
+        "player": "A. Saelemaekers",
+        "teamId": "459",
+        "goal": true,
+        "ownGoal": false,
+        "penalty": false,
+        "yellow": false,
+        "red": false
+      }
+    ]
+  },
   "104": {
     "homeScore": 0,
     "awayScore": 4,
@@ -4041,5 +4227,5 @@
       }
     ]
   },
-  "updated": "2026-06-27T03:43:58.408Z"
+  "updated": "2026-06-27T05:15:38.535Z"
 }
