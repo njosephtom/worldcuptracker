@@ -3925,5 +3925,283 @@
       }
     ]
   },
-  "updated": "2026-06-27T00:28:48.993Z"
+  "41": {
+    "homeScore": 3,
+    "awayScore": 0,
+    "homeTeamId": "478",
+    "awayTeamId": "4375",
+    "events": [
+      {"minute": "6'", "player": "A. Al-Ammari", "teamId": "4375", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "14'", "player": "K. Mbappé", "teamId": "478", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "54'", "player": "K. Mbappé", "teamId": "478", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "66'", "player": "O. Dembélé", "teamId": "478", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false}
+    ]
+  },
+  "42": {
+    "homeScore": 3,
+    "awayScore": 2,
+    "homeTeamId": "464",
+    "awayTeamId": "654",
+    "events": [
+      {"minute": "43'", "player": "M. Holmgren Pedersen", "teamId": "464", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "48'", "player": "E. Haaland", "teamId": "464", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "53'", "player": "I. Sarr", "teamId": "654", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "58'", "player": "E. Haaland", "teamId": "464", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "90'+3'", "player": "I. Sarr", "teamId": "654", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false}
+    ]
+  },
+  "43": {
+    "homeScore": 1,
+    "awayScore": 2,
+    "homeTeamId": "2917",
+    "awayTeamId": "624",
+    "events": [
+      {"minute": "36'", "player": "N. Al-Rashdan", "teamId": "2917", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "44'", "player": "R. Zerrouki", "teamId": "624", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "64'", "player": "H. Abu Dahab", "teamId": "2917", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "69'", "player": "N. Benbouali", "teamId": "624", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "82'", "player": "A. Gouiri", "teamId": "624", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false}
+    ]
+  },
+  "44": {
+    "homeScore": 5,
+    "awayScore": 0,
+    "homeTeamId": "482",
+    "awayTeamId": "2570",
+    "events": [
+      {"minute": "6'", "player": "C. Ronaldo", "teamId": "482", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "14'", "player": "O. Xamrobekov", "teamId": "2570", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "17'", "player": "N. Mendes", "teamId": "482", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "39'", "player": "C. Ronaldo", "teamId": "482", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "60'", "player": "A. Nematov", "teamId": "482", "goal": true, "ownGoal": true, "penalty": false, "yellow": false, "red": false},
+      {"minute": "68'", "player": "R. Veiga", "teamId": "482", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "87'", "player": "R. Leão", "teamId": "482", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false}
+    ]
+  },
+  "45": {
+    "homeScore": 0,
+    "awayScore": 0,
+    "homeTeamId": "448",
+    "awayTeamId": "4469",
+    "events": [
+      {"minute": "41'", "player": "D. Rice", "teamId": "448", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "60'", "player": "I. Williams", "teamId": "4469", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false}
+    ]
+  },
+  "46": {
+    "homeScore": 0,
+    "awayScore": 1,
+    "homeTeamId": "2659",
+    "awayTeamId": "477",
+    "events": [
+      {"minute": "54'", "player": "A. Budimir", "teamId": "477", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "61'", "player": "É. Bárcenas", "teamId": "2659", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "90'+2'", "player": "P. Sucic", "teamId": "477", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false}
+    ]
+  },
+  "47": {
+    "homeScore": 1,
+    "awayScore": 0,
+    "homeTeamId": "208",
+    "awayTeamId": "2850",
+    "events": [
+      {"minute": "56'", "player": "J. Lucumí", "teamId": "208", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "76'", "player": "D. Muñoz", "teamId": "208", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "90'+3'", "player": "C. Pickel", "teamId": "2850", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "90'+4'", "player": "J. Lerma", "teamId": "208", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false}
+    ]
+  },
+  "48": {
+    "homeScore": 3,
+    "awayScore": 1,
+    "homeTeamId": "452",
+    "awayTeamId": "4398",
+    "events": [
+      {"minute": "29'", "player": "K. Alajbegovic", "teamId": "452", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "34'", "player": "M. Abunada", "teamId": "452", "goal": true, "ownGoal": true, "penalty": false, "yellow": false, "red": false},
+      {"minute": "42'", "player": "H. Al-Haydos", "teamId": "4398", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "78'", "player": "A. Fathy", "teamId": "4398", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "80'", "player": "E. Mahmic", "teamId": "452", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "82'", "player": "E. Mahmic", "teamId": "452", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false}
+    ]
+  },
+  "49": {
+    "homeScore": 2,
+    "awayScore": 1,
+    "homeTeamId": "475",
+    "awayTeamId": "206",
+    "events": [
+      {"minute": "32'", "player": "C. Larin", "teamId": "206", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "32'", "player": "G. Xhaka", "teamId": "475", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "46'", "player": "R. Vargas", "teamId": "475", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "57'", "player": "J. Manzambi", "teamId": "475", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "76'", "player": "P. David", "teamId": "206", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "87'", "player": "L. Millar", "teamId": "206", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false}
+    ]
+  },
+  "50": {
+    "homeScore": 4,
+    "awayScore": 2,
+    "homeTeamId": "2869",
+    "awayTeamId": "2654",
+    "events": [
+      {"minute": "10'", "player": "Y. Bounou", "teamId": "2654", "goal": true, "ownGoal": true, "penalty": false, "yellow": false, "red": false},
+      {"minute": "39'", "player": "A. Hakimi", "teamId": "2869", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "43'", "player": "W. Isidor", "teamId": "2654", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "45'+1'", "player": "I. Saibari", "teamId": "2869", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "78'", "player": "S. Rahimi", "teamId": "2869", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "79'", "player": "J. Placide", "teamId": "2654", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "80'", "player": "D. Nazon", "teamId": "2654", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "89'", "player": "G. Yassine", "teamId": "2869", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "90'+3'", "player": "J. Casimir", "teamId": "2654", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false}
+    ]
+  },
+  "51": {
+    "homeScore": 0,
+    "awayScore": 3,
+    "homeTeamId": "580",
+    "awayTeamId": "205",
+    "events": [
+      {"minute": "7'", "player": "Vinícius Júnior", "teamId": "205", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "45'+3'", "player": "Vinícius Júnior", "teamId": "205", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "60'", "player": "M. Cunha", "teamId": "205", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "62'", "player": "Danilo", "teamId": "205", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "82'", "player": "Fabinho", "teamId": "205", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "89'", "player": "R. Christie", "teamId": "580", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false}
+    ]
+  },
+  "52": {
+    "homeScore": 0,
+    "awayScore": 3,
+    "homeTeamId": "450",
+    "awayTeamId": "203",
+    "events": [
+      {"minute": "55'", "player": "M. Chávez", "teamId": "203", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "61'", "player": "J. Quiñones", "teamId": "203", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "64'", "player": "E. Álvarez", "teamId": "203", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "90'+4'", "player": "Á. Fidalgo", "teamId": "203", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false}
+    ]
+  },
+  "53": {
+    "homeScore": 0,
+    "awayScore": 1,
+    "homeTeamId": "451",
+    "awayTeamId": "467",
+    "events": [
+      {"minute": "63'", "player": "T. Maseko", "teamId": "467", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "73'", "player": "A. Modiba", "teamId": "467", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "79'", "player": "C. Gue-Sung", "teamId": "451", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false}
+    ]
+  },
+  "54": {
+    "homeScore": 0,
+    "awayScore": 2,
+    "homeTeamId": "11678",
+    "awayTeamId": "4789",
+    "events": [
+      {"minute": "7'", "player": "N. Pépé", "teamId": "4789", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "35'", "player": "N. Pépé", "teamId": "4789", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "64'", "player": "N. Pépé", "teamId": "4789", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "75'", "player": "J. Bacuna", "teamId": "11678", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "83'", "player": "G. Kastaneer", "teamId": "11678", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false}
+    ]
+  },
+  "55": {
+    "homeScore": 2,
+    "awayScore": 1,
+    "homeTeamId": "209",
+    "awayTeamId": "481",
+    "events": [
+      {"minute": "2'", "player": "L. Sané", "teamId": "481", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "9'", "player": "N. Angulo", "teamId": "209", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "43'", "player": "P. Hincapié", "teamId": "209", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "44'", "player": "A. Pavlovic", "teamId": "481", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "50'", "player": "A. Franco", "teamId": "209", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "77'", "player": "G. Plata", "teamId": "209", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "89'", "player": "G. Plata", "teamId": "209", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false}
+    ]
+  },
+  "56": {
+    "homeScore": 1,
+    "awayScore": 1,
+    "homeTeamId": "627",
+    "awayTeamId": "466",
+    "events": [
+      {"minute": "32'", "player": "I. Hien", "teamId": "466", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "56'", "player": "D. Maeda", "teamId": "627", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "62'", "player": "A. Elanga", "teamId": "466", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "77'", "player": "S. Taniguchi", "teamId": "627", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "85'", "player": "V. Gyökeres", "teamId": "466", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false}
+    ]
+  },
+  "57": {
+    "homeScore": 1,
+    "awayScore": 3,
+    "homeTeamId": "659",
+    "awayTeamId": "449",
+    "events": [
+      {"minute": "3'", "player": "E. Skhiri", "teamId": "449", "goal": true, "ownGoal": true, "penalty": false, "yellow": false, "red": false},
+      {"minute": "7'", "player": "B. Brobbey", "teamId": "449", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "54'", "player": "H. Mastouri", "teamId": "659", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "62'", "player": "J. van Hecke", "teamId": "449", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false}
+    ]
+  },
+  "58": {
+    "homeScore": 0,
+    "awayScore": 0,
+    "homeTeamId": "210",
+    "awayTeamId": "628",
+    "events": [
+      {"minute": "46'", "player": "J. Irvine", "teamId": "628", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "77'", "player": "D. Gómez", "teamId": "210", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false}
+    ]
+  },
+  "59": {
+    "homeScore": 3,
+    "awayScore": 2,
+    "homeTeamId": "465",
+    "awayTeamId": "660",
+    "events": [
+      {"minute": "3'", "player": "A. Trusty", "teamId": "660", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "10'", "player": "A. Güler", "teamId": "465", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "19'", "player": "S. Berhalter", "teamId": "660", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "31'", "player": "B. Yilmaz", "teamId": "465", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "49'", "player": "S. Berhalter", "teamId": "660", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "90'+8'", "player": "K. Ayhan", "teamId": "465", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false}
+    ]
+  },
+  "60": {
+    "homeScore": 1,
+    "awayScore": 4,
+    "homeTeamId": "464",
+    "awayTeamId": "478",
+    "events": [
+      {"minute": "7'", "player": "O. Dembélé", "teamId": "478", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "10'", "player": "P. Berg", "teamId": "464", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "20'", "player": "O. Dembélé", "teamId": "478", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "21'", "player": "T. Aasgaard", "teamId": "464", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "32'", "player": "O. Dembélé", "teamId": "478", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "74'", "player": "A. Tchouaméni", "teamId": "478", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "90'+4'", "player": "D. Doué", "teamId": "478", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false}
+    ]
+  },
+  "61": {
+    "homeScore": 0,
+    "awayScore": 5,
+    "homeTeamId": "4375",
+    "awayTeamId": "654",
+    "events": [
+      {"minute": "4'", "player": "H. Diarra", "teamId": "654", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "13'", "player": "R. Sulaka", "teamId": "4375", "goal": false, "ownGoal": false, "penalty": false, "yellow": false, "red": true},
+      {"minute": "18'", "player": "A. Seck", "teamId": "654", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "56'", "player": "I. Sarr", "teamId": "654", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "59'", "player": "P. Gueye", "teamId": "654", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "71'", "player": "P. Gueye", "teamId": "654", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "75'", "player": "A. Al-Ammari", "teamId": "4375", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "81'", "player": "P. Gueye", "teamId": "654", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false},
+      {"minute": "82'", "player": "I. Ndiaye", "teamId": "654", "goal": true, "ownGoal": false, "penalty": false, "yellow": false, "red": false},
+      {"minute": "90'", "player": "M. Doski", "teamId": "4375", "goal": false, "ownGoal": false, "penalty": false, "yellow": true, "red": false}
+    ]
+  },
+  "updated": "2026-06-26T20:00:00.000Z"
 }
