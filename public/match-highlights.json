@@ -670,6 +670,28 @@
     "attempts": 1,
     "searchQuery": "[global] Iraq vs Senegal Full Highlights FIFA World Cup 2026"
   },
+  "62": {
+    "videoId": "grj3Ijq7cjQ",
+    "title": "Cape Verde vs Saudi Arabia Extended Highlights 🌎🏆 2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/grj3Ijq7cjQ/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-27T04:23:32.857Z",
+    "lastAttemptAt": "2026-06-27T04:23:32.857Z",
+    "attempts": 1,
+    "searchQuery": "[global] Cabo Verde vs Saudi Arabia Full Highlights FIFA World Cup 2026"
+  },
+  "63": {
+    "videoId": "3RFmWXxfHi4",
+    "title": "Spain vs Uruguay 2026 World Cup Highlights | Full Match Highlights &amp; All Goals | HD",
+    "thumbnail": "https://i.ytimg.com/vi/3RFmWXxfHi4/hqdefault.jpg",
+    "channelTitle": "PlayNova",
+    "status": "found",
+    "fetchedAt": "2026-06-27T04:23:32.857Z",
+    "lastAttemptAt": "2026-06-27T04:23:32.857Z",
+    "attempts": 1,
+    "searchQuery": "[global] Uruguay vs Spain Full Highlights FIFA World Cup 2026"
+  },
   "104": {
     "videoId": "3ESRyAZNh5A",
     "title": "Tunisia vs. Japan Full Highlights | FIFA World Cup 2026",
@@ -682,9 +704,9 @@
     "searchQuery": "[TSN] Tunisia vs. Japan Full Highlights | FIFA World Cup 2026"
   },
   "_meta": {
-    "updatedAt": "2026-06-27T01:41:52.248Z",
-    "totalFound": 62,
+    "updatedAt": "2026-06-27T04:23:32.857Z",
+    "totalFound": 64,
     "totalPending": 0,
-    "quotaUsed": 1
+    "quotaUsed": 1001
   }
 }
