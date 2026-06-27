@@ -692,6 +692,28 @@
     "attempts": 1,
     "searchQuery": "[global] Uruguay vs Spain Full Highlights FIFA World Cup 2026"
   },
+  "64": {
+    "videoId": "kDGHb9e0z8I",
+    "title": "🇪🇬 Egypt vs 🇮🇷 Iran 🔴| FIFA World Cup 2026 | Full Match Highlights &amp; Goals | HD",
+    "thumbnail": "https://i.ytimg.com/vi/kDGHb9e0z8I/hqdefault.jpg",
+    "channelTitle": "Sports Sprint",
+    "status": "found",
+    "fetchedAt": "2026-06-27T06:13:35.929Z",
+    "lastAttemptAt": "2026-06-27T06:13:35.929Z",
+    "attempts": 1,
+    "searchQuery": "[global] Iran vs Egypt Full Highlights FIFA World Cup 2026"
+  },
+  "65": {
+    "videoId": "Rouzq1yDV-Q",
+    "title": "New Zealand vs Belgium Extended Highlights 🌎🏆 2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/Rouzq1yDV-Q/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-27T06:13:35.929Z",
+    "lastAttemptAt": "2026-06-27T06:13:35.929Z",
+    "attempts": 1,
+    "searchQuery": "[global] Belgium vs New Zealand Full Highlights FIFA World Cup 2026"
+  },
   "104": {
     "videoId": "3ESRyAZNh5A",
     "title": "Tunisia vs. Japan Full Highlights | FIFA World Cup 2026",
@@ -704,8 +726,8 @@
     "searchQuery": "[TSN] Tunisia vs. Japan Full Highlights | FIFA World Cup 2026"
   },
   "_meta": {
-    "updatedAt": "2026-06-27T04:23:32.857Z",
-    "totalFound": 64,
+    "updatedAt": "2026-06-27T06:13:35.929Z",
+    "totalFound": 66,
     "totalPending": 0,
     "quotaUsed": 1001
   }
