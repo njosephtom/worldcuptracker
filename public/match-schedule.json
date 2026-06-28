@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-27T18:28:31.671Z",
+  "updated": "2026-06-28T04:08:15.895Z",
   "matches": [
     {
       "espnId": "760415",
@@ -111,11 +111,10 @@
       "h": "Australia",
       "a": "Turkey",
       "d": "2026-06-13",
-      "t": "12:00 AM ET",
+      "t": "11:00 PM ET",
       "v": "bcplace",
       "venueName": "BC Place",
       "status": "finished",
-      "localTime": "9:00 PM PT",
       "localTZ": "PT",
       "g": "D",
       "homeScore": 2,
@@ -291,11 +290,10 @@
       "h": "Austria",
       "a": "Jordan",
       "d": "2026-06-16",
-      "t": "12:00 AM ET",
+      "t": "9:00 PM ET",
       "v": "levis",
       "venueName": "Levi's Stadium",
       "status": "finished",
-      "localTime": "9:00 PM PT",
       "localTZ": "PT",
       "g": "J",
       "homeScore": 3,
@@ -535,7 +533,6 @@
       "v": "bbva",
       "venueName": "Estadio BBVA",
       "status": "finished",
-      "localTime": "10:00 PM CT",
       "localTZ": "CT",
       "g": "F",
       "homeScore": 0,
@@ -999,10 +996,12 @@
       "t": "5:00 PM ET",
       "v": "lincoln",
       "venueName": "Lincoln Financial Field",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "5:00 PM ET",
       "localTZ": "ET",
-      "g": "L"
+      "g": "L",
+      "homeScore": 2,
+      "awayScore": 1
     },
     {
       "espnId": "760485",
@@ -1012,10 +1011,12 @@
       "t": "5:00 PM ET",
       "v": "metlife",
       "venueName": "MetLife Stadium",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "5:00 PM ET",
       "localTZ": "ET",
-      "g": "L"
+      "g": "L",
+      "homeScore": 0,
+      "awayScore": 2
     },
     {
       "espnId": "760481",
@@ -1025,10 +1026,12 @@
       "t": "7:30 PM ET",
       "v": "hardrock",
       "venueName": "Hard Rock Stadium",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "7:30 PM ET",
       "localTZ": "ET",
-      "g": "K"
+      "g": "K",
+      "homeScore": 0,
+      "awayScore": 0
     },
     {
       "espnId": "760482",
@@ -1038,10 +1041,12 @@
       "t": "7:30 PM ET",
       "v": "mercedes",
       "venueName": "Mercedes-Benz Stadium",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "7:30 PM ET",
       "localTZ": "ET",
-      "g": "K"
+      "g": "K",
+      "homeScore": 3,
+      "awayScore": 1
     },
     {
       "espnId": "760484",
@@ -1051,10 +1056,12 @@
       "t": "10:00 PM ET",
       "v": "arrowhead",
       "venueName": "GEHA Field at Arrowhead Stadium",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "9:00 PM CT",
       "localTZ": "CT",
-      "g": "J"
+      "g": "J",
+      "homeScore": 3,
+      "awayScore": 3
     },
     {
       "espnId": "760483",
@@ -1064,10 +1071,12 @@
       "t": "10:00 PM ET",
       "v": "att",
       "venueName": "AT&T Stadium",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "9:00 PM CT",
       "localTZ": "CT",
-      "g": "J"
+      "g": "J",
+      "homeScore": 1,
+      "awayScore": 3
     },
     {
       "espnId": "760486",
@@ -1150,7 +1159,7 @@
     {
       "espnId": "760491",
       "h": "Mexico",
-      "a": "Third Place Group C/E/F/H/I",
+      "a": "Ecuador",
       "d": "2026-06-30",
       "t": "9:00 PM ET",
       "v": "azteca",
@@ -1162,8 +1171,8 @@
     },
     {
       "espnId": "760495",
-      "h": "Group L Winner",
-      "a": "Third Place Group E/H/I/J/K",
+      "h": "England",
+      "a": "DR Congo",
       "d": "2026-07-01",
       "t": "12:00 PM ET",
       "v": "mercedes",
@@ -1176,7 +1185,7 @@
     {
       "espnId": "760493",
       "h": "Belgium",
-      "a": "Third Place Group A/E/H/I/J",
+      "a": "Senegal",
       "d": "2026-07-01",
       "t": "4:00 PM ET",
       "v": "lumen",
@@ -1202,7 +1211,7 @@
     {
       "espnId": "760497",
       "h": "Spain",
-      "a": "Group J 2nd Place",
+      "a": "Austria",
       "d": "2026-07-02",
       "t": "3:00 PM ET",
       "v": "sofi",
@@ -1214,8 +1223,8 @@
     },
     {
       "espnId": "760496",
-      "h": "Group K 2nd Place",
-      "a": "Group L 2nd Place",
+      "h": "Portugal",
+      "a": "Croatia",
       "d": "2026-07-02",
       "t": "7:00 PM ET",
       "v": "bmo",
@@ -1228,7 +1237,7 @@
     {
       "espnId": "760498",
       "h": "Switzerland",
-      "a": "Third Place Group E/F/G/I/J",
+      "a": "Algeria",
       "d": "2026-07-02",
       "t": "11:00 PM ET",
       "v": "bcplace",
@@ -1266,8 +1275,8 @@
     },
     {
       "espnId": "760501",
-      "h": "Group K Winner",
-      "a": "Third Place Group D/E/I/J/L",
+      "h": "Colombia",
+      "a": "Ghana",
       "d": "2026-07-03",
       "t": "9:30 PM ET",
       "v": "arrowhead",

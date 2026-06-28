@@ -621,11 +621,9 @@ function PathLegend({ slot, onClear }) {
 }
 
 // ─── Root export ──────────────────────────────────────────────────────────────
-export function KnockoutBracket({ isMobile, mockEnabled = false, standings = {}, predictionMode = false, onTogglePrediction, onTT, onMoveTT, onHideTT }) {
+export function KnockoutBracket({ isMobile, mockEnabled = false, standings = {}, onTT, onMoveTT, onHideTT }) {
   const [hoveredSlot, setHoveredSlot] = useState(null);
-  const mockBDM = useMemo(() => buildBDM(mockEnabled), [mockEnabled]);
-  const predBDM = useMemo(() => buildPredictionBDM(standings), [standings]);
-  const bdm = predictionMode ? predBDM : mockBDM;
+  const bdm = useMemo(() => buildBDM(mockEnabled), [mockEnabled]);
 
   return (
     <div style={{ height:'100%', display:'flex', flexDirection:'column',
@@ -644,25 +642,8 @@ export function KnockoutBracket({ isMobile, mockEnabled = false, standings = {},
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       }}>
         <span style={{ color: 'var(--ac-gold)' }}>
-          {predictionMode ? 'R32 Prediction — Bracket' : 'World Cup 2026 Knockout Bracket'}
+          World Cup 2026 Knockout Bracket
         </span>
-        {onTogglePrediction && Date.now() < new Date('2026-06-29T00:00:00-04:00').getTime() && (
-          <button
-            onClick={onTogglePrediction}
-            title={predictionMode ? 'Show official bracket' : 'Fill bracket with predicted teams based on current group standings'}
-            style={{
-              background: predictionMode ? 'rgba(240,192,64,0.15)' : 'transparent',
-              border: predictionMode ? '1px solid rgba(240,192,64,0.4)' : '1px solid var(--brk-bd)',
-              color: predictionMode ? 'var(--ac-gold)' : 'var(--brk-dim)',
-              fontSize: 9, fontWeight: predictionMode ? 700 : 500,
-              padding: '2px 8px', borderRadius: 4, cursor: 'pointer',
-              fontFamily: 'var(--font-sans)', letterSpacing: 0.3,
-              transition: 'all .15s',
-            }}
-          >
-            🔮 Predict
-          </button>
-        )}
       </div>
       {isMobile
         ? <MobileBracket bdm={bdm} mockEnabled={mockEnabled} standings={standings}

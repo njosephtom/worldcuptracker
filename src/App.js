@@ -61,7 +61,6 @@ export default function App() {
   const [use24h, setUse24h] = useState(() => localStorage.getItem('wc-clock') === '24h');
   const [showGuide, setShowGuide] = useState(false);
   const [showHistory, setShowHistory] = useState(false);
-  const [showR32, setShowR32] = useState(false);
   const [selectedTZ, setSelectedTZ] = useState(() => localStorage.getItem('wc-tz') || null);
   const [tzAbbr] = useState(getTZAbbr);
   const [isRefreshing, setIsRefreshing] = useState(false);
@@ -227,7 +226,6 @@ export default function App() {
           <div style={{ ...S.colLeft, ...(isMobile ? S.colLeftMobile : {}), order: isMobile ? 2 : 0 }}>
             <div style={{ overflow: 'hidden', flex: 1, minHeight: 0 }}>
               <KnockoutBracket isMobile={isMobile} mockEnabled={wc.mockEnabled} standings={wc.standings}
-                  predictionMode={showR32} onTogglePrediction={() => setShowR32(v => !v)}
                   onTT={show} onMoveTT={move} onHideTT={hide} />
             </div>
           </div>
