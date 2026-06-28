@@ -758,6 +758,28 @@
     "attempts": 1,
     "searchQuery": "[global] Uzbekistan vs DR Congo Full Highlights FIFA World Cup 2026"
   },
+  "70": {
+    "videoId": "fjPH_DXx12M",
+    "title": "Algeria vs Austria Extended Highlights 🌎🏆 2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/fjPH_DXx12M/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-28T06:30:47.281Z",
+    "lastAttemptAt": "2026-06-28T06:30:47.281Z",
+    "attempts": 1,
+    "searchQuery": "[global] Austria vs Algeria Full Highlights FIFA World Cup 2026"
+  },
+  "71": {
+    "videoId": "sPJIf3GfNo0",
+    "title": "Jordan vs Argentina Extended Highlights 🌎🏆 2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/sPJIf3GfNo0/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-28T06:30:47.281Z",
+    "lastAttemptAt": "2026-06-28T06:30:47.281Z",
+    "attempts": 1,
+    "searchQuery": "[global] Argentina vs Jordan Full Highlights FIFA World Cup 2026"
+  },
   "104": {
     "videoId": "3ESRyAZNh5A",
     "title": "Tunisia vs. Japan Full Highlights | FIFA World Cup 2026",
@@ -770,8 +792,8 @@
     "searchQuery": "[TSN] Tunisia vs. Japan Full Highlights | FIFA World Cup 2026"
   },
   "_meta": {
-    "updatedAt": "2026-06-28T04:33:15.679Z",
-    "totalFound": 70,
+    "updatedAt": "2026-06-28T06:30:47.281Z",
+    "totalFound": 72,
     "totalPending": 0,
     "quotaUsed": 1001
   }
