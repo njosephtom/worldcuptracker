@@ -736,6 +736,28 @@
     "attempts": 1,
     "searchQuery": "[global] Panama vs England Full Highlights FIFA World Cup 2026"
   },
+  "68": {
+    "videoId": "cRb6GQEAsU8",
+    "title": "Colombia vs Portugal Extended Highlights 🌎🏆 2026 FIFA World Cup™",
+    "thumbnail": "https://i.ytimg.com/vi/cRb6GQEAsU8/hqdefault.jpg",
+    "channelTitle": "FOX Sports",
+    "status": "found",
+    "fetchedAt": "2026-06-28T04:33:15.679Z",
+    "lastAttemptAt": "2026-06-28T04:33:15.679Z",
+    "attempts": 1,
+    "searchQuery": "[global] Portugal vs Colombia Full Highlights FIFA World Cup 2026"
+  },
+  "69": {
+    "videoId": "eQcHqTIVKLg",
+    "title": "Fiston Mayele Scores! 🇨🇩 DR Congo 3-1 Uzbekistan | Full Match Highlights | FIFA World Cup 2026",
+    "thumbnail": "https://i.ytimg.com/vi/eQcHqTIVKLg/hqdefault.jpg",
+    "channelTitle": "moneycontrol",
+    "status": "found",
+    "fetchedAt": "2026-06-28T04:33:15.679Z",
+    "lastAttemptAt": "2026-06-28T04:33:15.679Z",
+    "attempts": 1,
+    "searchQuery": "[global] Uzbekistan vs DR Congo Full Highlights FIFA World Cup 2026"
+  },
   "104": {
     "videoId": "3ESRyAZNh5A",
     "title": "Tunisia vs. Japan Full Highlights | FIFA World Cup 2026",
@@ -748,9 +770,9 @@
     "searchQuery": "[TSN] Tunisia vs. Japan Full Highlights | FIFA World Cup 2026"
   },
   "_meta": {
-    "updatedAt": "2026-06-28T01:45:16.441Z",
-    "totalFound": 68,
+    "updatedAt": "2026-06-28T04:33:15.679Z",
+    "totalFound": 70,
     "totalPending": 0,
-    "quotaUsed": 1
+    "quotaUsed": 1001
   }
 }
