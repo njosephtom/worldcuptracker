@@ -65,9 +65,11 @@ function buildBDM(enabled, liveBracket) {
     const mock = enabled ? MOCK_RESULTS[+id] : null;
     const live = !enabled && liveBracket ? liveBracket[+id] || liveBracket[String(id)] : null;
     if (mock) {
-      out[+id] = { ...m, h:mock.h||m.h, a:mock.a||m.a, hs:mock.hs, as:mock.as };
+      out[+id] = { ...m, h:mock.h||m.h, a:mock.a||m.a, hs:mock.hs, as:mock.as, status:'finished' };
+    } else if (live && live.status === 'finished') {
+      out[+id] = { ...m, h:live.h||m.h, a:live.a||m.a, hs:live.hs, as:live.as, status:'finished' };
     } else if (live && live.status !== 'upcoming') {
-      out[+id] = { ...m, h:live.h||m.h, a:live.a||m.a, hs:live.hs, as:live.as };
+      out[+id] = { ...m, h:live.h||m.h, a:live.a||m.a, status:live.status };
     } else if (live) {
       out[+id] = { ...m, h:live.h||m.h, a:live.a||m.a };
     } else {
@@ -75,11 +77,11 @@ function buildBDM(enabled, liveBracket) {
     }
   });
 
-  // Propagate winners up the bracket: R32→R16→QF→SF→Final
+  // Propagate winners up the bracket — only from finished matches
   const rounds = ['R32','R16','QF','SF'];
   for (const round of rounds) {
     for (const [id, m] of Object.entries(out)) {
-      if (m.r !== round || m.hs == null) continue;
+      if (m.r !== round || m.status !== 'finished' || m.hs == null) continue;
       const winner = m.hs > m.as ? m.h : m.a;
       const parentId = BD[+id]?.pid;
       if (!parentId || !out[parentId]) continue;
