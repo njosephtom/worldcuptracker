@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-28T18:28:10.139Z",
+  "updated": "2026-06-29T18:44:33.124Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1089,10 +1089,12 @@
       "t": "3:00 PM ET",
       "v": "sofi",
       "venueName": "SoFi Stadium",
-      "status": "upcoming",
+      "status": "finished",
       "localTime": "12:00 PM PT",
       "localTZ": "PT",
-      "round": "R32"
+      "round": "R32",
+      "homeScore": 0,
+      "awayScore": 1
     },
     {
       "espnId": "760487",
@@ -1102,10 +1104,12 @@
       "t": "1:00 PM ET",
       "v": "nrg",
       "venueName": "NRG Stadium",
-      "status": "upcoming",
+      "status": "live",
       "localTime": "12:00 PM CT",
       "localTZ": "CT",
-      "round": "R32"
+      "round": "R32",
+      "homeScore": 1,
+      "awayScore": 1
     },
     {
       "espnId": "760489",
@@ -1291,7 +1295,7 @@
     },
     {
       "espnId": "760502",
-      "h": "Round of 32 1 Winner",
+      "h": "Canada",
       "a": "Round of 32 3 Winner",
       "d": "2026-07-04",
       "t": "1:00 PM ET",
