@@ -25,20 +25,20 @@ function cardX(round) { return COL(round) * (CW + GX); }
 
 const BD = {
   72: { r:'R32', p:0,  h:'Germany',       a:'Paraguay',                pid:88 },
-  73: { r:'R32', p:1,  h:'Brazil',        a:'Japan',                   pid:88 },
-  74: { r:'R32', p:2,  h:'France',        a:'Sweden',                  pid:89 },
-  75: { r:'R32', p:3,  h:'Ivory Coast',   a:'Norway',                  pid:89 },
-  76: { r:'R32', p:4,  h:'South Africa',  a:'Canada',                  pid:90 },
-  77: { r:'R32', p:5,  h:'Mexico',        a:'Ecuador',                 pid:90 },
-  78: { r:'R32', p:6,  h:'Netherlands',   a:'Morocco',                 pid:91 },
-  79: { r:'R32', p:7,  h:'England',       a:'DR Congo',               pid:91 },
-  80: { r:'R32', p:8,  h:'Portugal',      a:'Croatia',                 pid:92 },
-  81: { r:'R32', p:9,  h:'Spain',         a:'Austria',                 pid:92 },
-  82: { r:'R32', p:10, h:'Australia',     a:'Egypt',                   pid:93 },
-  83: { r:'R32', p:11, h:'Belgium',       a:'Senegal',                 pid:93 },
-  84: { r:'R32', p:12, h:'Switzerland',   a:'Algeria',                 pid:94 },
-  85: { r:'R32', p:13, h:'Argentina',     a:'Cape Verde',              pid:94 },
-  86: { r:'R32', p:14, h:'United States', a:'Bosnia and Herzegovina',  pid:95 },
+  73: { r:'R32', p:1,  h:'France',        a:'Sweden',                  pid:88 },
+  74: { r:'R32', p:2,  h:'South Africa',  a:'Canada',                  pid:89 },
+  75: { r:'R32', p:3,  h:'Netherlands',   a:'Morocco',                 pid:89 },
+  76: { r:'R32', p:4,  h:'Portugal',      a:'Croatia',                 pid:90 },
+  77: { r:'R32', p:5,  h:'Spain',         a:'Austria',                 pid:90 },
+  78: { r:'R32', p:6,  h:'United States', a:'Bosnia and Herzegovina',  pid:91 },
+  79: { r:'R32', p:7,  h:'Belgium',       a:'Senegal',                 pid:91 },
+  80: { r:'R32', p:8,  h:'Brazil',        a:'Japan',                   pid:92 },
+  81: { r:'R32', p:9,  h:'Ivory Coast',   a:'Norway',                  pid:92 },
+  82: { r:'R32', p:10, h:'Mexico',        a:'Ecuador',                 pid:93 },
+  83: { r:'R32', p:11, h:'England',       a:'DR Congo',               pid:93 },
+  84: { r:'R32', p:12, h:'Argentina',     a:'Cape Verde',              pid:94 },
+  85: { r:'R32', p:13, h:'Australia',     a:'Egypt',                   pid:94 },
+  86: { r:'R32', p:14, h:'Switzerland',   a:'Algeria',                 pid:95 },
   87: { r:'R32', p:15, h:'Colombia',      a:'Ghana',                   pid:95 },
   88: { r:'R16', p:0,  h:'TBD', a:'TBD', pid:96,  kids:[72,73] },
   89: { r:'R16', p:1,  h:'TBD', a:'TBD', pid:96,  kids:[74,75] },
@@ -58,13 +58,42 @@ const BD = {
  102: { r:'Bronze', p:0, h:'TBD', a:'TBD'                        },
 };
 
-// ─── Merge mock results into bracket (computed per-render based on toggle) ────
-function buildBDM(enabled) {
+// ─── Merge mock or live results into bracket, then propagate winners ─────────
+function buildBDM(enabled, liveBracket) {
   const out = {};
   Object.entries(BD).forEach(([id, m]) => {
-    const r = enabled ? MOCK_RESULTS[+id] : null;
-    out[+id] = r ? { ...m, h:r.h, a:r.a, hs:r.hs, as:r.as } : { ...m };
+    const mock = enabled ? MOCK_RESULTS[+id] : null;
+    const live = !enabled && liveBracket ? liveBracket[+id] || liveBracket[String(id)] : null;
+    if (mock) {
+      out[+id] = { ...m, h:mock.h||m.h, a:mock.a||m.a, hs:mock.hs, as:mock.as };
+    } else if (live && live.status !== 'upcoming') {
+      out[+id] = { ...m, h:live.h||m.h, a:live.a||m.a, hs:live.hs, as:live.as };
+    } else if (live) {
+      out[+id] = { ...m, h:live.h||m.h, a:live.a||m.a };
+    } else {
+      out[+id] = { ...m };
+    }
   });
+
+  // Propagate winners up the bracket: R32→R16→QF→SF→Final
+  const rounds = ['R32','R16','QF','SF'];
+  for (const round of rounds) {
+    for (const [id, m] of Object.entries(out)) {
+      if (m.r !== round || m.hs == null) continue;
+      const winner = m.hs > m.as ? m.h : m.a;
+      const parentId = BD[+id]?.pid;
+      if (!parentId || !out[parentId]) continue;
+      const kids = BD[parentId]?.kids;
+      if (!kids) continue;
+      const parent = out[parentId];
+      if (kids[0] === +id && (!parent.h || parent.h === 'TBD')) {
+        out[parentId] = { ...parent, h: winner };
+      } else if (kids[1] === +id && (!parent.a || parent.a === 'TBD')) {
+        out[parentId] = { ...parent, a: winner };
+      }
+    }
+  }
+
   return out;
 }
 
@@ -184,13 +213,13 @@ function MatchCard({ id, m, highlighted, hoveredSlot, onSlotEnter, onSlotLeave, 
 }
 
 // ─── Bronze card ──────────────────────────────────────────────────────────────
-function BronzeCard({ mockEnabled }) {
-  const mock = mockEnabled ? MOCK_RESULTS[102] : null;
+function BronzeCard({ bdm }) {
+  const m102 = bdm?.[102];
+  const fin  = m102 && m102.hs !== undefined;
   const x    = cardX('Final');
   const y    = TH - SH * 2.5;
-  const fin      = !!mock;
-  const homeWins = fin && mock.hs > mock.as;
-  const awayWins = fin && mock.as > mock.hs;
+  const homeWins = fin && m102.hs > m102.as;
+  const awayWins = fin && m102.as > m102.hs;
 
   const Row = ({ name, score, wins }) => (
     <div style={{ display:'flex', alignItems:'center', gap:5, padding:'3px 7px', minHeight:(CH-14)/2,
@@ -215,17 +244,17 @@ function BronzeCard({ mockEnabled }) {
         padding:'2px 0', borderBottom:'1px solid var(--brk-div)', letterSpacing:0.5, textTransform:'lowercase' }}>
         🥉 3rd Place · Jul 19
       </div>
-      <Row name={mock?.h} score={mock?.hs} wins={homeWins} />
+      <Row name={m102?.h} score={m102?.hs} wins={homeWins} />
       <div style={{ height:1, background:'var(--brk-div)', margin:'0 7px' }} />
-      <Row name={mock?.a} score={mock?.as} wins={awayWins} />
+      <Row name={m102?.a} score={m102?.as} wins={awayWins} />
     </div>
   );
 }
 
 // ─── Champion banner ──────────────────────────────────────────────────────────
-function ChampionBanner({ mockEnabled }) {
-  const m = mockEnabled ? MOCK_RESULTS[103] : null;
-  if (!m) return null;
+function ChampionBanner({ bdm }) {
+  const m = bdm?.[103];
+  if (!m || m.hs === undefined) return null;
   const champion = m.as > m.hs ? m.a : m.h;
   const score    = m.as > m.hs ? `${m.as}–${m.hs}` : `${m.hs}–${m.as}`;
   const x = cardX('Final');
@@ -346,8 +375,8 @@ function DesktopBracket({ bdm, mockEnabled, standings, hoveredSlot, setHoveredSl
   const highlighted    = useMemo(() => pathFor(hoveredSlot, bdm), [hoveredSlot, bdm]);
   const allKnockoutIds = Object.keys(BD).map(Number).filter(id => BD[id].r !== 'Bronze');
   const TOTAL_W        = GS_W + TW;
-  const hasMock        = mockEnabled && !!MOCK_RESULTS[103];
-  const trophyTop      = cardCY('Final', 0) + CH / 2 + (hasMock ? 110 : 14);
+  const hasFinal       = bdm[103]?.hs !== undefined;
+  const trophyTop      = cardCY('Final', 0) + CH / 2 + (hasFinal ? 110 : 14);
 
   return (
     <div style={{ overflowX:'auto', overflowY:'auto', flex:1, minHeight:0 }}>
@@ -377,8 +406,8 @@ function DesktopBracket({ bdm, mockEnabled, standings, hoveredSlot, setHoveredSl
               onSlotLeave={() => setHoveredSlot(null)}
               onSlotClick={slot => { if (!slot || slot === 'TBD') return; setHoveredSlot(s => s === slot ? null : slot); }} />
           ))}
-          <BronzeCard mockEnabled={mockEnabled} />
-          {hasMock && <ChampionBanner mockEnabled={mockEnabled} />}
+          <BronzeCard bdm={bdm} />
+          {hasFinal && <ChampionBanner bdm={bdm} />}
           <img src={trophyUrl} alt="World Cup Trophy"
             style={{ position:'absolute', left:cardX('Final') + CW / 2 - 40, top:trophyTop,
               width:80, height:110, filter:'drop-shadow(0 0 12px rgba(240,192,64,0.6))', pointerEvents:'none' }} />
@@ -484,8 +513,18 @@ const MOBILE_ROUNDS = [
   { key:'Final', label:'Final',  full:'Final + Bronze', date:'Jul 19',       ids:[103,102] },
 ];
 
+function defaultMobileRound() {
+  const d = new Date().toLocaleDateString('en-CA');
+  if (d >= '2026-07-19') return 'Final';
+  if (d >= '2026-07-15') return 'SF';
+  if (d >= '2026-07-11') return 'QF';
+  if (d >= '2026-07-04') return 'R16';
+  if (d >= '2026-06-28') return 'R32';
+  return 'GS';
+}
+
 function MobileBracket({ bdm, mockEnabled, standings, hoveredSlot, setHoveredSlot, onTT, onMoveTT, onHideTT }) {
-  const [activeRound, setActiveRound] = useState('GS');
+  const [activeRound, setActiveRound] = useState(defaultMobileRound);
   const rnd = MOBILE_ROUNDS.find(r => r.key === activeRound);
   const highlighted = useMemo(() => pathFor(hoveredSlot, bdm), [hoveredSlot, bdm]);
   function toggleSlot(slot) { setHoveredSlot(s => s === slot ? null : slot); }
@@ -555,9 +594,10 @@ function PathLegend({ slot, onClear }) {
 }
 
 // ─── Root export ──────────────────────────────────────────────────────────────
-export function KnockoutBracket({ isMobile, mockEnabled = false, standings = {}, onTT, onMoveTT, onHideTT }) {
+export function KnockoutBracket({ isMobile, mockEnabled = false, standings = {}, bracketLive, onTT, onMoveTT, onHideTT }) {
   const [hoveredSlot, setHoveredSlot] = useState(null);
-  const bdm = useMemo(() => buildBDM(mockEnabled), [mockEnabled]);
+  const liveBracket = bracketLive?.bracket || null;
+  const bdm = useMemo(() => buildBDM(mockEnabled, liveBracket), [mockEnabled, liveBracket]);
 
   return (
     <div style={{ height:'100%', display:'flex', flexDirection:'column',

@@ -43,6 +43,7 @@ export function useWorldCup(autoRefresh = true) {
   const [mockEnabled,  setMockEnabled]  = useState(false);
   const [cachedEvents, setCachedEvents] = useState({});
   const [matchSchedule, setMatchSchedule] = useState(null);
+  const [bracketLive, setBracketLive] = useState(null);
 
   // Load static match-events.json once on mount for past match scores
   useEffect(() => {
@@ -59,6 +60,21 @@ export function useWorldCup(autoRefresh = true) {
       .then(data => { if (data) setMatchSchedule(data); })
       .catch(() => {});
   }, []);
+
+  // Load live bracket results (updated every 30 min by GitHub Actions)
+  useEffect(() => {
+    function load() {
+      fetch('/bracket-live.json')
+        .then(r => r.ok ? r.json() : null)
+        .then(data => { if (data) setBracketLive(data); })
+        .catch(() => {});
+    }
+    load();
+    if (autoRefresh) {
+      const t = setInterval(load, 5 * 60 * 1000);
+      return () => clearInterval(t);
+    }
+  }, [autoRefresh]);
 
   // Live scores polled from ESPN every 60 s
   const liveScores = useLiveScores(!autoRefresh);
@@ -138,5 +154,6 @@ export function useWorldCup(autoRefresh = true) {
     matches, dayMatches, standings, liveCount,
     today,
     mockEnabled, setMockEnabled,
+    bracketLive,
   };
 }
