@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-29T18:44:33.124Z",
+  "updated": "2026-06-29T22:55:34.685Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1104,11 +1104,11 @@
       "t": "1:00 PM ET",
       "v": "nrg",
       "venueName": "NRG Stadium",
-      "status": "live",
+      "status": "finished",
       "localTime": "12:00 PM CT",
       "localTZ": "CT",
       "round": "R32",
-      "homeScore": 1,
+      "homeScore": 2,
       "awayScore": 1
     },
     {
@@ -1119,10 +1119,12 @@
       "t": "4:30 PM ET",
       "v": "gillette",
       "venueName": "Gillette Stadium",
-      "status": "upcoming",
+      "status": "live",
       "localTime": "4:30 PM ET",
       "localTZ": "ET",
-      "round": "R32"
+      "round": "R32",
+      "homeScore": 1,
+      "awayScore": 1
     },
     {
       "espnId": "760488",
@@ -1321,7 +1323,7 @@
     },
     {
       "espnId": "760504",
-      "h": "Round of 32 4 Winner",
+      "h": "Brazil",
       "a": "Round of 32 6 Winner",
       "d": "2026-07-05",
       "t": "4:00 PM ET",
