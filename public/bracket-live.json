@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-29T19:10:51.371Z",
+  "updated": "2026-06-29T20:11:14.425Z",
   "bracket": {
     "72": {
       "h": "Germany",
@@ -124,6 +124,22 @@
     "87": {
       "h": "Colombia",
       "a": "Ghana",
+      "hs": null,
+      "as": null,
+      "status": "upcoming",
+      "winner": null
+    },
+    "89": {
+      "h": "Canada",
+      "a": null,
+      "hs": null,
+      "as": null,
+      "status": "upcoming",
+      "winner": null
+    },
+    "92": {
+      "h": "Brazil",
+      "a": null,
       "hs": null,
       "as": null,
       "status": "upcoming",
