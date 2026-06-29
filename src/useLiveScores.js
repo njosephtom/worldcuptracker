@@ -47,18 +47,14 @@ function parseESPN(data) {
     if (!homeTeam || !awayTeam) return;
 
     const sName = ev.status?.type?.name || '';
+    const st    = ev.status?.type || {};
+    // Use ESPN's authoritative status flags: `completed` is true once the match
+    // is over (incl. extra time / penalties); `state` is pre/in/post. This also
+    // catches transient states like STATUS_END_OF_EXTRATIME that don't match a
+    // fixed name list but are clearly in-progress (state === 'in').
     let status = 'upcoming';
-    if (sName === 'STATUS_IN_PROGRESS' ||
-        sName === 'STATUS_FIRST_HALF'  ||
-        sName === 'STATUS_SECOND_HALF' ||
-        sName === 'STATUS_HALFTIME'    ||
-        sName === 'STATUS_EXTRA_TIME'  ||
-        sName === 'STATUS_PENALTY'     ||
-        sName === 'STATUS_DELAYED'     ||
-        sName === 'STATUS_SUSPENDED')   status = 'live';
-    if (sName === 'STATUS_FINAL' ||
-        sName === 'STATUS_FULL_TIME' ||
-        sName === 'STATUS_END_PERIOD')   status = 'finished';
+    if (st.completed === true) status = 'finished';
+    else if (st.state === 'in') status = 'live';
 
     // skip upcoming — only merge live/finished into the app
     if (status === 'upcoming') return;

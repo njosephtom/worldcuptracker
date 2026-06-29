@@ -173,10 +173,15 @@ async function main() {
         const round   = extractRound(altNote);
         if (!round) continue; // skip group stage
 
-        const sName = ev.status?.type?.name || '';
+        // Use ESPN's authoritative status flags rather than matching on the
+        // status name string. `completed` is true only once the match is truly
+        // over — including after extra time / penalty shootouts. `state` is
+        // 'pre' | 'in' | 'post'. (Matching "EXTRA_TIME" by substring wrongly
+        // flagged STATUS_END_OF_EXTRATIME — a finished/penalty game — as live.)
+        const st = ev.status?.type || {};
         let status = 'upcoming';
-        if (/IN_PROGRESS|FIRST_HALF|SECOND_HALF|HALFTIME|EXTRA_TIME|PENALTY/.test(sName)) status = 'live';
-        if (/FINAL|FULL_TIME|END_PERIOD/.test(sName)) status = 'finished';
+        if (st.completed === true) status = 'finished';
+        else if (st.state === 'in') status = 'live';
 
         const homeScore = parseInt(home.score, 10) || 0;
         const awayScore = parseInt(away.score, 10) || 0;
@@ -192,7 +197,12 @@ async function main() {
         };
 
         if (status === 'finished') {
-          match.winner = homeScore > awayScore ? homeTeam : awayTeam;
+          // Prefer ESPN's winner flag — it's correct even when the scoreline is
+          // level and the match was decided on penalties (e.g. 1-1 AET-pens).
+          if (home.winner === true)      match.winner = homeTeam;
+          else if (away.winner === true) match.winner = awayTeam;
+          else if (homeScore !== awayScore) match.winner = homeScore > awayScore ? homeTeam : awayTeam;
+          else match.winner = null; // level and no winner flag yet — don't guess
         }
 
         espnMatches.push(match);

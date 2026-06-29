@@ -2,8 +2,9 @@ name: Sync ESPN Schedule
 
 on:
   schedule:
-    # Daily at 10:00 AM PST (18:00 UTC)
-    - cron: '0 18 * * *'
+    # Every 30 minutes, Pacific 10am–11pm
+    # (10am PDT = 17:00 UTC → 11pm PST = 07:00 UTC next day; covers either DST state)
+    - cron: '*/30 17-23,0-7 * * *'
   workflow_dispatch:
 
 permissions:

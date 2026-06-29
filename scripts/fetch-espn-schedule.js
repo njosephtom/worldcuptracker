@@ -241,10 +241,12 @@ async function main() {
           localTZ = vtz.abbr;
         }
 
-        const sName = ev.status?.type?.name || '';
+        // Use ESPN's authoritative status flags: `completed` is true once the
+        // match is over (incl. extra time / penalties); `state` is pre/in/post.
+        const st = ev.status?.type || {};
         let status = 'upcoming';
-        if (/IN_PROGRESS|FIRST_HALF|SECOND_HALF|HALFTIME|EXTRA_TIME|PENALTY/.test(sName)) status = 'live';
-        if (/FINAL|FULL_TIME|END_PERIOD/.test(sName)) status = 'finished';
+        if (st.completed === true) status = 'finished';
+        else if (st.state === 'in') status = 'live';
 
         const match = {
           espnId,

@@ -145,8 +145,9 @@ function parseEvents(data, cache) {
     const comp = ev.competitions?.[0];
     if (!comp) continue;
 
-    const sName = ev.status?.type?.name || '';
-    if (sName !== 'STATUS_FINAL' && sName !== 'STATUS_FULL_TIME' && sName !== 'STATUS_END_PERIOD') continue;
+    // `completed` is ESPN's authoritative "match is over" flag — true after
+    // full time and after extra time / penalty shootouts alike.
+    if (ev.status?.type?.completed !== true) continue;
 
     const home = comp.competitors?.find(c => c.homeAway === 'home');
     const away = comp.competitors?.find(c => c.homeAway === 'away');
