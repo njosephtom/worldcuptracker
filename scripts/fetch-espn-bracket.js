@@ -120,12 +120,36 @@ function findMatchId(homeTeam, awayTeam, round, espnMatches) {
   return null;
 }
 
+function loadExistingBracket() {
+  try {
+    if (fs.existsSync(OUT_PATH)) {
+      const data = JSON.parse(fs.readFileSync(OUT_PATH, 'utf8'));
+      return data.bracket || {};
+    }
+  } catch {}
+  return {};
+}
+
+function datesToFetch() {
+  const fullScan = process.argv.includes('--full');
+  if (fullScan) return dateRange(KNOCKOUT_START, KNOCKOUT_END);
+
+  const now = new Date();
+  const utcDate  = now.toISOString().slice(0, 10);
+  const etDate   = now.toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
+  const yesterday = new Date(now - 86400000).toISOString().slice(0, 10);
+  return [...new Set([yesterday, utcDate, etDate])].filter(
+    d => d >= KNOCKOUT_START && d <= KNOCKOUT_END
+  ).sort();
+}
+
 async function main() {
-  const allDates = dateRange(KNOCKOUT_START, KNOCKOUT_END);
+  const existingBracket = loadExistingBracket();
+  const allDates = datesToFetch();
   const espnMatches = [];
   const seen = new Set();
 
-  console.log(`Fetching ESPN bracket for ${allDates.length} days...\n`);
+  console.log(`Fetching ESPN bracket for ${allDates.length} day(s): ${allDates.join(', ')}\n`);
 
   for (const date of allDates) {
     try {
@@ -163,11 +187,10 @@ async function main() {
           a: awayTeam,
           round,
           status,
-          homeScore: status !== 'upcoming' ? homeScore : null,
-          awayScore: status !== 'upcoming' ? awayScore : null,
+          homeScore: status === 'finished' ? homeScore : null,
+          awayScore: status === 'finished' ? awayScore : null,
         };
 
-        // Determine winner for finished matches
         if (status === 'finished') {
           match.winner = homeScore > awayScore ? homeTeam : awayTeam;
         }
@@ -184,8 +207,8 @@ async function main() {
     await new Promise(r => setTimeout(r, 250));
   }
 
-  // Build bracket results keyed by our internal match IDs
-  const bracket = {};
+  // Start from existing bracket so historical finished results are preserved
+  const bracket = { ...existingBracket };
 
   // Process R32 matches — match ESPN data to our static IDs
   for (const m of espnMatches) {
@@ -246,6 +269,24 @@ async function main() {
   resolveRound(SF_FEEDS, 'SF');
   resolveRound(F_FEEDS, 'Final');
 
+  // Propagate finished match winners into next-round slots,
+  // even if ESPN hasn't listed the next-round match yet.
+  const ALL_FEEDS = { ...R16_FEEDS, ...QF_FEEDS, ...SF_FEEDS, ...F_FEEDS };
+  for (const [targetId, sourceIds] of Object.entries(ALL_FEEDS)) {
+    const tid = +targetId;
+    for (let i = 0; i < sourceIds.length; i++) {
+      const src = bracket[sourceIds[i]];
+      if (!src?.winner) continue;
+      const slot = i === 0 ? 'h' : 'a';
+      if (!bracket[tid]) {
+        bracket[tid] = { h: null, a: null, hs: null, as: null, status: 'upcoming', winner: null };
+      }
+      if (!bracket[tid][slot]) {
+        bracket[tid][slot] = src.winner;
+      }
+    }
+  }
+
   // Bronze match — losers of semifinals
   const sfLosers = [100, 101].map(id => {
     const m = bracket[id];
@@ -263,9 +304,11 @@ async function main() {
         h, a,
         hs: flippedH ? bronzeESPN.awayScore : bronzeESPN.homeScore,
         as: flippedH ? bronzeESPN.homeScore : bronzeESPN.awayScore,
-        status: bronzeESPN.status,
+        status: bronzeESPN.status === 'finished' ? 'finished' : bronzeESPN.status,
         winner: bronzeESPN.winner || null,
       };
+    } else if (!bracket[102]) {
+      bracket[102] = { h: sfLosers[0], a: sfLosers[1], hs: null, as: null, status: 'upcoming', winner: null };
     }
   }
 

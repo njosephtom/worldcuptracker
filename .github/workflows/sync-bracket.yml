@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: '*/30 * * * *'
   workflow_dispatch:
+    inputs:
+      full_scan:
+        description: 'Fetch all knockout dates (not just today)'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -19,7 +24,7 @@ jobs:
           node-version: '20'
 
       - name: Fetch ESPN bracket data
-        run: node scripts/fetch-espn-bracket.js
+        run: node scripts/fetch-espn-bracket.js ${{ inputs.full_scan == 'true' && '--full' || '' }}
 
       - name: Commit and push if changed
         run: |
