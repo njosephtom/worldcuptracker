@@ -8,6 +8,7 @@
 const fs   = require('fs');
 const path = require('path');
 
+// ESPN API endpoint for FIFA World Cup schedule
 const ESPN_URL = 'https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard';
 const OUT_PATH = path.join(__dirname, '../public/match-schedule.json');
 
