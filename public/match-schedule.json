@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-30T02:17:37.844Z",
+  "updated": "2026-06-30T04:16:37.872Z",
   "matches": [
     {
       "espnId": "760415",
@@ -111,11 +111,10 @@
       "h": "Australia",
       "a": "Turkey",
       "d": "2026-06-13",
-      "t": "12:00 AM ET",
+      "t": "11:00 PM ET",
       "v": "bcplace",
       "venueName": "BC Place",
       "status": "finished",
-      "localTime": "9:00 PM PT",
       "localTZ": "PT",
       "g": "D",
       "homeScore": 2,
@@ -291,11 +290,10 @@
       "h": "Austria",
       "a": "Jordan",
       "d": "2026-06-16",
-      "t": "12:00 AM ET",
+      "t": "9:00 PM ET",
       "v": "levis",
       "venueName": "Levi's Stadium",
       "status": "finished",
-      "localTime": "9:00 PM PT",
       "localTZ": "PT",
       "g": "J",
       "homeScore": 3,
@@ -535,7 +533,6 @@
       "v": "bbva",
       "venueName": "Estadio BBVA",
       "status": "finished",
-      "localTime": "10:00 PM CT",
       "localTZ": "CT",
       "g": "F",
       "homeScore": 0,
@@ -1134,12 +1131,12 @@
       "t": "9:00 PM ET",
       "v": "bbva",
       "venueName": "Estadio BBVA",
-      "status": "live",
+      "status": "finished",
       "localTime": "7:00 PM CT",
       "localTZ": "CT",
       "round": "R32",
-      "homeScore": 0,
-      "awayScore": 0
+      "homeScore": 1,
+      "awayScore": 1
     },
     {
       "espnId": "760490",
@@ -1300,7 +1297,7 @@
     {
       "espnId": "760502",
       "h": "Canada",
-      "a": "Round of 32 3 Winner",
+      "a": "Morocco",
       "d": "2026-07-04",
       "t": "1:00 PM ET",
       "v": "nrg",
