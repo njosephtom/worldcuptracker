@@ -67,7 +67,7 @@ function buildBDM(enabled, liveBracket) {
     if (mock) {
       out[+id] = { ...m, h:mock.h||m.h, a:mock.a||m.a, hs:mock.hs, as:mock.as, status:'finished' };
     } else if (live && live.status === 'finished') {
-      out[+id] = { ...m, h:live.h||m.h, a:live.a||m.a, hs:live.hs, as:live.as, status:'finished' };
+      out[+id] = { ...m, h:live.h||m.h, a:live.a||m.a, hs:live.hs, as:live.as, status:'finished', winner:live.winner };
     } else if (live && live.status !== 'upcoming') {
       out[+id] = { ...m, h:live.h||m.h, a:live.a||m.a, status:live.status };
     } else if (live) {
