@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-30T00:26:12.661Z",
+  "updated": "2026-06-30T00:29:32.405Z",
   "bracket": {
     "72": {
       "h": "Germany",
@@ -7,9 +7,7 @@
       "hs": 1,
       "as": 1,
       "status": "finished",
-      "winner": "Paraguay",
-      "shootoutWinner": "Paraguay",
-      "shootoutScore": {"h": 3, "a": 4}
+      "winner": "Paraguay"
     },
     "73": {
       "h": "France",
