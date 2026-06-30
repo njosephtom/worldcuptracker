@@ -132,7 +132,7 @@ export function MatchDay({ matches, today, use24h, selectedTZ, onMatchClick, onT
     if (!grouped[m.d]) grouped[m.d] = [];
     grouped[m.d].push(m);
   });
-  const dates = Object.keys(grouped).sort();
+  const dates = Object.keys(grouped).sort((a, b) => new Date(a) - new Date(b));
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
