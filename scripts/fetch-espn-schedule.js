@@ -199,9 +199,10 @@ async function main() {
         let homeTeam = norm(home.team?.displayName || '');
         let awayTeam = norm(away.team?.displayName || '');
 
-        // Replace playoff bracket placeholders with TBD
-        if (/^Round of \d+ \d* Winner/.test(homeTeam)) homeTeam = 'TBD';
-        if (/^Round of \d+ \d* Winner/.test(awayTeam)) awayTeam = 'TBD';
+        // Replace playoff bracket placeholders with TBD (R32, QF, SF, Finals)
+        const isPlaceholder = (team) => /^(Round of|Quarterfinal|Semifinal) \d+.*Winner/i.test(team);
+        if (isPlaceholder(homeTeam)) homeTeam = 'TBD';
+        if (isPlaceholder(awayTeam)) awayTeam = 'TBD';
 
         const altNote   = comp.altGameNote || ev.competitions?.[0]?.notes?.[0]?.headline || '';
         const group     = extractGroup(altNote);
