@@ -169,12 +169,18 @@ function parseEvents(data, cache) {
         goal:    !!d.scoringPlay,
         ownGoal: !!d.ownGoal,
         penalty: !!d.penaltyKick,
+        shootout:!!d.shootout, // penalty shootout kick (not an in-match goal)
         yellow:  !!d.yellowCard,
         red:     !!d.redCard,
       }));
 
     const hs = parseInt(home.score, 10) || 0;
     const as = parseInt(away.score, 10) || 0;
+    // Penalty shootout tally (present only when a level match was decided on pens)
+    const hPen = home.shootoutScore != null ? parseInt(home.shootoutScore, 10) : null;
+    const aPen = away.shootoutScore != null ? parseInt(away.shootoutScore, 10) : null;
+    const hasShootout = hPen != null && aPen != null;
+
     cache[String(matchId)] = {
       homeScore:  flipped ? as : hs,
       awayScore:  flipped ? hs : as,
@@ -182,6 +188,10 @@ function parseEvents(data, cache) {
       awayTeamId: flipped ? (home.team?.id || '') : (away.team?.id || ''),
       events,
     };
+    if (hasShootout) {
+      cache[String(matchId)].homeShootout = flipped ? aPen : hPen;
+      cache[String(matchId)].awayShootout = flipped ? hPen : aPen;
+    }
     console.log(`  ✓ [${matchId}] ${flipped ? awayTeam : homeTeam} ${cache[matchId].homeScore}-${cache[matchId].awayScore} ${flipped ? homeTeam : awayTeam} (${events.length} events)`);
   }
 }

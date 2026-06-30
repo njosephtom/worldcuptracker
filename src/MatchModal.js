@@ -39,15 +39,19 @@ async function fetchMatchEvents(matchDate, homeTeam, awayTeam) {
         goal:    !!d.scoringPlay,
         ownGoal: !!d.ownGoal,
         penalty: !!d.penaltyKick,
+        shootout:!!d.shootout, // penalty shootout kick (not an in-match goal)
         yellow:  !!d.yellowCard,
         red:     !!d.redCard,
       }));
+    const hPen = home.shootoutScore != null ? parseInt(home.shootoutScore, 10) : null;
+    const aPen = away.shootoutScore != null ? parseInt(away.shootoutScore, 10) : null;
     return {
       homeTeamId: home.team?.id || '',
       awayTeamId: away.team?.id || '',
       homeScore:  parseInt(home.score, 10) || 0,
       awayScore:  parseInt(away.score, 10) || 0,
       events,
+      ...(hPen != null && aPen != null ? { homeShootout: hPen, awayShootout: aPen } : {}),
     };
   }
   return null;
@@ -210,10 +214,19 @@ export function MatchModal({ match, onClose, use24h, fifaRankings }) {
 
   const homeScore = match.homeScore ?? extraData?.homeScore ?? 0;
   const awayScore = match.awayScore ?? extraData?.awayScore ?? 0;
-  const homeWins  = finished && homeScore > awayScore;
-  const awayWins  = finished && awayScore > homeScore;
 
-  const events     = (match.events && match.events.length > 0) ? match.events : (extraData?.events || []);
+  // Penalty shootout result — present only when a level match was decided on pens
+  const homeShootout = match.homeShootout ?? extraData?.homeShootout ?? null;
+  const awayShootout = match.awayShootout ?? extraData?.awayShootout ?? null;
+  const hasShootout  = finished && homeShootout != null && awayShootout != null;
+
+  const homeWins = finished && (homeScore > awayScore || (hasShootout && homeScore === awayScore && homeShootout > awayShootout));
+  const awayWins = finished && (awayScore > homeScore || (hasShootout && awayScore === homeScore && awayShootout > homeShootout));
+
+  const allEvents  = (match.events && match.events.length > 0) ? match.events : (extraData?.events || []);
+  // Keep penalty-shootout kicks out of the regulation timeline — they show in their own section
+  const events     = allEvents.filter(e => !e.shootout);
+  const shootoutEvents = allEvents.filter(e => e.shootout);
   const homeTeamId = match.homeTeamId || extraData?.homeTeamId || '';
   const awayTeamId = match.awayTeamId || extraData?.awayTeamId || '';
   const hasEvents  = events.length > 0;
@@ -260,6 +273,11 @@ export function MatchModal({ match, onClose, use24h, fifaRankings }) {
                 <span style={{ color: awayWins ? 'var(--ac-gold)' : live ? 'var(--ac-red)' : 'var(--tx-primary)' }}>{awayScore}</span>
               </div>
             )}
+            {hasShootout && (
+              <div style={S.penResult}>
+                {(homeWins ? match.h : match.a)} win {Math.max(homeShootout, awayShootout)}–{Math.min(homeShootout, awayShootout)} on penalties
+              </div>
+            )}
             {live && liveMin && <div style={S.liveTimer}>{liveMin}</div>}
             <div style={S.venueRow}>📍 {venue.name ? `${venue.name}, ` : ''}{venue.city}</div>
           </div>
@@ -290,6 +308,20 @@ export function MatchModal({ match, onClose, use24h, fifaRankings }) {
             </div>
           )}
         </div>
+
+        {/* ── Penalty Shootout ── */}
+        {hasShootout && (
+          <div style={S.eventsSection}>
+            <div style={S.eventsLabel}>
+              Penalty Shootout · {homeShootout}–{awayShootout}
+            </div>
+            <div style={S.eventsGrid}>
+              <EventsColumn team={match.h} events={shootoutEvents} teamId={homeTeamId} align="left" />
+              <div style={S.evDivider} />
+              <EventsColumn team={match.a} events={shootoutEvents} teamId={awayTeamId} align="right" />
+            </div>
+          </div>
+        )}
 
         {/* ── YouTube Highlights (shown 30 min after estimated full time) ── */}
         {finished && ytStatus !== 'not-found' && (now > md.getTime() + 150 * 60000) && (
@@ -439,6 +471,12 @@ const S = {
   sbCenter: { textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 },
   sbScore: { fontSize: 42, fontWeight: 900, display: 'flex', alignItems: 'center', gap: 8, lineHeight: 1 },
   sbDash: { fontSize: 28, color: 'var(--tx-dim2)', fontWeight: 400 },
+  penResult: {
+    fontSize: 11, fontWeight: 700, color: 'var(--ac-gold)',
+    background: 'rgba(234,179,8,0.10)',
+    padding: '2px 10px', borderRadius: 12, letterSpacing: .3,
+    textAlign: 'center',
+  },
   sbKickoff: { fontSize: 28, fontWeight: 800, color: 'var(--ac-gold)' },
   sbDate: { fontSize: 11, color: 'var(--tx-dim)', marginTop: 2 },
   sbTime: { display: 'flex', flexDirection: 'column', alignItems: 'center' },

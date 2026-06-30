@@ -71,12 +71,15 @@ function parseESPN(data) {
         goal:    d.scoringPlay,
         ownGoal: d.ownGoal,
         penalty: d.penaltyKick,
+        shootout:!!d.shootout, // penalty shootout kick (not an in-match goal)
         yellow:  d.yellowCard,
         red:     d.redCard,
       }));
 
     // key matches our MATCHES: home team first
     const delayed = sName === 'STATUS_DELAYED' || sName === 'STATUS_SUSPENDED';
+    const hPen = home.shootoutScore != null ? parseInt(home.shootoutScore, 10) : null;
+    const aPen = away.shootoutScore != null ? parseInt(away.shootoutScore, 10) : null;
 
     scores[`${homeTeam}|${awayTeam}`] = {
       homeScore:  parseInt(home.score, 10) || 0,
@@ -86,6 +89,7 @@ function parseESPN(data) {
       status,
       clock: delayed ? (sName === 'STATUS_SUSPENDED' ? 'Suspended' : 'Delayed') : clock,
       events,
+      ...(hPen != null && aPen != null ? { homeShootout: hPen, awayShootout: aPen } : {}),
     };
   });
   return scores;

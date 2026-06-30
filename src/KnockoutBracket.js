@@ -82,7 +82,8 @@ function buildBDM(enabled, liveBracket) {
   for (const round of rounds) {
     for (const [id, m] of Object.entries(out)) {
       if (m.r !== round || m.status !== 'finished' || m.hs == null) continue;
-      const winner = m.hs > m.as ? m.h : m.a;
+      // Use ESPN's explicit winner (set via penalty shootouts) or fall back to score
+      const winner = m.winner || (m.hs > m.as ? m.h : m.a);
       const parentId = BD[+id]?.pid;
       if (!parentId || !out[parentId]) continue;
       const kids = BD[parentId]?.kids;
@@ -189,8 +190,8 @@ function TeamSlot({ slot, score, isWinner, isActive, onEnter, onLeave, onClick }
 function MatchCard({ id, m, highlighted, hoveredSlot, onSlotEnter, onSlotLeave, onSlotClick }) {
   const isOnPath = highlighted.has(id);
   const fin      = m.hs !== undefined;
-  const homeWins = fin && m.hs > m.as;
-  const awayWins = fin && m.as > m.hs;
+  const homeWins = fin && (m.winner === m.h || (m.winner === undefined && m.hs > m.as));
+  const awayWins = fin && (m.winner === m.a || (m.winner === undefined && m.as > m.hs));
   const isFinal  = id === 103;
   return (
     <div style={{
