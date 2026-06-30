@@ -47,7 +47,7 @@ export function useWorldCup(autoRefresh = true) {
 
   // Load static match-events.json once on mount for past match scores
   useEffect(() => {
-    fetch('/match-events.json')
+    fetch(`/match-events.json?t=${Date.now()}`)
       .then(r => r.ok ? r.json() : {})
       .then(data => setCachedEvents(data))
       .catch(() => {});
@@ -55,7 +55,7 @@ export function useWorldCup(autoRefresh = true) {
 
   // Load match schedule (updated daily by GitHub Actions from ESPN)
   useEffect(() => {
-    fetch('/match-schedule.json')
+    fetch(`/match-schedule.json?t=${Date.now()}`)
       .then(r => r.ok ? r.json() : null)
       .then(data => { if (data) setMatchSchedule(data); })
       .catch(() => {});
@@ -64,7 +64,7 @@ export function useWorldCup(autoRefresh = true) {
   // Load live bracket results (updated every 30 min by GitHub Actions)
   useEffect(() => {
     function load() {
-      fetch('/bracket-live.json')
+      fetch(`/bracket-live.json?t=${Date.now()}`)
         .then(r => r.ok ? r.json() : null)
         .then(data => { if (data) setBracketLive(data); })
         .catch(() => {});
