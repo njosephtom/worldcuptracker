@@ -210,8 +210,8 @@ export function MatchDay({ matches, today, use24h, selectedTZ, onMatchClick, onT
 
                 const md       = parseMatchDateTime(m.d, m.t);
                 const countdown = matchCountdown(md, now);
-                const homeWins  = ft && m.homeScore > m.awayScore;
-                const awayWins  = ft && m.awayScore > m.homeScore;
+                const homeWins  = ft && (m.winner === m.h || (m.winner === undefined && m.homeScore > m.awayScore));
+                const awayWins  = ft && (m.winner === m.a || (m.winner === undefined && m.awayScore > m.homeScore));
 
                 return (
                   <div key={m.id}

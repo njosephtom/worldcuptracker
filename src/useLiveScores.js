@@ -81,6 +81,13 @@ function parseESPN(data) {
     const hPen = home.shootoutScore != null ? parseInt(home.shootoutScore, 10) : null;
     const aPen = away.shootoutScore != null ? parseInt(away.shootoutScore, 10) : null;
 
+    // Determine winner: use ESPN's explicit winner (penalties) or score
+    let winner = null;
+    if (status === 'finished') {
+      if (home.winner === true) winner = homeTeam;
+      else if (away.winner === true) winner = awayTeam;
+    }
+
     scores[`${homeTeam}|${awayTeam}`] = {
       homeScore:  parseInt(home.score, 10) || 0,
       awayScore:  parseInt(away.score, 10) || 0,
@@ -90,6 +97,7 @@ function parseESPN(data) {
       clock: delayed ? (sName === 'STATUS_SUSPENDED' ? 'Suspended' : 'Delayed') : clock,
       events,
       ...(hPen != null && aPen != null ? { homeShootout: hPen, awayShootout: aPen } : {}),
+      ...(winner ? { winner } : {}),
     };
   });
   return scores;

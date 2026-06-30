@@ -97,6 +97,7 @@ export function useWorldCup(autoRefresh = true) {
     const flipped = !liveScores[key] && !!liveScores[revKey];
     if (raw) {
       const hasShootout = raw.homeShootout != null && raw.awayShootout != null;
+      const winner = raw.winner ? (flipped && raw.winner !== 'TBD' ? (raw.winner === m.h ? m.a : raw.winner === m.a ? m.h : raw.winner) : raw.winner) : null;
       return {
         ...m,
         status:     raw.status,
@@ -110,6 +111,7 @@ export function useWorldCup(autoRefresh = true) {
           homeShootout: flipped ? raw.awayShootout : raw.homeShootout,
           awayShootout: flipped ? raw.homeShootout : raw.awayShootout,
         } : {}),
+        ...(winner ? { winner } : {}),
       };
     }
 
