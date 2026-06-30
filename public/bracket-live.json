@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-30T00:29:32.405Z",
+  "updated": "2026-06-30T00:35:40.664Z",
   "bracket": {
     "72": {
       "h": "Germany",
@@ -17,9 +17,49 @@
       "status": "upcoming",
       "winner": null
     },
+    "74": {
+      "h": "South Africa",
+      "a": "Canada",
+      "hs": 0,
+      "as": 1,
+      "status": "finished",
+      "winner": "Canada"
+    },
     "75": {
       "h": "Netherlands",
       "a": "Morocco",
+      "hs": null,
+      "as": null,
+      "status": "upcoming",
+      "winner": null
+    },
+    "76": {
+      "h": "Portugal",
+      "a": "Croatia",
+      "hs": null,
+      "as": null,
+      "status": "upcoming",
+      "winner": null
+    },
+    "77": {
+      "h": "Spain",
+      "a": "Austria",
+      "hs": null,
+      "as": null,
+      "status": "upcoming",
+      "winner": null
+    },
+    "78": {
+      "h": "United States",
+      "a": "Bosnia and Herzegovina",
+      "hs": null,
+      "as": null,
+      "status": "upcoming",
+      "winner": null
+    },
+    "79": {
+      "h": "Belgium",
+      "a": "Senegal",
       "hs": null,
       "as": null,
       "status": "upcoming",
@@ -49,8 +89,56 @@
       "status": "upcoming",
       "winner": null
     },
+    "83": {
+      "h": "England",
+      "a": "DR Congo",
+      "hs": null,
+      "as": null,
+      "status": "upcoming",
+      "winner": null
+    },
+    "84": {
+      "h": "Argentina",
+      "a": "Cape Verde",
+      "hs": null,
+      "as": null,
+      "status": "upcoming",
+      "winner": null
+    },
+    "85": {
+      "h": "Australia",
+      "a": "Egypt",
+      "hs": null,
+      "as": null,
+      "status": "upcoming",
+      "winner": null
+    },
+    "86": {
+      "h": "Switzerland",
+      "a": "Algeria",
+      "hs": null,
+      "as": null,
+      "status": "upcoming",
+      "winner": null
+    },
+    "87": {
+      "h": "Colombia",
+      "a": "Ghana",
+      "hs": null,
+      "as": null,
+      "status": "upcoming",
+      "winner": null
+    },
     "88": {
       "h": "Paraguay",
+      "a": null,
+      "hs": null,
+      "as": null,
+      "status": "upcoming",
+      "winner": null
+    },
+    "89": {
+      "h": "Canada",
       "a": null,
       "hs": null,
       "as": null,
