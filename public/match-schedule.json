@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-30T13:53:56.759Z",
+  "updated": "2026-06-30T17:33:44.899Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1149,10 +1149,12 @@
       "t": "1:00 PM ET",
       "v": "att",
       "venueName": "AT&T Stadium",
-      "status": "upcoming",
+      "status": "live",
       "localTime": "12:00 PM CT",
       "localTZ": "CT",
-      "round": "R32"
+      "round": "R32",
+      "homeScore": 0,
+      "awayScore": 0
     },
     {
       "espnId": "760492",
