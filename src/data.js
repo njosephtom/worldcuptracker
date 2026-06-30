@@ -229,28 +229,28 @@ export const MATCHES = [
   {id:87,d:'2026-07-03',t:'9:30 PM ET',h:'Colombia',a:'Ghana',round:'R32',v:'arrowhead'},
 
   // ── Round of 16 ─────────────────────────────────────────────────────────────
-  {id:88,d:'2026-07-04',t:'1:00 PM ET',h:'TBD',a:'TBD',round:'R16',v:'nrg'},
-  {id:89,d:'2026-07-04',t:'5:00 PM ET',h:'TBD',a:'TBD',round:'R16',v:'lincoln'},
-  {id:90,d:'2026-07-05',t:'4:00 PM ET',h:'TBD',a:'TBD',round:'R16',v:'metlife'},
-  {id:91,d:'2026-07-05',t:'8:00 PM ET',h:'TBD',a:'TBD',round:'R16',v:'azteca'},
-  {id:92,d:'2026-07-06',t:'3:00 PM ET',h:'TBD',a:'TBD',round:'R16',v:'att'},
-  {id:93,d:'2026-07-06',t:'8:00 PM ET',h:'TBD',a:'TBD',round:'R16',v:'lumen'},
-  {id:94,d:'2026-07-07',t:'12:00 PM ET',h:'TBD',a:'TBD',round:'R16',v:'mercedes'},
-  {id:95,d:'2026-07-07',t:'4:00 PM ET',h:'TBD',a:'TBD',round:'R16',v:'bcplace'},
+  {id:88,espnId:'760502',d:'2026-07-04',t:'1:00 PM ET',h:'TBD',a:'TBD',round:'R16',v:'nrg'},
+  {id:89,espnId:'760503',d:'2026-07-04',t:'5:00 PM ET',h:'TBD',a:'TBD',round:'R16',v:'lincoln'},
+  {id:90,espnId:'760504',d:'2026-07-05',t:'4:00 PM ET',h:'TBD',a:'TBD',round:'R16',v:'metlife'},
+  {id:91,espnId:'760505',d:'2026-07-05',t:'8:00 PM ET',h:'TBD',a:'TBD',round:'R16',v:'azteca'},
+  {id:92,espnId:'760506',d:'2026-07-06',t:'3:00 PM ET',h:'TBD',a:'TBD',round:'R16',v:'att'},
+  {id:93,espnId:'760507',d:'2026-07-06',t:'8:00 PM ET',h:'TBD',a:'TBD',round:'R16',v:'lumen'},
+  {id:94,espnId:'760509',d:'2026-07-07',t:'12:00 PM ET',h:'TBD',a:'TBD',round:'R16',v:'mercedes'},
+  {id:95,espnId:'760508',d:'2026-07-07',t:'4:00 PM ET',h:'TBD',a:'TBD',round:'R16',v:'bcplace'},
 
   // ── Quarterfinals ────────────────────────────────────────────────────────────
-  {id:96,d:'2026-07-09',t:'4:00 PM ET',h:'TBD',a:'TBD',round:'QF',v:'gillette'},
-  {id:97,d:'2026-07-10',t:'3:00 PM ET',h:'TBD',a:'TBD',round:'QF',v:'sofi'},
-  {id:98,d:'2026-07-11',t:'5:00 PM ET',h:'TBD',a:'TBD',round:'QF',v:'hardrock'},
-  {id:99,d:'2026-07-11',t:'9:00 PM ET',h:'TBD',a:'TBD',round:'QF',v:'arrowhead'},
+  {id:96,espnId:'760510',d:'2026-07-09',t:'4:00 PM ET',h:'TBD',a:'TBD',round:'QF',v:'gillette'},
+  {id:97,espnId:'760511',d:'2026-07-10',t:'3:00 PM ET',h:'TBD',a:'TBD',round:'QF',v:'sofi'},
+  {id:98,espnId:'760512',d:'2026-07-11',t:'5:00 PM ET',h:'TBD',a:'TBD',round:'QF',v:'hardrock'},
+  {id:99,espnId:'760513',d:'2026-07-11',t:'9:00 PM ET',h:'TBD',a:'TBD',round:'QF',v:'arrowhead'},
 
   // ── Semifinals ───────────────────────────────────────────────────────────────
-  {id:100,d:'2026-07-14',t:'3:00 PM ET',h:'TBD',a:'TBD',round:'SF',v:'att'},
-  {id:101,d:'2026-07-15',t:'3:00 PM ET',h:'TBD',a:'TBD',round:'SF',v:'mercedes'},
+  {id:100,espnId:'760514',d:'2026-07-14',t:'3:00 PM ET',h:'TBD',a:'TBD',round:'SF',v:'att'},
+  {id:101,espnId:'760515',d:'2026-07-15',t:'3:00 PM ET',h:'TBD',a:'TBD',round:'SF',v:'mercedes'},
 
   // ── Third Place + Final ──────────────────────────────────────────────────────
-  {id:102,d:'2026-07-18',t:'5:00 PM ET',h:'TBD',a:'TBD',round:'Bronze',v:'hardrock'},
-  {id:103,d:'2026-07-19',t:'3:00 PM ET',h:'TBD',a:'TBD',round:'Final',v:'metlife'},
+  {id:102,espnId:'760516',d:'2026-07-18',t:'5:00 PM ET',h:'TBD',a:'TBD',round:'Bronze',v:'hardrock'},
+  {id:103,espnId:'760517',d:'2026-07-19',t:'3:00 PM ET',h:'TBD',a:'TBD',round:'Final',v:'metlife'},
 ];
 
 export function todayStr() {

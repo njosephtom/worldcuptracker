@@ -10,18 +10,29 @@ export const isDevMode =
 function mergeSchedule(staticMatches, scheduleData) {
   if (!scheduleData?.matches?.length) return staticMatches;
 
-  const byKey = {};
+  const byTeamKey = {};
+  const byEspnId = {};
   scheduleData.matches.forEach(em => {
     if (em.h && em.a && !(em.h === 'TBD' && em.a === 'TBD')) {
-      byKey[`${em.h}|${em.a}`] = em;
+      byTeamKey[`${em.h}|${em.a}`] = em;
+    }
+    if (em.espnId) {
+      byEspnId[em.espnId] = em;
     }
   });
 
   return staticMatches.map(m => {
-    const em = byKey[`${m.h}|${m.a}`] || byKey[`${m.a}|${m.h}`];
+    let em = byTeamKey[`${m.h}|${m.a}`] || byTeamKey[`${m.a}|${m.h}`];
+    let flipped = !byTeamKey[`${m.h}|${m.a}`];
+
+    // For bracket stage matches with TBD teams, try matching by espnId
+    if (!em && (m.h === 'TBD' || m.a === 'TBD') && m.espnId) {
+      em = byEspnId[m.espnId];
+      flipped = false;
+    }
+
     if (!em) return m;
 
-    const flipped = !byKey[`${m.h}|${m.a}`];
     const updates = {};
     if (em.d) updates.d = em.d;
     if (em.t) updates.t = em.t;
