@@ -34,6 +34,8 @@ function mergeSchedule(staticMatches, scheduleData) {
     if (!em) return m;
 
     const updates = {};
+    if (em.h) updates.h = flipped ? em.a : em.h;
+    if (em.a) updates.a = flipped ? em.h : em.a;
     if (em.d) updates.d = em.d;
     if (em.t) updates.t = em.t;
     if (em.v) updates.v = em.v;
