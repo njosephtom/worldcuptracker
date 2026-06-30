@@ -12,7 +12,7 @@ function mergeSchedule(staticMatches, scheduleData) {
 
   const byKey = {};
   scheduleData.matches.forEach(em => {
-    if (em.h && em.a) {
+    if (em.h && em.a && em.h !== 'TBD' && em.a !== 'TBD') {
       byKey[`${em.h}|${em.a}`] = em;
     }
   });
