@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-30T18:36:44.889Z",
+  "updated": "2026-06-30T19:32:56.627Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1149,12 +1149,12 @@
       "t": "1:00 PM ET",
       "v": "att",
       "venueName": "AT&T Stadium",
-      "status": "live",
+      "status": "finished",
       "localTime": "12:00 PM CT",
       "localTZ": "CT",
       "round": "R32",
       "homeScore": 1,
-      "awayScore": 1
+      "awayScore": 2
     },
     {
       "espnId": "760492",
@@ -1328,7 +1328,7 @@
     {
       "espnId": "760504",
       "h": "Brazil",
-      "a": "TBD",
+      "a": "Norway",
       "d": "2026-07-05",
       "t": "4:00 PM ET",
       "v": "metlife",
