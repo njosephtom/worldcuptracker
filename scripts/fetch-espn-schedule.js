@@ -196,8 +196,12 @@ async function main() {
         const away = comp.competitors?.find(c => c.homeAway === 'away');
         if (!home || !away) continue;
 
-        const homeTeam = norm(home.team?.displayName || '');
-        const awayTeam = norm(away.team?.displayName || '');
+        let homeTeam = norm(home.team?.displayName || '');
+        let awayTeam = norm(away.team?.displayName || '');
+
+        // Replace playoff bracket placeholders with TBD
+        if (/^Round of \d+ \d* Winner/.test(homeTeam)) homeTeam = 'TBD';
+        if (/^Round of \d+ \d* Winner/.test(awayTeam)) awayTeam = 'TBD';
 
         const altNote   = comp.altGameNote || ev.competitions?.[0]?.notes?.[0]?.headline || '';
         const group     = extractGroup(altNote);
