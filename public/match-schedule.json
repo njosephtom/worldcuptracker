@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-01T08:23:47.917Z",
+  "updated": "2026-07-01T17:35:27.939Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1194,10 +1194,12 @@
       "t": "12:00 PM ET",
       "v": "mercedes",
       "venueName": "Mercedes-Benz Stadium",
-      "status": "upcoming",
+      "status": "live",
       "localTime": "12:00 PM ET",
       "localTZ": "ET",
-      "round": "R32"
+      "round": "R32",
+      "homeScore": 0,
+      "awayScore": 1
     },
     {
       "espnId": "760493",
