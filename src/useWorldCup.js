@@ -111,9 +111,11 @@ export function useWorldCup(autoRefresh = true) {
     if (raw) {
       const hasShootout = raw.homeShootout != null && raw.awayShootout != null;
       const winner = raw.winner ? (flipped && raw.winner !== 'TBD' ? (raw.winner === m.h ? m.a : raw.winner === m.a ? m.h : raw.winner) : raw.winner) : null;
+      // Auto-detect finished status if scores are final (have homeScore and awayScore)
+      const status = (raw.homeScore != null && raw.awayScore != null) ? 'finished' : raw.status;
       return {
         ...m,
-        status:     raw.status,
+        status,
         homeScore:  flipped ? raw.awayScore : raw.homeScore,
         awayScore:  flipped ? raw.homeScore : raw.awayScore,
         clock:      raw.clock,
