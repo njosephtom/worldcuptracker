@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-01T22:26:53.877Z",
+  "updated": "2026-07-01T22:53:57.567Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1209,11 +1209,11 @@
       "t": "4:00 PM ET",
       "v": "lumen",
       "venueName": "Lumen Field",
-      "status": "live",
+      "status": "finished",
       "localTime": "1:00 PM PT",
       "localTZ": "PT",
       "round": "R32",
-      "homeScore": 2,
+      "homeScore": 3,
       "awayScore": 2
     },
     {
