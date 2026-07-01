@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-01T00:30:57.752Z",
+  "updated": "2026-07-01T01:43:59.697Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1176,11 +1176,11 @@
       "h": "Mexico",
       "a": "Ecuador",
       "d": "2026-06-30",
-      "t": "9:00 PM ET",
+      "t": "10:00 PM ET",
       "v": "azteca",
       "venueName": "Estadio Banorte",
       "status": "upcoming",
-      "localTime": "7:00 PM CT",
+      "localTime": "8:00 PM CT",
       "localTZ": "CT",
       "round": "R32"
     },
