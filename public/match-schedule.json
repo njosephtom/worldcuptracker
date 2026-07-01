@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-01T17:35:27.939Z",
+  "updated": "2026-07-01T18:36:17.879Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1194,11 +1194,11 @@
       "t": "12:00 PM ET",
       "v": "mercedes",
       "venueName": "Mercedes-Benz Stadium",
-      "status": "live",
+      "status": "finished",
       "localTime": "12:00 PM ET",
       "localTZ": "ET",
       "round": "R32",
-      "homeScore": 0,
+      "homeScore": 2,
       "awayScore": 1
     },
     {
@@ -1347,7 +1347,7 @@
     {
       "espnId": "760505",
       "h": "Mexico",
-      "a": "TBD",
+      "a": "England",
       "d": "2026-07-05",
       "t": "8:00 PM ET",
       "v": "azteca",
