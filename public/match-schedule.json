@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-01T03:03:22.750Z",
+  "updated": "2026-07-01T05:01:20.328Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1179,7 +1179,7 @@
       "t": "10:00 PM ET",
       "v": "azteca",
       "venueName": "Estadio Banorte",
-      "status": "live",
+      "status": "finished",
       "localTime": "8:00 PM CT",
       "localTZ": "CT",
       "round": "R32",
@@ -1344,7 +1344,7 @@
     },
     {
       "espnId": "760505",
-      "h": "TBD",
+      "h": "Mexico",
       "a": "TBD",
       "d": "2026-07-05",
       "t": "8:00 PM ET",
