@@ -39,8 +39,8 @@ function mergeSchedule(staticMatches, scheduleData) {
     if (em.d) updates.d = em.d;
     if (em.t) updates.t = em.t;
     if (em.v) updates.v = em.v;
-    if (em.status === 'finished') {
-      updates.status    = 'finished';
+    if (em.status === 'finished' || em.status === 'live') {
+      updates.status    = em.status;
       updates.homeScore = flipped ? em.awayScore : em.homeScore;
       updates.awayScore = flipped ? em.homeScore : em.awayScore;
     }
