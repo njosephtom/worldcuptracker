@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-02T01:39:00.915Z",
+  "updated": "2026-07-02T03:02:33.118Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1224,11 +1224,11 @@
       "t": "8:00 PM ET",
       "v": "levis",
       "venueName": "Levi's Stadium",
-      "status": "live",
+      "status": "finished",
       "localTime": "5:00 PM PT",
       "localTZ": "PT",
       "round": "R32",
-      "homeScore": 1,
+      "homeScore": 2,
       "awayScore": 0
     },
     {
@@ -1376,7 +1376,7 @@
     },
     {
       "espnId": "760507",
-      "h": "TBD",
+      "h": "United States",
       "a": "Belgium",
       "d": "2026-07-06",
       "t": "8:00 PM ET",
