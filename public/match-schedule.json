@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-01T23:55:53.536Z",
+  "updated": "2026-07-02T00:37:12.049Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1224,10 +1224,12 @@
       "t": "8:00 PM ET",
       "v": "levis",
       "venueName": "Levi's Stadium",
-      "status": "upcoming",
+      "status": "live",
       "localTime": "5:00 PM PT",
       "localTZ": "PT",
-      "round": "R32"
+      "round": "R32",
+      "homeScore": 0,
+      "awayScore": 0
     },
     {
       "espnId": "760497",
