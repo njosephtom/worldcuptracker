@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-02T22:49:44.141Z",
+  "updated": "2026-07-02T23:23:01.436Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1254,10 +1254,12 @@
       "t": "7:00 PM ET",
       "v": "bmo",
       "venueName": "BMO Field",
-      "status": "upcoming",
+      "status": "live",
       "localTime": "7:00 PM ET",
       "localTZ": "ET",
-      "round": "R32"
+      "round": "R32",
+      "homeScore": 0,
+      "awayScore": 0
     },
     {
       "espnId": "760498",
