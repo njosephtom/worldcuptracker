@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-02T01:23:05.835Z",
+  "updated": "2026-07-02T02:16:29.496Z",
   "bracket": {
     "72": {
       "h": "Germany",
@@ -52,10 +52,10 @@
     "78": {
       "h": "United States",
       "a": "Bosnia and Herzegovina",
-      "hs": null,
-      "as": null,
-      "status": "live",
-      "winner": null
+      "hs": 2,
+      "as": 0,
+      "status": "finished",
+      "winner": "United States"
     },
     "79": {
       "h": "Belgium",
@@ -146,7 +146,7 @@
       "winner": null
     },
     "91": {
-      "h": null,
+      "h": "United States",
       "a": "Belgium",
       "hs": null,
       "as": null,
