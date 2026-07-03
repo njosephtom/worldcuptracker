@@ -136,8 +136,8 @@ export function useWorldCup(autoRefresh = true) {
       return {
         ...m,
         status:     'finished',
-        homeScore:  cached?.homeScore,
-        awayScore:  cached?.awayScore,
+        homeScore:  cached?.homeScore ?? m.homeScore,
+        awayScore:  cached?.awayScore ?? m.awayScore,
         homeTeamId: cached?.homeTeamId,
         awayTeamId: cached?.awayTeamId,
         events:     cached?.events,
@@ -153,11 +153,11 @@ export function useWorldCup(autoRefresh = true) {
         return {
           ...m,
           status:     'finished',
-          homeScore:  cached.homeScore,
-          awayScore:  cached.awayScore,
-          homeTeamId: cached.homeTeamId,
-          awayTeamId: cached.awayTeamId,
-          events:     cached.events,
+          homeScore:  cached.homeScore ?? m.homeScore,
+          awayScore:  cached.awayScore ?? m.awayScore,
+          homeTeamId: cached.homeTeamId ?? m.homeTeamId,
+          awayTeamId: cached.awayTeamId ?? m.awayTeamId,
+          events:     cached.events ?? m.events,
           clock:      undefined,
         };
       }
