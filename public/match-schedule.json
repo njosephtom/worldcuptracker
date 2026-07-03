@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-03T20:01:36.979Z",
+  "updated": "2026-07-03T21:03:37.689Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1284,7 +1284,7 @@
       "t": "2:00 PM ET",
       "v": "att",
       "venueName": "AT&T Stadium",
-      "status": "live",
+      "status": "finished",
       "localTime": "1:00 PM CT",
       "localTZ": "CT",
       "round": "R32",
@@ -1398,7 +1398,7 @@
     {
       "espnId": "760509",
       "h": "TBD",
-      "a": "TBD",
+      "a": "Egypt",
       "d": "2026-07-07",
       "t": "12:00 PM ET",
       "v": "mercedes",
