@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-03T22:47:52.374Z",
+  "updated": "2026-07-03T23:21:36.849Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1304,7 +1304,7 @@
       "localTZ": "ET",
       "round": "R32",
       "homeScore": 1,
-      "awayScore": 0
+      "awayScore": 1
     },
     {
       "espnId": "760501",
