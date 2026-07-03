@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-03T03:43:56.913Z",
+  "updated": "2026-07-03T05:15:41.827Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1269,11 +1269,11 @@
       "t": "11:00 PM ET",
       "v": "bcplace",
       "venueName": "BC Place",
-      "status": "live",
+      "status": "finished",
       "localTime": "8:00 PM PT",
       "localTZ": "PT",
       "round": "R32",
-      "homeScore": 1,
+      "homeScore": 2,
       "awayScore": 0
     },
     {
@@ -1408,7 +1408,7 @@
     },
     {
       "espnId": "760508",
-      "h": "TBD",
+      "h": "Switzerland",
       "a": "TBD",
       "d": "2026-07-07",
       "t": "4:00 PM ET",
