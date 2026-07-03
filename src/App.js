@@ -226,7 +226,7 @@ export default function App() {
           <div style={{ ...S.colLeft, ...(isMobile ? S.colLeftMobile : {}), order: isMobile ? 2 : 0 }}>
             <div style={{ overflow: 'hidden', flex: 1, minHeight: 0 }}>
               <KnockoutBracket isMobile={isMobile} mockEnabled={wc.mockEnabled} standings={wc.standings}
-                  bracketLive={wc.bracketLive} onTT={show} onMoveTT={move} onHideTT={hide} />
+                  bracketLive={wc.bracketLive} liveMatches={wc.matches} onTT={show} onMoveTT={move} onHideTT={hide} />
             </div>
           </div>
           {/* RIGHT: Match Day + Map — shown first on mobile */}

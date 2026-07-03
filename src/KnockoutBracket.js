@@ -59,13 +59,27 @@ const BD = {
 };
 
 // ─── Merge mock or live results into bracket, then propagate winners ─────────
-function buildBDM(enabled, liveBracket) {
+function buildBDM(enabled, liveBracket, liveMatches = []) {
   const out = {};
+
+  // Build a map of live matches by team pair for quick lookup
+  const matchMap = {};
+  liveMatches.forEach(m => {
+    const key = `${m.h}|${m.a}`;
+    if (m.homeScore !== undefined && m.awayScore !== undefined && (m.status === 'finished' || m.status === 'live')) {
+      matchMap[key] = m;
+    }
+  });
+
   Object.entries(BD).forEach(([id, m]) => {
     const mock = enabled ? MOCK_RESULTS[+id] : null;
     const live = !enabled && liveBracket ? liveBracket[+id] || liveBracket[String(id)] : null;
+    const liveMatch = matchMap[`${m.h}|${m.a}`];
+
     if (mock) {
       out[+id] = { ...m, h:mock.h||m.h, a:mock.a||m.a, hs:mock.hs, as:mock.as, status:'finished' };
+    } else if (liveMatch) {
+      out[+id] = { ...m, h:liveMatch.h||m.h, a:liveMatch.a||m.a, hs:liveMatch.homeScore, as:liveMatch.awayScore, status:liveMatch.status, winner:liveMatch.winner };
     } else if (live && live.status === 'finished') {
       out[+id] = { ...m, h:live.h||m.h, a:live.a||m.a, hs:live.hs, as:live.as, status:'finished', winner:live.winner };
     } else if (live && live.status !== 'upcoming') {
@@ -597,10 +611,10 @@ function PathLegend({ slot, onClear }) {
 }
 
 // ─── Root export ──────────────────────────────────────────────────────────────
-export function KnockoutBracket({ isMobile, mockEnabled = false, standings = {}, bracketLive, onTT, onMoveTT, onHideTT }) {
+export function KnockoutBracket({ isMobile, mockEnabled = false, standings = {}, bracketLive, liveMatches = [], onTT, onMoveTT, onHideTT }) {
   const [hoveredSlot, setHoveredSlot] = useState(null);
   const liveBracket = bracketLive?.bracket || null;
-  const bdm = useMemo(() => buildBDM(mockEnabled, liveBracket), [mockEnabled, liveBracket]);
+  const bdm = useMemo(() => buildBDM(mockEnabled, liveBracket, liveMatches), [mockEnabled, liveBracket, liveMatches]);
 
   return (
     <div style={{ height:'100%', display:'flex', flexDirection:'column',
