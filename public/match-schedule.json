@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-03T01:05:55.812Z",
+  "updated": "2026-07-03T02:16:40.314Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1254,12 +1254,12 @@
       "t": "7:00 PM ET",
       "v": "bmo",
       "venueName": "BMO Field",
-      "status": "live",
+      "status": "finished",
       "localTime": "7:00 PM ET",
       "localTZ": "ET",
       "round": "R32",
       "homeScore": 2,
-      "awayScore": 2
+      "awayScore": 1
     },
     {
       "espnId": "760498",
@@ -1367,7 +1367,7 @@
     },
     {
       "espnId": "760506",
-      "h": "TBD",
+      "h": "Portugal",
       "a": "Spain",
       "d": "2026-07-06",
       "t": "3:00 PM ET",
