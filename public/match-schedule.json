@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-04T00:25:29.474Z",
+  "updated": "2026-07-04T01:03:38.406Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1299,11 +1299,11 @@
       "t": "6:00 PM ET",
       "v": "hardrock",
       "venueName": "Hard Rock Stadium",
-      "status": "live",
+      "status": "finished",
       "localTime": "6:00 PM ET",
       "localTZ": "ET",
       "round": "R32",
-      "homeScore": 2,
+      "homeScore": 3,
       "awayScore": 2
     },
     {
@@ -1399,7 +1399,7 @@
     },
     {
       "espnId": "760509",
-      "h": "TBD",
+      "h": "Argentina",
       "a": "Egypt",
       "d": "2026-07-07",
       "t": "12:00 PM ET",
