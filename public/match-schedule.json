@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-04T20:46:12.943Z",
+  "updated": "2026-07-04T21:17:53.935Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1344,10 +1344,12 @@
       "t": "5:00 PM ET",
       "v": "lincoln",
       "venueName": "Lincoln Financial Field",
-      "status": "upcoming",
+      "status": "live",
       "localTime": "5:00 PM ET",
       "localTZ": "ET",
-      "round": "R16"
+      "round": "R16",
+      "homeScore": 0,
+      "awayScore": 0
     },
     {
       "espnId": "760504",
