@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-04T07:57:10.116Z",
+  "updated": "2026-07-04T17:22:02.781Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1329,10 +1329,12 @@
       "t": "1:00 PM ET",
       "v": "nrg",
       "venueName": "NRG Stadium",
-      "status": "upcoming",
+      "status": "live",
       "localTime": "12:00 PM CT",
       "localTZ": "CT",
-      "round": "R16"
+      "round": "R16",
+      "homeScore": 0,
+      "awayScore": 0
     },
     {
       "espnId": "760503",
