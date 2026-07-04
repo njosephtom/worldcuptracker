@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-04T01:03:38.406Z",
+  "updated": "2026-07-04T02:16:31.561Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1314,10 +1314,12 @@
       "t": "9:30 PM ET",
       "v": "arrowhead",
       "venueName": "GEHA Field at Arrowhead Stadium",
-      "status": "upcoming",
+      "status": "live",
       "localTime": "8:30 PM CT",
       "localTZ": "CT",
-      "round": "R32"
+      "round": "R32",
+      "homeScore": 1,
+      "awayScore": 0
     },
     {
       "espnId": "760502",
