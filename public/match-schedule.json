@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-04T18:47:24.189Z",
+  "updated": "2026-07-04T19:27:43.256Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1329,12 +1329,12 @@
       "t": "1:00 PM ET",
       "v": "nrg",
       "venueName": "NRG Stadium",
-      "status": "live",
+      "status": "finished",
       "localTime": "12:00 PM CT",
       "localTZ": "CT",
       "round": "R16",
       "homeScore": 0,
-      "awayScore": 2
+      "awayScore": 3
     },
     {
       "espnId": "760503",
@@ -1430,7 +1430,7 @@
     {
       "espnId": "760510",
       "h": "TBD",
-      "a": "TBD",
+      "a": "Morocco",
       "d": "2026-07-09",
       "t": "4:00 PM ET",
       "v": "gillette",
