@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-04T02:16:31.561Z",
+  "updated": "2026-07-04T03:43:50.067Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1314,7 +1314,7 @@
       "t": "9:30 PM ET",
       "v": "arrowhead",
       "venueName": "GEHA Field at Arrowhead Stadium",
-      "status": "live",
+      "status": "finished",
       "localTime": "8:30 PM CT",
       "localTZ": "CT",
       "round": "R32",
@@ -1415,7 +1415,7 @@
     {
       "espnId": "760508",
       "h": "Switzerland",
-      "a": "TBD",
+      "a": "Colombia",
       "d": "2026-07-07",
       "t": "4:00 PM ET",
       "v": "bcplace",
