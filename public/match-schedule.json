@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-05T21:47:03.953Z",
+  "updated": "2026-07-05T22:19:13.805Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1359,12 +1359,12 @@
       "t": "4:00 PM ET",
       "v": "metlife",
       "venueName": "MetLife Stadium",
-      "status": "live",
+      "status": "finished",
       "localTime": "4:00 PM ET",
       "localTZ": "ET",
       "round": "R16",
-      "homeScore": 0,
-      "awayScore": 1
+      "homeScore": 1,
+      "awayScore": 2
     },
     {
       "espnId": "760505",
@@ -1459,7 +1459,7 @@
     },
     {
       "espnId": "760512",
-      "h": "TBD",
+      "h": "Norway",
       "a": "TBD",
       "d": "2026-07-11",
       "t": "5:00 PM ET",
