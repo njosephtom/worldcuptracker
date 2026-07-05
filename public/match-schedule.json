@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-05T22:47:11.694Z",
+  "updated": "2026-07-05T23:21:34.702Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1371,11 +1371,11 @@
       "h": "Mexico",
       "a": "England",
       "d": "2026-07-05",
-      "t": "8:00 PM ET",
+      "t": "9:00 PM ET",
       "v": "azteca",
       "venueName": "Estadio Banorte",
       "status": "upcoming",
-      "localTime": "6:00 PM CT",
+      "localTime": "7:00 PM CT",
       "localTZ": "CT",
       "round": "R16"
     },
