@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-06T20:36:22.422Z",
+  "updated": "2026-07-06T21:03:58.327Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1389,12 +1389,12 @@
       "t": "3:00 PM ET",
       "v": "att",
       "venueName": "AT&T Stadium",
-      "status": "live",
+      "status": "finished",
       "localTime": "2:00 PM CT",
       "localTZ": "CT",
       "round": "R16",
       "homeScore": 0,
-      "awayScore": 0
+      "awayScore": 1
     },
     {
       "espnId": "760507",
@@ -1450,7 +1450,7 @@
     },
     {
       "espnId": "760511",
-      "h": "TBD",
+      "h": "Spain",
       "a": "TBD",
       "d": "2026-07-10",
       "t": "3:00 PM ET",
