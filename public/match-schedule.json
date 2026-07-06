@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-06T02:17:04.934Z",
+  "updated": "2026-07-06T03:44:33.943Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1374,12 +1374,12 @@
       "t": "9:00 PM ET",
       "v": "azteca",
       "venueName": "Estadio Banorte",
-      "status": "live",
+      "status": "finished",
       "localTime": "7:00 PM CT",
       "localTZ": "CT",
       "round": "R16",
-      "homeScore": 1,
-      "awayScore": 2
+      "homeScore": 2,
+      "awayScore": 3
     },
     {
       "espnId": "760506",
@@ -1462,7 +1462,7 @@
     {
       "espnId": "760512",
       "h": "Norway",
-      "a": "TBD",
+      "a": "England",
       "d": "2026-07-11",
       "t": "5:00 PM ET",
       "v": "hardrock",
