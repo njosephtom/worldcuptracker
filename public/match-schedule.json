@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-07T19:32:07.497Z",
+  "updated": "2026-07-07T20:33:53.401Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1434,10 +1434,12 @@
       "t": "4:00 PM ET",
       "v": "bcplace",
       "venueName": "BC Place",
-      "status": "upcoming",
+      "status": "live",
       "localTime": "1:00 PM PT",
       "localTZ": "PT",
-      "round": "R16"
+      "round": "R16",
+      "homeScore": 0,
+      "awayScore": 0
     },
     {
       "espnId": "760510",
