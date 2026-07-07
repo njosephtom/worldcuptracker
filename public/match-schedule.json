@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-07T01:09:24.420Z",
+  "updated": "2026-07-07T02:16:45.341Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1404,12 +1404,12 @@
       "t": "8:00 PM ET",
       "v": "lumen",
       "venueName": "Lumen Field",
-      "status": "live",
+      "status": "finished",
       "localTime": "5:00 PM PT",
       "localTZ": "PT",
       "round": "R16",
       "homeScore": 1,
-      "awayScore": 2
+      "awayScore": 4
     },
     {
       "espnId": "760509",
@@ -1453,7 +1453,7 @@
     {
       "espnId": "760511",
       "h": "Spain",
-      "a": "TBD",
+      "a": "Belgium",
       "d": "2026-07-10",
       "t": "3:00 PM ET",
       "v": "sofi",
