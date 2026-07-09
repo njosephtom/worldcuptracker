@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-09T19:31:11.518Z",
+  "updated": "2026-07-09T20:32:43.909Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1449,10 +1449,12 @@
       "t": "4:00 PM ET",
       "v": "gillette",
       "venueName": "Gillette Stadium",
-      "status": "upcoming",
+      "status": "live",
       "localTime": "4:00 PM ET",
       "localTZ": "ET",
-      "round": "QF"
+      "round": "QF",
+      "homeScore": 0,
+      "awayScore": 0
     },
     {
       "espnId": "760511",
