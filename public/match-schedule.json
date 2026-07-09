@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-09T21:29:07.116Z",
+  "updated": "2026-07-09T22:04:09.004Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1449,11 +1449,11 @@
       "t": "4:00 PM ET",
       "v": "gillette",
       "venueName": "Gillette Stadium",
-      "status": "live",
+      "status": "finished",
       "localTime": "4:00 PM ET",
       "localTZ": "ET",
       "round": "QF",
-      "homeScore": 1,
+      "homeScore": 2,
       "awayScore": 0
     },
     {
@@ -1497,7 +1497,7 @@
     },
     {
       "espnId": "760514",
-      "h": "TBD",
+      "h": "France",
       "a": "TBD",
       "d": "2026-07-14",
       "t": "3:00 PM ET",
