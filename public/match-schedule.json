@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-10T20:36:26.909Z",
+  "updated": "2026-07-10T21:22:15.170Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1464,11 +1464,11 @@
       "t": "3:00 PM ET",
       "v": "sofi",
       "venueName": "SoFi Stadium",
-      "status": "live",
+      "status": "finished",
       "localTime": "12:00 PM PT",
       "localTZ": "PT",
       "round": "QF",
-      "homeScore": 1,
+      "homeScore": 2,
       "awayScore": 1
     },
     {
@@ -1500,7 +1500,7 @@
     {
       "espnId": "760514",
       "h": "France",
-      "a": "TBD",
+      "a": "Spain",
       "d": "2026-07-14",
       "t": "3:00 PM ET",
       "v": "att",
