@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-10T18:29:07.081Z",
+  "updated": "2026-07-10T19:04:31.791Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1464,10 +1464,12 @@
       "t": "3:00 PM ET",
       "v": "sofi",
       "venueName": "SoFi Stadium",
-      "status": "upcoming",
+      "status": "live",
       "localTime": "12:00 PM PT",
       "localTZ": "PT",
-      "round": "QF"
+      "round": "QF",
+      "homeScore": 0,
+      "awayScore": 0
     },
     {
       "espnId": "760512",
