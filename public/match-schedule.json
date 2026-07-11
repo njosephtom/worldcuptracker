@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-11T20:45:02.064Z",
+  "updated": "2026-07-11T21:15:37.344Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1479,10 +1479,12 @@
       "t": "5:00 PM ET",
       "v": "hardrock",
       "venueName": "Hard Rock Stadium",
-      "status": "upcoming",
+      "status": "live",
       "localTime": "5:00 PM ET",
       "localTZ": "ET",
-      "round": "QF"
+      "round": "QF",
+      "homeScore": 0,
+      "awayScore": 0
     },
     {
       "espnId": "760513",
