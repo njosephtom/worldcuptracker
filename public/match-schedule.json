@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-12T03:43:16.172Z",
+  "updated": "2026-07-12T05:02:32.254Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1494,7 +1494,7 @@
       "t": "9:00 PM ET",
       "v": "arrowhead",
       "venueName": "GEHA Field at Arrowhead Stadium",
-      "status": "live",
+      "status": "finished",
       "localTime": "8:00 PM CT",
       "localTZ": "CT",
       "round": "QF",
@@ -1517,7 +1517,7 @@
     {
       "espnId": "760515",
       "h": "England",
-      "a": "TBD",
+      "a": "Argentina",
       "d": "2026-07-15",
       "t": "3:00 PM ET",
       "v": "mercedes",
