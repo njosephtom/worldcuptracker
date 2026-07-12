@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-12T03:42:45.951Z",
+  "updated": "2026-07-12T05:01:50.246Z",
   "bracket": {
     "72": {
       "h": "Germany",
@@ -220,10 +220,10 @@
     "99": {
       "h": "Argentina",
       "a": "Switzerland",
-      "hs": null,
-      "as": null,
-      "status": "live",
-      "winner": null
+      "hs": 3,
+      "as": 1,
+      "status": "finished",
+      "winner": "Argentina"
     },
     "100": {
       "h": "France",
@@ -235,7 +235,7 @@
     },
     "101": {
       "h": "England",
-      "a": null,
+      "a": "Argentina",
       "hs": null,
       "as": null,
       "status": "upcoming",
