@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-14T20:48:46.703Z",
+  "updated": "2026-07-14T21:19:38.341Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1509,7 +1509,7 @@
       "t": "3:00 PM ET",
       "v": "att",
       "venueName": "AT&T Stadium",
-      "status": "live",
+      "status": "finished",
       "localTime": "2:00 PM CT",
       "localTZ": "CT",
       "round": "SF",
