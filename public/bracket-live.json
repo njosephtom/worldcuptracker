@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-15T20:46:34.428Z",
+  "updated": "2026-07-15T21:18:59.972Z",
   "bracket": {
     "72": {
       "h": "Germany",
@@ -236,14 +236,22 @@
     "101": {
       "h": "England",
       "a": "Argentina",
+      "hs": 1,
+      "as": 2,
+      "status": "finished",
+      "winner": "Argentina"
+    },
+    "102": {
+      "h": "France",
+      "a": "England",
       "hs": null,
       "as": null,
-      "status": "live",
+      "status": "upcoming",
       "winner": null
     },
     "103": {
       "h": "Spain",
-      "a": null,
+      "a": "Argentina",
       "hs": null,
       "as": null,
       "status": "upcoming",
