@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-15T20:47:06.459Z",
+  "updated": "2026-07-15T21:19:34.513Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1524,17 +1524,17 @@
       "t": "3:00 PM ET",
       "v": "mercedes",
       "venueName": "Mercedes-Benz Stadium",
-      "status": "live",
+      "status": "finished",
       "localTime": "3:00 PM ET",
       "localTZ": "ET",
       "round": "SF",
       "homeScore": 1,
-      "awayScore": 1
+      "awayScore": 2
     },
     {
       "espnId": "760516",
       "h": "France",
-      "a": "Semifinal 2 Loser",
+      "a": "England",
       "d": "2026-07-18",
       "t": "5:00 PM ET",
       "v": "hardrock",
@@ -1546,7 +1546,7 @@
     {
       "espnId": "760517",
       "h": "Spain",
-      "a": "TBD",
+      "a": "Argentina",
       "d": "2026-07-19",
       "t": "3:00 PM ET",
       "v": "metlife",
