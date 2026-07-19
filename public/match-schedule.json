@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-19T18:46:46.584Z",
+  "updated": "2026-07-19T19:24:07.090Z",
   "matches": [
     {
       "espnId": "760415",
@@ -1553,10 +1553,12 @@
       "t": "3:00 PM ET",
       "v": "metlife",
       "venueName": "MetLife Stadium",
-      "status": "upcoming",
+      "status": "live",
       "localTime": "3:00 PM ET",
       "localTZ": "ET",
-      "round": "Final"
+      "round": "Final",
+      "homeScore": 0,
+      "awayScore": 0
     }
   ]
 }
